@@ -1,0 +1,86 @@
+{
+  "episode_id": "group-032",
+  "title": "Materialism theories -> Phylogenetic evolution Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 4,
+  "section_ids": [
+    "9.10.6",
+    "9.10.7",
+    "9.10.8",
+    "9.10.9"
+  ],
+  "sections": [
+    {
+      "section_id": "9.10.6",
+      "title": "Reber’s cellular basis of consciousness",
+      "pages": "57-57",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "Reber’s cellular basis of consciousness"
+      ],
+      "research_path": "data/research/9.10.6.json",
+      "packet_path": "packets/theories/09-10-06-rebers-cellular-basis-of-consciousness.md"
+    },
+    {
+      "section_id": "9.10.7",
+      "title": "Feinberg and Mallatt’s ancient origins of consciousness",
+      "pages": "57-57",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "Feinberg and Mallatt’s ancient origins of consciousness"
+      ],
+      "research_path": "data/research/9.10.7.json",
+      "packet_path": "packets/theories/09-10-07-feinberg-and-mallatts-ancient-origins-of-consciousness.md"
+    },
+    {
+      "section_id": "9.10.8",
+      "title": "Levin’s technological approach to mind everywhere",
+      "pages": "58-58",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "Levin’s technological approach to mind everywhere"
+      ],
+      "research_path": "data/research/9.10.8.json",
+      "packet_path": "packets/theories/09-10-08-levins-technological-approach-to-mind-everywhere.md"
+    },
+    {
+      "section_id": "9.10.9",
+      "title": "No hard problem in William James’s psychology",
+      "pages": "58-58",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "No hard problem in William James’s psychology"
+      ],
+      "research_path": "data/research/9.10.9.json",
+      "packet_path": "packets/theories/09-10-09-no-hard-problem-in-william-jamess-psychology.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.10.6.json",
+    "data/research/9.10.7.json",
+    "data/research/9.10.8.json",
+    "data/research/9.10.9.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-10-06-rebers-cellular-basis-of-consciousness.md",
+    "packets/theories/09-10-07-feinberg-and-mallatts-ancient-origins-of-consciousness.md",
+    "packets/theories/09-10-08-levins-technological-approach-to-mind-everywhere.md",
+    "packets/theories/09-10-09-no-hard-problem-in-william-jamess-psychology.md"
+  ],
+  "script_job_id": "group-032-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-032/script.json",
+  "bundle_output_path": "episodes/group-032/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-032/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

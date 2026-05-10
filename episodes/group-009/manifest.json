@@ -1,0 +1,101 @@
+{
+  "episode_id": "group-009",
+  "title": "Materialism theories -> Philosophical Theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.1.1",
+    "9.1.2",
+    "9.1.3",
+    "9.1.4",
+    "9.1.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.1.1",
+      "title": "Eliminative materialism/illusionism",
+      "pages": "13-13",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Eliminative materialism/illusionism"
+      ],
+      "research_path": "data/research/9.1.1.json",
+      "packet_path": "packets/theories/09-01-01-eliminative-materialism-illusionism.md"
+    },
+    {
+      "section_id": "9.1.2",
+      "title": "Epiphenomenalism",
+      "pages": "14-14",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Epiphenomenalism"
+      ],
+      "research_path": "data/research/9.1.2.json",
+      "packet_path": "packets/theories/09-01-02-epiphenomenalism.md"
+    },
+    {
+      "section_id": "9.1.3",
+      "title": "Functionalism",
+      "pages": "14-14",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Functionalism"
+      ],
+      "research_path": "data/research/9.1.3.json",
+      "packet_path": "packets/theories/09-01-03-functionalism.md"
+    },
+    {
+      "section_id": "9.1.4",
+      "title": "Emergence",
+      "pages": "15-15",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Emergence"
+      ],
+      "research_path": "data/research/9.1.4.json",
+      "packet_path": "packets/theories/09-01-04-emergence.md"
+    },
+    {
+      "section_id": "9.1.5",
+      "title": "Mind-brain identity theory",
+      "pages": "16-16",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Mind-brain identity theory"
+      ],
+      "research_path": "data/research/9.1.5.json",
+      "packet_path": "packets/theories/09-01-05-mind-brain-identity-theory.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.1.1.json",
+    "data/research/9.1.2.json",
+    "data/research/9.1.3.json",
+    "data/research/9.1.4.json",
+    "data/research/9.1.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-01-01-eliminative-materialism-illusionism.md",
+    "packets/theories/09-01-02-epiphenomenalism.md",
+    "packets/theories/09-01-03-functionalism.md",
+    "packets/theories/09-01-04-emergence.md",
+    "packets/theories/09-01-05-mind-brain-identity-theory.md"
+  ],
+  "script_job_id": "group-009-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-009/script.json",
+  "bundle_output_path": "episodes/group-009/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-009/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

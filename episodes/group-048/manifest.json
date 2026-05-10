@@ -1,0 +1,96 @@
+{
+  "episode_id": "group-048",
+  "title": "Dualisms Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "15.11",
+    "15.12",
+    "15.13",
+    "15.14",
+    "15.15"
+  ],
+  "sections": [
+    {
+      "section_id": "15.11",
+      "title": "Soul in the Hebrew Bible and Jewish philosophy",
+      "pages": "89-89",
+      "taxonomy_path": [
+        "Dualisms",
+        "Soul in the Hebrew Bible and Jewish philosophy"
+      ],
+      "research_path": "data/research/15.11.json",
+      "packet_path": "packets/theories/15-11-soul-in-the-hebrew-bible-and-jewish-philosophy.md"
+    },
+    {
+      "section_id": "15.12",
+      "title": "Soul in the New Testament and Christian philosophy",
+      "pages": "89-89",
+      "taxonomy_path": [
+        "Dualisms",
+        "Soul in the New Testament and Christian philosophy"
+      ],
+      "research_path": "data/research/15.12.json",
+      "packet_path": "packets/theories/15-12-soul-in-the-new-testament-and-christian-philosophy.md"
+    },
+    {
+      "section_id": "15.13",
+      "title": "Soul in Islamic philosophy",
+      "pages": "90-90",
+      "taxonomy_path": [
+        "Dualisms",
+        "Soul in Islamic philosophy"
+      ],
+      "research_path": "data/research/15.13.json",
+      "packet_path": "packets/theories/15-13-soul-in-islamic-philosophy.md"
+    },
+    {
+      "section_id": "15.14",
+      "title": "God as the supplier of souls",
+      "pages": "91-91",
+      "taxonomy_path": [
+        "Dualisms",
+        "God as the supplier of souls"
+      ],
+      "research_path": "data/research/15.14.json",
+      "packet_path": "packets/theories/15-14-god-as-the-supplier-of-souls.md"
+    },
+    {
+      "section_id": "15.15",
+      "title": "Personal and cosmic consciousness in Indian philosophy",
+      "pages": "91-91",
+      "taxonomy_path": [
+        "Dualisms",
+        "Personal and cosmic consciousness in Indian philosophy"
+      ],
+      "research_path": "data/research/15.15.json",
+      "packet_path": "packets/theories/15-15-personal-and-cosmic-consciousness-in-indian-philosophy.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/15.11.json",
+    "data/research/15.12.json",
+    "data/research/15.13.json",
+    "data/research/15.14.json",
+    "data/research/15.15.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/15-11-soul-in-the-hebrew-bible-and-jewish-philosophy.md",
+    "packets/theories/15-12-soul-in-the-new-testament-and-christian-philosophy.md",
+    "packets/theories/15-13-soul-in-islamic-philosophy.md",
+    "packets/theories/15-14-god-as-the-supplier-of-souls.md",
+    "packets/theories/15-15-personal-and-cosmic-consciousness-in-indian-philosophy.md"
+  ],
+  "script_job_id": "group-048-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-048/script.json",
+  "bundle_output_path": "episodes/group-048/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-048/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

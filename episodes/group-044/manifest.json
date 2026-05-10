@@ -1,0 +1,96 @@
+{
+  "episode_id": "group-044",
+  "title": "Monisms Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "14.6",
+    "14.7",
+    "14.8",
+    "14.9",
+    "14.10"
+  ],
+  "sections": [
+    {
+      "section_id": "14.6",
+      "title": "Teilhard de Cardin’s evolving consciousness",
+      "pages": "80-80",
+      "taxonomy_path": [
+        "Monisms",
+        "Teilhard de Cardin’s evolving consciousness"
+      ],
+      "research_path": "data/research/14.6.json",
+      "packet_path": "packets/theories/14-06-teilhard-de-cardins-evolving-consciousness.md"
+    },
+    {
+      "section_id": "14.7",
+      "title": "Atmanspacher’s dual-aspect monism",
+      "pages": "81-81",
+      "taxonomy_path": [
+        "Monisms",
+        "Atmanspacher’s dual-aspect monism"
+      ],
+      "research_path": "data/research/14.7.json",
+      "packet_path": "packets/theories/14-07-atmanspachers-dual-aspect-monism.md"
+    },
+    {
+      "section_id": "14.8",
+      "title": "Ramachandran’s new physics and neuroscience",
+      "pages": "81-81",
+      "taxonomy_path": [
+        "Monisms",
+        "Ramachandran’s new physics and neuroscience"
+      ],
+      "research_path": "data/research/14.8.json",
+      "packet_path": "packets/theories/14-08-ramachandrans-new-physics-and-neuroscience.md"
+    },
+    {
+      "section_id": "14.9",
+      "title": "Tegmark’s state of matter",
+      "pages": "81-81",
+      "taxonomy_path": [
+        "Monisms",
+        "Tegmark’s state of matter"
+      ],
+      "research_path": "data/research/14.9.json",
+      "packet_path": "packets/theories/14-09-tegmarks-state-of-matter.md"
+    },
+    {
+      "section_id": "14.10",
+      "title": "Qualia Research Institute’s state-space, qualia formalism, valence",
+      "pages": "82-82",
+      "taxonomy_path": [
+        "Monisms",
+        "Qualia Research Institute’s state-space, qualia formalism, valence"
+      ],
+      "research_path": "data/research/14.10.json",
+      "packet_path": "packets/theories/14-10-qualia-research-institutes-state-space-qualia-formalism-valence.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/14.6.json",
+    "data/research/14.7.json",
+    "data/research/14.8.json",
+    "data/research/14.9.json",
+    "data/research/14.10.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/14-06-teilhard-de-cardins-evolving-consciousness.md",
+    "packets/theories/14-07-atmanspachers-dual-aspect-monism.md",
+    "packets/theories/14-08-ramachandrans-new-physics-and-neuroscience.md",
+    "packets/theories/14-09-tegmarks-state-of-matter.md",
+    "packets/theories/14-10-qualia-research-institutes-state-space-qualia-formalism-valence.md"
+  ],
+  "script_job_id": "group-044-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-044/script.json",
+  "bundle_output_path": "episodes/group-044/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-044/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

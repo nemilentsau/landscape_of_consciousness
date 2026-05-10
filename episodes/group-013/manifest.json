@@ -1,0 +1,101 @@
+{
+  "episode_id": "group-013",
+  "title": "Materialism theories -> Neurobiological theories Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.2.6",
+    "9.2.7",
+    "9.2.8",
+    "9.2.9",
+    "9.2.10"
+  ],
+  "sections": [
+    {
+      "section_id": "9.2.6",
+      "title": "Graziano’s attention schema theory",
+      "pages": "23-23",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Graziano’s attention schema theory"
+      ],
+      "research_path": "data/research/9.2.6.json",
+      "packet_path": "packets/theories/09-02-06-grazianos-attention-schema-theory.md"
+    },
+    {
+      "section_id": "9.2.7",
+      "title": "Prinz’s neurofunctionalism: how attention engenders experience",
+      "pages": "23-23",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Prinz’s neurofunctionalism: how attention engenders experience"
+      ],
+      "research_path": "data/research/9.2.7.json",
+      "packet_path": "packets/theories/09-02-07-prinzs-neurofunctionalism-how-attention-engenders-experience.md"
+    },
+    {
+      "section_id": "9.2.8",
+      "title": "Sapolsky’s hard incompatibilism",
+      "pages": "23-23",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Sapolsky’s hard incompatibilism"
+      ],
+      "research_path": "data/research/9.2.8.json",
+      "packet_path": "packets/theories/09-02-08-sapolskys-hard-incompatibilism.md"
+    },
+    {
+      "section_id": "9.2.9",
+      "title": "Mitchell’s free agents",
+      "pages": "24-24",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Mitchell’s free agents"
+      ],
+      "research_path": "data/research/9.2.9.json",
+      "packet_path": "packets/theories/09-02-09-mitchells-free-agents.md"
+    },
+    {
+      "section_id": "9.2.10",
+      "title": "Bach’s cortical conductor theory",
+      "pages": "24-24",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Bach’s cortical conductor theory"
+      ],
+      "research_path": "data/research/9.2.10.json",
+      "packet_path": "packets/theories/09-02-10-bachs-cortical-conductor-theory.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.2.6.json",
+    "data/research/9.2.7.json",
+    "data/research/9.2.8.json",
+    "data/research/9.2.9.json",
+    "data/research/9.2.10.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-02-06-grazianos-attention-schema-theory.md",
+    "packets/theories/09-02-07-prinzs-neurofunctionalism-how-attention-engenders-experience.md",
+    "packets/theories/09-02-08-sapolskys-hard-incompatibilism.md",
+    "packets/theories/09-02-09-mitchells-free-agents.md",
+    "packets/theories/09-02-10-bachs-cortical-conductor-theory.md"
+  ],
+  "script_job_id": "group-013-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-013/script.json",
+  "bundle_output_path": "episodes/group-013/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-013/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

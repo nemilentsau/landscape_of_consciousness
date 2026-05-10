@@ -1,0 +1,96 @@
+{
+  "episode_id": "group-056",
+  "title": "Anomalous and altered states theories Part 4",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "17.16",
+    "17.17",
+    "17.18",
+    "17.19",
+    "17.20"
+  ],
+  "sections": [
+    {
+      "section_id": "17.16",
+      "title": "Hiller ’ s eternal discarnate consciousness",
+      "pages": "114-114",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Hiller ’ s eternal discarnate consciousness"
+      ],
+      "research_path": "data/research/17.16.json",
+      "packet_path": "packets/theories/17-16-hillers-eternal-discarnate-consciousness.md"
+    },
+    {
+      "section_id": "17.17",
+      "title": "Harp ’ s universal or God consciousness",
+      "pages": "114-114",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Harp ’ s universal or God consciousness"
+      ],
+      "research_path": "data/research/17.17.json",
+      "packet_path": "packets/theories/17-17-harps-universal-or-god-consciousness.md"
+    },
+    {
+      "section_id": "17.18",
+      "title": "Swimme ’ s cosmogenesis",
+      "pages": "115-115",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Swimme ’ s cosmogenesis"
+      ],
+      "research_path": "data/research/17.18.json",
+      "packet_path": "packets/theories/17-18-swimmes-cosmogenesis.md"
+    },
+    {
+      "section_id": "17.19",
+      "title": "Langan ’ s cognitive-theoretic model of the universe",
+      "pages": "115-115",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Langan ’ s cognitive-theoretic model of the universe"
+      ],
+      "research_path": "data/research/17.19.json",
+      "packet_path": "packets/theories/17-19-langans-cognitive-theoretic-model-of-the-universe.md"
+    },
+    {
+      "section_id": "17.20",
+      "title": "Meditation and the brain",
+      "pages": "115-115",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Meditation and the brain"
+      ],
+      "research_path": "data/research/17.20.json",
+      "packet_path": "packets/theories/17-20-meditation-and-the-brain.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/17.16.json",
+    "data/research/17.17.json",
+    "data/research/17.18.json",
+    "data/research/17.19.json",
+    "data/research/17.20.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/17-16-hillers-eternal-discarnate-consciousness.md",
+    "packets/theories/17-17-harps-universal-or-god-consciousness.md",
+    "packets/theories/17-18-swimmes-cosmogenesis.md",
+    "packets/theories/17-19-langans-cognitive-theoretic-model-of-the-universe.md",
+    "packets/theories/17-20-meditation-and-the-brain.md"
+  ],
+  "script_job_id": "group-056-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-056/script.json",
+  "bundle_output_path": "episodes/group-056/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-056/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

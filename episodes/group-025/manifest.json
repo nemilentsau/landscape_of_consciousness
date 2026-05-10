@@ -1,0 +1,56 @@
+{
+  "episode_id": "group-025",
+  "title": "Materialism theories -> Relational theories Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 2,
+  "section_ids": [
+    "9.7.6",
+    "9.7.7"
+  ],
+  "sections": [
+    {
+      "section_id": "9.7.6",
+      "title": "Jaworski ’ s hylomorphism",
+      "pages": "42-42",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Relational theories",
+        "Jaworski ’ s hylomorphism"
+      ],
+      "research_path": "data/research/9.7.6.json",
+      "packet_path": "packets/theories/09-07-06-jaworskis-hylomorphism.md"
+    },
+    {
+      "section_id": "9.7.7",
+      "title": "Process theory",
+      "pages": "43-43",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Relational theories",
+        "Process theory"
+      ],
+      "research_path": "data/research/9.7.7.json",
+      "packet_path": "packets/theories/09-07-07-process-theory.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.7.6.json",
+    "data/research/9.7.7.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-07-06-jaworskis-hylomorphism.md",
+    "packets/theories/09-07-07-process-theory.md"
+  ],
+  "script_job_id": "group-025-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-025/script.json",
+  "bundle_output_path": "episodes/group-025/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-025/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

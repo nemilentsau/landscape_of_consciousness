@@ -1,0 +1,96 @@
+{
+  "episode_id": "group-055",
+  "title": "Anomalous and altered states theories Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "17.11",
+    "17.12",
+    "17.13",
+    "17.14",
+    "17.15"
+  ],
+  "sections": [
+    {
+      "section_id": "17.11",
+      "title": "Graboi’s three-aspect model",
+      "pages": "111-111",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Graboi’s three-aspect model"
+      ],
+      "research_path": "data/research/17.11.json",
+      "packet_path": "packets/theories/17-11-grabois-three-aspect-model.md"
+    },
+    {
+      "section_id": "17.12",
+      "title": "Near death experiences, survival, past lives",
+      "pages": "111-111",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Near death experiences, survival, past lives"
+      ],
+      "research_path": "data/research/17.12.json",
+      "packet_path": "packets/theories/17-12-near-death-experiences-survival-past-lives.md"
+    },
+    {
+      "section_id": "17.13",
+      "title": "DOPS’s consciousness research and theory",
+      "pages": "112-112",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "DOPS’s consciousness research and theory"
+      ],
+      "research_path": "data/research/17.13.json",
+      "packet_path": "packets/theories/17-13-dopss-consciousness-research-and-theory.md"
+    },
+    {
+      "section_id": "17.14",
+      "title": "Bitbol’s phenomenological ontology",
+      "pages": "113-113",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Bitbol’s phenomenological ontology"
+      ],
+      "research_path": "data/research/17.14.json",
+      "packet_path": "packets/theories/17-14-bitbols-phenomenological-ontology.md"
+    },
+    {
+      "section_id": "17.15",
+      "title": "Campbell ’ s theory of everything",
+      "pages": "114-114",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Campbell ’ s theory of everything"
+      ],
+      "research_path": "data/research/17.15.json",
+      "packet_path": "packets/theories/17-15-campbells-theory-of-everything.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/17.11.json",
+    "data/research/17.12.json",
+    "data/research/17.13.json",
+    "data/research/17.14.json",
+    "data/research/17.15.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/17-11-grabois-three-aspect-model.md",
+    "packets/theories/17-12-near-death-experiences-survival-past-lives.md",
+    "packets/theories/17-13-dopss-consciousness-research-and-theory.md",
+    "packets/theories/17-14-bitbols-phenomenological-ontology.md",
+    "packets/theories/17-15-campbells-theory-of-everything.md"
+  ],
+  "script_job_id": "group-055-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-055/script.json",
+  "bundle_output_path": "episodes/group-055/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-055/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

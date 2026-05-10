@@ -1,0 +1,101 @@
+{
+  "episode_id": "group-022",
+  "title": "Materialism theories -> Embodied and enactive theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.6.1",
+    "9.6.2",
+    "9.6.3",
+    "9.6.4",
+    "9.6.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.6.1",
+      "title": "Embodied cognition",
+      "pages": "37-37",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Embodied and enactive theories",
+        "Embodied cognition"
+      ],
+      "research_path": "data/research/9.6.1.json",
+      "packet_path": "packets/theories/09-06-01-embodied-cognition.md"
+    },
+    {
+      "section_id": "9.6.2",
+      "title": "Enactivism",
+      "pages": "38-38",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Embodied and enactive theories",
+        "Enactivism"
+      ],
+      "research_path": "data/research/9.6.2.json",
+      "packet_path": "packets/theories/09-06-02-enactivism.md"
+    },
+    {
+      "section_id": "9.6.3",
+      "title": "Varela ’ s neurophenomenology",
+      "pages": "38-38",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Embodied and enactive theories",
+        "Varela ’ s neurophenomenology"
+      ],
+      "research_path": "data/research/9.6.3.json",
+      "packet_path": "packets/theories/09-06-03-varelas-neurophenomenology.md"
+    },
+    {
+      "section_id": "9.6.4",
+      "title": "Thompson ’ s mind in life",
+      "pages": "38-38",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Embodied and enactive theories",
+        "Thompson ’ s mind in life"
+      ],
+      "research_path": "data/research/9.6.4.json",
+      "packet_path": "packets/theories/09-06-04-thompsons-mind-in-life.md"
+    },
+    {
+      "section_id": "9.6.5",
+      "title": "Frank/Gleiser/Thompson’s “The Blind Spot”",
+      "pages": "39-39",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Embodied and enactive theories",
+        "Frank/Gleiser/Thompson’s “The Blind Spot”"
+      ],
+      "research_path": "data/research/9.6.5.json",
+      "packet_path": "packets/theories/09-06-05-frank-gleiser-thompsons-the-blind-spot.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.6.1.json",
+    "data/research/9.6.2.json",
+    "data/research/9.6.3.json",
+    "data/research/9.6.4.json",
+    "data/research/9.6.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-06-01-embodied-cognition.md",
+    "packets/theories/09-06-02-enactivism.md",
+    "packets/theories/09-06-03-varelas-neurophenomenology.md",
+    "packets/theories/09-06-04-thompsons-mind-in-life.md",
+    "packets/theories/09-06-05-frank-gleiser-thompsons-the-blind-spot.md"
+  ],
+  "script_job_id": "group-022-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-022/script.json",
+  "bundle_output_path": "episodes/group-022/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-022/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

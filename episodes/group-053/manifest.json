@@ -1,0 +1,96 @@
+{
+  "episode_id": "group-053",
+  "title": "Anomalous and altered states theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "17.1",
+    "17.2",
+    "17.3",
+    "17.4",
+    "17.5"
+  ],
+  "sections": [
+    {
+      "section_id": "17.1",
+      "title": "Bergson’s multiplicity, duration, perception, memory",
+      "pages": "105-105",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Bergson’s multiplicity, duration, perception, memory"
+      ],
+      "research_path": "data/research/17.1.json",
+      "packet_path": "packets/theories/17-01-bergsons-multiplicity-duration-perception-memory.md"
+    },
+    {
+      "section_id": "17.2",
+      "title": "Jung’s collective unconscious and synchronicity",
+      "pages": "106-106",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Jung’s collective unconscious and synchronicity"
+      ],
+      "research_path": "data/research/17.2.json",
+      "packet_path": "packets/theories/17-02-jungs-collective-unconscious-and-synchronicity.md"
+    },
+    {
+      "section_id": "17.3",
+      "title": "Radin ’ s challenge to materialism",
+      "pages": "107-107",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Radin ’ s challenge to materialism"
+      ],
+      "research_path": "data/research/17.3.json",
+      "packet_path": "packets/theories/17-03-radins-challenge-to-materialism.md"
+    },
+    {
+      "section_id": "17.4",
+      "title": "Tart ’ s emergent interactionism",
+      "pages": "108-108",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Tart ’ s emergent interactionism"
+      ],
+      "research_path": "data/research/17.4.json",
+      "packet_path": "packets/theories/17-04-tarts-emergent-interactionism.md"
+    },
+    {
+      "section_id": "17.5",
+      "title": "Josephson ’ s psi-informed models",
+      "pages": "108-108",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Josephson ’ s psi-informed models"
+      ],
+      "research_path": "data/research/17.5.json",
+      "packet_path": "packets/theories/17-05-josephsons-psi-informed-models.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/17.1.json",
+    "data/research/17.2.json",
+    "data/research/17.3.json",
+    "data/research/17.4.json",
+    "data/research/17.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/17-01-bergsons-multiplicity-duration-perception-memory.md",
+    "packets/theories/17-02-jungs-collective-unconscious-and-synchronicity.md",
+    "packets/theories/17-03-radins-challenge-to-materialism.md",
+    "packets/theories/17-04-tarts-emergent-interactionism.md",
+    "packets/theories/17-05-josephsons-psi-informed-models.md"
+  ],
+  "script_job_id": "group-053-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-053/script.json",
+  "bundle_output_path": "episodes/group-053/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-053/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

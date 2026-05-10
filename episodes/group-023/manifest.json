@@ -1,0 +1,71 @@
+{
+  "episode_id": "group-023",
+  "title": "Materialism theories -> Embodied and enactive theories Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 3,
+  "section_ids": [
+    "9.6.6",
+    "9.6.7",
+    "9.6.8"
+  ],
+  "sections": [
+    {
+      "section_id": "9.6.6",
+      "title": "Bitbol’s radical neurophenomenology",
+      "pages": "40-40",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Embodied and enactive theories",
+        "Bitbol’s radical neurophenomenology"
+      ],
+      "research_path": "data/research/9.6.6.json",
+      "packet_path": "packets/theories/09-06-06-bitbols-radical-neurophenomenology.md"
+    },
+    {
+      "section_id": "9.6.7",
+      "title": "Direct perception theory",
+      "pages": "41-41",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Embodied and enactive theories",
+        "Direct perception theory"
+      ],
+      "research_path": "data/research/9.6.7.json",
+      "packet_path": "packets/theories/09-06-07-direct-perception-theory.md"
+    },
+    {
+      "section_id": "9.6.8",
+      "title": "Gibson ’ s ecological psychology",
+      "pages": "41-41",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Embodied and enactive theories",
+        "Gibson ’ s ecological psychology"
+      ],
+      "research_path": "data/research/9.6.8.json",
+      "packet_path": "packets/theories/09-06-08-gibsons-ecological-psychology.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.6.6.json",
+    "data/research/9.6.7.json",
+    "data/research/9.6.8.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-06-06-bitbols-radical-neurophenomenology.md",
+    "packets/theories/09-06-07-direct-perception-theory.md",
+    "packets/theories/09-06-08-gibsons-ecological-psychology.md"
+  ],
+  "script_job_id": "group-023-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-023/script.json",
+  "bundle_output_path": "episodes/group-023/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-023/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

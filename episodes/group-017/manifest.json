@@ -1,0 +1,101 @@
+{
+  "episode_id": "group-017",
+  "title": "Materialism theories -> Computational and Informational Theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.4.1",
+    "9.4.2",
+    "9.4.3",
+    "9.4.4",
+    "9.4.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.4.1",
+      "title": "Computational theories",
+      "pages": "28-28",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories",
+        "Computational theories"
+      ],
+      "research_path": "data/research/9.4.1.json",
+      "packet_path": "packets/theories/09-04-01-computational-theories.md"
+    },
+    {
+      "section_id": "9.4.2",
+      "title": "Grossberg ’ s adaptive resonance theory",
+      "pages": "29-29",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories",
+        "Grossberg ’ s adaptive resonance theory"
+      ],
+      "research_path": "data/research/9.4.2.json",
+      "packet_path": "packets/theories/09-04-02-grossbergs-adaptive-resonance-theory.md"
+    },
+    {
+      "section_id": "9.4.3",
+      "title": "Complex adaptive systems models",
+      "pages": "29-29",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories",
+        "Complex adaptive systems models"
+      ],
+      "research_path": "data/research/9.4.3.json",
+      "packet_path": "packets/theories/09-04-03-complex-adaptive-systems-models.md"
+    },
+    {
+      "section_id": "9.4.4",
+      "title": "Critical brain hypothesis",
+      "pages": "30-30",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories",
+        "Critical brain hypothesis"
+      ],
+      "research_path": "data/research/9.4.4.json",
+      "packet_path": "packets/theories/09-04-04-critical-brain-hypothesis.md"
+    },
+    {
+      "section_id": "9.4.5",
+      "title": "Pribram’s holonomic brain theory",
+      "pages": "30-30",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories",
+        "Pribram’s holonomic brain theory"
+      ],
+      "research_path": "data/research/9.4.5.json",
+      "packet_path": "packets/theories/09-04-05-pribrams-holonomic-brain-theory.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.4.1.json",
+    "data/research/9.4.2.json",
+    "data/research/9.4.3.json",
+    "data/research/9.4.4.json",
+    "data/research/9.4.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-04-01-computational-theories.md",
+    "packets/theories/09-04-02-grossbergs-adaptive-resonance-theory.md",
+    "packets/theories/09-04-03-complex-adaptive-systems-models.md",
+    "packets/theories/09-04-04-critical-brain-hypothesis.md",
+    "packets/theories/09-04-05-pribrams-holonomic-brain-theory.md"
+  ],
+  "script_job_id": "group-017-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-017/script.json",
+  "bundle_output_path": "episodes/group-017/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-017/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

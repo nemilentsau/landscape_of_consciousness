@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.course import group_sections, write_course_artifacts
+from consciousness_pipeline.course import group_sections, write_course_artifacts, write_episode_artifacts
 from consciousness_pipeline.models import Section
 
 
@@ -71,8 +71,40 @@ class CourseGenerationTest(unittest.TestCase):
             self.assertEqual(groups[0]["audio_profile"]["length"], "Longer")
             self.assertIn("Podcast Episode Map", group_markdown)
             self.assertEqual(rows[0]["research_status"], "research_queued")
-            self.assertEqual(rows[0]["script_status"], "script_queued")
+            self.assertEqual(rows[0]["script_status"], "source_script_queued")
             self.assertEqual(rows[0]["notebooklm_status"], "not_started")
+
+    def test_write_episode_artifacts_makes_section_inputs_explicit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output_dir = Path(tmp) / "episodes"
+            sections = [
+                make_section("9.2.3", "Global workspace theory"),
+                make_section("9.2.4", "Multiple drafts model"),
+            ]
+
+            write_episode_artifacts(sections, output_dir)
+
+            manifest = json.loads((output_dir / "group-001" / "manifest.json").read_text(encoding="utf-8"))
+            readme = (output_dir / "group-001" / "README.md").read_text(encoding="utf-8")
+
+            self.assertEqual(manifest["episode_id"], "group-001")
+            self.assertEqual(manifest["section_ids"], ["9.2.3", "9.2.4"])
+            self.assertEqual(
+                manifest["research_inputs"],
+                ["data/research/9.2.3.json", "data/research/9.2.4.json"],
+            )
+            self.assertEqual(manifest["sections"][0]["title"], "Global workspace theory")
+            self.assertEqual(manifest["sections"][0]["research_path"], "data/research/9.2.3.json")
+            self.assertEqual(
+                manifest["sections"][0]["packet_path"],
+                "packets/theories/9-2-3-global-workspace-theory.md",
+            )
+            self.assertEqual(manifest["script_job_manifest"], "jobs/source-scripts.jsonl")
+            self.assertEqual(manifest["bundle_output_path"], "episodes/group-001/notebooklm_bundle/research_dossier.md")
+            self.assertIn("This is one podcast episode group", readme)
+            self.assertIn("section-level research records", readme)
+            self.assertIn("factual NotebookLM source script", readme)
+            self.assertIn("data/research/9.2.3.json", readme)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.course import EpisodeGroup, group_sections
+from consciousness_pipeline.course import EpisodeGroup, group_sections, write_episode_artifacts
 from consciousness_pipeline.models import Section
 
 RESEARCH_SCHEMA: dict[str, Any] = {
@@ -43,15 +43,14 @@ RESEARCH_SCHEMA: dict[str, Any] = {
     "additionalProperties": False,
 }
 
-PODCAST_SCRIPT_SCHEMA: dict[str, Any] = {
+SOURCE_SCRIPT_SCHEMA: dict[str, Any] = {
     "type": "object",
     "properties": {
         "episode_id": {"type": "string"},
         "title": {"type": "string"},
         "episode_question": {"type": "string"},
         "duration_target": {"type": "string"},
-        "script_markdown": {"type": "string"},
-        "source_bundle_markdown": {"type": "string"},
+        "research_dossier_markdown": {"type": "string"},
         "citations": {"type": "array", "items": {"type": "string"}},
         "missing_inputs": {"type": "array", "items": {"type": "string"}},
     },
@@ -60,8 +59,7 @@ PODCAST_SCRIPT_SCHEMA: dict[str, Any] = {
         "title",
         "episode_question",
         "duration_target",
-        "script_markdown",
-        "source_bundle_markdown",
+        "research_dossier_markdown",
         "citations",
         "missing_inputs",
     ],
@@ -100,10 +98,11 @@ def _research_job(section: Section) -> dict[str, object]:
 def _script_job(group: EpisodeGroup) -> dict[str, object]:
     group_id = str(group["group_id"])
     section_ids = [str(item) for item in group["section_ids"]]
+    episode_manifest_path = f"episodes/{group_id}/manifest.json"
     return {
         "job_id": f"{group_id}-script",
-        "kind": "podcast_script",
-        "prompt_contract": "debate_club_longform_script_v1",
+        "kind": "source_script",
+        "prompt_contract": "notebooklm_factual_source_script_v1",
         "agents": ["codex_exec", "claude_headless"],
         "group_id": group_id,
         "title": str(group["title"]),
@@ -115,12 +114,15 @@ def _script_job(group: EpisodeGroup) -> dict[str, object]:
         "input_paths": [
             "data/extracted/sections.json",
             "course/episode-map.json",
+            episode_manifest_path,
             *[f"data/research/{section_id}.json" for section_id in section_ids],
         ],
+        "episode_manifest_path": episode_manifest_path,
         "output_path": f"episodes/{group_id}/script.json",
-        "schema_path": "schemas/podcast-script.schema.json",
+        "schema_path": "schemas/source-script.schema.json",
         "notebooklm_handoff": "computer_use_after_script_bundle",
         "notebooklm_bundle_dir": f"episodes/{group_id}/notebooklm_bundle",
+        "bundle_output_path": f"episodes/{group_id}/notebooklm_bundle/research_dossier.md",
     }
 
 
@@ -142,10 +144,15 @@ def write_agent_job_artifacts(
     schemas_dir.mkdir(parents=True, exist_ok=True)
     episodes_dir.mkdir(parents=True, exist_ok=True)
 
+    for legacy_path in (jobs_dir / "podcast-scripts.jsonl", schemas_dir / "podcast-script.schema.json"):
+        if legacy_path.exists():
+            legacy_path.unlink()
+
     _write_json(schemas_dir / "research-record.schema.json", RESEARCH_SCHEMA)
-    _write_json(schemas_dir / "podcast-script.schema.json", PODCAST_SCRIPT_SCHEMA)
+    _write_json(schemas_dir / "source-script.schema.json", SOURCE_SCRIPT_SCHEMA)
     _write_jsonl(jobs_dir / "research.jsonl", build_research_jobs(sections))
-    _write_jsonl(jobs_dir / "podcast-scripts.jsonl", build_script_jobs(sections))
+    _write_jsonl(jobs_dir / "source-scripts.jsonl", build_script_jobs(sections))
+    write_episode_artifacts(sections, episodes_dir)
 
 
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -181,7 +188,7 @@ def build_job_prompt(job: dict[str, Any], root: Path) -> str:
     if kind == "research":
         section = sections[str(job["section_id"])]
         return build_research_prompt(job, section)
-    if kind == "podcast_script":
+    if kind == "source_script":
         group_sections_for_job = [sections[str(section_id)] for section_id in job["section_ids"]]
         return build_script_prompt(job, group_sections_for_job)
     raise ValueError(f"Unsupported job kind: {kind}")
@@ -214,14 +221,16 @@ Section text:
 def build_script_prompt(job: dict[str, Any], sections: list[Section]) -> str:
     summaries = "\n".join(_section_summary(section) for section in sections)
     research_paths = "\n".join(f"- data/research/{section.section_id}.json" for section in sections)
-    return f"""Write one long-form debate-club podcast script for the consciousness listening course.
+    return f"""Write one factual NotebookLM source dossier for the consciousness listening course.
 
 Job ID: {job["job_id"]}
 Episode group: {job["group_id"]} - {job["title"]}
 Episode question: {job["episode_question"]}
+Episode manifest: {job["episode_manifest_path"]}
 Output path: {job["output_path"]}
 Required schema: {job["schema_path"]}
 NotebookLM handoff: {job["notebooklm_handoff"]}; bundle dir {job["notebooklm_bundle_dir"]}
+NotebookLM dossier markdown output: {job["bundle_output_path"]}
 
 Sections:
 {summaries}
@@ -229,8 +238,20 @@ Sections:
 Research inputs to read:
 {research_paths}
 
-Write for a long episode, not a short summary. Use a debate-club structure:
-opening dispute, steelman, cross-examination, objections, implications, and a verdict without closure.
-Keep the tone balanced and interesting. Do not make speculative theories sound more established than
-the sources justify. Return only JSON matching the schema.
+Produce thorough research material for NotebookLM to work with. NotebookLM will generate the conversational audio.
+Do not write dialogue, speaker names, stage directions, banter, cold opens, finished narration, or host patter.
+
+The research_dossier_markdown should be factual and structured:
+- episode scope and why these sections are grouped
+- concise thesis of the cluster
+- per-section factual summaries grounded in Kuhn and the research records
+- strongest academic case
+- serious objections and limits
+- comparison axes for theories in the cluster
+- epistemic status and what not to overstate
+- implications only where the sources justify them
+- citation-backed source notes and local input paths
+
+Write the same research_dossier_markdown to the NotebookLM dossier markdown output path so it can
+be uploaded directly. Return only JSON matching the schema.
 """

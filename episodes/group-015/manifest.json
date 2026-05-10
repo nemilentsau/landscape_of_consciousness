@@ -1,0 +1,101 @@
+{
+  "episode_id": "group-015",
+  "title": "Materialism theories -> Electromagnetic field theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.3.1",
+    "9.3.2",
+    "9.3.3",
+    "9.3.4",
+    "9.3.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.3.1",
+      "title": "Jones ’ s electromagnetic fields",
+      "pages": "26-26",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Electromagnetic field theories",
+        "Jones ’ s electromagnetic fields"
+      ],
+      "research_path": "data/research/9.3.1.json",
+      "packet_path": "packets/theories/09-03-01-joness-electromagnetic-fields.md"
+    },
+    {
+      "section_id": "9.3.2",
+      "title": "Pockett ’ s conscious and non-conscious patterns",
+      "pages": "26-26",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Electromagnetic field theories",
+        "Pockett ’ s conscious and non-conscious patterns"
+      ],
+      "research_path": "data/research/9.3.2.json",
+      "packet_path": "packets/theories/09-03-02-pocketts-conscious-and-non-conscious-patterns.md"
+    },
+    {
+      "section_id": "9.3.3",
+      "title": "McFadden ’ s conscious electromagnetic information theory",
+      "pages": "27-27",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Electromagnetic field theories",
+        "McFadden ’ s conscious electromagnetic information theory"
+      ],
+      "research_path": "data/research/9.3.3.json",
+      "packet_path": "packets/theories/09-03-03-mcfaddens-conscious-electromagnetic-information-theory.md"
+    },
+    {
+      "section_id": "9.3.4",
+      "title": "Ephaptic coupling",
+      "pages": "27-27",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Electromagnetic field theories",
+        "Ephaptic coupling"
+      ],
+      "research_path": "data/research/9.3.4.json",
+      "packet_path": "packets/theories/09-03-04-ephaptic-coupling.md"
+    },
+    {
+      "section_id": "9.3.5",
+      "title": "Ambron ’ s local field potentials and electromagnetic waves",
+      "pages": "27-27",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Electromagnetic field theories",
+        "Ambron ’ s local field potentials and electromagnetic waves"
+      ],
+      "research_path": "data/research/9.3.5.json",
+      "packet_path": "packets/theories/09-03-05-ambrons-local-field-potentials-and-electromagnetic-waves.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.3.1.json",
+    "data/research/9.3.2.json",
+    "data/research/9.3.3.json",
+    "data/research/9.3.4.json",
+    "data/research/9.3.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-03-01-joness-electromagnetic-fields.md",
+    "packets/theories/09-03-02-pocketts-conscious-and-non-conscious-patterns.md",
+    "packets/theories/09-03-03-mcfaddens-conscious-electromagnetic-information-theory.md",
+    "packets/theories/09-03-04-ephaptic-coupling.md",
+    "packets/theories/09-03-05-ambrons-local-field-potentials-and-electromagnetic-waves.md"
+  ],
+  "script_job_id": "group-015-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-015/script.json",
+  "bundle_output_path": "episodes/group-015/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-015/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

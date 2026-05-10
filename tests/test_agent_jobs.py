@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.agent_jobs import write_agent_job_artifacts
+from consciousness_pipeline.agent_jobs import build_job_prompt, write_agent_job_artifacts
 from consciousness_pipeline.models import Section
 
 
@@ -42,7 +42,7 @@ class AgentJobGenerationTest(unittest.TestCase):
             )
 
             research_jobs = read_jsonl(root / "jobs" / "research.jsonl")
-            script_jobs = read_jsonl(root / "jobs" / "podcast-scripts.jsonl")
+            script_jobs = read_jsonl(root / "jobs" / "source-scripts.jsonl")
             serialized = json.dumps({"research": research_jobs, "scripts": script_jobs}).lower()
 
             self.assertEqual(len(research_jobs), 2)
@@ -53,15 +53,60 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertEqual(research_jobs[0]["agents"], ["codex_exec", "claude_headless"])
 
             self.assertEqual(len(script_jobs), 1)
-            self.assertEqual(script_jobs[0]["kind"], "podcast_script")
+            self.assertEqual(script_jobs[0]["kind"], "source_script")
+            self.assertEqual(script_jobs[0]["prompt_contract"], "notebooklm_factual_source_script_v1")
             self.assertEqual(script_jobs[0]["duration_target"], "long_form")
             self.assertEqual(script_jobs[0]["section_ids"], ["9.2.3", "9.2.4"])
+            self.assertEqual(script_jobs[0]["episode_manifest_path"], "episodes/group-001/manifest.json")
+            self.assertIn("episodes/group-001/manifest.json", script_jobs[0]["input_paths"])
             self.assertEqual(script_jobs[0]["output_path"], "episodes/group-001/script.json")
+            self.assertEqual(
+                script_jobs[0]["bundle_output_path"],
+                "episodes/group-001/notebooklm_bundle/research_dossier.md",
+            )
             self.assertIn("computer_use", script_jobs[0]["notebooklm_handoff"])
 
             self.assertTrue((root / "schemas" / "research-record.schema.json").exists())
-            self.assertTrue((root / "schemas" / "podcast-script.schema.json").exists())
+            source_script_schema = json.loads((root / "schemas" / "source-script.schema.json").read_text())
+            self.assertIn("research_dossier_markdown", source_script_schema["required"])
+            self.assertNotIn("script_markdown", source_script_schema["properties"])
+            self.assertFalse((root / "jobs" / "podcast-scripts.jsonl").exists())
+            self.assertFalse((root / "schemas" / "podcast-script.schema.json").exists())
             self.assertNotIn("playwright", serialized)
+
+            sections_path = root / "data" / "extracted" / "sections.json"
+            sections_path.parent.mkdir(parents=True)
+            sections_path.write_text(
+                json.dumps([section.to_dict() for section in sections], ensure_ascii=False),
+                encoding="utf-8",
+            )
+            prompt = build_job_prompt(script_jobs[0], root)
+            self.assertIn("factual NotebookLM source dossier", prompt)
+            self.assertIn("Do not write dialogue", prompt)
+            self.assertIn("NotebookLM will generate the conversational audio", prompt)
+            self.assertNotIn("opening dispute", prompt)
+            self.assertNotIn("cross-examination", prompt)
+
+    def test_write_agent_job_artifacts_removes_legacy_dialogue_script_manifests(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sections = [make_section("9.2.3", "Global workspace theory")]
+            legacy_job = root / "jobs" / "podcast-scripts.jsonl"
+            legacy_schema = root / "schemas" / "podcast-script.schema.json"
+            legacy_job.parent.mkdir(parents=True)
+            legacy_schema.parent.mkdir(parents=True)
+            legacy_job.write_text("legacy dialogue job\n", encoding="utf-8")
+            legacy_schema.write_text('{"legacy": true}\n', encoding="utf-8")
+
+            write_agent_job_artifacts(
+                sections,
+                jobs_dir=root / "jobs",
+                schemas_dir=root / "schemas",
+                episodes_dir=root / "episodes",
+            )
+
+            self.assertFalse(legacy_job.exists())
+            self.assertFalse(legacy_schema.exists())
 
 
 if __name__ == "__main__":

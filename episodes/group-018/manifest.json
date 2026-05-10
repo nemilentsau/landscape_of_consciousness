@@ -1,0 +1,71 @@
+{
+  "episode_id": "group-018",
+  "title": "Materialism theories -> Computational and Informational Theories Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 3,
+  "section_ids": [
+    "9.4.6",
+    "9.4.7",
+    "9.4.8"
+  ],
+  "sections": [
+    {
+      "section_id": "9.4.6",
+      "title": "Doyle’s experience recorder and reproducer",
+      "pages": "31-31",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories",
+        "Doyle’s experience recorder and reproducer"
+      ],
+      "research_path": "data/research/9.4.6.json",
+      "packet_path": "packets/theories/09-04-06-doyles-experience-recorder-and-reproducer.md"
+    },
+    {
+      "section_id": "9.4.7",
+      "title": "Informational realism and emergent information theory",
+      "pages": "31-31",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories",
+        "Informational realism and emergent information theory"
+      ],
+      "research_path": "data/research/9.4.7.json",
+      "packet_path": "packets/theories/09-04-07-informational-realism-and-emergent-information-theory.md"
+    },
+    {
+      "section_id": "9.4.8",
+      "title": "Mathematical theories",
+      "pages": "32-32",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories",
+        "Mathematical theories"
+      ],
+      "research_path": "data/research/9.4.8.json",
+      "packet_path": "packets/theories/09-04-08-mathematical-theories.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.4.6.json",
+    "data/research/9.4.7.json",
+    "data/research/9.4.8.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-04-06-doyles-experience-recorder-and-reproducer.md",
+    "packets/theories/09-04-07-informational-realism-and-emergent-information-theory.md",
+    "packets/theories/09-04-08-mathematical-theories.md"
+  ],
+  "script_job_id": "group-018-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-018/script.json",
+  "bundle_output_path": "episodes/group-018/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-018/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

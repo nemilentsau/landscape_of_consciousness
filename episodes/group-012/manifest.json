@@ -1,0 +1,101 @@
+{
+  "episode_id": "group-012",
+  "title": "Materialism theories -> Neurobiological theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.2.1",
+    "9.2.2",
+    "9.2.3",
+    "9.2.4",
+    "9.2.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.2.1",
+      "title": "Edelman’s neural Darwinism and reentrant neural circuitry",
+      "pages": "19-19",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Edelman’s neural Darwinism and reentrant neural circuitry"
+      ],
+      "research_path": "data/research/9.2.1.json",
+      "packet_path": "packets/theories/09-02-01-edelmans-neural-darwinism-and-reentrant-neural-circuitry.md"
+    },
+    {
+      "section_id": "9.2.2",
+      "title": "Crick and Koch ’ s neural correlates of consciousness (NCC)",
+      "pages": "20-20",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Crick and Koch ’ s neural correlates of consciousness (NCC)"
+      ],
+      "research_path": "data/research/9.2.2.json",
+      "packet_path": "packets/theories/09-02-02-crick-and-kochs-neural-correlates-of-consciousness-ncc.md"
+    },
+    {
+      "section_id": "9.2.3",
+      "title": "Baars’s and Dehaene’s global workspace theory",
+      "pages": "21-21",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Baars’s and Dehaene’s global workspace theory"
+      ],
+      "research_path": "data/research/9.2.3.json",
+      "packet_path": "packets/theories/09-02-03-baarss-and-dehaenes-global-workspace-theory.md"
+    },
+    {
+      "section_id": "9.2.4",
+      "title": "Dennett’s multiple drafts model",
+      "pages": "21-21",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Dennett’s multiple drafts model"
+      ],
+      "research_path": "data/research/9.2.4.json",
+      "packet_path": "packets/theories/09-02-04-dennetts-multiple-drafts-model.md"
+    },
+    {
+      "section_id": "9.2.5",
+      "title": "Minsky’s society of mind",
+      "pages": "22-22",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Minsky’s society of mind"
+      ],
+      "research_path": "data/research/9.2.5.json",
+      "packet_path": "packets/theories/09-02-05-minskys-society-of-mind.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.2.1.json",
+    "data/research/9.2.2.json",
+    "data/research/9.2.3.json",
+    "data/research/9.2.4.json",
+    "data/research/9.2.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-02-01-edelmans-neural-darwinism-and-reentrant-neural-circuitry.md",
+    "packets/theories/09-02-02-crick-and-kochs-neural-correlates-of-consciousness-ncc.md",
+    "packets/theories/09-02-03-baarss-and-dehaenes-global-workspace-theory.md",
+    "packets/theories/09-02-04-dennetts-multiple-drafts-model.md",
+    "packets/theories/09-02-05-minskys-society-of-mind.md"
+  ],
+  "script_job_id": "group-012-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-012/script.json",
+  "bundle_output_path": "episodes/group-012/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-012/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

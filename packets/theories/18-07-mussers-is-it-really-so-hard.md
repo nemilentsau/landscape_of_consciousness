@@ -39,8 +39,8 @@ Research incomplete
 Episode format: Debate
 Target length: Long-form
 Language: English
-Debate prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
-NotebookLM handoff: use Debate format and Longer length after scripts are generated.
+Debate prompt: Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution.
+NotebookLM handoff: use Debate format and Longer length after factual source scripts are generated.
 
 ## Sources
 - Kuhn review, section 18.7, pages 119-119.

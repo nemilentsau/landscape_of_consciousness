@@ -1,0 +1,96 @@
+{
+  "episode_id": "group-043",
+  "title": "Monisms Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "14.1",
+    "14.2",
+    "14.3",
+    "14.4",
+    "14.5"
+  ],
+  "sections": [
+    {
+      "section_id": "14.1",
+      "title": "Russellian Monism",
+      "pages": "78-78",
+      "taxonomy_path": [
+        "Monisms",
+        "Russellian Monism"
+      ],
+      "research_path": "data/research/14.1.json",
+      "packet_path": "packets/theories/14-01-russellian-monism.md"
+    },
+    {
+      "section_id": "14.2",
+      "title": "Davidson’s anomalous monism",
+      "pages": "78-78",
+      "taxonomy_path": [
+        "Monisms",
+        "Davidson’s anomalous monism"
+      ],
+      "research_path": "data/research/14.2.json",
+      "packet_path": "packets/theories/14-02-davidsons-anomalous-monism.md"
+    },
+    {
+      "section_id": "14.3",
+      "title": "Velmans’s reflexive monism",
+      "pages": "78-78",
+      "taxonomy_path": [
+        "Monisms",
+        "Velmans’s reflexive monism"
+      ],
+      "research_path": "data/research/14.3.json",
+      "packet_path": "packets/theories/14-03-velmanss-reflexive-monism.md"
+    },
+    {
+      "section_id": "14.4",
+      "title": "Strawson’s realistic monism and real materialism",
+      "pages": "79-79",
+      "taxonomy_path": [
+        "Monisms",
+        "Strawson’s realistic monism and real materialism"
+      ],
+      "research_path": "data/research/14.4.json",
+      "packet_path": "packets/theories/14-04-strawsons-realistic-monism-and-real-materialism.md"
+    },
+    {
+      "section_id": "14.5",
+      "title": "Polkinghorne’s dual-aspect monism",
+      "pages": "80-80",
+      "taxonomy_path": [
+        "Monisms",
+        "Polkinghorne’s dual-aspect monism"
+      ],
+      "research_path": "data/research/14.5.json",
+      "packet_path": "packets/theories/14-05-polkinghornes-dual-aspect-monism.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/14.1.json",
+    "data/research/14.2.json",
+    "data/research/14.3.json",
+    "data/research/14.4.json",
+    "data/research/14.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/14-01-russellian-monism.md",
+    "packets/theories/14-02-davidsons-anomalous-monism.md",
+    "packets/theories/14-03-velmanss-reflexive-monism.md",
+    "packets/theories/14-04-strawsons-realistic-monism-and-real-materialism.md",
+    "packets/theories/14-05-polkinghornes-dual-aspect-monism.md"
+  ],
+  "script_job_id": "group-043-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-043/script.json",
+  "bundle_output_path": "episodes/group-043/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-043/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

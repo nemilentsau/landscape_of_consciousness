@@ -1,0 +1,86 @@
+{
+  "episode_id": "group-014",
+  "title": "Materialism theories -> Neurobiological theories Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 4,
+  "section_ids": [
+    "9.2.11",
+    "9.2.12",
+    "9.2.13",
+    "9.2.14"
+  ],
+  "sections": [
+    {
+      "section_id": "9.2.11",
+      "title": "Brain circuits and cycles theories",
+      "pages": "24-24",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Brain circuits and cycles theories"
+      ],
+      "research_path": "data/research/9.2.11.json",
+      "packet_path": "packets/theories/09-02-11-brain-circuits-and-cycles-theories.md"
+    },
+    {
+      "section_id": "9.2.12",
+      "title": "Northoff’s temporo-spatial sentience",
+      "pages": "25-25",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Northoff’s temporo-spatial sentience"
+      ],
+      "research_path": "data/research/9.2.12.json",
+      "packet_path": "packets/theories/09-02-12-northoffs-temporo-spatial-sentience.md"
+    },
+    {
+      "section_id": "9.2.13",
+      "title": "Bunge’s emergent materialism",
+      "pages": "25-25",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Bunge’s emergent materialism"
+      ],
+      "research_path": "data/research/9.2.13.json",
+      "packet_path": "packets/theories/09-02-13-bunges-emergent-materialism.md"
+    },
+    {
+      "section_id": "9.2.14",
+      "title": "Hirstein’s mindmelding",
+      "pages": "25-25",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories",
+        "Hirstein’s mindmelding"
+      ],
+      "research_path": "data/research/9.2.14.json",
+      "packet_path": "packets/theories/09-02-14-hirsteins-mindmelding.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.2.11.json",
+    "data/research/9.2.12.json",
+    "data/research/9.2.13.json",
+    "data/research/9.2.14.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-02-11-brain-circuits-and-cycles-theories.md",
+    "packets/theories/09-02-12-northoffs-temporo-spatial-sentience.md",
+    "packets/theories/09-02-13-bunges-emergent-materialism.md",
+    "packets/theories/09-02-14-hirsteins-mindmelding.md"
+  ],
+  "script_job_id": "group-014-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-014/script.json",
+  "bundle_output_path": "episodes/group-014/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-014/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "episode_id": "group-050",
+  "title": "Idealisms Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "16.1",
+    "16.2",
+    "16.3",
+    "16.4",
+    "16.5"
+  ],
+  "sections": [
+    {
+      "section_id": "16.1",
+      "title": "Indian cosmic consciousness",
+      "pages": "95-96",
+      "taxonomy_path": [
+        "Idealisms",
+        "Indian cosmic consciousness"
+      ],
+      "research_path": "data/research/16.1.json",
+      "packet_path": "packets/theories/16-01-indian-cosmic-consciousness.md"
+    },
+    {
+      "section_id": "16.2",
+      "title": "Buddhism ’ s empty, illusory phenomenal consciousness",
+      "pages": "97-97",
+      "taxonomy_path": [
+        "Idealisms",
+        "Buddhism ’ s empty, illusory phenomenal consciousness"
+      ],
+      "research_path": "data/research/16.2.json",
+      "packet_path": "packets/theories/16-02-buddhisms-empty-illusory-phenomenal-consciousness.md"
+    },
+    {
+      "section_id": "16.3",
+      "title": "Dao De Jing ’ s constant dao",
+      "pages": "98-98",
+      "taxonomy_path": [
+        "Idealisms",
+        "Dao De Jing ’ s constant dao"
+      ],
+      "research_path": "data/research/16.3.json",
+      "packet_path": "packets/theories/16-03-dao-de-jings-constant-dao.md"
+    },
+    {
+      "section_id": "16.4",
+      "title": "Kastrup ’ s analytic idealism",
+      "pages": "98-98",
+      "taxonomy_path": [
+        "Idealisms",
+        "Kastrup ’ s analytic idealism"
+      ],
+      "research_path": "data/research/16.4.json",
+      "packet_path": "packets/theories/16-04-kastrups-analytic-idealism.md"
+    },
+    {
+      "section_id": "16.5",
+      "title": "Hoffman’s conscious realism: the case against reality",
+      "pages": "99-99",
+      "taxonomy_path": [
+        "Idealisms",
+        "Hoffman’s conscious realism: the case against reality"
+      ],
+      "research_path": "data/research/16.5.json",
+      "packet_path": "packets/theories/16-05-hoffmans-conscious-realism-the-case-against-reality.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/16.1.json",
+    "data/research/16.2.json",
+    "data/research/16.3.json",
+    "data/research/16.4.json",
+    "data/research/16.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/16-01-indian-cosmic-consciousness.md",
+    "packets/theories/16-02-buddhisms-empty-illusory-phenomenal-consciousness.md",
+    "packets/theories/16-03-dao-de-jings-constant-dao.md",
+    "packets/theories/16-04-kastrups-analytic-idealism.md",
+    "packets/theories/16-05-hoffmans-conscious-realism-the-case-against-reality.md"
+  ],
+  "script_job_id": "group-050-script",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
+  "script_output": "episodes/group-050/script.json",
+  "bundle_output_path": "episodes/group-050/notebooklm_bundle/research_dossier.md",
+  "notebooklm_bundle_dir": "episodes/group-050/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}
