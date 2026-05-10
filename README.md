@@ -72,5 +72,6 @@ uv run python -m consciousness_pipeline.cli bundle-sources --episode-id group-00
 ```
 
 Use Computer Use or Claude Code browser control to create NotebookLM notebooks, upload
-`research_dossier.md` plus every Markdown file in `notebooklm_bundle/sources/`, choose Debate and
-Longer audio, and record the resulting URL/status in `course/production-status.csv`.
+`research_dossier.md` plus every Markdown file in `notebooklm_bundle/sources/`, choose Deep Dive and
+Long audio, paste the custom prompt from the episode manifest, and record the resulting URL/status in
+`course/production-status.csv`.

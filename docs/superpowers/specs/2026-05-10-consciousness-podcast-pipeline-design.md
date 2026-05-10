@@ -83,6 +83,8 @@ Source-script jobs should produce factual NotebookLM research dossiers, not dial
 
 NotebookLM receives factual dossiers and generates the conversational episode itself. Computer Use or Claude Code may operate the UI, but that automation must observe the live UI and recover from login/account/manual states. It should not be represented as deterministic local Playwright selectors.
 
+The default audio handoff is NotebookLM's Deep Dive format with Long length. The custom prompt should ask for an extended, rigorous, balanced treatment that steelmans physicalist, dualist, idealist, and typological positions; challenges each with serious objections; keeps Chalmers's hard problem, phenomenal versus access consciousness, and correlation-versus-explanation distinctions central; and compares nearby theories without prematurely resolving the discussion. Debate language belongs inside this guidance prompt, not in NotebookLM's selected format.
+
 ## Verification
 
 - Unit tests for extraction, heading detection, segmentation, grouping, packet rendering, job generation, and headless command construction.

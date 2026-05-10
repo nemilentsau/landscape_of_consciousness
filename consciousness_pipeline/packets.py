@@ -17,7 +17,7 @@ REQUIRED_MARKERS = (
     "## Related Packets",
     "## Podcast Production Guidance",
     "## Sources",
-    "Episode format: Debate",
+    "NotebookLM format: Deep Dive",
     "Target length: Long-form",
 )
 
@@ -56,7 +56,7 @@ def render_packet(section: Section, research: ResearchRecord) -> str:
     return f"""# {section.title}
 
 ## Course Role
-This packet supports a debate-club episode on {research.opening_question}
+This packet supports a long-form listening-course episode on {research.opening_question}
 
 ## Kuhn Review Anchor
 - Section: {section.section_id}. {section.title}
@@ -91,11 +91,11 @@ Compare this section with neighboring packets in the taxonomy path: {taxonomy}.
 - Adjacent packets in {taxonomy}
 
 ## Podcast Production Guidance
-Episode format: {AUDIO_FORMAT}
+NotebookLM format: {AUDIO_FORMAT}
 Target length: Long-form
 Language: {AUDIO_LANGUAGE}
-Debate prompt: {AUDIO_PROMPT}
-NotebookLM handoff: use Debate format and {AUDIO_LENGTH} length after factual source scripts are generated.
+Custom prompt: {AUDIO_PROMPT}
+NotebookLM handoff: use {AUDIO_FORMAT} format and {AUDIO_LENGTH} length after factual source scripts are generated.
 
 ## Sources
 - Kuhn review, section {section.section_id}, pages {section.start_page}-{section.end_page}.

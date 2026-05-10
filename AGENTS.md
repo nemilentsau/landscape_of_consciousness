@@ -27,4 +27,5 @@ uv run python -m unittest discover -s tests -v
 
 - The downloaded PDF in `papers/` is a local source artifact and is not committed.
 - NotebookLM is only the final audio handoff target. Research and script generation should run through headless Codex CLI or Claude Code jobs.
+- For NotebookLM audio, use Deep Dive format with Long length. Do not choose Debate as the NotebookLM format; debate-style balance belongs in the custom prompt.
 - Keep generated research records schema-shaped so they can be consumed by packet and script generation.

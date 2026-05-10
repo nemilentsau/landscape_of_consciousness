@@ -67,8 +67,8 @@ class CourseGenerationTest(unittest.TestCase):
                 rows = list(csv.DictReader(handle))
 
             self.assertIn("Global workspace theory", index)
-            self.assertEqual(groups[0]["audio_profile"]["format"], "Debate")
-            self.assertEqual(groups[0]["audio_profile"]["length"], "Longer")
+            self.assertEqual(groups[0]["audio_profile"]["format"], "Deep Dive")
+            self.assertEqual(groups[0]["audio_profile"]["length"], "Long")
             self.assertIn("Podcast Episode Map", group_markdown)
             self.assertEqual(rows[0]["research_status"], "research_queued")
             self.assertEqual(rows[0]["script_status"], "source_script_queued")

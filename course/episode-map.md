@@ -2,7 +2,7 @@
 
 ## group-001: Top-level sections Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-001/manifest.json`
 - Factual source script: `episodes/group-001/script.json`
 - NotebookLM dossier: `episodes/group-001/notebooklm_bundle/research_dossier.md`
@@ -16,7 +16,7 @@
 
 ## group-002: Top-level sections Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-002/manifest.json`
 - Factual source script: `episodes/group-002/script.json`
 - NotebookLM dossier: `episodes/group-002/notebooklm_bundle/research_dossier.md`
@@ -30,7 +30,7 @@
 
 ## group-003: Top-level sections Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-003/manifest.json`
 - Factual source script: `episodes/group-003/script.json`
 - NotebookLM dossier: `episodes/group-003/notebooklm_bundle/research_dossier.md`
@@ -44,7 +44,7 @@
 
 ## group-004: Top-level sections Part 4
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-004/manifest.json`
 - Factual source script: `episodes/group-004/script.json`
 - NotebookLM dossier: `episodes/group-004/notebooklm_bundle/research_dossier.md`
@@ -58,7 +58,7 @@
 
 ## group-005: Top-level sections Part 5
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-005/manifest.json`
 - Factual source script: `episodes/group-005/script.json`
 - NotebookLM dossier: `episodes/group-005/notebooklm_bundle/research_dossier.md`
@@ -72,7 +72,7 @@
 
 ## group-006: Top-level sections Part 6
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-006/manifest.json`
 - Factual source script: `episodes/group-006/script.json`
 - NotebookLM dossier: `episodes/group-006/notebooklm_bundle/research_dossier.md`
@@ -82,7 +82,7 @@
 
 ## group-007: Materialism theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-007/manifest.json`
 - Factual source script: `episodes/group-007/script.json`
 - NotebookLM dossier: `episodes/group-007/notebooklm_bundle/research_dossier.md`
@@ -96,7 +96,7 @@
 
 ## group-008: Materialism theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-008/manifest.json`
 - Factual source script: `episodes/group-008/script.json`
 - NotebookLM dossier: `episodes/group-008/notebooklm_bundle/research_dossier.md`
@@ -110,7 +110,7 @@
 
 ## group-009: Materialism theories -> Philosophical Theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-009/manifest.json`
 - Factual source script: `episodes/group-009/script.json`
 - NotebookLM dossier: `episodes/group-009/notebooklm_bundle/research_dossier.md`
@@ -124,7 +124,7 @@
 
 ## group-010: Materialism theories -> Philosophical Theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-010/manifest.json`
 - Factual source script: `episodes/group-010/script.json`
 - NotebookLM dossier: `episodes/group-010/notebooklm_bundle/research_dossier.md`
@@ -138,7 +138,7 @@
 
 ## group-011: Materialism theories -> Philosophical Theories Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-011/manifest.json`
 - Factual source script: `episodes/group-011/script.json`
 - NotebookLM dossier: `episodes/group-011/notebooklm_bundle/research_dossier.md`
@@ -149,7 +149,7 @@
 
 ## group-012: Materialism theories -> Neurobiological theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-012/manifest.json`
 - Factual source script: `episodes/group-012/script.json`
 - NotebookLM dossier: `episodes/group-012/notebooklm_bundle/research_dossier.md`
@@ -163,7 +163,7 @@
 
 ## group-013: Materialism theories -> Neurobiological theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-013/manifest.json`
 - Factual source script: `episodes/group-013/script.json`
 - NotebookLM dossier: `episodes/group-013/notebooklm_bundle/research_dossier.md`
@@ -177,7 +177,7 @@
 
 ## group-014: Materialism theories -> Neurobiological theories Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-014/manifest.json`
 - Factual source script: `episodes/group-014/script.json`
 - NotebookLM dossier: `episodes/group-014/notebooklm_bundle/research_dossier.md`
@@ -190,7 +190,7 @@
 
 ## group-015: Materialism theories -> Electromagnetic field theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-015/manifest.json`
 - Factual source script: `episodes/group-015/script.json`
 - NotebookLM dossier: `episodes/group-015/notebooklm_bundle/research_dossier.md`
@@ -204,7 +204,7 @@
 
 ## group-016: Materialism theories -> Electromagnetic field theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-016/manifest.json`
 - Factual source script: `episodes/group-016/script.json`
 - NotebookLM dossier: `episodes/group-016/notebooklm_bundle/research_dossier.md`
@@ -215,7 +215,7 @@
 
 ## group-017: Materialism theories -> Computational and Informational Theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-017/manifest.json`
 - Factual source script: `episodes/group-017/script.json`
 - NotebookLM dossier: `episodes/group-017/notebooklm_bundle/research_dossier.md`
@@ -229,7 +229,7 @@
 
 ## group-018: Materialism theories -> Computational and Informational Theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-018/manifest.json`
 - Factual source script: `episodes/group-018/script.json`
 - NotebookLM dossier: `episodes/group-018/notebooklm_bundle/research_dossier.md`
@@ -241,7 +241,7 @@
 
 ## group-019: Materialism theories -> Homeostatic and affective theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-019/manifest.json`
 - Factual source script: `episodes/group-019/script.json`
 - NotebookLM dossier: `episodes/group-019/notebooklm_bundle/research_dossier.md`
@@ -255,7 +255,7 @@
 
 ## group-020: Materialism theories -> Homeostatic and affective theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-020/manifest.json`
 - Factual source script: `episodes/group-020/script.json`
 - NotebookLM dossier: `episodes/group-020/notebooklm_bundle/research_dossier.md`
@@ -269,7 +269,7 @@
 
 ## group-021: Materialism theories -> Homeostatic and affective theories Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-021/manifest.json`
 - Factual source script: `episodes/group-021/script.json`
 - NotebookLM dossier: `episodes/group-021/notebooklm_bundle/research_dossier.md`
@@ -280,7 +280,7 @@
 
 ## group-022: Materialism theories -> Embodied and enactive theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-022/manifest.json`
 - Factual source script: `episodes/group-022/script.json`
 - NotebookLM dossier: `episodes/group-022/notebooklm_bundle/research_dossier.md`
@@ -294,7 +294,7 @@
 
 ## group-023: Materialism theories -> Embodied and enactive theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-023/manifest.json`
 - Factual source script: `episodes/group-023/script.json`
 - NotebookLM dossier: `episodes/group-023/notebooklm_bundle/research_dossier.md`
@@ -306,7 +306,7 @@
 
 ## group-024: Materialism theories -> Relational theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-024/manifest.json`
 - Factual source script: `episodes/group-024/script.json`
 - NotebookLM dossier: `episodes/group-024/notebooklm_bundle/research_dossier.md`
@@ -320,7 +320,7 @@
 
 ## group-025: Materialism theories -> Relational theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-025/manifest.json`
 - Factual source script: `episodes/group-025/script.json`
 - NotebookLM dossier: `episodes/group-025/notebooklm_bundle/research_dossier.md`
@@ -331,7 +331,7 @@
 
 ## group-026: Materialism theories -> Representational theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-026/manifest.json`
 - Factual source script: `episodes/group-026/script.json`
 - NotebookLM dossier: `episodes/group-026/notebooklm_bundle/research_dossier.md`
@@ -345,7 +345,7 @@
 
 ## group-027: Materialism theories -> Representational theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-027/manifest.json`
 - Factual source script: `episodes/group-027/script.json`
 - NotebookLM dossier: `episodes/group-027/notebooklm_bundle/research_dossier.md`
@@ -359,7 +359,7 @@
 
 ## group-028: Materialism theories -> Representational theories Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-028/manifest.json`
 - Factual source script: `episodes/group-028/script.json`
 - NotebookLM dossier: `episodes/group-028/notebooklm_bundle/research_dossier.md`
@@ -372,7 +372,7 @@
 
 ## group-029: Materialism theories -> Language relationships Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-029/manifest.json`
 - Factual source script: `episodes/group-029/script.json`
 - NotebookLM dossier: `episodes/group-029/notebooklm_bundle/research_dossier.md`
@@ -386,7 +386,7 @@
 
 ## group-030: Materialism theories -> Language relationships Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-030/manifest.json`
 - Factual source script: `episodes/group-030/script.json`
 - NotebookLM dossier: `episodes/group-030/notebooklm_bundle/research_dossier.md`
@@ -396,7 +396,7 @@
 
 ## group-031: Materialism theories -> Phylogenetic evolution Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-031/manifest.json`
 - Factual source script: `episodes/group-031/script.json`
 - NotebookLM dossier: `episodes/group-031/notebooklm_bundle/research_dossier.md`
@@ -410,7 +410,7 @@
 
 ## group-032: Materialism theories -> Phylogenetic evolution Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-032/manifest.json`
 - Factual source script: `episodes/group-032/script.json`
 - NotebookLM dossier: `episodes/group-032/notebooklm_bundle/research_dossier.md`
@@ -423,7 +423,7 @@
 
 ## group-033: Non-reductive physicalism Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-033/manifest.json`
 - Factual source script: `episodes/group-033/script.json`
 - NotebookLM dossier: `episodes/group-033/notebooklm_bundle/research_dossier.md`
@@ -437,7 +437,7 @@
 
 ## group-034: Non-reductive physicalism Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-034/manifest.json`
 - Factual source script: `episodes/group-034/script.json`
 - NotebookLM dossier: `episodes/group-034/notebooklm_bundle/research_dossier.md`
@@ -447,7 +447,7 @@
 
 ## group-035: Quantum theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-035/manifest.json`
 - Factual source script: `episodes/group-035/script.json`
 - NotebookLM dossier: `episodes/group-035/notebooklm_bundle/research_dossier.md`
@@ -461,7 +461,7 @@
 
 ## group-036: Quantum theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-036/manifest.json`
 - Factual source script: `episodes/group-036/script.json`
 - NotebookLM dossier: `episodes/group-036/notebooklm_bundle/research_dossier.md`
@@ -475,7 +475,7 @@
 
 ## group-037: Quantum theories Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-037/manifest.json`
 - Factual source script: `episodes/group-037/script.json`
 - NotebookLM dossier: `episodes/group-037/notebooklm_bundle/research_dossier.md`
@@ -489,7 +489,7 @@
 
 ## group-038: Quantum theories Part 4
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-038/manifest.json`
 - Factual source script: `episodes/group-038/script.json`
 - NotebookLM dossier: `episodes/group-038/notebooklm_bundle/research_dossier.md`
@@ -499,7 +499,7 @@
 
 ## group-039: Integrated information theory
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-039/manifest.json`
 - Factual source script: `episodes/group-039/script.json`
 - NotebookLM dossier: `episodes/group-039/notebooklm_bundle/research_dossier.md`
@@ -510,7 +510,7 @@
 
 ## group-040: Panpsychisms Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-040/manifest.json`
 - Factual source script: `episodes/group-040/script.json`
 - NotebookLM dossier: `episodes/group-040/notebooklm_bundle/research_dossier.md`
@@ -524,7 +524,7 @@
 
 ## group-041: Panpsychisms Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-041/manifest.json`
 - Factual source script: `episodes/group-041/script.json`
 - NotebookLM dossier: `episodes/group-041/notebooklm_bundle/research_dossier.md`
@@ -538,7 +538,7 @@
 
 ## group-042: Panpsychisms Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-042/manifest.json`
 - Factual source script: `episodes/group-042/script.json`
 - NotebookLM dossier: `episodes/group-042/notebooklm_bundle/research_dossier.md`
@@ -549,7 +549,7 @@
 
 ## group-043: Monisms Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-043/manifest.json`
 - Factual source script: `episodes/group-043/script.json`
 - NotebookLM dossier: `episodes/group-043/notebooklm_bundle/research_dossier.md`
@@ -563,7 +563,7 @@
 
 ## group-044: Monisms Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-044/manifest.json`
 - Factual source script: `episodes/group-044/script.json`
 - NotebookLM dossier: `episodes/group-044/notebooklm_bundle/research_dossier.md`
@@ -577,7 +577,7 @@
 
 ## group-045: Monisms Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-045/manifest.json`
 - Factual source script: `episodes/group-045/script.json`
 - NotebookLM dossier: `episodes/group-045/notebooklm_bundle/research_dossier.md`
@@ -588,7 +588,7 @@
 
 ## group-046: Dualisms Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-046/manifest.json`
 - Factual source script: `episodes/group-046/script.json`
 - NotebookLM dossier: `episodes/group-046/notebooklm_bundle/research_dossier.md`
@@ -602,7 +602,7 @@
 
 ## group-047: Dualisms Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-047/manifest.json`
 - Factual source script: `episodes/group-047/script.json`
 - NotebookLM dossier: `episodes/group-047/notebooklm_bundle/research_dossier.md`
@@ -616,7 +616,7 @@
 
 ## group-048: Dualisms Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-048/manifest.json`
 - Factual source script: `episodes/group-048/script.json`
 - NotebookLM dossier: `episodes/group-048/notebooklm_bundle/research_dossier.md`
@@ -630,7 +630,7 @@
 
 ## group-049: Dualisms Part 4
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-049/manifest.json`
 - Factual source script: `episodes/group-049/script.json`
 - NotebookLM dossier: `episodes/group-049/notebooklm_bundle/research_dossier.md`
@@ -644,7 +644,7 @@
 
 ## group-050: Idealisms Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-050/manifest.json`
 - Factual source script: `episodes/group-050/script.json`
 - NotebookLM dossier: `episodes/group-050/notebooklm_bundle/research_dossier.md`
@@ -658,7 +658,7 @@
 
 ## group-051: Idealisms Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-051/manifest.json`
 - Factual source script: `episodes/group-051/script.json`
 - NotebookLM dossier: `episodes/group-051/notebooklm_bundle/research_dossier.md`
@@ -672,7 +672,7 @@
 
 ## group-052: Idealisms Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-052/manifest.json`
 - Factual source script: `episodes/group-052/script.json`
 - NotebookLM dossier: `episodes/group-052/notebooklm_bundle/research_dossier.md`
@@ -686,7 +686,7 @@
 
 ## group-053: Anomalous and altered states theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-053/manifest.json`
 - Factual source script: `episodes/group-053/script.json`
 - NotebookLM dossier: `episodes/group-053/notebooklm_bundle/research_dossier.md`
@@ -700,7 +700,7 @@
 
 ## group-054: Anomalous and altered states theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-054/manifest.json`
 - Factual source script: `episodes/group-054/script.json`
 - NotebookLM dossier: `episodes/group-054/notebooklm_bundle/research_dossier.md`
@@ -714,7 +714,7 @@
 
 ## group-055: Anomalous and altered states theories Part 3
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-055/manifest.json`
 - Factual source script: `episodes/group-055/script.json`
 - NotebookLM dossier: `episodes/group-055/notebooklm_bundle/research_dossier.md`
@@ -728,7 +728,7 @@
 
 ## group-056: Anomalous and altered states theories Part 4
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-056/manifest.json`
 - Factual source script: `episodes/group-056/script.json`
 - NotebookLM dossier: `episodes/group-056/notebooklm_bundle/research_dossier.md`
@@ -742,7 +742,7 @@
 
 ## group-057: Anomalous and altered states theories Part 5
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-057/manifest.json`
 - Factual source script: `episodes/group-057/script.json`
 - NotebookLM dossier: `episodes/group-057/notebooklm_bundle/research_dossier.md`
@@ -752,7 +752,7 @@
 
 ## group-058: Challenge theories Part 1
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-058/manifest.json`
 - Factual source script: `episodes/group-058/script.json`
 - NotebookLM dossier: `episodes/group-058/notebooklm_bundle/research_dossier.md`
@@ -766,7 +766,7 @@
 
 ## group-059: Challenge theories Part 2
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Audio target: Debate, Longer, English
+- Audio target: Deep Dive, Long, English
 - Episode manifest: `episodes/group-059/manifest.json`
 - Factual source script: `episodes/group-059/script.json`
 - NotebookLM dossier: `episodes/group-059/notebooklm_bundle/research_dossier.md`
