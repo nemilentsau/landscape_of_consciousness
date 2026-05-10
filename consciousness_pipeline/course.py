@@ -6,11 +6,13 @@ from pathlib import Path
 from consciousness_pipeline.config import AUDIO_FORMAT, AUDIO_LANGUAGE, AUDIO_LENGTH, AUDIO_PROMPT
 from consciousness_pipeline.models import Section
 
+TOP_LEVEL_GROUP_TITLE = "Top-level sections"
+
 
 def group_sections(sections: list[Section], max_group_size: int = 5) -> list[dict[str, object]]:
     buckets: dict[str, list[Section]] = defaultdict(list)
     for section in sections:
-        key = " -> ".join(section.taxonomy_path[:-1]) if len(section.taxonomy_path) > 1 else section.title
+        key = " -> ".join(section.taxonomy_path[:-1]) if len(section.taxonomy_path) > 1 else TOP_LEVEL_GROUP_TITLE
         buckets[key].append(section)
 
     groups: list[dict[str, object]] = []

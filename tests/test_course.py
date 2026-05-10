@@ -29,6 +29,31 @@ class CourseGenerationTest(unittest.TestCase):
         self.assertEqual(len(groups[0]["packet_slugs"]), 5)
         self.assertEqual(len(groups[1]["packet_slugs"]), 1)
 
+    def test_group_sections_uses_stable_bucket_for_top_level_sections(self):
+        sections = [
+            make_section("1", "Introduction"),
+            make_section("2", "Definitions"),
+        ]
+        sections = [
+            Section(
+                section_id=section.section_id,
+                title=section.title,
+                level=section.level,
+                start_page=section.start_page,
+                end_page=section.end_page,
+                taxonomy_path=[section.title],
+                text=section.text,
+                slug=section.slug,
+            )
+            for section in sections
+        ]
+
+        groups = group_sections(sections)
+
+        self.assertEqual(len(groups), 1)
+        self.assertEqual(groups[0]["title"], "Top-level sections")
+        self.assertEqual(groups[0]["packet_slugs"], [section.slug for section in sections])
+
     def test_write_course_artifacts(self):
         with tempfile.TemporaryDirectory() as tmp:
             output_dir = Path(tmp)
