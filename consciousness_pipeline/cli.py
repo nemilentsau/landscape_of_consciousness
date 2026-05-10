@@ -2,7 +2,19 @@ import argparse
 import json
 from pathlib import Path
 
-from consciousness_pipeline.config import COURSE_DIR, DEFAULT_PDF, EXTRACTED_DIR, PACKETS_DIR, RESEARCH_DIR
+from consciousness_pipeline.agent_jobs import write_agent_job_artifacts
+from consciousness_pipeline.agent_runner import run_job
+from consciousness_pipeline.config import (
+    COURSE_DIR,
+    DEFAULT_PDF,
+    EPISODES_DIR,
+    EXTRACTED_DIR,
+    JOBS_DIR,
+    PACKETS_DIR,
+    PROJECT_ROOT,
+    RESEARCH_DIR,
+    SCHEMAS_DIR,
+)
 from consciousness_pipeline.course import write_course_artifacts
 from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
@@ -77,16 +89,33 @@ def cmd_course(args: argparse.Namespace) -> None:
     print("Wrote course artifacts")
 
 
+def cmd_jobs(args: argparse.Namespace) -> None:
+    sections = _read_sections(EXTRACTED_DIR / "sections.json")
+    write_course_artifacts(sections, COURSE_DIR)
+    write_agent_job_artifacts(sections, JOBS_DIR, SCHEMAS_DIR, EPISODES_DIR)
+    print("Wrote headless agent job manifests")
+
+
+def cmd_run_job(args: argparse.Namespace) -> None:
+    manifest = Path(args.manifest)
+    if not manifest.is_absolute():
+        manifest = PROJECT_ROOT / manifest
+    command = run_job(manifest, args.job_id, args.agent, dry_run=args.dry_run)
+    if args.dry_run:
+        print(json.dumps(command, indent=2))
+
+
 def cmd_all(args: argparse.Namespace) -> None:
     cmd_extract(args)
     cmd_headings(args)
     cmd_sections(args)
     cmd_packets(args)
     cmd_course(args)
+    cmd_jobs(args)
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Build consciousness theory packets for NotebookLM")
+    parser = argparse.ArgumentParser(description="Build a headless-agent consciousness podcast pipeline")
     parser.add_argument("--pdf", default=str(DEFAULT_PDF), help="Path to the Kuhn review PDF")
     subparsers = parser.add_subparsers(dest="command", required=True)
     for name, handler in (
@@ -95,10 +124,17 @@ def build_parser() -> argparse.ArgumentParser:
         ("sections", cmd_sections),
         ("packets", cmd_packets),
         ("course", cmd_course),
+        ("jobs", cmd_jobs),
         ("all", cmd_all),
     ):
         subparser = subparsers.add_parser(name)
         subparser.set_defaults(func=handler)
+    run_job_parser = subparsers.add_parser("run-job")
+    run_job_parser.add_argument("--manifest", required=True, help="JSONL job manifest path")
+    run_job_parser.add_argument("--job-id", required=True, help="Job id from the manifest")
+    run_job_parser.add_argument("--agent", required=True, choices=("codex", "claude"), help="Headless agent backend")
+    run_job_parser.add_argument("--dry-run", action="store_true", help="Print the command without executing it")
+    run_job_parser.set_defaults(func=cmd_run_job)
     return parser
 
 

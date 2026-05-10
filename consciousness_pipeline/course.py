@@ -27,10 +27,12 @@ def group_sections(sections: list[Section], max_group_size: int = 5) -> list[dic
                     "episode_question": "What is the strongest case for this cluster, and where does it break?",
                     "packet_slugs": [section.slug for section in chunk],
                     "section_ids": [section.section_id for section in chunk],
-                    "audio_format": AUDIO_FORMAT,
-                    "audio_length": AUDIO_LENGTH,
-                    "audio_language": AUDIO_LANGUAGE,
-                    "audio_prompt": AUDIO_PROMPT,
+                    "audio_profile": {
+                        "format": AUDIO_FORMAT,
+                        "length": AUDIO_LENGTH,
+                        "language": AUDIO_LANGUAGE,
+                        "prompt": AUDIO_PROMPT,
+                    },
                 }
             )
             counter += 1
@@ -49,17 +51,22 @@ def write_course_artifacts(sections: list[Section], output_dir: Path) -> None:
     (output_dir / "exhaustive-index.md").write_text("\n".join(index_lines) + "\n", encoding="utf-8")
 
     groups = group_sections(sections)
-    (output_dir / "notebook-groups.json").write_text(json.dumps(groups, indent=2, ensure_ascii=False), encoding="utf-8")
+    (output_dir / "episode-map.json").write_text(json.dumps(groups, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    group_lines = ["# NotebookLM Groups", ""]
+    group_lines = ["# Podcast Episode Map", ""]
     for group in groups:
         group_lines.append(f"## {group['group_id']}: {group['title']}")
         group_lines.append(f"- Episode question: {group['episode_question']}")
-        group_lines.append(f"- Audio: {group['audio_format']}, {group['audio_length']}, {group['audio_language']}")
+        audio_profile = group["audio_profile"]
+        group_lines.append(
+            f"- Audio target: {audio_profile['format']}, {audio_profile['length']}, {audio_profile['language']}"
+        )
+        group_lines.append(f"- Script output: `episodes/{group['group_id']}/script.json`")
+        group_lines.append(f"- NotebookLM handoff: computer use after script bundle is ready")
         for slug in group["packet_slugs"]:
             group_lines.append(f"- `packets/theories/{slug}.md`")
         group_lines.append("")
-    (output_dir / "notebook-groups.md").write_text("\n".join(group_lines), encoding="utf-8")
+    (output_dir / "episode-map.md").write_text("\n".join(group_lines), encoding="utf-8")
 
     with (output_dir / "production-status.csv").open("w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(
@@ -68,7 +75,9 @@ def write_course_artifacts(sections: list[Section], output_dir: Path) -> None:
                 "group_id",
                 "section_id",
                 "packet_slug",
-                "status",
+                "research_status",
+                "script_status",
+                "notebooklm_status",
                 "notebook_url",
                 "audio_status",
                 "message",
@@ -82,7 +91,9 @@ def write_course_artifacts(sections: list[Section], output_dir: Path) -> None:
                         "group_id": group["group_id"],
                         "section_id": section_id,
                         "packet_slug": slug,
-                        "status": "packet_ready",
+                        "research_status": "research_queued",
+                        "script_status": "script_queued",
+                        "notebooklm_status": "not_started",
                         "notebook_url": "",
                         "audio_status": "not_started",
                         "message": "",

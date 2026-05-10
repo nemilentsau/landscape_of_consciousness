@@ -35,11 +35,12 @@ Research incomplete
 ## Related Packets
 - Adjacent packets in Materialism theories -> Embodied and enactive theories -> Varela ’ s neurophenomenology
 
-## NotebookLM Audio Guidance
-Format: Debate
-Length: Longer
+## Podcast Production Guidance
+Episode format: Debate
+Target length: Long-form
 Language: English
-Prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+Debate prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+NotebookLM handoff: use Debate format and Longer length after scripts are generated.
 
 ## Sources
 - Kuhn review, section 9.6.3, pages 38-38.

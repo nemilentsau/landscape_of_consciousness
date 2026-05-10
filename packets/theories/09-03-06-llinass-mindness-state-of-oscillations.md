@@ -35,11 +35,12 @@ Research incomplete
 ## Related Packets
 - Adjacent packets in Materialism theories -> Electromagnetic field theories -> Llinas’s mindness state of oscillations
 
-## NotebookLM Audio Guidance
-Format: Debate
-Length: Longer
+## Podcast Production Guidance
+Episode format: Debate
+Target length: Long-form
 Language: English
-Prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+Debate prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+NotebookLM handoff: use Debate format and Longer length after scripts are generated.
 
 ## Sources
 - Kuhn review, section 9.3.6, pages 28-28.

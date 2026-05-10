@@ -25,7 +25,7 @@ class PacketRenderingTest(unittest.TestCase):
             slug="09-02-03-baarss-and-dehaenes-global-workspace-theory",
         )
 
-    def test_render_packet_contains_notebooklm_audio_guidance_and_sources(self):
+    def test_render_packet_contains_podcast_production_guidance_and_sources(self):
         section = self.section()
         research = ResearchRecord(
             section_id="9.2.3",
@@ -43,8 +43,10 @@ class PacketRenderingTest(unittest.TestCase):
 
         packet = render_packet(section, research)
         self.assertIn("# Baars's and Dehaene's global workspace theory", packet)
-        self.assertIn("Format: Debate", packet)
-        self.assertIn("Length: Longer", packet)
+        self.assertIn("## Podcast Production Guidance", packet)
+        self.assertIn("Episode format: Debate", packet)
+        self.assertIn("Target length: Long-form", packet)
+        self.assertIn("NotebookLM handoff: use Debate format and Longer length after scripts are generated.", packet)
         self.assertIn("Does global broadcast explain consciousness", packet)
         self.assertEqual(validate_packet(packet), [])
 

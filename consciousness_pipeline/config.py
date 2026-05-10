@@ -9,6 +9,9 @@ EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"
 RESEARCH_DIR = PROJECT_ROOT / "data" / "research"
 PACKETS_DIR = PROJECT_ROOT / "packets" / "theories"
 COURSE_DIR = PROJECT_ROOT / "course"
+JOBS_DIR = PROJECT_ROOT / "jobs"
+SCHEMAS_DIR = PROJECT_ROOT / "schemas"
+EPISODES_DIR = PROJECT_ROOT / "episodes"
 
 AUDIO_FORMAT = "Debate"
 AUDIO_LENGTH = "Longer"
@@ -21,10 +24,12 @@ AUDIO_PROMPT = (
 STATUS_VALUES = (
     "not_started",
     "extracted",
+    "research_queued",
     "researched",
+    "script_queued",
+    "scripted",
     "packet_ready",
-    "upload_attempted",
-    "uploaded",
+    "notebooklm_bundle_ready",
     "audio_requested",
     "audio_ready",
     "failed",

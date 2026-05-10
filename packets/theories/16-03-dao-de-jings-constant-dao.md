@@ -35,11 +35,12 @@ Research incomplete
 ## Related Packets
 - Adjacent packets in Idealisms -> Dao De Jing ’ s constant dao
 
-## NotebookLM Audio Guidance
-Format: Debate
-Length: Longer
+## Podcast Production Guidance
+Episode format: Debate
+Target length: Long-form
 Language: English
-Prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+Debate prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+NotebookLM handoff: use Debate format and Longer length after scripts are generated.
 
 ## Sources
 - Kuhn review, section 16.3, pages 98-98.

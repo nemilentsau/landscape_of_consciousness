@@ -35,11 +35,12 @@ Research incomplete
 ## Related Packets
 - Adjacent packets in Anomalous and altered states theories -> Combs’s chaotic attractor and autopoietic systems
 
-## NotebookLM Audio Guidance
-Format: Debate
-Length: Longer
+## Podcast Production Guidance
+Episode format: Debate
+Target length: Long-form
 Language: English
-Prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+Debate prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+NotebookLM handoff: use Debate format and Longer length after scripts are generated.
 
 ## Sources
 - Kuhn review, section 17.7, pages 109-109.

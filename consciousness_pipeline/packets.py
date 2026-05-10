@@ -13,10 +13,10 @@ REQUIRED_MARKERS = (
     "## Credibility Notes",
     "## Listener Hooks",
     "## Related Packets",
-    "## NotebookLM Audio Guidance",
+    "## Podcast Production Guidance",
     "## Sources",
-    "Format: Debate",
-    "Length: Longer",
+    "Episode format: Debate",
+    "Target length: Long-form",
 )
 
 REQUIRED_NONEMPTY_SECTIONS = (
@@ -84,11 +84,12 @@ Compare this section with neighboring packets in the taxonomy path: {taxonomy}.
 ## Related Packets
 - Adjacent packets in {taxonomy}
 
-## NotebookLM Audio Guidance
-Format: {AUDIO_FORMAT}
-Length: {AUDIO_LENGTH}
+## Podcast Production Guidance
+Episode format: {AUDIO_FORMAT}
+Target length: Long-form
 Language: {AUDIO_LANGUAGE}
-Prompt: {AUDIO_PROMPT}
+Debate prompt: {AUDIO_PROMPT}
+NotebookLM handoff: use Debate format and {AUDIO_LENGTH} length after scripts are generated.
 
 ## Sources
 - Kuhn review, section {section.section_id}, pages {section.start_page}-{section.end_page}.

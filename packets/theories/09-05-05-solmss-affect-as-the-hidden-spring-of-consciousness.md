@@ -35,11 +35,12 @@ Research incomplete
 ## Related Packets
 - Adjacent packets in Materialism theories -> Homeostatic and affective theories -> Solms’s affect as the hidden spring of consciousness
 
-## NotebookLM Audio Guidance
-Format: Debate
-Length: Longer
+## Podcast Production Guidance
+Episode format: Debate
+Target length: Long-form
 Language: English
-Prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+Debate prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
+NotebookLM handoff: use Debate format and Longer length after scripts are generated.
 
 ## Sources
 - Kuhn review, section 9.5.5, pages 34-34.

@@ -61,14 +61,18 @@ class CourseGenerationTest(unittest.TestCase):
             write_course_artifacts(sections, output_dir)
 
             index = (output_dir / "exhaustive-index.md").read_text(encoding="utf-8")
-            groups = json.loads((output_dir / "notebook-groups.json").read_text(encoding="utf-8"))
+            groups = json.loads((output_dir / "episode-map.json").read_text(encoding="utf-8"))
+            group_markdown = (output_dir / "episode-map.md").read_text(encoding="utf-8")
             with (output_dir / "production-status.csv").open(newline="", encoding="utf-8") as handle:
                 rows = list(csv.DictReader(handle))
 
             self.assertIn("Global workspace theory", index)
-            self.assertEqual(groups[0]["audio_format"], "Debate")
-            self.assertEqual(groups[0]["audio_length"], "Longer")
-            self.assertEqual(rows[0]["status"], "packet_ready")
+            self.assertEqual(groups[0]["audio_profile"]["format"], "Debate")
+            self.assertEqual(groups[0]["audio_profile"]["length"], "Longer")
+            self.assertIn("Podcast Episode Map", group_markdown)
+            self.assertEqual(rows[0]["research_status"], "research_queued")
+            self.assertEqual(rows[0]["script_status"], "script_queued")
+            self.assertEqual(rows[0]["notebooklm_status"], "not_started")
 
 
 if __name__ == "__main__":

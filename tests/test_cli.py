@@ -13,6 +13,8 @@ class CliTest(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0)
         self.assertIn("extract", result.stdout)
+        self.assertIn("jobs", result.stdout)
+        self.assertIn("run-job", result.stdout)
         self.assertIn("all", result.stdout)
 
 
