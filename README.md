@@ -22,11 +22,4 @@ Generated artifacts:
 
 ## NotebookLM Automation
 
-Run a dry run first:
-
-```bash
-npm install
-npm run notebooklm:dry-run
-```
-
-Live NotebookLM automation is intentionally run only after local packets and course groups have been reviewed.
+The NotebookLM automation harness is added in the next step. After that setup exists, the dry-run command will be available before any live NotebookLM automation is attempted.
