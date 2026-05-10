@@ -1,9 +1,11 @@
 import json
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
-from consciousness_pipeline.agent_runner import build_claude_command, build_codex_command
+from consciousness_pipeline.agent_runner import build_claude_command, build_codex_command, check_agent_available
 
 
 class AgentRunnerCommandTest(unittest.TestCase):
@@ -43,6 +45,21 @@ class AgentRunnerCommandTest(unittest.TestCase):
             self.assertIn("json", command)
             self.assertIn("--json-schema", command)
             self.assertIn(json.dumps(schema), command)
+
+    @patch("consciousness_pipeline.agent_runner.subprocess.run")
+    def test_check_agent_available_reports_broken_cli_stderr(self, run):
+        run.return_value = subprocess.CompletedProcess(
+            args=["codex", "--version"],
+            returncode=1,
+            stdout="",
+            stderr="spawn missing vendored binary ENOENT",
+        )
+
+        with self.assertRaises(RuntimeError) as context:
+            check_agent_available("codex")
+
+        self.assertIn("codex CLI is not usable", str(context.exception))
+        self.assertIn("ENOENT", str(context.exception))
 
 
 if __name__ == "__main__":

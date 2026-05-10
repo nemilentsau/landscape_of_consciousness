@@ -9,6 +9,20 @@ from consciousness_pipeline.agent_jobs import build_job_prompt, find_job
 from consciousness_pipeline.config import PROJECT_ROOT
 
 
+def check_agent_available(agent: str) -> None:
+    if agent == "codex":
+        command = ["codex", "--version"]
+    elif agent == "claude":
+        command = ["claude", "--version"]
+    else:
+        raise ValueError("agent must be 'codex' or 'claude'")
+
+    result = subprocess.run(command, text=True, capture_output=True, check=False)
+    if result.returncode != 0:
+        detail = (result.stderr or result.stdout or f"exit code {result.returncode}").strip()
+        raise RuntimeError(f"{agent} CLI is not usable: {detail}")
+
+
 def build_codex_command(job: dict[str, object], prompt: str) -> list[str]:
     return [
         "codex",
@@ -59,6 +73,8 @@ def _write_claude_output(job: dict[str, object], stdout: str, root: Path) -> Non
 
 def run_job(manifest_path: Path, job_id: str, agent: str, root: Path = PROJECT_ROOT, dry_run: bool = False) -> list[str]:
     job = find_job(manifest_path, job_id)
+    if not dry_run:
+        check_agent_available(agent)
     prompt = build_job_prompt(job, root)
     if agent == "codex":
         command = build_codex_command(job, prompt)
