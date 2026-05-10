@@ -21,7 +21,12 @@ def load_research_record(path: Path, section: Section) -> ResearchRecord:
     if not path.exists():
         return empty_research_record(section)
     data = json.loads(path.read_text(encoding="utf-8"))
-    return ResearchRecord.from_dict(data)
+    record = ResearchRecord.from_dict(data)
+    if record.section_id != section.section_id:
+        raise ValueError(
+            f"Research record section_id {record.section_id} does not match section {section.section_id}"
+        )
+    return record
 
 
 def write_research_stub(path: Path, section: Section) -> None:

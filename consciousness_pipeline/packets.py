@@ -19,6 +19,15 @@ REQUIRED_MARKERS = (
     "Length: Longer",
 )
 
+REQUIRED_NONEMPTY_SECTIONS = (
+    "Course Role",
+    "Core Claim",
+    "Strongest Case",
+    "Best Objections",
+    "Credibility Notes",
+    "Sources",
+)
+
 
 def _bullet_list(items: tuple[str, ...]) -> str:
     if not items:
@@ -87,6 +96,21 @@ Prompt: {AUDIO_PROMPT}
 """
 
 
+def _section_body(packet: str, section_name: str) -> str:
+    heading = f"## {section_name}"
+    start = packet.find(heading)
+    if start == -1:
+        return ""
+    body_start = start + len(heading)
+    next_heading = packet.find("\n## ", body_start)
+    if next_heading == -1:
+        return packet[body_start:]
+    return packet[body_start:next_heading]
+
+
 def validate_packet(packet: str) -> list[str]:
-    missing = [marker for marker in REQUIRED_MARKERS if marker not in packet]
-    return [f"Missing marker: {marker}" for marker in missing]
+    errors = [f"Missing marker: {marker}" for marker in REQUIRED_MARKERS if marker not in packet]
+    for section_name in REQUIRED_NONEMPTY_SECTIONS:
+        if f"## {section_name}" in packet and not _section_body(packet, section_name).strip():
+            errors.append(f"Empty section: {section_name}")
+    return errors
