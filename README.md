@@ -24,6 +24,7 @@ Generated artifacts:
 
 ```bash
 npm install
+npm run playwright:install
 npm run notebooklm:dry-run
 ```
 

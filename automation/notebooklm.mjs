@@ -100,7 +100,13 @@ async function liveRun(groups) {
   }
 
   const userDataDir = path.join(root, ".browser-profiles", "notebooklm");
-  const context = await chromium.launchPersistentContext(userDataDir, { headless: false });
+  let context;
+  try {
+    context = await chromium.launchPersistentContext(userDataDir, { headless: false });
+  } catch (error) {
+    console.error("Playwright browser is not installed. Run: npm run playwright:install");
+    throw error;
+  }
   const page = await context.newPage();
   await page.goto(notebookUrl, { waitUntil: "domcontentloaded" });
 
