@@ -1,0 +1,247 @@
+# Exhaustive Consciousness Theory Packet Index
+
+- 1. Chalmers’s “hard problem” of consciousness - pages 2-3 - `packets/theories/01-chalmerss-hard-problem-of-consciousness.md`
+- 2. Initial thoughts - pages 4-4 - `packets/theories/02-initial-thoughts.md`
+- 3. Philosophical tensions - pages 5-5 - `packets/theories/03-philosophical-tensions.md`
+- 4. Surveys & typologies - pages 5-5 - `packets/theories/04-surveys-typologies.md`
+- 5. Opposing worldviews - pages 5-5 - `packets/theories/05-opposing-worldviews.md`
+- 6. Is consciousness primitive/fundamental? - pages 6-6 - `packets/theories/06-is-consciousness-primitive-fundamental.md`
+- 7. Identity theory - pages 7-7 - `packets/theories/07-identity-theory.md`
+- 8. A landscape - pages 8-11 - `packets/theories/08-a-landscape.md`
+- 9. Materialism theories - pages 12-12 - `packets/theories/09-materialism-theories.md`
+- 9.1. Philosophical Theories - pages 13-13 - `packets/theories/09-01-philosophical-theories.md`
+- 9.1.1. Eliminative materialism/illusionism - pages 13-13 - `packets/theories/09-01-01-eliminative-materialism-illusionism.md`
+- 9.1.2. Epiphenomenalism - pages 14-14 - `packets/theories/09-01-02-epiphenomenalism.md`
+- 9.1.3. Functionalism - pages 14-14 - `packets/theories/09-01-03-functionalism.md`
+- 9.1.4. Emergence - pages 15-15 - `packets/theories/09-01-04-emergence.md`
+- 9.1.5. Mind-brain identity theory - pages 16-16 - `packets/theories/09-01-05-mind-brain-identity-theory.md`
+- 9.1.6. Searle’s biological naturalism - pages 16-16 - `packets/theories/09-01-06-searles-biological-naturalism.md`
+- 9.1.7. Block’s biological reductionism - pages 16-16 - `packets/theories/09-01-07-blocks-biological-reductionism.md`
+- 9.1.8. Flanagan’s constructive naturalism - pages 16-16 - `packets/theories/09-01-08-flanagans-constructive-naturalism.md`
+- 9.1.9. Papineau ’ s mind-brain identity - pages 17-17 - `packets/theories/09-01-09-papineaus-mind-brain-identity.md`
+- 9.1.10. Goldstein’s mind-body problem - pages 18-18 - `packets/theories/09-01-10-goldsteins-mind-body-problem.md`
+- 9.1.11. Hardcastle’s argument against materialism skeptics - pages 18-18 - `packets/theories/09-01-11-hardcastles-argument-against-materialism-skeptics.md`
+- 9.1.12. Stoljar’s epistemic view and non-standard physicalism - pages 19-19 - `packets/theories/09-01-12-stoljars-epistemic-view-and-non-standard-physicalism.md`
+- 9.2. Neurobiological theories - pages 19-19 - `packets/theories/09-02-neurobiological-theories.md`
+- 9.2.1. Edelman’s neural Darwinism and reentrant neural circuitry - pages 19-19 - `packets/theories/09-02-01-edelmans-neural-darwinism-and-reentrant-neural-circuitry.md`
+- 9.2.2. Crick and Koch ’ s neural correlates of consciousness (NCC) - pages 20-20 - `packets/theories/09-02-02-crick-and-kochs-neural-correlates-of-consciousness-ncc.md`
+- 9.2.3. Baars’s and Dehaene’s global workspace theory - pages 21-21 - `packets/theories/09-02-03-baarss-and-dehaenes-global-workspace-theory.md`
+- 9.2.4. Dennett’s multiple drafts model - pages 21-21 - `packets/theories/09-02-04-dennetts-multiple-drafts-model.md`
+- 9.2.5. Minsky’s society of mind - pages 22-22 - `packets/theories/09-02-05-minskys-society-of-mind.md`
+- 9.2.6. Graziano’s attention schema theory - pages 23-23 - `packets/theories/09-02-06-grazianos-attention-schema-theory.md`
+- 9.2.7. Prinz’s neurofunctionalism: how attention engenders experience - pages 23-23 - `packets/theories/09-02-07-prinzs-neurofunctionalism-how-attention-engenders-experience.md`
+- 9.2.8. Sapolsky’s hard incompatibilism - pages 23-23 - `packets/theories/09-02-08-sapolskys-hard-incompatibilism.md`
+- 9.2.9. Mitchell’s free agents - pages 24-24 - `packets/theories/09-02-09-mitchells-free-agents.md`
+- 9.2.10. Bach’s cortical conductor theory - pages 24-24 - `packets/theories/09-02-10-bachs-cortical-conductor-theory.md`
+- 9.2.11. Brain circuits and cycles theories - pages 24-24 - `packets/theories/09-02-11-brain-circuits-and-cycles-theories.md`
+- 9.2.12. Northoff’s temporo-spatial sentience - pages 25-25 - `packets/theories/09-02-12-northoffs-temporo-spatial-sentience.md`
+- 9.2.13. Bunge’s emergent materialism - pages 25-25 - `packets/theories/09-02-13-bunges-emergent-materialism.md`
+- 9.2.14. Hirstein’s mindmelding - pages 25-25 - `packets/theories/09-02-14-hirsteins-mindmelding.md`
+- 9.3. Electromagnetic field theories - pages 26-26 - `packets/theories/09-03-electromagnetic-field-theories.md`
+- 9.3.1. Jones ’ s electromagnetic fields - pages 26-26 - `packets/theories/09-03-01-joness-electromagnetic-fields.md`
+- 9.3.2. Pockett ’ s conscious and non-conscious patterns - pages 26-26 - `packets/theories/09-03-02-pocketts-conscious-and-non-conscious-patterns.md`
+- 9.3.3. McFadden ’ s conscious electromagnetic information theory - pages 27-27 - `packets/theories/09-03-03-mcfaddens-conscious-electromagnetic-information-theory.md`
+- 9.3.4. Ephaptic coupling - pages 27-27 - `packets/theories/09-03-04-ephaptic-coupling.md`
+- 9.3.5. Ambron ’ s local field potentials and electromagnetic waves - pages 27-27 - `packets/theories/09-03-05-ambrons-local-field-potentials-and-electromagnetic-waves.md`
+- 9.3.6. Llinas’s mindness state of oscillations - pages 28-28 - `packets/theories/09-03-06-llinass-mindness-state-of-oscillations.md`
+- 9.3.7. Zhang’s long-distance light-speed telecommunications - pages 28-28 - `packets/theories/09-03-07-zhangs-long-distance-light-speed-telecommunications.md`
+- 9.4. Computational and Informational Theories - pages 28-28 - `packets/theories/09-04-computational-and-informational-theories.md`
+- 9.4.1. Computational theories - pages 28-28 - `packets/theories/09-04-01-computational-theories.md`
+- 9.4.2. Grossberg ’ s adaptive resonance theory - pages 29-29 - `packets/theories/09-04-02-grossbergs-adaptive-resonance-theory.md`
+- 9.4.3. Complex adaptive systems models - pages 29-29 - `packets/theories/09-04-03-complex-adaptive-systems-models.md`
+- 9.4.4. Critical brain hypothesis - pages 30-30 - `packets/theories/09-04-04-critical-brain-hypothesis.md`
+- 9.4.5. Pribram’s holonomic brain theory - pages 30-30 - `packets/theories/09-04-05-pribrams-holonomic-brain-theory.md`
+- 9.4.6. Doyle’s experience recorder and reproducer - pages 31-31 - `packets/theories/09-04-06-doyles-experience-recorder-and-reproducer.md`
+- 9.4.7. Informational realism and emergent information theory - pages 31-31 - `packets/theories/09-04-07-informational-realism-and-emergent-information-theory.md`
+- 9.4.8. Mathematical theories - pages 32-32 - `packets/theories/09-04-08-mathematical-theories.md`
+- 9.5. Homeostatic and affective theories - pages 32-32 - `packets/theories/09-05-homeostatic-and-affective-theories.md`
+- 9.5.1. Predictive theories (Top-down) - pages 32-32 - `packets/theories/09-05-01-predictive-theories-top-down.md`
+- 9.5.2. Seth’s “beast machine” theory - pages 33-33 - `packets/theories/09-05-02-seths-beast-machine-theory.md`
+- 9.5.3. Damasio’s homeostatic feelings and emergence of consciousness - pages 33-33 - `packets/theories/09-05-03-damasios-homeostatic-feelings-and-emergence-of-consciousness.md`
+- 9.5.4. Friston’s free-energy principle and active inference - pages 33-33 - `packets/theories/09-05-04-fristons-free-energy-principle-and-active-inference.md`
+- 9.5.5. Solms’s affect as the hidden spring of consciousness - pages 34-34 - `packets/theories/09-05-05-solmss-affect-as-the-hidden-spring-of-consciousness.md`
+- 9.5.6. Carhart-Harris ’ s entropic brain hypothesis - pages 35-35 - `packets/theories/09-05-06-carhart-harriss-entropic-brain-hypothesis.md`
+- 9.5.7. Buzs ´aki ’ s neural syntax and self-caused rhythms - pages 35-35 - `packets/theories/09-05-07-buzs-akis-neural-syntax-and-self-caused-rhythms.md`
+- 9.5.8. Deacon ’ s self-organized constraint and emergence of self - pages 36-36 - `packets/theories/09-05-08-deacons-self-organized-constraint-and-emergence-of-self.md`
+- 9.5.9. Pereira ’ s sentience - pages 36-36 - `packets/theories/09-05-09-pereiras-sentience.md`
+- 9.5.10. Mansell’s perceptual control theory - pages 37-37 - `packets/theories/09-05-10-mansells-perceptual-control-theory.md`
+- 9.5.11. Projective consciousness model - pages 37-37 - `packets/theories/09-05-11-projective-consciousness-model.md`
+- 9.5.12. Pepperell’s organization of energy - pages 37-37 - `packets/theories/09-05-12-pepperells-organization-of-energy.md`
+- 9.6. Embodied and enactive theories - pages 37-37 - `packets/theories/09-06-embodied-and-enactive-theories.md`
+- 9.6.1. Embodied cognition - pages 37-37 - `packets/theories/09-06-01-embodied-cognition.md`
+- 9.6.2. Enactivism - pages 38-38 - `packets/theories/09-06-02-enactivism.md`
+- 9.6.3. Varela ’ s neurophenomenology - pages 38-38 - `packets/theories/09-06-03-varelas-neurophenomenology.md`
+- 9.6.4. Thompson ’ s mind in life - pages 38-38 - `packets/theories/09-06-04-thompsons-mind-in-life.md`
+- 9.6.5. Frank/Gleiser/Thompson’s “The Blind Spot” - pages 39-39 - `packets/theories/09-06-05-frank-gleiser-thompsons-the-blind-spot.md`
+- 9.6.6. Bitbol’s radical neurophenomenology - pages 40-40 - `packets/theories/09-06-06-bitbols-radical-neurophenomenology.md`
+- 9.6.7. Direct perception theory - pages 41-41 - `packets/theories/09-06-07-direct-perception-theory.md`
+- 9.6.8. Gibson ’ s ecological psychology - pages 41-41 - `packets/theories/09-06-08-gibsons-ecological-psychology.md`
+- 9.7. Relational theories - pages 41-41 - `packets/theories/09-07-relational-theories.md`
+- 9.7.1. A. Clark ’ s extended mind - pages 41-41 - `packets/theories/09-07-01-a-clarks-extended-mind.md`
+- 9.7.2. No ¨e ’ s “ out of our heads ” theory - pages 41-41 - `packets/theories/09-07-02-no-es-out-of-our-heads-theory.md`
+- 9.7.3. Loorits ’ s structural realism - pages 42-42 - `packets/theories/09-07-03-looritss-structural-realism.md`
+- 9.7.4. Lahav ’ s relativistic theory - pages 42-42 - `packets/theories/09-07-04-lahavs-relativistic-theory.md`
+- 9.7.5. Tsuchiya ’ s relational approach to consciousness - pages 42-42 - `packets/theories/09-07-05-tsuchiyas-relational-approach-to-consciousness.md`
+- 9.7.6. Jaworski ’ s hylomorphism - pages 42-42 - `packets/theories/09-07-06-jaworskis-hylomorphism.md`
+- 9.7.7. Process theory - pages 43-43 - `packets/theories/09-07-07-process-theory.md`
+- 9.8. Representational theories - pages 43-43 - `packets/theories/09-08-representational-theories.md`
+- 9.8.1. First-order representationalism - pages 43-43 - `packets/theories/09-08-01-first-order-representationalism.md`
+- 9.8.2. Lamme’s recurrent processing theory - pages 44-44 - `packets/theories/09-08-02-lammes-recurrent-processing-theory.md`
+- 9.8.3. Higher-order theories - pages 45-45 - `packets/theories/09-08-03-higher-order-theories.md`
+- 9.8.4. Lau’s perceptual reality monitoring theory - pages 45-45 - `packets/theories/09-08-04-laus-perceptual-reality-monitoring-theory.md`
+- 9.8.5. LeDoux’s higher-order theory of emotional consciousness - pages 46-46 - `packets/theories/09-08-05-ledouxs-higher-order-theory-of-emotional-consciousness.md`
+- 9.8.6. Humphrey’s mental representations and brain attractors - pages 47-47 - `packets/theories/09-08-06-humphreys-mental-representations-and-brain-attractors.md`
+- 9.8.7. Metzinger’s no-self representational theory of subjectivity - pages 47-47 - `packets/theories/09-08-07-metzingers-no-self-representational-theory-of-subjectivity.md`
+- 9.8.8. Jackson’s diaphanous representationalism and the knowledge - pages 48-48 - `packets/theories/09-08-08-jacksons-diaphanous-representationalism-and-the-knowledge.md`
+- 9.8.9. Lycan’s homuncular functionalism - pages 48-48 - `packets/theories/09-08-09-lycans-homuncular-functionalism.md`
+- 9.8.10. Transparency theory - pages 49-49 - `packets/theories/09-08-10-transparency-theory.md`
+- 9.8.11. Tye’s contingentism - pages 49-49 - `packets/theories/09-08-11-tyes-contingentism.md`
+- 9.8.12. Thagard’s neural representation, binding, coherence, competition - pages 50-50 - `packets/theories/09-08-12-thagards-neural-representation-binding-coherence-competition.md`
+- 9.8.13. T. Clark’s content hypothesis - pages 50-50 - `packets/theories/09-08-13-t-clarks-content-hypothesis.md`
+- 9.8.14. Deacon’s symbolic communication (human consciousness) - pages 51-51 - `packets/theories/09-08-14-deacons-symbolic-communication-human-consciousness.md`
+- 9.9. Language relationships - pages 51-51 - `packets/theories/09-09-language-relationships.md`
+- 9.9.1. Chomsky’s language and consciousness - pages 52-52 - `packets/theories/09-09-01-chomskys-language-and-consciousness.md`
+- 9.9.2. Searle’s language and consciousness - pages 52-52 - `packets/theories/09-09-02-searles-language-and-consciousness.md`
+- 9.9.3. Koch’s consciousness does not depend on language - pages 53-53 - `packets/theories/09-09-03-kochs-consciousness-does-not-depend-on-language.md`
+- 9.9.4. Smith’s language as classifier of consciousness - pages 53-53 - `packets/theories/09-09-04-smiths-language-as-classifier-of-consciousness.md`
+- 9.9.5. Jaynes’s breakdown of the bicameral mind - pages 53-53 - `packets/theories/09-09-05-jayness-breakdown-of-the-bicameral-mind.md`
+- 9.9.6. Parrington’s language and tool-driven consciousness - pages 54-54 - `packets/theories/09-09-06-parringtons-language-and-tool-driven-consciousness.md`
+- 9.10. Phylogenetic evolution - pages 54-54 - `packets/theories/09-10-phylogenetic-evolution.md`
+- 9.10.1. Dennett’s evolution of minds - pages 55-55 - `packets/theories/09-10-01-dennetts-evolution-of-minds.md`
+- 9.10.2. LeDoux’s deep roots of consciousness - pages 55-55 - `packets/theories/09-10-02-ledouxs-deep-roots-of-consciousness.md`
+- 9.10.3. Ginsburg and Jablonka’s associative learning during evolution - pages 55-55 - `packets/theories/09-10-03-ginsburg-and-jablonkas-associative-learning-during-evolution.md`
+- 9.10.4. Cleeremans and Tallon-Baudry ’ s phenomenal experience has - pages 56-56 - `packets/theories/09-10-04-cleeremans-and-tallon-baudrys-phenomenal-experience-has.md`
+- 9.10.5. Andrew ’ s consciousness without complex brains - pages 56-56 - `packets/theories/09-10-05-andrews-consciousness-without-complex-brains.md`
+- 9.10.6. Reber’s cellular basis of consciousness - pages 57-57 - `packets/theories/09-10-06-rebers-cellular-basis-of-consciousness.md`
+- 9.10.7. Feinberg and Mallatt’s ancient origins of consciousness - pages 57-57 - `packets/theories/09-10-07-feinberg-and-mallatts-ancient-origins-of-consciousness.md`
+- 9.10.8. Levin’s technological approach to mind everywhere - pages 58-58 - `packets/theories/09-10-08-levins-technological-approach-to-mind-everywhere.md`
+- 9.10.9. No hard problem in William James’s psychology - pages 58-58 - `packets/theories/09-10-09-no-hard-problem-in-william-jamess-psychology.md`
+- 10. Non-reductive physicalism - pages 58-58 - `packets/theories/10-non-reductive-physicalism.md`
+- 10.1. Ellis’s strong emergence and top-down causation - pages 59-59 - `packets/theories/10-01-elliss-strong-emergence-and-top-down-causation.md`
+- 10.2. Murphy ’ s non-reductive physicalism - pages 60-60 - `packets/theories/10-02-murphys-non-reductive-physicalism.md`
+- 10.3. Van Inwagen ’ s Christian materialism and the resurrection of the - pages 60-60 - `packets/theories/10-03-van-inwagens-christian-materialism-and-the-resurrection-of-the.md`
+- 10.4. Nagasawa ’ s nontheoretical physicalism - pages 61-61 - `packets/theories/10-04-nagasawas-nontheoretical-physicalism.md`
+- 10.5. Sanfey ’ s Abstract Realism - pages 61-61 - `packets/theories/10-05-sanfeys-abstract-realism.md`
+- 10.6. Northoff ’ s non-reductive neurophilosophy - pages 61-61 - `packets/theories/10-06-northoffs-non-reductive-neurophilosophy.md`
+- 11. Quantum theories - pages 61-61 - `packets/theories/11-quantum-theories.md`
+- 11.1. Penrose-Hameroff ’ s orchestrated objective reduction - pages 62-62 - `packets/theories/11-01-penrose-hameroffs-orchestrated-objective-reduction.md`
+- 11.2. Stapp ’ s collapsing the wave function via asking “ questions ” - pages 63-63 - `packets/theories/11-02-stapps-collapsing-the-wave-function-via-asking-questions.md`
+- 11.3. Bohm’s implicate-explicate order - pages 64-64 - `packets/theories/11-03-bohms-implicate-explicate-order.md`
+- 11.4. Pylkk ¨anen ’ s quantum potential energy and active information - pages 65-65 - `packets/theories/11-04-pylkk-anens-quantum-potential-energy-and-active-information.md`
+- 11.5. Wolfram ’ s consciousness in the ruliad - pages 65-65 - `packets/theories/11-05-wolframs-consciousness-in-the-ruliad.md`
+- 11.6. Beck-Eccles ’ s quantum processes in the synapse - pages 65-65 - `packets/theories/11-06-beck-eccless-quantum-processes-in-the-synapse.md`
+- 11.7. Kauffman’s mind mediating possibles to actuals - pages 66-66 - `packets/theories/11-07-kauffmans-mind-mediating-possibles-to-actuals.md`
+- 11.8. Torday’s cellular and cosmic consciousness - pages 66-66 - `packets/theories/11-08-tordays-cellular-and-cosmic-consciousness.md`
+- 11.9. Smolin’s causal theory of views - pages 66-66 - `packets/theories/11-09-smolins-causal-theory-of-views.md`
+- 11.10. Carr’s quantum theory, psi, mental space - pages 67-67 - `packets/theories/11-10-carrs-quantum-theory-psi-mental-space.md`
+- 11.11. Faggin’s quantum information-based panpsychism - pages 67-67 - `packets/theories/11-11-faggins-quantum-information-based-panpsychism.md`
+- 11.12. Fisher ’ s quantum cognition - pages 68-68 - `packets/theories/11-12-fishers-quantum-cognition.md`
+- 11.13. Globus ’ s quantum thermofield brain dynamics - pages 68-68 - `packets/theories/11-13-globuss-quantum-thermofield-brain-dynamics.md`
+- 11.14. Poznanski ’ s dynamic organicity theory - pages 68-68 - `packets/theories/11-14-poznanskis-dynamic-organicity-theory.md`
+- 11.15. Quantum consciousness extensions - pages 69-69 - `packets/theories/11-15-quantum-consciousness-extensions.md`
+- 11.16. Rovelli ’ s relational physics - pages 69-69 - `packets/theories/11-16-rovellis-relational-physics.md`
+- 12. Integrated information theory - pages 70-71 - `packets/theories/12-integrated-information-theory.md`
+- 12.1. Critiques of integrated information theory - pages 72-72 - `packets/theories/12-01-critiques-of-integrated-information-theory.md`
+- 12.2. Koch compares integrated information theory with panpsychism - pages 72-72 - `packets/theories/12-02-koch-compares-integrated-information-theory-with-panpsychism.md`
+- 13. Panpsychisms - pages 73-73 - `packets/theories/13-panpsychisms.md`
+- 13.1. Micropsychism - pages 73-73 - `packets/theories/13-01-micropsychism.md`
+- 13.2. Panprotopsychism - pages 73-73 - `packets/theories/13-02-panprotopsychism.md`
+- 13.3. Cosmopsychism - pages 73-73 - `packets/theories/13-03-cosmopsychism.md`
+- 13.4. Qualia force - pages 74-74 - `packets/theories/13-04-qualia-force.md`
+- 13.5. Qualia space - pages 74-74 - `packets/theories/13-05-qualia-space.md`
+- 13.6. Chalmers ’ s panpsychism - pages 74-74 - `packets/theories/13-06-chalmerss-panpsychism.md`
+- 13.7. Strawson’s panpsychism - pages 75-75 - `packets/theories/13-07-strawsons-panpsychism.md`
+- 13.8. Goff’s panpsychism - pages 75-75 - `packets/theories/13-08-goffs-panpsychism.md`
+- 13.9. A. Harris’s panpsychism as fundamental field - pages 76-76 - `packets/theories/13-09-a-harriss-panpsychism-as-fundamental-field.md`
+- 13.10. Sheldrake’s self-organizing systems at all levels of complexity - pages 76-76 - `packets/theories/13-10-sheldrakes-self-organizing-systems-at-all-levels-of-complexity.md`
+- 13.11. Wallace’s panpsychism inside physics - pages 76-76 - `packets/theories/13-11-wallaces-panpsychism-inside-physics.md`
+- 13.12. Whitehead’s process theory - pages 77-77 - `packets/theories/13-12-whiteheads-process-theory.md`
+- 14. Monisms - pages 77-77 - `packets/theories/14-monisms.md`
+- 14.1. Russellian Monism - pages 78-78 - `packets/theories/14-01-russellian-monism.md`
+- 14.2. Davidson’s anomalous monism - pages 78-78 - `packets/theories/14-02-davidsons-anomalous-monism.md`
+- 14.3. Velmans’s reflexive monism - pages 78-78 - `packets/theories/14-03-velmanss-reflexive-monism.md`
+- 14.4. Strawson’s realistic monism and real materialism - pages 79-79 - `packets/theories/14-04-strawsons-realistic-monism-and-real-materialism.md`
+- 14.5. Polkinghorne’s dual-aspect monism - pages 80-80 - `packets/theories/14-05-polkinghornes-dual-aspect-monism.md`
+- 14.6. Teilhard de Cardin’s evolving consciousness - pages 80-80 - `packets/theories/14-06-teilhard-de-cardins-evolving-consciousness.md`
+- 14.7. Atmanspacher’s dual-aspect monism - pages 81-81 - `packets/theories/14-07-atmanspachers-dual-aspect-monism.md`
+- 14.8. Ramachandran’s new physics and neuroscience - pages 81-81 - `packets/theories/14-08-ramachandrans-new-physics-and-neuroscience.md`
+- 14.9. Tegmark’s state of matter - pages 81-81 - `packets/theories/14-09-tegmarks-state-of-matter.md`
+- 14.10. Qualia Research Institute’s state-space, qualia formalism, valence - pages 82-82 - `packets/theories/14-10-qualia-research-institutes-state-space-qualia-formalism-valence.md`
+- 14.11. Bentley Hart’s monism: consciousness, being, God - pages 82-82 - `packets/theories/14-11-bentley-harts-monism-consciousness-being-god.md`
+- 14.12. Leslie’s consciousness inside an infinite mind - pages 83-83 - `packets/theories/14-12-leslies-consciousness-inside-an-infinite-mind.md`
+- 15. Dualisms - pages 83-83 - `packets/theories/15-dualisms.md`
+- 15.1. Property dualism - pages 84-84 - `packets/theories/15-01-property-dualism.md`
+- 15.2. Historical and traditional dualisms - pages 85-85 - `packets/theories/15-02-historical-and-traditional-dualisms.md`
+- 15.3. Swinburne’s substance dualism - pages 85-85 - `packets/theories/15-03-swinburnes-substance-dualism.md`
+- 15.4. Composite dualism - pages 85-85 - `packets/theories/15-04-composite-dualism.md`
+- 15.5. Stump’s Thomistic dualism - pages 86-86 - `packets/theories/15-05-stumps-thomistic-dualism.md`
+- 15.6. Feser’s neo-Thomistic, neo-Aristotelian, common-sense dualism - pages 86-86 - `packets/theories/15-06-fesers-neo-thomistic-neo-aristotelian-common-sense-dualism.md`
+- 15.7. Moreland’s Christian soul - pages 87-87 - `packets/theories/15-07-morelands-christian-soul.md`
+- 15.8. Interactive dualism - pages 87-87 - `packets/theories/15-08-interactive-dualism.md`
+- 15.9. Emergent dualism - pages 88-88 - `packets/theories/15-09-emergent-dualism.md`
+- 15.10. Kind’s dualism 2.0 - pages 88-88 - `packets/theories/15-10-kinds-dualism-2-0.md`
+- 15.11. Soul in the Hebrew Bible and Jewish philosophy - pages 89-89 - `packets/theories/15-11-soul-in-the-hebrew-bible-and-jewish-philosophy.md`
+- 15.12. Soul in the New Testament and Christian philosophy - pages 89-89 - `packets/theories/15-12-soul-in-the-new-testament-and-christian-philosophy.md`
+- 15.13. Soul in Islamic philosophy - pages 90-90 - `packets/theories/15-13-soul-in-islamic-philosophy.md`
+- 15.14. God as the supplier of souls - pages 91-91 - `packets/theories/15-14-god-as-the-supplier-of-souls.md`
+- 15.15. Personal and cosmic consciousness in Indian philosophy - pages 91-91 - `packets/theories/15-15-personal-and-cosmic-consciousness-in-indian-philosophy.md`
+- 15.16. Soul in indigenous religions - pages 92-92 - `packets/theories/15-16-soul-in-indigenous-religions.md`
+- 15.17. Realms of the soul - pages 93-93 - `packets/theories/15-17-realms-of-the-soul.md`
+- 15.18. Theosophy ’ s eclectic soul and consciousness - pages 93-93 - `packets/theories/15-18-theosophys-eclectic-soul-and-consciousness.md`
+- 15.19. Steiner ’ s esoteric soul and consciousness - pages 93-93 - `packets/theories/15-19-steiners-esoteric-soul-and-consciousness.md`
+- 15.20. Nonphysical component in the human mind - pages 94-94 - `packets/theories/15-20-nonphysical-component-in-the-human-mind.md`
+- 16. Idealisms - pages 94-94 - `packets/theories/16-idealisms.md`
+- 16.1. Indian cosmic consciousness - pages 95-96 - `packets/theories/16-01-indian-cosmic-consciousness.md`
+- 16.2. Buddhism ’ s empty, illusory phenomenal consciousness - pages 97-97 - `packets/theories/16-02-buddhisms-empty-illusory-phenomenal-consciousness.md`
+- 16.3. Dao De Jing ’ s constant dao - pages 98-98 - `packets/theories/16-03-dao-de-jings-constant-dao.md`
+- 16.4. Kastrup ’ s analytic idealism - pages 98-98 - `packets/theories/16-04-kastrups-analytic-idealism.md`
+- 16.5. Hoffman’s conscious realism: the case against reality - pages 99-99 - `packets/theories/16-05-hoffmans-conscious-realism-the-case-against-reality.md`
+- 16.6. McGilchrist’s relational, creative-process idealism - pages 99-99 - `packets/theories/16-06-mcgilchrists-relational-creative-process-idealism.md`
+- 16.7. Chopra’s only the whole is conscious - pages 100-100 - `packets/theories/16-07-chopras-only-the-whole-is-conscious.md`
+- 16.8. How consciousness becomes the physical universe - pages 101-101 - `packets/theories/16-08-how-consciousness-becomes-the-physical-universe.md`
+- 16.9. Goswami’s self-aware universe - pages 101-101 - `packets/theories/16-09-goswamis-self-aware-universe.md`
+- 16.10. Spira’s non-duality - pages 101-101 - `packets/theories/16-10-spiras-non-duality.md`
+- 16.11. Nader’s all there is - pages 101-101 - `packets/theories/16-11-naders-all-there-is.md`
+- 16.12. Ward ’ s personal idealism: souls as embodied agents created by - pages 102-102 - `packets/theories/16-12-wards-personal-idealism-souls-as-embodied-agents-created-by.md`
+- 16.13. Albahari ’ s perennial idealism - pages 102-102 - `packets/theories/16-13-albaharis-perennial-idealism.md`
+- 16.14. Meijer ’ s universal knowledge field - pages 102-102 - `packets/theories/16-14-meijers-universal-knowledge-field.md`
+- 16.15. Idealism’s imaginative expressions - pages 103-103 - `packets/theories/16-15-idealisms-imaginative-expressions.md`
+- 17. Anomalous and altered states theories - pages 104-104 - `packets/theories/17-anomalous-and-altered-states-theories.md`
+- 17.1. Bergson’s multiplicity, duration, perception, memory - pages 105-105 - `packets/theories/17-01-bergsons-multiplicity-duration-perception-memory.md`
+- 17.2. Jung’s collective unconscious and synchronicity - pages 106-106 - `packets/theories/17-02-jungs-collective-unconscious-and-synchronicity.md`
+- 17.3. Radin ’ s challenge to materialism - pages 107-107 - `packets/theories/17-03-radins-challenge-to-materialism.md`
+- 17.4. Tart ’ s emergent interactionism - pages 108-108 - `packets/theories/17-04-tarts-emergent-interactionism.md`
+- 17.5. Josephson ’ s psi-informed models - pages 108-108 - `packets/theories/17-05-josephsons-psi-informed-models.md`
+- 17.6. Wilber ’ s Integral Theory - pages 108-108 - `packets/theories/17-06-wilbers-integral-theory.md`
+- 17.7. Combs’s chaotic attractor and autopoietic systems - pages 109-109 - `packets/theories/17-07-combss-chaotic-attractor-and-autopoietic-systems.md`
+- 17.8. Schooler’s resonance theory and subjective time - pages 109-109 - `packets/theories/17-08-schoolers-resonance-theory-and-subjective-time.md`
+- 17.9. Sheldrake’s morphic fields - pages 110-110 - `packets/theories/17-09-sheldrakes-morphic-fields.md`
+- 17.10. Grinberg’s syntergic/neuronal field theory - pages 111-111 - `packets/theories/17-10-grinbergs-syntergic-neuronal-field-theory.md`
+- 17.11. Graboi’s three-aspect model - pages 111-111 - `packets/theories/17-11-grabois-three-aspect-model.md`
+- 17.12. Near death experiences, survival, past lives - pages 111-111 - `packets/theories/17-12-near-death-experiences-survival-past-lives.md`
+- 17.13. DOPS’s consciousness research and theory - pages 112-112 - `packets/theories/17-13-dopss-consciousness-research-and-theory.md`
+- 17.14. Bitbol’s phenomenological ontology - pages 113-113 - `packets/theories/17-14-bitbols-phenomenological-ontology.md`
+- 17.15. Campbell ’ s theory of everything - pages 114-114 - `packets/theories/17-15-campbells-theory-of-everything.md`
+- 17.16. Hiller ’ s eternal discarnate consciousness - pages 114-114 - `packets/theories/17-16-hillers-eternal-discarnate-consciousness.md`
+- 17.17. Harp ’ s universal or God consciousness - pages 114-114 - `packets/theories/17-17-harps-universal-or-god-consciousness.md`
+- 17.18. Swimme ’ s cosmogenesis - pages 115-115 - `packets/theories/17-18-swimmes-cosmogenesis.md`
+- 17.19. Langan ’ s cognitive-theoretic model of the universe - pages 115-115 - `packets/theories/17-19-langans-cognitive-theoretic-model-of-the-universe.md`
+- 17.20. Meditation and the brain - pages 115-115 - `packets/theories/17-20-meditation-and-the-brain.md`
+- 17.21. Psychedelic theories of consciousness - pages 115-116 - `packets/theories/17-21-psychedelic-theories-of-consciousness.md`
+- 18. Challenge theories - pages 117-117 - `packets/theories/18-challenge-theories.md`
+- 18.1. Nagel’s mind and cosmos - pages 117-117 - `packets/theories/18-01-nagels-mind-and-cosmos.md`
+- 18.2. McGinn’s ultimate mystery (mysterianism) - pages 117-117 - `packets/theories/18-02-mcginns-ultimate-mystery-mysterianism.md`
+- 18.3. S. Harris’s mystery of consciousness - pages 118-118 - `packets/theories/18-03-s-harriss-mystery-of-consciousness.md`
+- 18.4. Eagleman’s possibilianism - pages 118-118 - `packets/theories/18-04-eaglemans-possibilianism.md`
+- 18.5. Tallis’s anti-neuromania skepticism - pages 119-119 - `packets/theories/18-05-talliss-anti-neuromania-skepticism.md`
+- 18.6. Nagasawa’s mind-body problem in an infinitely decomposable - pages 119-119 - `packets/theories/18-06-nagasawas-mind-body-problem-in-an-infinitely-decomposable.md`
+- 18.7. Musser’s “is it really so hard?” - pages 119-119 - `packets/theories/18-07-mussers-is-it-really-so-hard.md`
+- 18.8. Davies ’ s consciousness in the cosmos - pages 120-120 - `packets/theories/18-08-daviess-consciousness-in-the-cosmos.md`
+- 19. Closer to truth views - pages 120-120 - `packets/theories/19-closer-to-truth-views.md`
+- 20. Chalmers’s meta-problem of consciousness - pages 121-121 - `packets/theories/20-chalmerss-meta-problem-of-consciousness.md`
+- 21. Implications - pages 122-122 - `packets/theories/21-implications.md`
+- 22. Meaning/purpose/value - pages 122-122 - `packets/theories/22-meaning-purpose-value.md`
+- 23. Artificial intelligence (AI) consciousness - pages 123-124 - `packets/theories/23-artificial-intelligence-ai-consciousness.md`
+- 24. Virtual immortality - pages 125-127 - `packets/theories/24-virtual-immortality.md`
+- 25. Survival beyond death - pages 128-128 - `packets/theories/25-survival-beyond-death.md`
+- 26. Reflections - pages 129-142 - `packets/theories/26-reflections.md`

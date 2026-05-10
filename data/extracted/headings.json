@@ -1,0 +1,1717 @@
+[
+  {
+    "section_id": "1",
+    "title": "Chalmers’s “hard problem” of consciousness",
+    "page": 2,
+    "level": 1,
+    "line": "1. Chalmers’s “hard problem” of consciousness"
+  },
+  {
+    "section_id": "2",
+    "title": "Initial thoughts",
+    "page": 4,
+    "level": 1,
+    "line": "2. Initial thoughts"
+  },
+  {
+    "section_id": "3",
+    "title": "Philosophical tensions",
+    "page": 5,
+    "level": 1,
+    "line": "3. Philosophical tensions"
+  },
+  {
+    "section_id": "4",
+    "title": "Surveys & typologies",
+    "page": 5,
+    "level": 1,
+    "line": "4. Surveys & typologies"
+  },
+  {
+    "section_id": "5",
+    "title": "Opposing worldviews",
+    "page": 5,
+    "level": 1,
+    "line": "5. Opposing worldviews"
+  },
+  {
+    "section_id": "6",
+    "title": "Is consciousness primitive/fundamental?",
+    "page": 6,
+    "level": 1,
+    "line": "6. Is consciousness primitive/fundamental?"
+  },
+  {
+    "section_id": "7",
+    "title": "Identity theory",
+    "page": 7,
+    "level": 1,
+    "line": "7. Identity theory"
+  },
+  {
+    "section_id": "8",
+    "title": "A landscape",
+    "page": 8,
+    "level": 1,
+    "line": "8. A landscape"
+  },
+  {
+    "section_id": "9",
+    "title": "Materialism theories",
+    "page": 12,
+    "level": 1,
+    "line": "9. Materialism theories"
+  },
+  {
+    "section_id": "9.1",
+    "title": "Philosophical Theories",
+    "page": 13,
+    "level": 2,
+    "line": "9.1. Philosophical Theories"
+  },
+  {
+    "section_id": "9.1.1",
+    "title": "Eliminative materialism/illusionism",
+    "page": 13,
+    "level": 3,
+    "line": "9.1.1. Eliminative materialism/illusionism"
+  },
+  {
+    "section_id": "9.1.2",
+    "title": "Epiphenomenalism",
+    "page": 14,
+    "level": 3,
+    "line": "9.1.2. Epiphenomenalism"
+  },
+  {
+    "section_id": "9.1.3",
+    "title": "Functionalism",
+    "page": 14,
+    "level": 3,
+    "line": "9.1.3. Functionalism"
+  },
+  {
+    "section_id": "9.1.4",
+    "title": "Emergence",
+    "page": 15,
+    "level": 3,
+    "line": "9.1.4. Emergence"
+  },
+  {
+    "section_id": "9.1.5",
+    "title": "Mind-brain identity theory",
+    "page": 16,
+    "level": 3,
+    "line": "9.1.5. Mind-brain identity theory"
+  },
+  {
+    "section_id": "9.1.6",
+    "title": "Searle’s biological naturalism",
+    "page": 16,
+    "level": 3,
+    "line": "9.1.6. Searle’s biological naturalism"
+  },
+  {
+    "section_id": "9.1.7",
+    "title": "Block’s biological reductionism",
+    "page": 16,
+    "level": 3,
+    "line": "9.1.7. Block’s biological reductionism"
+  },
+  {
+    "section_id": "9.1.8",
+    "title": "Flanagan’s constructive naturalism",
+    "page": 16,
+    "level": 3,
+    "line": "9.1.8. Flanagan’s constructive naturalism"
+  },
+  {
+    "section_id": "9.1.9",
+    "title": "Papineau ’ s mind-brain identity",
+    "page": 17,
+    "level": 3,
+    "line": "9.1.9. Papineau ’ s mind-brain identity"
+  },
+  {
+    "section_id": "9.1.10",
+    "title": "Goldstein’s mind-body problem",
+    "page": 18,
+    "level": 3,
+    "line": "9.1.10. Goldstein’s mind-body problem"
+  },
+  {
+    "section_id": "9.1.11",
+    "title": "Hardcastle’s argument against materialism skeptics",
+    "page": 18,
+    "level": 3,
+    "line": "9.1.11. Hardcastle’s argument against materialism skeptics"
+  },
+  {
+    "section_id": "9.1.12",
+    "title": "Stoljar’s epistemic view and non-standard physicalism",
+    "page": 19,
+    "level": 3,
+    "line": "9.1.12. Stoljar’s epistemic view and non-standard physicalism"
+  },
+  {
+    "section_id": "9.2",
+    "title": "Neurobiological theories",
+    "page": 19,
+    "level": 2,
+    "line": "9.2. Neurobiological theories"
+  },
+  {
+    "section_id": "9.2.1",
+    "title": "Edelman’s neural Darwinism and reentrant neural circuitry",
+    "page": 19,
+    "level": 3,
+    "line": "9.2.1. Edelman’s neural Darwinism and reentrant neural circuitry"
+  },
+  {
+    "section_id": "9.2.2",
+    "title": "Crick and Koch ’ s neural correlates of consciousness (NCC)",
+    "page": 20,
+    "level": 3,
+    "line": "9.2.2. Crick and Koch ’ s neural correlates of consciousness (NCC)"
+  },
+  {
+    "section_id": "9.2.3",
+    "title": "Baars’s and Dehaene’s global workspace theory",
+    "page": 21,
+    "level": 3,
+    "line": "9.2.3. Baars’s and Dehaene’s global workspace theory"
+  },
+  {
+    "section_id": "9.2.4",
+    "title": "Dennett’s multiple drafts model",
+    "page": 21,
+    "level": 3,
+    "line": "9.2.4. Dennett’s multiple drafts model"
+  },
+  {
+    "section_id": "9.2.5",
+    "title": "Minsky’s society of mind",
+    "page": 22,
+    "level": 3,
+    "line": "9.2.5. Minsky’s society of mind"
+  },
+  {
+    "section_id": "9.2.6",
+    "title": "Graziano’s attention schema theory",
+    "page": 23,
+    "level": 3,
+    "line": "9.2.6. Graziano’s attention schema theory"
+  },
+  {
+    "section_id": "9.2.7",
+    "title": "Prinz’s neurofunctionalism: how attention engenders experience",
+    "page": 23,
+    "level": 3,
+    "line": "9.2.7. Prinz’s neurofunctionalism: how attention engenders experience"
+  },
+  {
+    "section_id": "9.2.8",
+    "title": "Sapolsky’s hard incompatibilism",
+    "page": 23,
+    "level": 3,
+    "line": "9.2.8. Sapolsky’s hard incompatibilism"
+  },
+  {
+    "section_id": "9.2.9",
+    "title": "Mitchell’s free agents",
+    "page": 24,
+    "level": 3,
+    "line": "9.2.9. Mitchell’s free agents"
+  },
+  {
+    "section_id": "9.2.10",
+    "title": "Bach’s cortical conductor theory",
+    "page": 24,
+    "level": 3,
+    "line": "9.2.10. Bach’s cortical conductor theory"
+  },
+  {
+    "section_id": "9.2.11",
+    "title": "Brain circuits and cycles theories",
+    "page": 24,
+    "level": 3,
+    "line": "9.2.11. Brain circuits and cycles theories"
+  },
+  {
+    "section_id": "9.2.12",
+    "title": "Northoff’s temporo-spatial sentience",
+    "page": 25,
+    "level": 3,
+    "line": "9.2.12. Northoff’s temporo-spatial sentience"
+  },
+  {
+    "section_id": "9.2.13",
+    "title": "Bunge’s emergent materialism",
+    "page": 25,
+    "level": 3,
+    "line": "9.2.13. Bunge’s emergent materialism"
+  },
+  {
+    "section_id": "9.2.14",
+    "title": "Hirstein’s mindmelding",
+    "page": 25,
+    "level": 3,
+    "line": "9.2.14. Hirstein’s mindmelding"
+  },
+  {
+    "section_id": "9.3",
+    "title": "Electromagnetic field theories",
+    "page": 26,
+    "level": 2,
+    "line": "9.3. Electromagnetic field theories"
+  },
+  {
+    "section_id": "9.3.1",
+    "title": "Jones ’ s electromagnetic fields",
+    "page": 26,
+    "level": 3,
+    "line": "9.3.1. Jones ’ s electromagnetic fields"
+  },
+  {
+    "section_id": "9.3.2",
+    "title": "Pockett ’ s conscious and non-conscious patterns",
+    "page": 26,
+    "level": 3,
+    "line": "9.3.2. Pockett ’ s conscious and non-conscious patterns"
+  },
+  {
+    "section_id": "9.3.3",
+    "title": "McFadden ’ s conscious electromagnetic information theory",
+    "page": 27,
+    "level": 3,
+    "line": "9.3.3. McFadden ’ s conscious electromagnetic information theory"
+  },
+  {
+    "section_id": "9.3.4",
+    "title": "Ephaptic coupling",
+    "page": 27,
+    "level": 3,
+    "line": "9.3.4. Ephaptic coupling"
+  },
+  {
+    "section_id": "9.3.5",
+    "title": "Ambron ’ s local field potentials and electromagnetic waves",
+    "page": 27,
+    "level": 3,
+    "line": "9.3.5. Ambron ’ s local field potentials and electromagnetic waves"
+  },
+  {
+    "section_id": "9.3.6",
+    "title": "Llinas’s mindness state of oscillations",
+    "page": 28,
+    "level": 3,
+    "line": "9.3.6. Llinas’s mindness state of oscillations"
+  },
+  {
+    "section_id": "9.3.7",
+    "title": "Zhang’s long-distance light-speed telecommunications",
+    "page": 28,
+    "level": 3,
+    "line": "9.3.7. Zhang’s long-distance light-speed telecommunications"
+  },
+  {
+    "section_id": "9.4",
+    "title": "Computational and Informational Theories",
+    "page": 28,
+    "level": 2,
+    "line": "9.4. Computational and Informational Theories"
+  },
+  {
+    "section_id": "9.4.1",
+    "title": "Computational theories",
+    "page": 28,
+    "level": 3,
+    "line": "9.4.1. Computational theories"
+  },
+  {
+    "section_id": "9.4.2",
+    "title": "Grossberg ’ s adaptive resonance theory",
+    "page": 29,
+    "level": 3,
+    "line": "9.4.2. Grossberg ’ s adaptive resonance theory"
+  },
+  {
+    "section_id": "9.4.3",
+    "title": "Complex adaptive systems models",
+    "page": 29,
+    "level": 3,
+    "line": "9.4.3. Complex adaptive systems models"
+  },
+  {
+    "section_id": "9.4.4",
+    "title": "Critical brain hypothesis",
+    "page": 30,
+    "level": 3,
+    "line": "9.4.4. Critical brain hypothesis"
+  },
+  {
+    "section_id": "9.4.5",
+    "title": "Pribram’s holonomic brain theory",
+    "page": 30,
+    "level": 3,
+    "line": "9.4.5. Pribram’s holonomic brain theory"
+  },
+  {
+    "section_id": "9.4.6",
+    "title": "Doyle’s experience recorder and reproducer",
+    "page": 31,
+    "level": 3,
+    "line": "9.4.6. Doyle’s experience recorder and reproducer"
+  },
+  {
+    "section_id": "9.4.7",
+    "title": "Informational realism and emergent information theory",
+    "page": 31,
+    "level": 3,
+    "line": "9.4.7. Informational realism and emergent information theory"
+  },
+  {
+    "section_id": "9.4.8",
+    "title": "Mathematical theories",
+    "page": 32,
+    "level": 3,
+    "line": "9.4.8. Mathematical theories"
+  },
+  {
+    "section_id": "9.5",
+    "title": "Homeostatic and affective theories",
+    "page": 32,
+    "level": 2,
+    "line": "9.5. Homeostatic and affective theories"
+  },
+  {
+    "section_id": "9.5.1",
+    "title": "Predictive theories (Top-down)",
+    "page": 32,
+    "level": 3,
+    "line": "9.5.1. Predictive theories (Top-down)"
+  },
+  {
+    "section_id": "9.5.2",
+    "title": "Seth’s “beast machine” theory",
+    "page": 33,
+    "level": 3,
+    "line": "9.5.2. Seth’s “beast machine” theory"
+  },
+  {
+    "section_id": "9.5.3",
+    "title": "Damasio’s homeostatic feelings and emergence of consciousness",
+    "page": 33,
+    "level": 3,
+    "line": "9.5.3. Damasio’s homeostatic feelings and emergence of consciousness"
+  },
+  {
+    "section_id": "9.5.4",
+    "title": "Friston’s free-energy principle and active inference",
+    "page": 33,
+    "level": 3,
+    "line": "9.5.4. Friston’s free-energy principle and active inference"
+  },
+  {
+    "section_id": "9.5.5",
+    "title": "Solms’s affect as the hidden spring of consciousness",
+    "page": 34,
+    "level": 3,
+    "line": "9.5.5. Solms’s affect as the hidden spring of consciousness"
+  },
+  {
+    "section_id": "9.5.6",
+    "title": "Carhart-Harris ’ s entropic brain hypothesis",
+    "page": 35,
+    "level": 3,
+    "line": "9.5.6. Carhart-Harris ’ s entropic brain hypothesis"
+  },
+  {
+    "section_id": "9.5.7",
+    "title": "Buzs ´aki ’ s neural syntax and self-caused rhythms",
+    "page": 35,
+    "level": 3,
+    "line": "9.5.7. Buzs ´aki ’ s neural syntax and self-caused rhythms"
+  },
+  {
+    "section_id": "9.5.8",
+    "title": "Deacon ’ s self-organized constraint and emergence of self",
+    "page": 36,
+    "level": 3,
+    "line": "9.5.8. Deacon ’ s self-organized constraint and emergence of self"
+  },
+  {
+    "section_id": "9.5.9",
+    "title": "Pereira ’ s sentience",
+    "page": 36,
+    "level": 3,
+    "line": "9.5.9. Pereira ’ s sentience"
+  },
+  {
+    "section_id": "9.5.10",
+    "title": "Mansell’s perceptual control theory",
+    "page": 37,
+    "level": 3,
+    "line": "9.5.10. Mansell’s perceptual control theory"
+  },
+  {
+    "section_id": "9.5.11",
+    "title": "Projective consciousness model",
+    "page": 37,
+    "level": 3,
+    "line": "9.5.11. Projective consciousness model"
+  },
+  {
+    "section_id": "9.5.12",
+    "title": "Pepperell’s organization of energy",
+    "page": 37,
+    "level": 3,
+    "line": "9.5.12. Pepperell’s organization of energy"
+  },
+  {
+    "section_id": "9.6",
+    "title": "Embodied and enactive theories",
+    "page": 37,
+    "level": 2,
+    "line": "9.6. Embodied and enactive theories"
+  },
+  {
+    "section_id": "9.6.1",
+    "title": "Embodied cognition",
+    "page": 37,
+    "level": 3,
+    "line": "9.6.1. Embodied cognition"
+  },
+  {
+    "section_id": "9.6.2",
+    "title": "Enactivism",
+    "page": 38,
+    "level": 3,
+    "line": "9.6.2. Enactivism"
+  },
+  {
+    "section_id": "9.6.3",
+    "title": "Varela ’ s neurophenomenology",
+    "page": 38,
+    "level": 3,
+    "line": "9.6.3. Varela ’ s neurophenomenology"
+  },
+  {
+    "section_id": "9.6.4",
+    "title": "Thompson ’ s mind in life",
+    "page": 38,
+    "level": 3,
+    "line": "9.6.4. Thompson ’ s mind in life"
+  },
+  {
+    "section_id": "9.6.5",
+    "title": "Frank/Gleiser/Thompson’s “The Blind Spot”",
+    "page": 39,
+    "level": 3,
+    "line": "9.6.5. Frank/Gleiser/Thompson’s “The Blind Spot”"
+  },
+  {
+    "section_id": "9.6.6",
+    "title": "Bitbol’s radical neurophenomenology",
+    "page": 40,
+    "level": 3,
+    "line": "9.6.6. Bitbol’s radical neurophenomenology"
+  },
+  {
+    "section_id": "9.6.7",
+    "title": "Direct perception theory",
+    "page": 41,
+    "level": 3,
+    "line": "9.6.7. Direct perception theory"
+  },
+  {
+    "section_id": "9.6.8",
+    "title": "Gibson ’ s ecological psychology",
+    "page": 41,
+    "level": 3,
+    "line": "9.6.8. Gibson ’ s ecological psychology"
+  },
+  {
+    "section_id": "9.7",
+    "title": "Relational theories",
+    "page": 41,
+    "level": 2,
+    "line": "9.7. Relational theories"
+  },
+  {
+    "section_id": "9.7.1",
+    "title": "A. Clark ’ s extended mind",
+    "page": 41,
+    "level": 3,
+    "line": "9.7.1. A. Clark ’ s extended mind"
+  },
+  {
+    "section_id": "9.7.2",
+    "title": "No ¨e ’ s “ out of our heads ” theory",
+    "page": 41,
+    "level": 3,
+    "line": "9.7.2. No ¨e ’ s “ out of our heads ” theory"
+  },
+  {
+    "section_id": "9.7.3",
+    "title": "Loorits ’ s structural realism",
+    "page": 42,
+    "level": 3,
+    "line": "9.7.3. Loorits ’ s structural realism"
+  },
+  {
+    "section_id": "9.7.4",
+    "title": "Lahav ’ s relativistic theory",
+    "page": 42,
+    "level": 3,
+    "line": "9.7.4. Lahav ’ s relativistic theory"
+  },
+  {
+    "section_id": "9.7.5",
+    "title": "Tsuchiya ’ s relational approach to consciousness",
+    "page": 42,
+    "level": 3,
+    "line": "9.7.5. Tsuchiya ’ s relational approach to consciousness"
+  },
+  {
+    "section_id": "9.7.6",
+    "title": "Jaworski ’ s hylomorphism",
+    "page": 42,
+    "level": 3,
+    "line": "9.7.6. Jaworski ’ s hylomorphism"
+  },
+  {
+    "section_id": "9.7.7",
+    "title": "Process theory",
+    "page": 43,
+    "level": 3,
+    "line": "9.7.7. Process theory"
+  },
+  {
+    "section_id": "9.8",
+    "title": "Representational theories",
+    "page": 43,
+    "level": 2,
+    "line": "9.8. Representational theories"
+  },
+  {
+    "section_id": "9.8.1",
+    "title": "First-order representationalism",
+    "page": 43,
+    "level": 3,
+    "line": "9.8.1. First-order representationalism"
+  },
+  {
+    "section_id": "9.8.2",
+    "title": "Lamme’s recurrent processing theory",
+    "page": 44,
+    "level": 3,
+    "line": "9.8.2. Lamme’s recurrent processing theory"
+  },
+  {
+    "section_id": "9.8.3",
+    "title": "Higher-order theories",
+    "page": 45,
+    "level": 3,
+    "line": "9.8.3. Higher-order theories"
+  },
+  {
+    "section_id": "9.8.4",
+    "title": "Lau’s perceptual reality monitoring theory",
+    "page": 45,
+    "level": 3,
+    "line": "9.8.4. Lau’s perceptual reality monitoring theory"
+  },
+  {
+    "section_id": "9.8.5",
+    "title": "LeDoux’s higher-order theory of emotional consciousness",
+    "page": 46,
+    "level": 3,
+    "line": "9.8.5. LeDoux’s higher-order theory of emotional consciousness"
+  },
+  {
+    "section_id": "9.8.6",
+    "title": "Humphrey’s mental representations and brain attractors",
+    "page": 47,
+    "level": 3,
+    "line": "9.8.6. Humphrey’s mental representations and brain attractors"
+  },
+  {
+    "section_id": "9.8.7",
+    "title": "Metzinger’s no-self representational theory of subjectivity",
+    "page": 47,
+    "level": 3,
+    "line": "9.8.7. Metzinger’s no-self representational theory of subjectivity"
+  },
+  {
+    "section_id": "9.8.8",
+    "title": "Jackson’s diaphanous representationalism and the knowledge",
+    "page": 48,
+    "level": 3,
+    "line": "9.8.8. Jackson’s diaphanous representationalism and the knowledge"
+  },
+  {
+    "section_id": "9.8.9",
+    "title": "Lycan’s homuncular functionalism",
+    "page": 48,
+    "level": 3,
+    "line": "9.8.9. Lycan’s homuncular functionalism"
+  },
+  {
+    "section_id": "9.8.10",
+    "title": "Transparency theory",
+    "page": 49,
+    "level": 3,
+    "line": "9.8.10. Transparency theory"
+  },
+  {
+    "section_id": "9.8.11",
+    "title": "Tye’s contingentism",
+    "page": 49,
+    "level": 3,
+    "line": "9.8.11. Tye’s contingentism"
+  },
+  {
+    "section_id": "9.8.12",
+    "title": "Thagard’s neural representation, binding, coherence, competition",
+    "page": 50,
+    "level": 3,
+    "line": "9.8.12. Thagard’s neural representation, binding, coherence, competition"
+  },
+  {
+    "section_id": "9.8.13",
+    "title": "T. Clark’s content hypothesis",
+    "page": 50,
+    "level": 3,
+    "line": "9.8.13. T. Clark’s content hypothesis"
+  },
+  {
+    "section_id": "9.8.14",
+    "title": "Deacon’s symbolic communication (human consciousness)",
+    "page": 51,
+    "level": 3,
+    "line": "9.8.14. Deacon’s symbolic communication (human consciousness)"
+  },
+  {
+    "section_id": "9.9",
+    "title": "Language relationships",
+    "page": 51,
+    "level": 2,
+    "line": "9.9. Language relationships"
+  },
+  {
+    "section_id": "9.9.1",
+    "title": "Chomsky’s language and consciousness",
+    "page": 52,
+    "level": 3,
+    "line": "9.9.1. Chomsky’s language and consciousness"
+  },
+  {
+    "section_id": "9.9.2",
+    "title": "Searle’s language and consciousness",
+    "page": 52,
+    "level": 3,
+    "line": "9.9.2. Searle’s language and consciousness"
+  },
+  {
+    "section_id": "9.9.3",
+    "title": "Koch’s consciousness does not depend on language",
+    "page": 53,
+    "level": 3,
+    "line": "9.9.3. Koch’s consciousness does not depend on language"
+  },
+  {
+    "section_id": "9.9.4",
+    "title": "Smith’s language as classifier of consciousness",
+    "page": 53,
+    "level": 3,
+    "line": "9.9.4. Smith’s language as classifier of consciousness"
+  },
+  {
+    "section_id": "9.9.5",
+    "title": "Jaynes’s breakdown of the bicameral mind",
+    "page": 53,
+    "level": 3,
+    "line": "9.9.5. Jaynes’s breakdown of the bicameral mind"
+  },
+  {
+    "section_id": "9.9.6",
+    "title": "Parrington’s language and tool-driven consciousness",
+    "page": 54,
+    "level": 3,
+    "line": "9.9.6. Parrington’s language and tool-driven consciousness"
+  },
+  {
+    "section_id": "9.10",
+    "title": "Phylogenetic evolution",
+    "page": 54,
+    "level": 2,
+    "line": "9.10. Phylogenetic evolution"
+  },
+  {
+    "section_id": "9.10.1",
+    "title": "Dennett’s evolution of minds",
+    "page": 55,
+    "level": 3,
+    "line": "9.10.1. Dennett’s evolution of minds"
+  },
+  {
+    "section_id": "9.10.2",
+    "title": "LeDoux’s deep roots of consciousness",
+    "page": 55,
+    "level": 3,
+    "line": "9.10.2. LeDoux’s deep roots of consciousness"
+  },
+  {
+    "section_id": "9.10.3",
+    "title": "Ginsburg and Jablonka’s associative learning during evolution",
+    "page": 55,
+    "level": 3,
+    "line": "9.10.3. Ginsburg and Jablonka’s associative learning during evolution"
+  },
+  {
+    "section_id": "9.10.4",
+    "title": "Cleeremans and Tallon-Baudry ’ s phenomenal experience has",
+    "page": 56,
+    "level": 3,
+    "line": "9.10.4. Cleeremans and Tallon-Baudry ’ s phenomenal experience has"
+  },
+  {
+    "section_id": "9.10.5",
+    "title": "Andrew ’ s consciousness without complex brains",
+    "page": 56,
+    "level": 3,
+    "line": "9.10.5. Andrew ’ s consciousness without complex brains"
+  },
+  {
+    "section_id": "9.10.6",
+    "title": "Reber’s cellular basis of consciousness",
+    "page": 57,
+    "level": 3,
+    "line": "9.10.6. Reber’s cellular basis of consciousness"
+  },
+  {
+    "section_id": "9.10.7",
+    "title": "Feinberg and Mallatt’s ancient origins of consciousness",
+    "page": 57,
+    "level": 3,
+    "line": "9.10.7. Feinberg and Mallatt’s ancient origins of consciousness"
+  },
+  {
+    "section_id": "9.10.8",
+    "title": "Levin’s technological approach to mind everywhere",
+    "page": 58,
+    "level": 3,
+    "line": "9.10.8. Levin’s technological approach to mind everywhere"
+  },
+  {
+    "section_id": "9.10.9",
+    "title": "No hard problem in William James’s psychology",
+    "page": 58,
+    "level": 3,
+    "line": "9.10.9. No hard problem in William James’s psychology"
+  },
+  {
+    "section_id": "10",
+    "title": "Non-reductive physicalism",
+    "page": 58,
+    "level": 1,
+    "line": "10. Non-reductive physicalism"
+  },
+  {
+    "section_id": "10.1",
+    "title": "Ellis’s strong emergence and top-down causation",
+    "page": 59,
+    "level": 2,
+    "line": "10.1. Ellis’s strong emergence and top-down causation"
+  },
+  {
+    "section_id": "10.2",
+    "title": "Murphy ’ s non-reductive physicalism",
+    "page": 60,
+    "level": 2,
+    "line": "10.2. Murphy ’ s non-reductive physicalism"
+  },
+  {
+    "section_id": "10.3",
+    "title": "Van Inwagen ’ s Christian materialism and the resurrection of the",
+    "page": 60,
+    "level": 2,
+    "line": "10.3. Van Inwagen ’ s Christian materialism and the resurrection of the"
+  },
+  {
+    "section_id": "10.4",
+    "title": "Nagasawa ’ s nontheoretical physicalism",
+    "page": 61,
+    "level": 2,
+    "line": "10.4. Nagasawa ’ s nontheoretical physicalism"
+  },
+  {
+    "section_id": "10.5",
+    "title": "Sanfey ’ s Abstract Realism",
+    "page": 61,
+    "level": 2,
+    "line": "10.5. Sanfey ’ s Abstract Realism"
+  },
+  {
+    "section_id": "10.6",
+    "title": "Northoff ’ s non-reductive neurophilosophy",
+    "page": 61,
+    "level": 2,
+    "line": "10.6. Northoff ’ s non-reductive neurophilosophy"
+  },
+  {
+    "section_id": "11",
+    "title": "Quantum theories",
+    "page": 61,
+    "level": 1,
+    "line": "11. Quantum theories"
+  },
+  {
+    "section_id": "11.1",
+    "title": "Penrose-Hameroff ’ s orchestrated objective reduction",
+    "page": 62,
+    "level": 2,
+    "line": "11.1. Penrose-Hameroff ’ s orchestrated objective reduction"
+  },
+  {
+    "section_id": "11.2",
+    "title": "Stapp ’ s collapsing the wave function via asking “ questions ”",
+    "page": 63,
+    "level": 2,
+    "line": "11.2. Stapp ’ s collapsing the wave function via asking “ questions ”"
+  },
+  {
+    "section_id": "11.3",
+    "title": "Bohm’s implicate-explicate order",
+    "page": 64,
+    "level": 2,
+    "line": "11.3. Bohm’s implicate-explicate order"
+  },
+  {
+    "section_id": "11.4",
+    "title": "Pylkk ¨anen ’ s quantum potential energy and active information",
+    "page": 65,
+    "level": 2,
+    "line": "11.4. Pylkk ¨anen ’ s quantum potential energy and active information"
+  },
+  {
+    "section_id": "11.5",
+    "title": "Wolfram ’ s consciousness in the ruliad",
+    "page": 65,
+    "level": 2,
+    "line": "11.5. Wolfram ’ s consciousness in the ruliad"
+  },
+  {
+    "section_id": "11.6",
+    "title": "Beck-Eccles ’ s quantum processes in the synapse",
+    "page": 65,
+    "level": 2,
+    "line": "11.6. Beck-Eccles ’ s quantum processes in the synapse"
+  },
+  {
+    "section_id": "11.7",
+    "title": "Kauffman’s mind mediating possibles to actuals",
+    "page": 66,
+    "level": 2,
+    "line": "11.7. Kauffman’s mind mediating possibles to actuals"
+  },
+  {
+    "section_id": "11.8",
+    "title": "Torday’s cellular and cosmic consciousness",
+    "page": 66,
+    "level": 2,
+    "line": "11.8. Torday’s cellular and cosmic consciousness"
+  },
+  {
+    "section_id": "11.9",
+    "title": "Smolin’s causal theory of views",
+    "page": 66,
+    "level": 2,
+    "line": "11.9. Smolin’s causal theory of views"
+  },
+  {
+    "section_id": "11.10",
+    "title": "Carr’s quantum theory, psi, mental space",
+    "page": 67,
+    "level": 2,
+    "line": "11.10. Carr’s quantum theory, psi, mental space"
+  },
+  {
+    "section_id": "11.11",
+    "title": "Faggin’s quantum information-based panpsychism",
+    "page": 67,
+    "level": 2,
+    "line": "11.11. Faggin’s quantum information-based panpsychism"
+  },
+  {
+    "section_id": "11.12",
+    "title": "Fisher ’ s quantum cognition",
+    "page": 68,
+    "level": 2,
+    "line": "11.12. Fisher ’ s quantum cognition"
+  },
+  {
+    "section_id": "11.13",
+    "title": "Globus ’ s quantum thermofield brain dynamics",
+    "page": 68,
+    "level": 2,
+    "line": "11.13. Globus ’ s quantum thermofield brain dynamics"
+  },
+  {
+    "section_id": "11.14",
+    "title": "Poznanski ’ s dynamic organicity theory",
+    "page": 68,
+    "level": 2,
+    "line": "11.14. Poznanski ’ s dynamic organicity theory"
+  },
+  {
+    "section_id": "11.15",
+    "title": "Quantum consciousness extensions",
+    "page": 69,
+    "level": 2,
+    "line": "11.15. Quantum consciousness extensions"
+  },
+  {
+    "section_id": "11.16",
+    "title": "Rovelli ’ s relational physics",
+    "page": 69,
+    "level": 2,
+    "line": "11.16. Rovelli ’ s relational physics"
+  },
+  {
+    "section_id": "12",
+    "title": "Integrated information theory",
+    "page": 70,
+    "level": 1,
+    "line": "12. Integrated information theory"
+  },
+  {
+    "section_id": "12.1",
+    "title": "Critiques of integrated information theory",
+    "page": 72,
+    "level": 2,
+    "line": "12.1. Critiques of integrated information theory"
+  },
+  {
+    "section_id": "12.2",
+    "title": "Koch compares integrated information theory with panpsychism",
+    "page": 72,
+    "level": 2,
+    "line": "12.2. Koch compares integrated information theory with panpsychism"
+  },
+  {
+    "section_id": "13",
+    "title": "Panpsychisms",
+    "page": 73,
+    "level": 1,
+    "line": "13. Panpsychisms"
+  },
+  {
+    "section_id": "13.1",
+    "title": "Micropsychism",
+    "page": 73,
+    "level": 2,
+    "line": "13.1. Micropsychism"
+  },
+  {
+    "section_id": "13.2",
+    "title": "Panprotopsychism",
+    "page": 73,
+    "level": 2,
+    "line": "13.2. Panprotopsychism"
+  },
+  {
+    "section_id": "13.3",
+    "title": "Cosmopsychism",
+    "page": 73,
+    "level": 2,
+    "line": "13.3. Cosmopsychism"
+  },
+  {
+    "section_id": "13.4",
+    "title": "Qualia force",
+    "page": 74,
+    "level": 2,
+    "line": "13.4. Qualia force"
+  },
+  {
+    "section_id": "13.5",
+    "title": "Qualia space",
+    "page": 74,
+    "level": 2,
+    "line": "13.5. Qualia space"
+  },
+  {
+    "section_id": "13.6",
+    "title": "Chalmers ’ s panpsychism",
+    "page": 74,
+    "level": 2,
+    "line": "13.6. Chalmers ’ s panpsychism"
+  },
+  {
+    "section_id": "13.7",
+    "title": "Strawson’s panpsychism",
+    "page": 75,
+    "level": 2,
+    "line": "13.7. Strawson’s panpsychism"
+  },
+  {
+    "section_id": "13.8",
+    "title": "Goff’s panpsychism",
+    "page": 75,
+    "level": 2,
+    "line": "13.8. Goff’s panpsychism"
+  },
+  {
+    "section_id": "13.9",
+    "title": "A. Harris’s panpsychism as fundamental field",
+    "page": 76,
+    "level": 2,
+    "line": "13.9. A. Harris’s panpsychism as fundamental field"
+  },
+  {
+    "section_id": "13.10",
+    "title": "Sheldrake’s self-organizing systems at all levels of complexity",
+    "page": 76,
+    "level": 2,
+    "line": "13.10. Sheldrake’s self-organizing systems at all levels of complexity"
+  },
+  {
+    "section_id": "13.11",
+    "title": "Wallace’s panpsychism inside physics",
+    "page": 76,
+    "level": 2,
+    "line": "13.11. Wallace’s panpsychism inside physics"
+  },
+  {
+    "section_id": "13.12",
+    "title": "Whitehead’s process theory",
+    "page": 77,
+    "level": 2,
+    "line": "13.12. Whitehead’s process theory"
+  },
+  {
+    "section_id": "14",
+    "title": "Monisms",
+    "page": 77,
+    "level": 1,
+    "line": "14. Monisms"
+  },
+  {
+    "section_id": "14.1",
+    "title": "Russellian Monism",
+    "page": 78,
+    "level": 2,
+    "line": "14.1. Russellian Monism"
+  },
+  {
+    "section_id": "14.2",
+    "title": "Davidson’s anomalous monism",
+    "page": 78,
+    "level": 2,
+    "line": "14.2. Davidson’s anomalous monism"
+  },
+  {
+    "section_id": "14.3",
+    "title": "Velmans’s reflexive monism",
+    "page": 78,
+    "level": 2,
+    "line": "14.3. Velmans’s reflexive monism"
+  },
+  {
+    "section_id": "14.4",
+    "title": "Strawson’s realistic monism and real materialism",
+    "page": 79,
+    "level": 2,
+    "line": "14.4. Strawson’s realistic monism and real materialism"
+  },
+  {
+    "section_id": "14.5",
+    "title": "Polkinghorne’s dual-aspect monism",
+    "page": 80,
+    "level": 2,
+    "line": "14.5. Polkinghorne’s dual-aspect monism"
+  },
+  {
+    "section_id": "14.6",
+    "title": "Teilhard de Cardin’s evolving consciousness",
+    "page": 80,
+    "level": 2,
+    "line": "14.6. Teilhard de Cardin’s evolving consciousness"
+  },
+  {
+    "section_id": "14.7",
+    "title": "Atmanspacher’s dual-aspect monism",
+    "page": 81,
+    "level": 2,
+    "line": "14.7. Atmanspacher’s dual-aspect monism"
+  },
+  {
+    "section_id": "14.8",
+    "title": "Ramachandran’s new physics and neuroscience",
+    "page": 81,
+    "level": 2,
+    "line": "14.8. Ramachandran’s new physics and neuroscience"
+  },
+  {
+    "section_id": "14.9",
+    "title": "Tegmark’s state of matter",
+    "page": 81,
+    "level": 2,
+    "line": "14.9. Tegmark’s state of matter"
+  },
+  {
+    "section_id": "14.10",
+    "title": "Qualia Research Institute’s state-space, qualia formalism, valence",
+    "page": 82,
+    "level": 2,
+    "line": "14.10. Qualia Research Institute’s state-space, qualia formalism, valence"
+  },
+  {
+    "section_id": "14.11",
+    "title": "Bentley Hart’s monism: consciousness, being, God",
+    "page": 82,
+    "level": 2,
+    "line": "14.11. Bentley Hart’s monism: consciousness, being, God"
+  },
+  {
+    "section_id": "14.12",
+    "title": "Leslie’s consciousness inside an infinite mind",
+    "page": 83,
+    "level": 2,
+    "line": "14.12. Leslie’s consciousness inside an infinite mind"
+  },
+  {
+    "section_id": "15",
+    "title": "Dualisms",
+    "page": 83,
+    "level": 1,
+    "line": "15. Dualisms"
+  },
+  {
+    "section_id": "15.1",
+    "title": "Property dualism",
+    "page": 84,
+    "level": 2,
+    "line": "15.1. Property dualism"
+  },
+  {
+    "section_id": "15.2",
+    "title": "Historical and traditional dualisms",
+    "page": 85,
+    "level": 2,
+    "line": "15.2. Historical and traditional dualisms"
+  },
+  {
+    "section_id": "15.3",
+    "title": "Swinburne’s substance dualism",
+    "page": 85,
+    "level": 2,
+    "line": "15.3. Swinburne’s substance dualism"
+  },
+  {
+    "section_id": "15.4",
+    "title": "Composite dualism",
+    "page": 85,
+    "level": 2,
+    "line": "15.4. Composite dualism"
+  },
+  {
+    "section_id": "15.5",
+    "title": "Stump’s Thomistic dualism",
+    "page": 86,
+    "level": 2,
+    "line": "15.5. Stump’s Thomistic dualism"
+  },
+  {
+    "section_id": "15.6",
+    "title": "Feser’s neo-Thomistic, neo-Aristotelian, common-sense dualism",
+    "page": 86,
+    "level": 2,
+    "line": "15.6. Feser’s neo-Thomistic, neo-Aristotelian, common-sense dualism"
+  },
+  {
+    "section_id": "15.7",
+    "title": "Moreland’s Christian soul",
+    "page": 87,
+    "level": 2,
+    "line": "15.7. Moreland’s Christian soul"
+  },
+  {
+    "section_id": "15.8",
+    "title": "Interactive dualism",
+    "page": 87,
+    "level": 2,
+    "line": "15.8. Interactive dualism"
+  },
+  {
+    "section_id": "15.9",
+    "title": "Emergent dualism",
+    "page": 88,
+    "level": 2,
+    "line": "15.9. Emergent dualism"
+  },
+  {
+    "section_id": "15.10",
+    "title": "Kind’s dualism 2.0",
+    "page": 88,
+    "level": 2,
+    "line": "15.10. Kind’s dualism 2.0"
+  },
+  {
+    "section_id": "15.11",
+    "title": "Soul in the Hebrew Bible and Jewish philosophy",
+    "page": 89,
+    "level": 2,
+    "line": "15.11. Soul in the Hebrew Bible and Jewish philosophy"
+  },
+  {
+    "section_id": "15.12",
+    "title": "Soul in the New Testament and Christian philosophy",
+    "page": 89,
+    "level": 2,
+    "line": "15.12. Soul in the New Testament and Christian philosophy"
+  },
+  {
+    "section_id": "15.13",
+    "title": "Soul in Islamic philosophy",
+    "page": 90,
+    "level": 2,
+    "line": "15.13. Soul in Islamic philosophy"
+  },
+  {
+    "section_id": "15.14",
+    "title": "God as the supplier of souls",
+    "page": 91,
+    "level": 2,
+    "line": "15.14. God as the supplier of souls"
+  },
+  {
+    "section_id": "15.15",
+    "title": "Personal and cosmic consciousness in Indian philosophy",
+    "page": 91,
+    "level": 2,
+    "line": "15.15. Personal and cosmic consciousness in Indian philosophy"
+  },
+  {
+    "section_id": "15.16",
+    "title": "Soul in indigenous religions",
+    "page": 92,
+    "level": 2,
+    "line": "15.16. Soul in indigenous religions"
+  },
+  {
+    "section_id": "15.17",
+    "title": "Realms of the soul",
+    "page": 93,
+    "level": 2,
+    "line": "15.17. Realms of the soul"
+  },
+  {
+    "section_id": "15.18",
+    "title": "Theosophy ’ s eclectic soul and consciousness",
+    "page": 93,
+    "level": 2,
+    "line": "15.18. Theosophy ’ s eclectic soul and consciousness"
+  },
+  {
+    "section_id": "15.19",
+    "title": "Steiner ’ s esoteric soul and consciousness",
+    "page": 93,
+    "level": 2,
+    "line": "15.19. Steiner ’ s esoteric soul and consciousness"
+  },
+  {
+    "section_id": "15.20",
+    "title": "Nonphysical component in the human mind",
+    "page": 94,
+    "level": 2,
+    "line": "15.20. Nonphysical component in the human mind"
+  },
+  {
+    "section_id": "16",
+    "title": "Idealisms",
+    "page": 94,
+    "level": 1,
+    "line": "16. Idealisms"
+  },
+  {
+    "section_id": "16.1",
+    "title": "Indian cosmic consciousness",
+    "page": 95,
+    "level": 2,
+    "line": "16.1. Indian cosmic consciousness"
+  },
+  {
+    "section_id": "16.2",
+    "title": "Buddhism ’ s empty, illusory phenomenal consciousness",
+    "page": 97,
+    "level": 2,
+    "line": "16.2. Buddhism ’ s empty, illusory phenomenal consciousness"
+  },
+  {
+    "section_id": "16.3",
+    "title": "Dao De Jing ’ s constant dao",
+    "page": 98,
+    "level": 2,
+    "line": "16.3. Dao De Jing ’ s constant dao"
+  },
+  {
+    "section_id": "16.4",
+    "title": "Kastrup ’ s analytic idealism",
+    "page": 98,
+    "level": 2,
+    "line": "16.4. Kastrup ’ s analytic idealism"
+  },
+  {
+    "section_id": "16.5",
+    "title": "Hoffman’s conscious realism: the case against reality",
+    "page": 99,
+    "level": 2,
+    "line": "16.5. Hoffman’s conscious realism: the case against reality"
+  },
+  {
+    "section_id": "16.6",
+    "title": "McGilchrist’s relational, creative-process idealism",
+    "page": 99,
+    "level": 2,
+    "line": "16.6. McGilchrist’s relational, creative-process idealism"
+  },
+  {
+    "section_id": "16.7",
+    "title": "Chopra’s only the whole is conscious",
+    "page": 100,
+    "level": 2,
+    "line": "16.7. Chopra’s only the whole is conscious"
+  },
+  {
+    "section_id": "16.8",
+    "title": "How consciousness becomes the physical universe",
+    "page": 101,
+    "level": 2,
+    "line": "16.8. How consciousness becomes the physical universe"
+  },
+  {
+    "section_id": "16.9",
+    "title": "Goswami’s self-aware universe",
+    "page": 101,
+    "level": 2,
+    "line": "16.9. Goswami’s self-aware universe"
+  },
+  {
+    "section_id": "16.10",
+    "title": "Spira’s non-duality",
+    "page": 101,
+    "level": 2,
+    "line": "16.10. Spira’s non-duality"
+  },
+  {
+    "section_id": "16.11",
+    "title": "Nader’s all there is",
+    "page": 101,
+    "level": 2,
+    "line": "16.11. Nader’s all there is"
+  },
+  {
+    "section_id": "16.12",
+    "title": "Ward ’ s personal idealism: souls as embodied agents created by",
+    "page": 102,
+    "level": 2,
+    "line": "16.12. Ward ’ s personal idealism: souls as embodied agents created by"
+  },
+  {
+    "section_id": "16.13",
+    "title": "Albahari ’ s perennial idealism",
+    "page": 102,
+    "level": 2,
+    "line": "16.13. Albahari ’ s perennial idealism"
+  },
+  {
+    "section_id": "16.14",
+    "title": "Meijer ’ s universal knowledge field",
+    "page": 102,
+    "level": 2,
+    "line": "16.14. Meijer ’ s universal knowledge field"
+  },
+  {
+    "section_id": "16.15",
+    "title": "Idealism’s imaginative expressions",
+    "page": 103,
+    "level": 2,
+    "line": "16.15. Idealism’s imaginative expressions"
+  },
+  {
+    "section_id": "17",
+    "title": "Anomalous and altered states theories",
+    "page": 104,
+    "level": 1,
+    "line": "17. Anomalous and altered states theories"
+  },
+  {
+    "section_id": "17.1",
+    "title": "Bergson’s multiplicity, duration, perception, memory",
+    "page": 105,
+    "level": 2,
+    "line": "17.1. Bergson’s multiplicity, duration, perception, memory"
+  },
+  {
+    "section_id": "17.2",
+    "title": "Jung’s collective unconscious and synchronicity",
+    "page": 106,
+    "level": 2,
+    "line": "17.2. Jung’s collective unconscious and synchronicity"
+  },
+  {
+    "section_id": "17.3",
+    "title": "Radin ’ s challenge to materialism",
+    "page": 107,
+    "level": 2,
+    "line": "17.3. Radin ’ s challenge to materialism"
+  },
+  {
+    "section_id": "17.4",
+    "title": "Tart ’ s emergent interactionism",
+    "page": 108,
+    "level": 2,
+    "line": "17.4. Tart ’ s emergent interactionism"
+  },
+  {
+    "section_id": "17.5",
+    "title": "Josephson ’ s psi-informed models",
+    "page": 108,
+    "level": 2,
+    "line": "17.5. Josephson ’ s psi-informed models"
+  },
+  {
+    "section_id": "17.6",
+    "title": "Wilber ’ s Integral Theory",
+    "page": 108,
+    "level": 2,
+    "line": "17.6. Wilber ’ s Integral Theory"
+  },
+  {
+    "section_id": "17.7",
+    "title": "Combs’s chaotic attractor and autopoietic systems",
+    "page": 109,
+    "level": 2,
+    "line": "17.7. Combs’s chaotic attractor and autopoietic systems"
+  },
+  {
+    "section_id": "17.8",
+    "title": "Schooler’s resonance theory and subjective time",
+    "page": 109,
+    "level": 2,
+    "line": "17.8. Schooler’s resonance theory and subjective time"
+  },
+  {
+    "section_id": "17.9",
+    "title": "Sheldrake’s morphic fields",
+    "page": 110,
+    "level": 2,
+    "line": "17.9. Sheldrake’s morphic fields"
+  },
+  {
+    "section_id": "17.10",
+    "title": "Grinberg’s syntergic/neuronal field theory",
+    "page": 111,
+    "level": 2,
+    "line": "17.10. Grinberg’s syntergic/neuronal field theory"
+  },
+  {
+    "section_id": "17.11",
+    "title": "Graboi’s three-aspect model",
+    "page": 111,
+    "level": 2,
+    "line": "17.11. Graboi’s three-aspect model"
+  },
+  {
+    "section_id": "17.12",
+    "title": "Near death experiences, survival, past lives",
+    "page": 111,
+    "level": 2,
+    "line": "17.12. Near death experiences, survival, past lives"
+  },
+  {
+    "section_id": "17.13",
+    "title": "DOPS’s consciousness research and theory",
+    "page": 112,
+    "level": 2,
+    "line": "17.13. DOPS’s consciousness research and theory"
+  },
+  {
+    "section_id": "17.14",
+    "title": "Bitbol’s phenomenological ontology",
+    "page": 113,
+    "level": 2,
+    "line": "17.14. Bitbol’s phenomenological ontology"
+  },
+  {
+    "section_id": "17.15",
+    "title": "Campbell ’ s theory of everything",
+    "page": 114,
+    "level": 2,
+    "line": "17.15. Campbell ’ s theory of everything"
+  },
+  {
+    "section_id": "17.16",
+    "title": "Hiller ’ s eternal discarnate consciousness",
+    "page": 114,
+    "level": 2,
+    "line": "17.16. Hiller ’ s eternal discarnate consciousness"
+  },
+  {
+    "section_id": "17.17",
+    "title": "Harp ’ s universal or God consciousness",
+    "page": 114,
+    "level": 2,
+    "line": "17.17. Harp ’ s universal or God consciousness"
+  },
+  {
+    "section_id": "17.18",
+    "title": "Swimme ’ s cosmogenesis",
+    "page": 115,
+    "level": 2,
+    "line": "17.18. Swimme ’ s cosmogenesis"
+  },
+  {
+    "section_id": "17.19",
+    "title": "Langan ’ s cognitive-theoretic model of the universe",
+    "page": 115,
+    "level": 2,
+    "line": "17.19. Langan ’ s cognitive-theoretic model of the universe"
+  },
+  {
+    "section_id": "17.20",
+    "title": "Meditation and the brain",
+    "page": 115,
+    "level": 2,
+    "line": "17.20. Meditation and the brain"
+  },
+  {
+    "section_id": "17.21",
+    "title": "Psychedelic theories of consciousness",
+    "page": 115,
+    "level": 2,
+    "line": "17.21. Psychedelic theories of consciousness"
+  },
+  {
+    "section_id": "18",
+    "title": "Challenge theories",
+    "page": 117,
+    "level": 1,
+    "line": "18. Challenge theories"
+  },
+  {
+    "section_id": "18.1",
+    "title": "Nagel’s mind and cosmos",
+    "page": 117,
+    "level": 2,
+    "line": "18.1. Nagel’s mind and cosmos"
+  },
+  {
+    "section_id": "18.2",
+    "title": "McGinn’s ultimate mystery (mysterianism)",
+    "page": 117,
+    "level": 2,
+    "line": "18.2. McGinn’s ultimate mystery (mysterianism)"
+  },
+  {
+    "section_id": "18.3",
+    "title": "S. Harris’s mystery of consciousness",
+    "page": 118,
+    "level": 2,
+    "line": "18.3. S. Harris’s mystery of consciousness"
+  },
+  {
+    "section_id": "18.4",
+    "title": "Eagleman’s possibilianism",
+    "page": 118,
+    "level": 2,
+    "line": "18.4. Eagleman’s possibilianism"
+  },
+  {
+    "section_id": "18.5",
+    "title": "Tallis’s anti-neuromania skepticism",
+    "page": 119,
+    "level": 2,
+    "line": "18.5. Tallis’s anti-neuromania skepticism"
+  },
+  {
+    "section_id": "18.6",
+    "title": "Nagasawa’s mind-body problem in an infinitely decomposable",
+    "page": 119,
+    "level": 2,
+    "line": "18.6. Nagasawa’s mind-body problem in an infinitely decomposable"
+  },
+  {
+    "section_id": "18.7",
+    "title": "Musser’s “is it really so hard?”",
+    "page": 119,
+    "level": 2,
+    "line": "18.7. Musser’s “is it really so hard?”"
+  },
+  {
+    "section_id": "18.8",
+    "title": "Davies ’ s consciousness in the cosmos",
+    "page": 120,
+    "level": 2,
+    "line": "18.8. Davies ’ s consciousness in the cosmos"
+  },
+  {
+    "section_id": "19",
+    "title": "Closer to truth views",
+    "page": 120,
+    "level": 1,
+    "line": "19. Closer to truth views"
+  },
+  {
+    "section_id": "20",
+    "title": "Chalmers’s meta-problem of consciousness",
+    "page": 121,
+    "level": 1,
+    "line": "20. Chalmers’s meta-problem of consciousness"
+  },
+  {
+    "section_id": "21",
+    "title": "Implications",
+    "page": 122,
+    "level": 1,
+    "line": "21. Implications"
+  },
+  {
+    "section_id": "22",
+    "title": "Meaning/purpose/value",
+    "page": 122,
+    "level": 1,
+    "line": "22. Meaning/purpose/value"
+  },
+  {
+    "section_id": "23",
+    "title": "Artificial intelligence (AI) consciousness",
+    "page": 123,
+    "level": 1,
+    "line": "23. Artificial intelligence (AI) consciousness"
+  },
+  {
+    "section_id": "24",
+    "title": "Virtual immortality",
+    "page": 125,
+    "level": 1,
+    "line": "24. Virtual immortality"
+  },
+  {
+    "section_id": "25",
+    "title": "Survival beyond death",
+    "page": 128,
+    "level": 1,
+    "line": "25. Survival beyond death"
+  },
+  {
+    "section_id": "26",
+    "title": "Reflections",
+    "page": 129,
+    "level": 1,
+    "line": "26. Reflections"
+  }
+]
