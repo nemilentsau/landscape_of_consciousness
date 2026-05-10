@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-035",
+  "title": "Quantum theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "11.1",
+    "11.2",
+    "11.3",
+    "11.4",
+    "11.5"
+  ],
+  "sections": [
+    {
+      "section_id": "11.1",
+      "title": "Penrose-Hameroff ’ s orchestrated objective reduction",
+      "pages": "62-62",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Penrose-Hameroff ’ s orchestrated objective reduction"
+      ],
+      "research_path": "data/research/11.1.json",
+      "packet_path": "packets/theories/11-01-penrose-hameroffs-orchestrated-objective-reduction.md"
+    },
+    {
+      "section_id": "11.2",
+      "title": "Stapp ’ s collapsing the wave function via asking “ questions ”",
+      "pages": "63-63",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Stapp ’ s collapsing the wave function via asking “ questions ”"
+      ],
+      "research_path": "data/research/11.2.json",
+      "packet_path": "packets/theories/11-02-stapps-collapsing-the-wave-function-via-asking-questions.md"
+    },
+    {
+      "section_id": "11.3",
+      "title": "Bohm’s implicate-explicate order",
+      "pages": "64-64",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Bohm’s implicate-explicate order"
+      ],
+      "research_path": "data/research/11.3.json",
+      "packet_path": "packets/theories/11-03-bohms-implicate-explicate-order.md"
+    },
+    {
+      "section_id": "11.4",
+      "title": "Pylkk ¨anen ’ s quantum potential energy and active information",
+      "pages": "65-65",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Pylkk ¨anen ’ s quantum potential energy and active information"
+      ],
+      "research_path": "data/research/11.4.json",
+      "packet_path": "packets/theories/11-04-pylkk-anens-quantum-potential-energy-and-active-information.md"
+    },
+    {
+      "section_id": "11.5",
+      "title": "Wolfram ’ s consciousness in the ruliad",
+      "pages": "65-65",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Wolfram ’ s consciousness in the ruliad"
+      ],
+      "research_path": "data/research/11.5.json",
+      "packet_path": "packets/theories/11-05-wolframs-consciousness-in-the-ruliad.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/11.1.json",
+    "data/research/11.2.json",
+    "data/research/11.3.json",
+    "data/research/11.4.json",
+    "data/research/11.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/11-01-penrose-hameroffs-orchestrated-objective-reduction.md",
+    "packets/theories/11-02-stapps-collapsing-the-wave-function-via-asking-questions.md",
+    "packets/theories/11-03-bohms-implicate-explicate-order.md",
+    "packets/theories/11-04-pylkk-anens-quantum-potential-energy-and-active-information.md",
+    "packets/theories/11-05-wolframs-consciousness-in-the-ruliad.md"
+  ],
+  "script_job_id": "group-035-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-035/script.json",
+  "notebooklm_bundle_dir": "episodes/group-035/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

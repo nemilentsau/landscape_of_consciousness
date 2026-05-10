@@ -1,0 +1,53 @@
+{
+  "episode_id": "group-039",
+  "title": "Integrated information theory",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 2,
+  "section_ids": [
+    "12.1",
+    "12.2"
+  ],
+  "sections": [
+    {
+      "section_id": "12.1",
+      "title": "Critiques of integrated information theory",
+      "pages": "72-72",
+      "taxonomy_path": [
+        "Integrated information theory",
+        "Critiques of integrated information theory"
+      ],
+      "research_path": "data/research/12.1.json",
+      "packet_path": "packets/theories/12-01-critiques-of-integrated-information-theory.md"
+    },
+    {
+      "section_id": "12.2",
+      "title": "Koch compares integrated information theory with panpsychism",
+      "pages": "72-72",
+      "taxonomy_path": [
+        "Integrated information theory",
+        "Koch compares integrated information theory with panpsychism"
+      ],
+      "research_path": "data/research/12.2.json",
+      "packet_path": "packets/theories/12-02-koch-compares-integrated-information-theory-with-panpsychism.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/12.1.json",
+    "data/research/12.2.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/12-01-critiques-of-integrated-information-theory.md",
+    "packets/theories/12-02-koch-compares-integrated-information-theory-with-panpsychism.md"
+  ],
+  "script_job_id": "group-039-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-039/script.json",
+  "notebooklm_bundle_dir": "episodes/group-039/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

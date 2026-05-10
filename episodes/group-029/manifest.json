@@ -1,0 +1,100 @@
+{
+  "episode_id": "group-029",
+  "title": "Materialism theories -> Language relationships Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.9.1",
+    "9.9.2",
+    "9.9.3",
+    "9.9.4",
+    "9.9.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.9.1",
+      "title": "Chomsky’s language and consciousness",
+      "pages": "52-52",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Language relationships",
+        "Chomsky’s language and consciousness"
+      ],
+      "research_path": "data/research/9.9.1.json",
+      "packet_path": "packets/theories/09-09-01-chomskys-language-and-consciousness.md"
+    },
+    {
+      "section_id": "9.9.2",
+      "title": "Searle’s language and consciousness",
+      "pages": "52-52",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Language relationships",
+        "Searle’s language and consciousness"
+      ],
+      "research_path": "data/research/9.9.2.json",
+      "packet_path": "packets/theories/09-09-02-searles-language-and-consciousness.md"
+    },
+    {
+      "section_id": "9.9.3",
+      "title": "Koch’s consciousness does not depend on language",
+      "pages": "53-53",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Language relationships",
+        "Koch’s consciousness does not depend on language"
+      ],
+      "research_path": "data/research/9.9.3.json",
+      "packet_path": "packets/theories/09-09-03-kochs-consciousness-does-not-depend-on-language.md"
+    },
+    {
+      "section_id": "9.9.4",
+      "title": "Smith’s language as classifier of consciousness",
+      "pages": "53-53",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Language relationships",
+        "Smith’s language as classifier of consciousness"
+      ],
+      "research_path": "data/research/9.9.4.json",
+      "packet_path": "packets/theories/09-09-04-smiths-language-as-classifier-of-consciousness.md"
+    },
+    {
+      "section_id": "9.9.5",
+      "title": "Jaynes’s breakdown of the bicameral mind",
+      "pages": "53-53",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Language relationships",
+        "Jaynes’s breakdown of the bicameral mind"
+      ],
+      "research_path": "data/research/9.9.5.json",
+      "packet_path": "packets/theories/09-09-05-jayness-breakdown-of-the-bicameral-mind.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.9.1.json",
+    "data/research/9.9.2.json",
+    "data/research/9.9.3.json",
+    "data/research/9.9.4.json",
+    "data/research/9.9.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-09-01-chomskys-language-and-consciousness.md",
+    "packets/theories/09-09-02-searles-language-and-consciousness.md",
+    "packets/theories/09-09-03-kochs-consciousness-does-not-depend-on-language.md",
+    "packets/theories/09-09-04-smiths-language-as-classifier-of-consciousness.md",
+    "packets/theories/09-09-05-jayness-breakdown-of-the-bicameral-mind.md"
+  ],
+  "script_job_id": "group-029-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-029/script.json",
+  "notebooklm_bundle_dir": "episodes/group-029/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-058",
+  "title": "Challenge theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "18.1",
+    "18.2",
+    "18.3",
+    "18.4",
+    "18.5"
+  ],
+  "sections": [
+    {
+      "section_id": "18.1",
+      "title": "Nagel’s mind and cosmos",
+      "pages": "117-117",
+      "taxonomy_path": [
+        "Challenge theories",
+        "Nagel’s mind and cosmos"
+      ],
+      "research_path": "data/research/18.1.json",
+      "packet_path": "packets/theories/18-01-nagels-mind-and-cosmos.md"
+    },
+    {
+      "section_id": "18.2",
+      "title": "McGinn’s ultimate mystery (mysterianism)",
+      "pages": "117-117",
+      "taxonomy_path": [
+        "Challenge theories",
+        "McGinn’s ultimate mystery (mysterianism)"
+      ],
+      "research_path": "data/research/18.2.json",
+      "packet_path": "packets/theories/18-02-mcginns-ultimate-mystery-mysterianism.md"
+    },
+    {
+      "section_id": "18.3",
+      "title": "S. Harris’s mystery of consciousness",
+      "pages": "118-118",
+      "taxonomy_path": [
+        "Challenge theories",
+        "S. Harris’s mystery of consciousness"
+      ],
+      "research_path": "data/research/18.3.json",
+      "packet_path": "packets/theories/18-03-s-harriss-mystery-of-consciousness.md"
+    },
+    {
+      "section_id": "18.4",
+      "title": "Eagleman’s possibilianism",
+      "pages": "118-118",
+      "taxonomy_path": [
+        "Challenge theories",
+        "Eagleman’s possibilianism"
+      ],
+      "research_path": "data/research/18.4.json",
+      "packet_path": "packets/theories/18-04-eaglemans-possibilianism.md"
+    },
+    {
+      "section_id": "18.5",
+      "title": "Tallis’s anti-neuromania skepticism",
+      "pages": "119-119",
+      "taxonomy_path": [
+        "Challenge theories",
+        "Tallis’s anti-neuromania skepticism"
+      ],
+      "research_path": "data/research/18.5.json",
+      "packet_path": "packets/theories/18-05-talliss-anti-neuromania-skepticism.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/18.1.json",
+    "data/research/18.2.json",
+    "data/research/18.3.json",
+    "data/research/18.4.json",
+    "data/research/18.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/18-01-nagels-mind-and-cosmos.md",
+    "packets/theories/18-02-mcginns-ultimate-mystery-mysterianism.md",
+    "packets/theories/18-03-s-harriss-mystery-of-consciousness.md",
+    "packets/theories/18-04-eaglemans-possibilianism.md",
+    "packets/theories/18-05-talliss-anti-neuromania-skepticism.md"
+  ],
+  "script_job_id": "group-058-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-058/script.json",
+  "notebooklm_bundle_dir": "episodes/group-058/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

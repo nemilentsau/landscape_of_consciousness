@@ -1,0 +1,38 @@
+{
+  "episode_id": "group-006",
+  "title": "Top-level sections Part 6",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 1,
+  "section_ids": [
+    "26"
+  ],
+  "sections": [
+    {
+      "section_id": "26",
+      "title": "Reflections",
+      "pages": "129-142",
+      "taxonomy_path": [
+        "Reflections"
+      ],
+      "research_path": "data/research/26.json",
+      "packet_path": "packets/theories/26-reflections.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/26.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/26-reflections.md"
+  ],
+  "script_job_id": "group-006-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-006/script.json",
+  "notebooklm_bundle_dir": "episodes/group-006/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

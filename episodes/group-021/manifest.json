@@ -1,0 +1,55 @@
+{
+  "episode_id": "group-021",
+  "title": "Materialism theories -> Homeostatic and affective theories Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 2,
+  "section_ids": [
+    "9.5.11",
+    "9.5.12"
+  ],
+  "sections": [
+    {
+      "section_id": "9.5.11",
+      "title": "Projective consciousness model",
+      "pages": "37-37",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Homeostatic and affective theories",
+        "Projective consciousness model"
+      ],
+      "research_path": "data/research/9.5.11.json",
+      "packet_path": "packets/theories/09-05-11-projective-consciousness-model.md"
+    },
+    {
+      "section_id": "9.5.12",
+      "title": "Pepperell’s organization of energy",
+      "pages": "37-37",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Homeostatic and affective theories",
+        "Pepperell’s organization of energy"
+      ],
+      "research_path": "data/research/9.5.12.json",
+      "packet_path": "packets/theories/09-05-12-pepperells-organization-of-energy.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.5.11.json",
+    "data/research/9.5.12.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-05-11-projective-consciousness-model.md",
+    "packets/theories/09-05-12-pepperells-organization-of-energy.md"
+  ],
+  "script_job_id": "group-021-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-021/script.json",
+  "notebooklm_bundle_dir": "episodes/group-021/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

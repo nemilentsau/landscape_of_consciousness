@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-033",
+  "title": "Non-reductive physicalism Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "10.1",
+    "10.2",
+    "10.3",
+    "10.4",
+    "10.5"
+  ],
+  "sections": [
+    {
+      "section_id": "10.1",
+      "title": "Ellis’s strong emergence and top-down causation",
+      "pages": "59-59",
+      "taxonomy_path": [
+        "Non-reductive physicalism",
+        "Ellis’s strong emergence and top-down causation"
+      ],
+      "research_path": "data/research/10.1.json",
+      "packet_path": "packets/theories/10-01-elliss-strong-emergence-and-top-down-causation.md"
+    },
+    {
+      "section_id": "10.2",
+      "title": "Murphy ’ s non-reductive physicalism",
+      "pages": "60-60",
+      "taxonomy_path": [
+        "Non-reductive physicalism",
+        "Murphy ’ s non-reductive physicalism"
+      ],
+      "research_path": "data/research/10.2.json",
+      "packet_path": "packets/theories/10-02-murphys-non-reductive-physicalism.md"
+    },
+    {
+      "section_id": "10.3",
+      "title": "Van Inwagen ’ s Christian materialism and the resurrection of the",
+      "pages": "60-60",
+      "taxonomy_path": [
+        "Non-reductive physicalism",
+        "Van Inwagen ’ s Christian materialism and the resurrection of the"
+      ],
+      "research_path": "data/research/10.3.json",
+      "packet_path": "packets/theories/10-03-van-inwagens-christian-materialism-and-the-resurrection-of-the.md"
+    },
+    {
+      "section_id": "10.4",
+      "title": "Nagasawa ’ s nontheoretical physicalism",
+      "pages": "61-61",
+      "taxonomy_path": [
+        "Non-reductive physicalism",
+        "Nagasawa ’ s nontheoretical physicalism"
+      ],
+      "research_path": "data/research/10.4.json",
+      "packet_path": "packets/theories/10-04-nagasawas-nontheoretical-physicalism.md"
+    },
+    {
+      "section_id": "10.5",
+      "title": "Sanfey ’ s Abstract Realism",
+      "pages": "61-61",
+      "taxonomy_path": [
+        "Non-reductive physicalism",
+        "Sanfey ’ s Abstract Realism"
+      ],
+      "research_path": "data/research/10.5.json",
+      "packet_path": "packets/theories/10-05-sanfeys-abstract-realism.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/10.1.json",
+    "data/research/10.2.json",
+    "data/research/10.3.json",
+    "data/research/10.4.json",
+    "data/research/10.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/10-01-elliss-strong-emergence-and-top-down-causation.md",
+    "packets/theories/10-02-murphys-non-reductive-physicalism.md",
+    "packets/theories/10-03-van-inwagens-christian-materialism-and-the-resurrection-of-the.md",
+    "packets/theories/10-04-nagasawas-nontheoretical-physicalism.md",
+    "packets/theories/10-05-sanfeys-abstract-realism.md"
+  ],
+  "script_job_id": "group-033-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-033/script.json",
+  "notebooklm_bundle_dir": "episodes/group-033/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

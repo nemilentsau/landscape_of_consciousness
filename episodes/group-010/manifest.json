@@ -1,0 +1,100 @@
+{
+  "episode_id": "group-010",
+  "title": "Materialism theories -> Philosophical Theories Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.1.6",
+    "9.1.7",
+    "9.1.8",
+    "9.1.9",
+    "9.1.10"
+  ],
+  "sections": [
+    {
+      "section_id": "9.1.6",
+      "title": "Searle’s biological naturalism",
+      "pages": "16-16",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Searle’s biological naturalism"
+      ],
+      "research_path": "data/research/9.1.6.json",
+      "packet_path": "packets/theories/09-01-06-searles-biological-naturalism.md"
+    },
+    {
+      "section_id": "9.1.7",
+      "title": "Block’s biological reductionism",
+      "pages": "16-16",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Block’s biological reductionism"
+      ],
+      "research_path": "data/research/9.1.7.json",
+      "packet_path": "packets/theories/09-01-07-blocks-biological-reductionism.md"
+    },
+    {
+      "section_id": "9.1.8",
+      "title": "Flanagan’s constructive naturalism",
+      "pages": "16-16",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Flanagan’s constructive naturalism"
+      ],
+      "research_path": "data/research/9.1.8.json",
+      "packet_path": "packets/theories/09-01-08-flanagans-constructive-naturalism.md"
+    },
+    {
+      "section_id": "9.1.9",
+      "title": "Papineau ’ s mind-brain identity",
+      "pages": "17-17",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Papineau ’ s mind-brain identity"
+      ],
+      "research_path": "data/research/9.1.9.json",
+      "packet_path": "packets/theories/09-01-09-papineaus-mind-brain-identity.md"
+    },
+    {
+      "section_id": "9.1.10",
+      "title": "Goldstein’s mind-body problem",
+      "pages": "18-18",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Goldstein’s mind-body problem"
+      ],
+      "research_path": "data/research/9.1.10.json",
+      "packet_path": "packets/theories/09-01-10-goldsteins-mind-body-problem.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.1.6.json",
+    "data/research/9.1.7.json",
+    "data/research/9.1.8.json",
+    "data/research/9.1.9.json",
+    "data/research/9.1.10.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-01-06-searles-biological-naturalism.md",
+    "packets/theories/09-01-07-blocks-biological-reductionism.md",
+    "packets/theories/09-01-08-flanagans-constructive-naturalism.md",
+    "packets/theories/09-01-09-papineaus-mind-brain-identity.md",
+    "packets/theories/09-01-10-goldsteins-mind-body-problem.md"
+  ],
+  "script_job_id": "group-010-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-010/script.json",
+  "notebooklm_bundle_dir": "episodes/group-010/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

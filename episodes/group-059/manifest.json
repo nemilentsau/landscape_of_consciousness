@@ -1,0 +1,67 @@
+{
+  "episode_id": "group-059",
+  "title": "Challenge theories Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 3,
+  "section_ids": [
+    "18.6",
+    "18.7",
+    "18.8"
+  ],
+  "sections": [
+    {
+      "section_id": "18.6",
+      "title": "Nagasawa’s mind-body problem in an infinitely decomposable",
+      "pages": "119-119",
+      "taxonomy_path": [
+        "Challenge theories",
+        "Nagasawa’s mind-body problem in an infinitely decomposable"
+      ],
+      "research_path": "data/research/18.6.json",
+      "packet_path": "packets/theories/18-06-nagasawas-mind-body-problem-in-an-infinitely-decomposable.md"
+    },
+    {
+      "section_id": "18.7",
+      "title": "Musser’s “is it really so hard?”",
+      "pages": "119-119",
+      "taxonomy_path": [
+        "Challenge theories",
+        "Musser’s “is it really so hard?”"
+      ],
+      "research_path": "data/research/18.7.json",
+      "packet_path": "packets/theories/18-07-mussers-is-it-really-so-hard.md"
+    },
+    {
+      "section_id": "18.8",
+      "title": "Davies ’ s consciousness in the cosmos",
+      "pages": "120-120",
+      "taxonomy_path": [
+        "Challenge theories",
+        "Davies ’ s consciousness in the cosmos"
+      ],
+      "research_path": "data/research/18.8.json",
+      "packet_path": "packets/theories/18-08-daviess-consciousness-in-the-cosmos.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/18.6.json",
+    "data/research/18.7.json",
+    "data/research/18.8.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/18-06-nagasawas-mind-body-problem-in-an-infinitely-decomposable.md",
+    "packets/theories/18-07-mussers-is-it-really-so-hard.md",
+    "packets/theories/18-08-daviess-consciousness-in-the-cosmos.md"
+  ],
+  "script_job_id": "group-059-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-059/script.json",
+  "notebooklm_bundle_dir": "episodes/group-059/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

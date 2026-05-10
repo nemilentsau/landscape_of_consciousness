@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-049",
+  "title": "Dualisms Part 4",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "15.16",
+    "15.17",
+    "15.18",
+    "15.19",
+    "15.20"
+  ],
+  "sections": [
+    {
+      "section_id": "15.16",
+      "title": "Soul in indigenous religions",
+      "pages": "92-92",
+      "taxonomy_path": [
+        "Dualisms",
+        "Soul in indigenous religions"
+      ],
+      "research_path": "data/research/15.16.json",
+      "packet_path": "packets/theories/15-16-soul-in-indigenous-religions.md"
+    },
+    {
+      "section_id": "15.17",
+      "title": "Realms of the soul",
+      "pages": "93-93",
+      "taxonomy_path": [
+        "Dualisms",
+        "Realms of the soul"
+      ],
+      "research_path": "data/research/15.17.json",
+      "packet_path": "packets/theories/15-17-realms-of-the-soul.md"
+    },
+    {
+      "section_id": "15.18",
+      "title": "Theosophy ’ s eclectic soul and consciousness",
+      "pages": "93-93",
+      "taxonomy_path": [
+        "Dualisms",
+        "Theosophy ’ s eclectic soul and consciousness"
+      ],
+      "research_path": "data/research/15.18.json",
+      "packet_path": "packets/theories/15-18-theosophys-eclectic-soul-and-consciousness.md"
+    },
+    {
+      "section_id": "15.19",
+      "title": "Steiner ’ s esoteric soul and consciousness",
+      "pages": "93-93",
+      "taxonomy_path": [
+        "Dualisms",
+        "Steiner ’ s esoteric soul and consciousness"
+      ],
+      "research_path": "data/research/15.19.json",
+      "packet_path": "packets/theories/15-19-steiners-esoteric-soul-and-consciousness.md"
+    },
+    {
+      "section_id": "15.20",
+      "title": "Nonphysical component in the human mind",
+      "pages": "94-94",
+      "taxonomy_path": [
+        "Dualisms",
+        "Nonphysical component in the human mind"
+      ],
+      "research_path": "data/research/15.20.json",
+      "packet_path": "packets/theories/15-20-nonphysical-component-in-the-human-mind.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/15.16.json",
+    "data/research/15.17.json",
+    "data/research/15.18.json",
+    "data/research/15.19.json",
+    "data/research/15.20.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/15-16-soul-in-indigenous-religions.md",
+    "packets/theories/15-17-realms-of-the-soul.md",
+    "packets/theories/15-18-theosophys-eclectic-soul-and-consciousness.md",
+    "packets/theories/15-19-steiners-esoteric-soul-and-consciousness.md",
+    "packets/theories/15-20-nonphysical-component-in-the-human-mind.md"
+  ],
+  "script_job_id": "group-049-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-049/script.json",
+  "notebooklm_bundle_dir": "episodes/group-049/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "episode_id": "group-011",
+  "title": "Materialism theories -> Philosophical Theories Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 2,
+  "section_ids": [
+    "9.1.11",
+    "9.1.12"
+  ],
+  "sections": [
+    {
+      "section_id": "9.1.11",
+      "title": "Hardcastle’s argument against materialism skeptics",
+      "pages": "18-18",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Hardcastle’s argument against materialism skeptics"
+      ],
+      "research_path": "data/research/9.1.11.json",
+      "packet_path": "packets/theories/09-01-11-hardcastles-argument-against-materialism-skeptics.md"
+    },
+    {
+      "section_id": "9.1.12",
+      "title": "Stoljar’s epistemic view and non-standard physicalism",
+      "pages": "19-19",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories",
+        "Stoljar’s epistemic view and non-standard physicalism"
+      ],
+      "research_path": "data/research/9.1.12.json",
+      "packet_path": "packets/theories/09-01-12-stoljars-epistemic-view-and-non-standard-physicalism.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.1.11.json",
+    "data/research/9.1.12.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-01-11-hardcastles-argument-against-materialism-skeptics.md",
+    "packets/theories/09-01-12-stoljars-epistemic-view-and-non-standard-physicalism.md"
+  ],
+  "script_job_id": "group-011-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-011/script.json",
+  "notebooklm_bundle_dir": "episodes/group-011/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

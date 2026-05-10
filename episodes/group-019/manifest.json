@@ -1,0 +1,100 @@
+{
+  "episode_id": "group-019",
+  "title": "Materialism theories -> Homeostatic and affective theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.5.1",
+    "9.5.2",
+    "9.5.3",
+    "9.5.4",
+    "9.5.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.5.1",
+      "title": "Predictive theories (Top-down)",
+      "pages": "32-32",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Homeostatic and affective theories",
+        "Predictive theories (Top-down)"
+      ],
+      "research_path": "data/research/9.5.1.json",
+      "packet_path": "packets/theories/09-05-01-predictive-theories-top-down.md"
+    },
+    {
+      "section_id": "9.5.2",
+      "title": "Seth’s “beast machine” theory",
+      "pages": "33-33",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Homeostatic and affective theories",
+        "Seth’s “beast machine” theory"
+      ],
+      "research_path": "data/research/9.5.2.json",
+      "packet_path": "packets/theories/09-05-02-seths-beast-machine-theory.md"
+    },
+    {
+      "section_id": "9.5.3",
+      "title": "Damasio’s homeostatic feelings and emergence of consciousness",
+      "pages": "33-33",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Homeostatic and affective theories",
+        "Damasio’s homeostatic feelings and emergence of consciousness"
+      ],
+      "research_path": "data/research/9.5.3.json",
+      "packet_path": "packets/theories/09-05-03-damasios-homeostatic-feelings-and-emergence-of-consciousness.md"
+    },
+    {
+      "section_id": "9.5.4",
+      "title": "Friston’s free-energy principle and active inference",
+      "pages": "33-33",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Homeostatic and affective theories",
+        "Friston’s free-energy principle and active inference"
+      ],
+      "research_path": "data/research/9.5.4.json",
+      "packet_path": "packets/theories/09-05-04-fristons-free-energy-principle-and-active-inference.md"
+    },
+    {
+      "section_id": "9.5.5",
+      "title": "Solms’s affect as the hidden spring of consciousness",
+      "pages": "34-34",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Homeostatic and affective theories",
+        "Solms’s affect as the hidden spring of consciousness"
+      ],
+      "research_path": "data/research/9.5.5.json",
+      "packet_path": "packets/theories/09-05-05-solmss-affect-as-the-hidden-spring-of-consciousness.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.5.1.json",
+    "data/research/9.5.2.json",
+    "data/research/9.5.3.json",
+    "data/research/9.5.4.json",
+    "data/research/9.5.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-05-01-predictive-theories-top-down.md",
+    "packets/theories/09-05-02-seths-beast-machine-theory.md",
+    "packets/theories/09-05-03-damasios-homeostatic-feelings-and-emergence-of-consciousness.md",
+    "packets/theories/09-05-04-fristons-free-energy-principle-and-active-inference.md",
+    "packets/theories/09-05-05-solmss-affect-as-the-hidden-spring-of-consciousness.md"
+  ],
+  "script_job_id": "group-019-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-019/script.json",
+  "notebooklm_bundle_dir": "episodes/group-019/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

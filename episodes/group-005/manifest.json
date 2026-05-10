@@ -1,0 +1,90 @@
+{
+  "episode_id": "group-005",
+  "title": "Top-level sections Part 5",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "21",
+    "22",
+    "23",
+    "24",
+    "25"
+  ],
+  "sections": [
+    {
+      "section_id": "21",
+      "title": "Implications",
+      "pages": "122-122",
+      "taxonomy_path": [
+        "Implications"
+      ],
+      "research_path": "data/research/21.json",
+      "packet_path": "packets/theories/21-implications.md"
+    },
+    {
+      "section_id": "22",
+      "title": "Meaning/purpose/value",
+      "pages": "122-122",
+      "taxonomy_path": [
+        "Meaning/purpose/value"
+      ],
+      "research_path": "data/research/22.json",
+      "packet_path": "packets/theories/22-meaning-purpose-value.md"
+    },
+    {
+      "section_id": "23",
+      "title": "Artificial intelligence (AI) consciousness",
+      "pages": "123-124",
+      "taxonomy_path": [
+        "Artificial intelligence (AI) consciousness"
+      ],
+      "research_path": "data/research/23.json",
+      "packet_path": "packets/theories/23-artificial-intelligence-ai-consciousness.md"
+    },
+    {
+      "section_id": "24",
+      "title": "Virtual immortality",
+      "pages": "125-127",
+      "taxonomy_path": [
+        "Virtual immortality"
+      ],
+      "research_path": "data/research/24.json",
+      "packet_path": "packets/theories/24-virtual-immortality.md"
+    },
+    {
+      "section_id": "25",
+      "title": "Survival beyond death",
+      "pages": "128-128",
+      "taxonomy_path": [
+        "Survival beyond death"
+      ],
+      "research_path": "data/research/25.json",
+      "packet_path": "packets/theories/25-survival-beyond-death.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/21.json",
+    "data/research/22.json",
+    "data/research/23.json",
+    "data/research/24.json",
+    "data/research/25.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/21-implications.md",
+    "packets/theories/22-meaning-purpose-value.md",
+    "packets/theories/23-artificial-intelligence-ai-consciousness.md",
+    "packets/theories/24-virtual-immortality.md",
+    "packets/theories/25-survival-beyond-death.md"
+  ],
+  "script_job_id": "group-005-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-005/script.json",
+  "notebooklm_bundle_dir": "episodes/group-005/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

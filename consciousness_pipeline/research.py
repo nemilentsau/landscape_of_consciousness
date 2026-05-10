@@ -3,6 +3,21 @@ from pathlib import Path
 
 from consciousness_pipeline.models import ResearchRecord, Section, SourceRecord
 
+RESEARCH_README = """# Section Research Records
+
+Files in this directory are section-level research records, not podcast episodes.
+
+Each `*.json` file corresponds to one Kuhn taxonomy section from `data/extracted/sections.json`.
+Podcast episodes combine one or more of these section records through:
+
+- `course/episode-map.json`
+- `episodes/<group-id>/manifest.json`
+- `jobs/podcast-scripts.jsonl`
+
+For example, `data/research/1.json` is a reusable research input. It becomes part of a podcast only
+when an episode manifest lists it under `research_inputs`.
+"""
+
 
 def empty_research_record(section: Section) -> ResearchRecord:
     return ResearchRecord(
@@ -33,3 +48,8 @@ def write_research_stub(path: Path, section: Section) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     record = empty_research_record(section)
     path.write_text(json.dumps(record.to_dict(), indent=2, ensure_ascii=False), encoding="utf-8")
+
+
+def write_research_readme(research_dir: Path) -> None:
+    research_dir.mkdir(parents=True, exist_ok=True)
+    (research_dir / "README.md").write_text(RESEARCH_README, encoding="utf-8")

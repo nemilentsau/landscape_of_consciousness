@@ -1,0 +1,90 @@
+{
+  "episode_id": "group-004",
+  "title": "Top-level sections Part 4",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "16",
+    "17",
+    "18",
+    "19",
+    "20"
+  ],
+  "sections": [
+    {
+      "section_id": "16",
+      "title": "Idealisms",
+      "pages": "94-94",
+      "taxonomy_path": [
+        "Idealisms"
+      ],
+      "research_path": "data/research/16.json",
+      "packet_path": "packets/theories/16-idealisms.md"
+    },
+    {
+      "section_id": "17",
+      "title": "Anomalous and altered states theories",
+      "pages": "104-104",
+      "taxonomy_path": [
+        "Anomalous and altered states theories"
+      ],
+      "research_path": "data/research/17.json",
+      "packet_path": "packets/theories/17-anomalous-and-altered-states-theories.md"
+    },
+    {
+      "section_id": "18",
+      "title": "Challenge theories",
+      "pages": "117-117",
+      "taxonomy_path": [
+        "Challenge theories"
+      ],
+      "research_path": "data/research/18.json",
+      "packet_path": "packets/theories/18-challenge-theories.md"
+    },
+    {
+      "section_id": "19",
+      "title": "Closer to truth views",
+      "pages": "120-120",
+      "taxonomy_path": [
+        "Closer to truth views"
+      ],
+      "research_path": "data/research/19.json",
+      "packet_path": "packets/theories/19-closer-to-truth-views.md"
+    },
+    {
+      "section_id": "20",
+      "title": "Chalmers’s meta-problem of consciousness",
+      "pages": "121-121",
+      "taxonomy_path": [
+        "Chalmers’s meta-problem of consciousness"
+      ],
+      "research_path": "data/research/20.json",
+      "packet_path": "packets/theories/20-chalmerss-meta-problem-of-consciousness.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/16.json",
+    "data/research/17.json",
+    "data/research/18.json",
+    "data/research/19.json",
+    "data/research/20.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/16-idealisms.md",
+    "packets/theories/17-anomalous-and-altered-states-theories.md",
+    "packets/theories/18-challenge-theories.md",
+    "packets/theories/19-closer-to-truth-views.md",
+    "packets/theories/20-chalmerss-meta-problem-of-consciousness.md"
+  ],
+  "script_job_id": "group-004-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-004/script.json",
+  "notebooklm_bundle_dir": "episodes/group-004/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

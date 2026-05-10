@@ -1,0 +1,53 @@
+{
+  "episode_id": "group-042",
+  "title": "Panpsychisms Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 2,
+  "section_ids": [
+    "13.11",
+    "13.12"
+  ],
+  "sections": [
+    {
+      "section_id": "13.11",
+      "title": "Wallace’s panpsychism inside physics",
+      "pages": "76-76",
+      "taxonomy_path": [
+        "Panpsychisms",
+        "Wallace’s panpsychism inside physics"
+      ],
+      "research_path": "data/research/13.11.json",
+      "packet_path": "packets/theories/13-11-wallaces-panpsychism-inside-physics.md"
+    },
+    {
+      "section_id": "13.12",
+      "title": "Whitehead’s process theory",
+      "pages": "77-77",
+      "taxonomy_path": [
+        "Panpsychisms",
+        "Whitehead’s process theory"
+      ],
+      "research_path": "data/research/13.12.json",
+      "packet_path": "packets/theories/13-12-whiteheads-process-theory.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/13.11.json",
+    "data/research/13.12.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/13-11-wallaces-panpsychism-inside-physics.md",
+    "packets/theories/13-12-whiteheads-process-theory.md"
+  ],
+  "script_job_id": "group-042-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-042/script.json",
+  "notebooklm_bundle_dir": "episodes/group-042/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

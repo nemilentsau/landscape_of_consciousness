@@ -1,0 +1,90 @@
+{
+  "episode_id": "group-003",
+  "title": "Top-level sections Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "11",
+    "12",
+    "13",
+    "14",
+    "15"
+  ],
+  "sections": [
+    {
+      "section_id": "11",
+      "title": "Quantum theories",
+      "pages": "61-61",
+      "taxonomy_path": [
+        "Quantum theories"
+      ],
+      "research_path": "data/research/11.json",
+      "packet_path": "packets/theories/11-quantum-theories.md"
+    },
+    {
+      "section_id": "12",
+      "title": "Integrated information theory",
+      "pages": "70-71",
+      "taxonomy_path": [
+        "Integrated information theory"
+      ],
+      "research_path": "data/research/12.json",
+      "packet_path": "packets/theories/12-integrated-information-theory.md"
+    },
+    {
+      "section_id": "13",
+      "title": "Panpsychisms",
+      "pages": "73-73",
+      "taxonomy_path": [
+        "Panpsychisms"
+      ],
+      "research_path": "data/research/13.json",
+      "packet_path": "packets/theories/13-panpsychisms.md"
+    },
+    {
+      "section_id": "14",
+      "title": "Monisms",
+      "pages": "77-77",
+      "taxonomy_path": [
+        "Monisms"
+      ],
+      "research_path": "data/research/14.json",
+      "packet_path": "packets/theories/14-monisms.md"
+    },
+    {
+      "section_id": "15",
+      "title": "Dualisms",
+      "pages": "83-83",
+      "taxonomy_path": [
+        "Dualisms"
+      ],
+      "research_path": "data/research/15.json",
+      "packet_path": "packets/theories/15-dualisms.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/11.json",
+    "data/research/12.json",
+    "data/research/13.json",
+    "data/research/14.json",
+    "data/research/15.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/11-quantum-theories.md",
+    "packets/theories/12-integrated-information-theory.md",
+    "packets/theories/13-panpsychisms.md",
+    "packets/theories/14-monisms.md",
+    "packets/theories/15-dualisms.md"
+  ],
+  "script_job_id": "group-003-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-003/script.json",
+  "notebooklm_bundle_dir": "episodes/group-003/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

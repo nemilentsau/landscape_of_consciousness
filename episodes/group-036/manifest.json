@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-036",
+  "title": "Quantum theories Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "11.6",
+    "11.7",
+    "11.8",
+    "11.9",
+    "11.10"
+  ],
+  "sections": [
+    {
+      "section_id": "11.6",
+      "title": "Beck-Eccles ’ s quantum processes in the synapse",
+      "pages": "65-65",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Beck-Eccles ’ s quantum processes in the synapse"
+      ],
+      "research_path": "data/research/11.6.json",
+      "packet_path": "packets/theories/11-06-beck-eccless-quantum-processes-in-the-synapse.md"
+    },
+    {
+      "section_id": "11.7",
+      "title": "Kauffman’s mind mediating possibles to actuals",
+      "pages": "66-66",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Kauffman’s mind mediating possibles to actuals"
+      ],
+      "research_path": "data/research/11.7.json",
+      "packet_path": "packets/theories/11-07-kauffmans-mind-mediating-possibles-to-actuals.md"
+    },
+    {
+      "section_id": "11.8",
+      "title": "Torday’s cellular and cosmic consciousness",
+      "pages": "66-66",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Torday’s cellular and cosmic consciousness"
+      ],
+      "research_path": "data/research/11.8.json",
+      "packet_path": "packets/theories/11-08-tordays-cellular-and-cosmic-consciousness.md"
+    },
+    {
+      "section_id": "11.9",
+      "title": "Smolin’s causal theory of views",
+      "pages": "66-66",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Smolin’s causal theory of views"
+      ],
+      "research_path": "data/research/11.9.json",
+      "packet_path": "packets/theories/11-09-smolins-causal-theory-of-views.md"
+    },
+    {
+      "section_id": "11.10",
+      "title": "Carr’s quantum theory, psi, mental space",
+      "pages": "67-67",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Carr’s quantum theory, psi, mental space"
+      ],
+      "research_path": "data/research/11.10.json",
+      "packet_path": "packets/theories/11-10-carrs-quantum-theory-psi-mental-space.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/11.6.json",
+    "data/research/11.7.json",
+    "data/research/11.8.json",
+    "data/research/11.9.json",
+    "data/research/11.10.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/11-06-beck-eccless-quantum-processes-in-the-synapse.md",
+    "packets/theories/11-07-kauffmans-mind-mediating-possibles-to-actuals.md",
+    "packets/theories/11-08-tordays-cellular-and-cosmic-consciousness.md",
+    "packets/theories/11-09-smolins-causal-theory-of-views.md",
+    "packets/theories/11-10-carrs-quantum-theory-psi-mental-space.md"
+  ],
+  "script_job_id": "group-036-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-036/script.json",
+  "notebooklm_bundle_dir": "episodes/group-036/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

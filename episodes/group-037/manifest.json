@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-037",
+  "title": "Quantum theories Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "11.11",
+    "11.12",
+    "11.13",
+    "11.14",
+    "11.15"
+  ],
+  "sections": [
+    {
+      "section_id": "11.11",
+      "title": "Faggin’s quantum information-based panpsychism",
+      "pages": "67-67",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Faggin’s quantum information-based panpsychism"
+      ],
+      "research_path": "data/research/11.11.json",
+      "packet_path": "packets/theories/11-11-faggins-quantum-information-based-panpsychism.md"
+    },
+    {
+      "section_id": "11.12",
+      "title": "Fisher ’ s quantum cognition",
+      "pages": "68-68",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Fisher ’ s quantum cognition"
+      ],
+      "research_path": "data/research/11.12.json",
+      "packet_path": "packets/theories/11-12-fishers-quantum-cognition.md"
+    },
+    {
+      "section_id": "11.13",
+      "title": "Globus ’ s quantum thermofield brain dynamics",
+      "pages": "68-68",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Globus ’ s quantum thermofield brain dynamics"
+      ],
+      "research_path": "data/research/11.13.json",
+      "packet_path": "packets/theories/11-13-globuss-quantum-thermofield-brain-dynamics.md"
+    },
+    {
+      "section_id": "11.14",
+      "title": "Poznanski ’ s dynamic organicity theory",
+      "pages": "68-68",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Poznanski ’ s dynamic organicity theory"
+      ],
+      "research_path": "data/research/11.14.json",
+      "packet_path": "packets/theories/11-14-poznanskis-dynamic-organicity-theory.md"
+    },
+    {
+      "section_id": "11.15",
+      "title": "Quantum consciousness extensions",
+      "pages": "69-69",
+      "taxonomy_path": [
+        "Quantum theories",
+        "Quantum consciousness extensions"
+      ],
+      "research_path": "data/research/11.15.json",
+      "packet_path": "packets/theories/11-15-quantum-consciousness-extensions.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/11.11.json",
+    "data/research/11.12.json",
+    "data/research/11.13.json",
+    "data/research/11.14.json",
+    "data/research/11.15.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/11-11-faggins-quantum-information-based-panpsychism.md",
+    "packets/theories/11-12-fishers-quantum-cognition.md",
+    "packets/theories/11-13-globuss-quantum-thermofield-brain-dynamics.md",
+    "packets/theories/11-14-poznanskis-dynamic-organicity-theory.md",
+    "packets/theories/11-15-quantum-consciousness-extensions.md"
+  ],
+  "script_job_id": "group-037-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-037/script.json",
+  "notebooklm_bundle_dir": "episodes/group-037/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

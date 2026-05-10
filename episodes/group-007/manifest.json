@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-007",
+  "title": "Materialism theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.1",
+    "9.2",
+    "9.3",
+    "9.4",
+    "9.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.1",
+      "title": "Philosophical Theories",
+      "pages": "13-13",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Philosophical Theories"
+      ],
+      "research_path": "data/research/9.1.json",
+      "packet_path": "packets/theories/09-01-philosophical-theories.md"
+    },
+    {
+      "section_id": "9.2",
+      "title": "Neurobiological theories",
+      "pages": "19-19",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Neurobiological theories"
+      ],
+      "research_path": "data/research/9.2.json",
+      "packet_path": "packets/theories/09-02-neurobiological-theories.md"
+    },
+    {
+      "section_id": "9.3",
+      "title": "Electromagnetic field theories",
+      "pages": "26-26",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Electromagnetic field theories"
+      ],
+      "research_path": "data/research/9.3.json",
+      "packet_path": "packets/theories/09-03-electromagnetic-field-theories.md"
+    },
+    {
+      "section_id": "9.4",
+      "title": "Computational and Informational Theories",
+      "pages": "28-28",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Computational and Informational Theories"
+      ],
+      "research_path": "data/research/9.4.json",
+      "packet_path": "packets/theories/09-04-computational-and-informational-theories.md"
+    },
+    {
+      "section_id": "9.5",
+      "title": "Homeostatic and affective theories",
+      "pages": "32-32",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Homeostatic and affective theories"
+      ],
+      "research_path": "data/research/9.5.json",
+      "packet_path": "packets/theories/09-05-homeostatic-and-affective-theories.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.1.json",
+    "data/research/9.2.json",
+    "data/research/9.3.json",
+    "data/research/9.4.json",
+    "data/research/9.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-01-philosophical-theories.md",
+    "packets/theories/09-02-neurobiological-theories.md",
+    "packets/theories/09-03-electromagnetic-field-theories.md",
+    "packets/theories/09-04-computational-and-informational-theories.md",
+    "packets/theories/09-05-homeostatic-and-affective-theories.md"
+  ],
+  "script_job_id": "group-007-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-007/script.json",
+  "notebooklm_bundle_dir": "episodes/group-007/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

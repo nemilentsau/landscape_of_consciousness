@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-046",
+  "title": "Dualisms Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "15.1",
+    "15.2",
+    "15.3",
+    "15.4",
+    "15.5"
+  ],
+  "sections": [
+    {
+      "section_id": "15.1",
+      "title": "Property dualism",
+      "pages": "84-84",
+      "taxonomy_path": [
+        "Dualisms",
+        "Property dualism"
+      ],
+      "research_path": "data/research/15.1.json",
+      "packet_path": "packets/theories/15-01-property-dualism.md"
+    },
+    {
+      "section_id": "15.2",
+      "title": "Historical and traditional dualisms",
+      "pages": "85-85",
+      "taxonomy_path": [
+        "Dualisms",
+        "Historical and traditional dualisms"
+      ],
+      "research_path": "data/research/15.2.json",
+      "packet_path": "packets/theories/15-02-historical-and-traditional-dualisms.md"
+    },
+    {
+      "section_id": "15.3",
+      "title": "Swinburne’s substance dualism",
+      "pages": "85-85",
+      "taxonomy_path": [
+        "Dualisms",
+        "Swinburne’s substance dualism"
+      ],
+      "research_path": "data/research/15.3.json",
+      "packet_path": "packets/theories/15-03-swinburnes-substance-dualism.md"
+    },
+    {
+      "section_id": "15.4",
+      "title": "Composite dualism",
+      "pages": "85-85",
+      "taxonomy_path": [
+        "Dualisms",
+        "Composite dualism"
+      ],
+      "research_path": "data/research/15.4.json",
+      "packet_path": "packets/theories/15-04-composite-dualism.md"
+    },
+    {
+      "section_id": "15.5",
+      "title": "Stump’s Thomistic dualism",
+      "pages": "86-86",
+      "taxonomy_path": [
+        "Dualisms",
+        "Stump’s Thomistic dualism"
+      ],
+      "research_path": "data/research/15.5.json",
+      "packet_path": "packets/theories/15-05-stumps-thomistic-dualism.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/15.1.json",
+    "data/research/15.2.json",
+    "data/research/15.3.json",
+    "data/research/15.4.json",
+    "data/research/15.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/15-01-property-dualism.md",
+    "packets/theories/15-02-historical-and-traditional-dualisms.md",
+    "packets/theories/15-03-swinburnes-substance-dualism.md",
+    "packets/theories/15-04-composite-dualism.md",
+    "packets/theories/15-05-stumps-thomistic-dualism.md"
+  ],
+  "script_job_id": "group-046-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-046/script.json",
+  "notebooklm_bundle_dir": "episodes/group-046/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

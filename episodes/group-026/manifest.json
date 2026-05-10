@@ -1,0 +1,100 @@
+{
+  "episode_id": "group-026",
+  "title": "Materialism theories -> Representational theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.8.1",
+    "9.8.2",
+    "9.8.3",
+    "9.8.4",
+    "9.8.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.8.1",
+      "title": "First-order representationalism",
+      "pages": "43-43",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "First-order representationalism"
+      ],
+      "research_path": "data/research/9.8.1.json",
+      "packet_path": "packets/theories/09-08-01-first-order-representationalism.md"
+    },
+    {
+      "section_id": "9.8.2",
+      "title": "Lamme’s recurrent processing theory",
+      "pages": "44-44",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "Lamme’s recurrent processing theory"
+      ],
+      "research_path": "data/research/9.8.2.json",
+      "packet_path": "packets/theories/09-08-02-lammes-recurrent-processing-theory.md"
+    },
+    {
+      "section_id": "9.8.3",
+      "title": "Higher-order theories",
+      "pages": "45-45",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "Higher-order theories"
+      ],
+      "research_path": "data/research/9.8.3.json",
+      "packet_path": "packets/theories/09-08-03-higher-order-theories.md"
+    },
+    {
+      "section_id": "9.8.4",
+      "title": "Lau’s perceptual reality monitoring theory",
+      "pages": "45-45",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "Lau’s perceptual reality monitoring theory"
+      ],
+      "research_path": "data/research/9.8.4.json",
+      "packet_path": "packets/theories/09-08-04-laus-perceptual-reality-monitoring-theory.md"
+    },
+    {
+      "section_id": "9.8.5",
+      "title": "LeDoux’s higher-order theory of emotional consciousness",
+      "pages": "46-46",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "LeDoux’s higher-order theory of emotional consciousness"
+      ],
+      "research_path": "data/research/9.8.5.json",
+      "packet_path": "packets/theories/09-08-05-ledouxs-higher-order-theory-of-emotional-consciousness.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.8.1.json",
+    "data/research/9.8.2.json",
+    "data/research/9.8.3.json",
+    "data/research/9.8.4.json",
+    "data/research/9.8.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-08-01-first-order-representationalism.md",
+    "packets/theories/09-08-02-lammes-recurrent-processing-theory.md",
+    "packets/theories/09-08-03-higher-order-theories.md",
+    "packets/theories/09-08-04-laus-perceptual-reality-monitoring-theory.md",
+    "packets/theories/09-08-05-ledouxs-higher-order-theory-of-emotional-consciousness.md"
+  ],
+  "script_job_id": "group-026-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-026/script.json",
+  "notebooklm_bundle_dir": "episodes/group-026/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

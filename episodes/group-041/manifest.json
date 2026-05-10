@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-041",
+  "title": "Panpsychisms Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "13.6",
+    "13.7",
+    "13.8",
+    "13.9",
+    "13.10"
+  ],
+  "sections": [
+    {
+      "section_id": "13.6",
+      "title": "Chalmers ’ s panpsychism",
+      "pages": "74-74",
+      "taxonomy_path": [
+        "Panpsychisms",
+        "Chalmers ’ s panpsychism"
+      ],
+      "research_path": "data/research/13.6.json",
+      "packet_path": "packets/theories/13-06-chalmerss-panpsychism.md"
+    },
+    {
+      "section_id": "13.7",
+      "title": "Strawson’s panpsychism",
+      "pages": "75-75",
+      "taxonomy_path": [
+        "Panpsychisms",
+        "Strawson’s panpsychism"
+      ],
+      "research_path": "data/research/13.7.json",
+      "packet_path": "packets/theories/13-07-strawsons-panpsychism.md"
+    },
+    {
+      "section_id": "13.8",
+      "title": "Goff’s panpsychism",
+      "pages": "75-75",
+      "taxonomy_path": [
+        "Panpsychisms",
+        "Goff’s panpsychism"
+      ],
+      "research_path": "data/research/13.8.json",
+      "packet_path": "packets/theories/13-08-goffs-panpsychism.md"
+    },
+    {
+      "section_id": "13.9",
+      "title": "A. Harris’s panpsychism as fundamental field",
+      "pages": "76-76",
+      "taxonomy_path": [
+        "Panpsychisms",
+        "A. Harris’s panpsychism as fundamental field"
+      ],
+      "research_path": "data/research/13.9.json",
+      "packet_path": "packets/theories/13-09-a-harriss-panpsychism-as-fundamental-field.md"
+    },
+    {
+      "section_id": "13.10",
+      "title": "Sheldrake’s self-organizing systems at all levels of complexity",
+      "pages": "76-76",
+      "taxonomy_path": [
+        "Panpsychisms",
+        "Sheldrake’s self-organizing systems at all levels of complexity"
+      ],
+      "research_path": "data/research/13.10.json",
+      "packet_path": "packets/theories/13-10-sheldrakes-self-organizing-systems-at-all-levels-of-complexity.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/13.6.json",
+    "data/research/13.7.json",
+    "data/research/13.8.json",
+    "data/research/13.9.json",
+    "data/research/13.10.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/13-06-chalmerss-panpsychism.md",
+    "packets/theories/13-07-strawsons-panpsychism.md",
+    "packets/theories/13-08-goffs-panpsychism.md",
+    "packets/theories/13-09-a-harriss-panpsychism-as-fundamental-field.md",
+    "packets/theories/13-10-sheldrakes-self-organizing-systems-at-all-levels-of-complexity.md"
+  ],
+  "script_job_id": "group-041-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-041/script.json",
+  "notebooklm_bundle_dir": "episodes/group-041/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

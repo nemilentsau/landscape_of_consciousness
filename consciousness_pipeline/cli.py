@@ -15,12 +15,12 @@ from consciousness_pipeline.config import (
     RESEARCH_DIR,
     SCHEMAS_DIR,
 )
-from consciousness_pipeline.course import write_course_artifacts
+from consciousness_pipeline.course import write_course_artifacts, write_episode_artifacts
 from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
 from consciousness_pipeline.packets import render_packet, validate_packet
 from consciousness_pipeline.pdf_extract import extract_pages, write_pages_json
-from consciousness_pipeline.research import load_research_record, write_research_stub
+from consciousness_pipeline.research import load_research_record, write_research_readme, write_research_stub
 from consciousness_pipeline.sections import build_sections
 
 
@@ -68,6 +68,7 @@ def cmd_packets(args: argparse.Namespace) -> None:
     sections = _read_sections(EXTRACTED_DIR / "sections.json")
     PACKETS_DIR.mkdir(parents=True, exist_ok=True)
     RESEARCH_DIR.mkdir(parents=True, exist_ok=True)
+    write_research_readme(RESEARCH_DIR)
     written = 0
     for section in sections:
         research_path = RESEARCH_DIR / f"{section.section_id}.json"
@@ -86,12 +87,16 @@ def cmd_packets(args: argparse.Namespace) -> None:
 def cmd_course(args: argparse.Namespace) -> None:
     sections = _read_sections(EXTRACTED_DIR / "sections.json")
     write_course_artifacts(sections, COURSE_DIR)
-    print("Wrote course artifacts")
+    write_episode_artifacts(sections, EPISODES_DIR)
+    write_research_readme(RESEARCH_DIR)
+    print("Wrote course and episode artifacts")
 
 
 def cmd_jobs(args: argparse.Namespace) -> None:
     sections = _read_sections(EXTRACTED_DIR / "sections.json")
     write_course_artifacts(sections, COURSE_DIR)
+    write_episode_artifacts(sections, EPISODES_DIR)
+    write_research_readme(RESEARCH_DIR)
     write_agent_job_artifacts(sections, JOBS_DIR, SCHEMAS_DIR, EPISODES_DIR)
     print("Wrote headless agent job manifests")
 

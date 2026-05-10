@@ -1,0 +1,39 @@
+{
+  "episode_id": "group-057",
+  "title": "Anomalous and altered states theories Part 5",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 1,
+  "section_ids": [
+    "17.21"
+  ],
+  "sections": [
+    {
+      "section_id": "17.21",
+      "title": "Psychedelic theories of consciousness",
+      "pages": "115-116",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Psychedelic theories of consciousness"
+      ],
+      "research_path": "data/research/17.21.json",
+      "packet_path": "packets/theories/17-21-psychedelic-theories-of-consciousness.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/17.21.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/17-21-psychedelic-theories-of-consciousness.md"
+  ],
+  "script_job_id": "group-057-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-057/script.json",
+  "notebooklm_bundle_dir": "episodes/group-057/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.course import EpisodeGroup, group_sections
+from consciousness_pipeline.course import EpisodeGroup, group_sections, write_episode_artifacts
 from consciousness_pipeline.models import Section
 
 RESEARCH_SCHEMA: dict[str, Any] = {
@@ -100,6 +100,7 @@ def _research_job(section: Section) -> dict[str, object]:
 def _script_job(group: EpisodeGroup) -> dict[str, object]:
     group_id = str(group["group_id"])
     section_ids = [str(item) for item in group["section_ids"]]
+    episode_manifest_path = f"episodes/{group_id}/manifest.json"
     return {
         "job_id": f"{group_id}-script",
         "kind": "podcast_script",
@@ -115,8 +116,10 @@ def _script_job(group: EpisodeGroup) -> dict[str, object]:
         "input_paths": [
             "data/extracted/sections.json",
             "course/episode-map.json",
+            episode_manifest_path,
             *[f"data/research/{section_id}.json" for section_id in section_ids],
         ],
+        "episode_manifest_path": episode_manifest_path,
         "output_path": f"episodes/{group_id}/script.json",
         "schema_path": "schemas/podcast-script.schema.json",
         "notebooklm_handoff": "computer_use_after_script_bundle",
@@ -146,6 +149,7 @@ def write_agent_job_artifacts(
     _write_json(schemas_dir / "podcast-script.schema.json", PODCAST_SCRIPT_SCHEMA)
     _write_jsonl(jobs_dir / "research.jsonl", build_research_jobs(sections))
     _write_jsonl(jobs_dir / "podcast-scripts.jsonl", build_script_jobs(sections))
+    write_episode_artifacts(sections, episodes_dir)
 
 
 def load_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -219,6 +223,7 @@ def build_script_prompt(job: dict[str, Any], sections: list[Section]) -> str:
 Job ID: {job["job_id"]}
 Episode group: {job["group_id"]} - {job["title"]}
 Episode question: {job["episode_question"]}
+Episode manifest: {job["episode_manifest_path"]}
 Output path: {job["output_path"]}
 Required schema: {job["schema_path"]}
 NotebookLM handoff: {job["notebooklm_handoff"]}; bundle dir {job["notebooklm_bundle_dir"]}

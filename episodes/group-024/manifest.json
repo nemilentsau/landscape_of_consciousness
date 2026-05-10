@@ -1,0 +1,100 @@
+{
+  "episode_id": "group-024",
+  "title": "Materialism theories -> Relational theories Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.7.1",
+    "9.7.2",
+    "9.7.3",
+    "9.7.4",
+    "9.7.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.7.1",
+      "title": "A. Clark ’ s extended mind",
+      "pages": "41-41",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Relational theories",
+        "A. Clark ’ s extended mind"
+      ],
+      "research_path": "data/research/9.7.1.json",
+      "packet_path": "packets/theories/09-07-01-a-clarks-extended-mind.md"
+    },
+    {
+      "section_id": "9.7.2",
+      "title": "No ¨e ’ s “ out of our heads ” theory",
+      "pages": "41-41",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Relational theories",
+        "No ¨e ’ s “ out of our heads ” theory"
+      ],
+      "research_path": "data/research/9.7.2.json",
+      "packet_path": "packets/theories/09-07-02-no-es-out-of-our-heads-theory.md"
+    },
+    {
+      "section_id": "9.7.3",
+      "title": "Loorits ’ s structural realism",
+      "pages": "42-42",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Relational theories",
+        "Loorits ’ s structural realism"
+      ],
+      "research_path": "data/research/9.7.3.json",
+      "packet_path": "packets/theories/09-07-03-looritss-structural-realism.md"
+    },
+    {
+      "section_id": "9.7.4",
+      "title": "Lahav ’ s relativistic theory",
+      "pages": "42-42",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Relational theories",
+        "Lahav ’ s relativistic theory"
+      ],
+      "research_path": "data/research/9.7.4.json",
+      "packet_path": "packets/theories/09-07-04-lahavs-relativistic-theory.md"
+    },
+    {
+      "section_id": "9.7.5",
+      "title": "Tsuchiya ’ s relational approach to consciousness",
+      "pages": "42-42",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Relational theories",
+        "Tsuchiya ’ s relational approach to consciousness"
+      ],
+      "research_path": "data/research/9.7.5.json",
+      "packet_path": "packets/theories/09-07-05-tsuchiyas-relational-approach-to-consciousness.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.7.1.json",
+    "data/research/9.7.2.json",
+    "data/research/9.7.3.json",
+    "data/research/9.7.4.json",
+    "data/research/9.7.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-07-01-a-clarks-extended-mind.md",
+    "packets/theories/09-07-02-no-es-out-of-our-heads-theory.md",
+    "packets/theories/09-07-03-looritss-structural-realism.md",
+    "packets/theories/09-07-04-lahavs-relativistic-theory.md",
+    "packets/theories/09-07-05-tsuchiyas-relational-approach-to-consciousness.md"
+  ],
+  "script_job_id": "group-024-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-024/script.json",
+  "notebooklm_bundle_dir": "episodes/group-024/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

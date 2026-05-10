@@ -1,0 +1,100 @@
+{
+  "episode_id": "group-031",
+  "title": "Materialism theories -> Phylogenetic evolution Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "9.10.1",
+    "9.10.2",
+    "9.10.3",
+    "9.10.4",
+    "9.10.5"
+  ],
+  "sections": [
+    {
+      "section_id": "9.10.1",
+      "title": "Dennett’s evolution of minds",
+      "pages": "55-55",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "Dennett’s evolution of minds"
+      ],
+      "research_path": "data/research/9.10.1.json",
+      "packet_path": "packets/theories/09-10-01-dennetts-evolution-of-minds.md"
+    },
+    {
+      "section_id": "9.10.2",
+      "title": "LeDoux’s deep roots of consciousness",
+      "pages": "55-55",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "LeDoux’s deep roots of consciousness"
+      ],
+      "research_path": "data/research/9.10.2.json",
+      "packet_path": "packets/theories/09-10-02-ledouxs-deep-roots-of-consciousness.md"
+    },
+    {
+      "section_id": "9.10.3",
+      "title": "Ginsburg and Jablonka’s associative learning during evolution",
+      "pages": "55-55",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "Ginsburg and Jablonka’s associative learning during evolution"
+      ],
+      "research_path": "data/research/9.10.3.json",
+      "packet_path": "packets/theories/09-10-03-ginsburg-and-jablonkas-associative-learning-during-evolution.md"
+    },
+    {
+      "section_id": "9.10.4",
+      "title": "Cleeremans and Tallon-Baudry ’ s phenomenal experience has",
+      "pages": "56-56",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "Cleeremans and Tallon-Baudry ’ s phenomenal experience has"
+      ],
+      "research_path": "data/research/9.10.4.json",
+      "packet_path": "packets/theories/09-10-04-cleeremans-and-tallon-baudrys-phenomenal-experience-has.md"
+    },
+    {
+      "section_id": "9.10.5",
+      "title": "Andrew ’ s consciousness without complex brains",
+      "pages": "56-56",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Phylogenetic evolution",
+        "Andrew ’ s consciousness without complex brains"
+      ],
+      "research_path": "data/research/9.10.5.json",
+      "packet_path": "packets/theories/09-10-05-andrews-consciousness-without-complex-brains.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.10.1.json",
+    "data/research/9.10.2.json",
+    "data/research/9.10.3.json",
+    "data/research/9.10.4.json",
+    "data/research/9.10.5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-10-01-dennetts-evolution-of-minds.md",
+    "packets/theories/09-10-02-ledouxs-deep-roots-of-consciousness.md",
+    "packets/theories/09-10-03-ginsburg-and-jablonkas-associative-learning-during-evolution.md",
+    "packets/theories/09-10-04-cleeremans-and-tallon-baudrys-phenomenal-experience-has.md",
+    "packets/theories/09-10-05-andrews-consciousness-without-complex-brains.md"
+  ],
+  "script_job_id": "group-031-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-031/script.json",
+  "notebooklm_bundle_dir": "episodes/group-031/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-054",
+  "title": "Anomalous and altered states theories Part 2",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "17.6",
+    "17.7",
+    "17.8",
+    "17.9",
+    "17.10"
+  ],
+  "sections": [
+    {
+      "section_id": "17.6",
+      "title": "Wilber ’ s Integral Theory",
+      "pages": "108-108",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Wilber ’ s Integral Theory"
+      ],
+      "research_path": "data/research/17.6.json",
+      "packet_path": "packets/theories/17-06-wilbers-integral-theory.md"
+    },
+    {
+      "section_id": "17.7",
+      "title": "Combs’s chaotic attractor and autopoietic systems",
+      "pages": "109-109",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Combs’s chaotic attractor and autopoietic systems"
+      ],
+      "research_path": "data/research/17.7.json",
+      "packet_path": "packets/theories/17-07-combss-chaotic-attractor-and-autopoietic-systems.md"
+    },
+    {
+      "section_id": "17.8",
+      "title": "Schooler’s resonance theory and subjective time",
+      "pages": "109-109",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Schooler’s resonance theory and subjective time"
+      ],
+      "research_path": "data/research/17.8.json",
+      "packet_path": "packets/theories/17-08-schoolers-resonance-theory-and-subjective-time.md"
+    },
+    {
+      "section_id": "17.9",
+      "title": "Sheldrake’s morphic fields",
+      "pages": "110-110",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Sheldrake’s morphic fields"
+      ],
+      "research_path": "data/research/17.9.json",
+      "packet_path": "packets/theories/17-09-sheldrakes-morphic-fields.md"
+    },
+    {
+      "section_id": "17.10",
+      "title": "Grinberg’s syntergic/neuronal field theory",
+      "pages": "111-111",
+      "taxonomy_path": [
+        "Anomalous and altered states theories",
+        "Grinberg’s syntergic/neuronal field theory"
+      ],
+      "research_path": "data/research/17.10.json",
+      "packet_path": "packets/theories/17-10-grinbergs-syntergic-neuronal-field-theory.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/17.6.json",
+    "data/research/17.7.json",
+    "data/research/17.8.json",
+    "data/research/17.9.json",
+    "data/research/17.10.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/17-06-wilbers-integral-theory.md",
+    "packets/theories/17-07-combss-chaotic-attractor-and-autopoietic-systems.md",
+    "packets/theories/17-08-schoolers-resonance-theory-and-subjective-time.md",
+    "packets/theories/17-09-sheldrakes-morphic-fields.md",
+    "packets/theories/17-10-grinbergs-syntergic-neuronal-field-theory.md"
+  ],
+  "script_job_id": "group-054-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-054/script.json",
+  "notebooklm_bundle_dir": "episodes/group-054/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

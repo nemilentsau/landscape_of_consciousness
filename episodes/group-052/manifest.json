@@ -1,0 +1,95 @@
+{
+  "episode_id": "group-052",
+  "title": "Idealisms Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "16.11",
+    "16.12",
+    "16.13",
+    "16.14",
+    "16.15"
+  ],
+  "sections": [
+    {
+      "section_id": "16.11",
+      "title": "Nader’s all there is",
+      "pages": "101-101",
+      "taxonomy_path": [
+        "Idealisms",
+        "Nader’s all there is"
+      ],
+      "research_path": "data/research/16.11.json",
+      "packet_path": "packets/theories/16-11-naders-all-there-is.md"
+    },
+    {
+      "section_id": "16.12",
+      "title": "Ward ’ s personal idealism: souls as embodied agents created by",
+      "pages": "102-102",
+      "taxonomy_path": [
+        "Idealisms",
+        "Ward ’ s personal idealism: souls as embodied agents created by"
+      ],
+      "research_path": "data/research/16.12.json",
+      "packet_path": "packets/theories/16-12-wards-personal-idealism-souls-as-embodied-agents-created-by.md"
+    },
+    {
+      "section_id": "16.13",
+      "title": "Albahari ’ s perennial idealism",
+      "pages": "102-102",
+      "taxonomy_path": [
+        "Idealisms",
+        "Albahari ’ s perennial idealism"
+      ],
+      "research_path": "data/research/16.13.json",
+      "packet_path": "packets/theories/16-13-albaharis-perennial-idealism.md"
+    },
+    {
+      "section_id": "16.14",
+      "title": "Meijer ’ s universal knowledge field",
+      "pages": "102-102",
+      "taxonomy_path": [
+        "Idealisms",
+        "Meijer ’ s universal knowledge field"
+      ],
+      "research_path": "data/research/16.14.json",
+      "packet_path": "packets/theories/16-14-meijers-universal-knowledge-field.md"
+    },
+    {
+      "section_id": "16.15",
+      "title": "Idealism’s imaginative expressions",
+      "pages": "103-103",
+      "taxonomy_path": [
+        "Idealisms",
+        "Idealism’s imaginative expressions"
+      ],
+      "research_path": "data/research/16.15.json",
+      "packet_path": "packets/theories/16-15-idealisms-imaginative-expressions.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/16.11.json",
+    "data/research/16.12.json",
+    "data/research/16.13.json",
+    "data/research/16.14.json",
+    "data/research/16.15.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/16-11-naders-all-there-is.md",
+    "packets/theories/16-12-wards-personal-idealism-souls-as-embodied-agents-created-by.md",
+    "packets/theories/16-13-albaharis-perennial-idealism.md",
+    "packets/theories/16-14-meijers-universal-knowledge-field.md",
+    "packets/theories/16-15-idealisms-imaginative-expressions.md"
+  ],
+  "script_job_id": "group-052-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-052/script.json",
+  "notebooklm_bundle_dir": "episodes/group-052/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

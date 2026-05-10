@@ -1,0 +1,90 @@
+{
+  "episode_id": "group-001",
+  "title": "Top-level sections Part 1",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 5,
+  "section_ids": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+  ],
+  "sections": [
+    {
+      "section_id": "1",
+      "title": "Chalmers’s “hard problem” of consciousness",
+      "pages": "2-3",
+      "taxonomy_path": [
+        "Chalmers’s “hard problem” of consciousness"
+      ],
+      "research_path": "data/research/1.json",
+      "packet_path": "packets/theories/01-chalmerss-hard-problem-of-consciousness.md"
+    },
+    {
+      "section_id": "2",
+      "title": "Initial thoughts",
+      "pages": "4-4",
+      "taxonomy_path": [
+        "Initial thoughts"
+      ],
+      "research_path": "data/research/2.json",
+      "packet_path": "packets/theories/02-initial-thoughts.md"
+    },
+    {
+      "section_id": "3",
+      "title": "Philosophical tensions",
+      "pages": "5-5",
+      "taxonomy_path": [
+        "Philosophical tensions"
+      ],
+      "research_path": "data/research/3.json",
+      "packet_path": "packets/theories/03-philosophical-tensions.md"
+    },
+    {
+      "section_id": "4",
+      "title": "Surveys & typologies",
+      "pages": "5-5",
+      "taxonomy_path": [
+        "Surveys & typologies"
+      ],
+      "research_path": "data/research/4.json",
+      "packet_path": "packets/theories/04-surveys-typologies.md"
+    },
+    {
+      "section_id": "5",
+      "title": "Opposing worldviews",
+      "pages": "5-5",
+      "taxonomy_path": [
+        "Opposing worldviews"
+      ],
+      "research_path": "data/research/5.json",
+      "packet_path": "packets/theories/05-opposing-worldviews.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/1.json",
+    "data/research/2.json",
+    "data/research/3.json",
+    "data/research/4.json",
+    "data/research/5.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/01-chalmerss-hard-problem-of-consciousness.md",
+    "packets/theories/02-initial-thoughts.md",
+    "packets/theories/03-philosophical-tensions.md",
+    "packets/theories/04-surveys-typologies.md",
+    "packets/theories/05-opposing-worldviews.md"
+  ],
+  "script_job_id": "group-001-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-001/script.json",
+  "notebooklm_bundle_dir": "episodes/group-001/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

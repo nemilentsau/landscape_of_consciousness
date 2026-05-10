@@ -1,0 +1,85 @@
+{
+  "episode_id": "group-028",
+  "title": "Materialism theories -> Representational theories Part 3",
+  "episode_question": "What is the strongest case for this cluster, and where does it break?",
+  "section_count": 4,
+  "section_ids": [
+    "9.8.11",
+    "9.8.12",
+    "9.8.13",
+    "9.8.14"
+  ],
+  "sections": [
+    {
+      "section_id": "9.8.11",
+      "title": "Tye’s contingentism",
+      "pages": "49-49",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "Tye’s contingentism"
+      ],
+      "research_path": "data/research/9.8.11.json",
+      "packet_path": "packets/theories/09-08-11-tyes-contingentism.md"
+    },
+    {
+      "section_id": "9.8.12",
+      "title": "Thagard’s neural representation, binding, coherence, competition",
+      "pages": "50-50",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "Thagard’s neural representation, binding, coherence, competition"
+      ],
+      "research_path": "data/research/9.8.12.json",
+      "packet_path": "packets/theories/09-08-12-thagards-neural-representation-binding-coherence-competition.md"
+    },
+    {
+      "section_id": "9.8.13",
+      "title": "T. Clark’s content hypothesis",
+      "pages": "50-50",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "T. Clark’s content hypothesis"
+      ],
+      "research_path": "data/research/9.8.13.json",
+      "packet_path": "packets/theories/09-08-13-t-clarks-content-hypothesis.md"
+    },
+    {
+      "section_id": "9.8.14",
+      "title": "Deacon’s symbolic communication (human consciousness)",
+      "pages": "51-51",
+      "taxonomy_path": [
+        "Materialism theories",
+        "Representational theories",
+        "Deacon’s symbolic communication (human consciousness)"
+      ],
+      "research_path": "data/research/9.8.14.json",
+      "packet_path": "packets/theories/09-08-14-deacons-symbolic-communication-human-consciousness.md"
+    }
+  ],
+  "research_inputs": [
+    "data/research/9.8.11.json",
+    "data/research/9.8.12.json",
+    "data/research/9.8.13.json",
+    "data/research/9.8.14.json"
+  ],
+  "packet_inputs": [
+    "packets/theories/09-08-11-tyes-contingentism.md",
+    "packets/theories/09-08-12-thagards-neural-representation-binding-coherence-competition.md",
+    "packets/theories/09-08-13-t-clarks-content-hypothesis.md",
+    "packets/theories/09-08-14-deacons-symbolic-communication-human-consciousness.md"
+  ],
+  "script_job_id": "group-028-script",
+  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_output": "episodes/group-028/script.json",
+  "notebooklm_bundle_dir": "episodes/group-028/notebooklm_bundle",
+  "notebooklm_handoff": "computer_use_after_script_bundle",
+  "audio_profile": {
+    "format": "Debate",
+    "length": "Longer",
+    "language": "English",
+    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+  }
+}

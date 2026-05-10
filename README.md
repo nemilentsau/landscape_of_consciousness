@@ -23,16 +23,22 @@ Generated artifacts:
 - `data/extracted/paper_pages.json`
 - `data/extracted/headings.json`
 - `data/extracted/sections.json`
+- `data/research/README.md`
 - `data/research/*.json`
 - `packets/theories/*.md`
 - `course/exhaustive-index.md`
 - `course/episode-map.md`
 - `course/episode-map.json`
 - `course/production-status.csv`
+- `episodes/<group-id>/manifest.json`
+- `episodes/<group-id>/README.md`
 - `jobs/research.jsonl`
 - `jobs/podcast-scripts.jsonl`
 - `schemas/research-record.schema.json`
 - `schemas/podcast-script.schema.json`
+
+Research JSON files are section-level inputs, not podcast episodes. Episode directories show how
+those section inputs are assembled into a single listening-course episode.
 
 ## Run A Headless Job
 
