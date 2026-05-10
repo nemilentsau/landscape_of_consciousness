@@ -30,12 +30,12 @@ class AgentRunnerCommandTest(unittest.TestCase):
     def test_build_claude_command_uses_bare_print_mode_and_json_schema(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            schema_path = root / "schemas" / "podcast-script.schema.json"
+            schema_path = root / "schemas" / "source-script.schema.json"
             schema_path.parent.mkdir(parents=True)
             schema = {"type": "object", "properties": {"title": {"type": "string"}}, "required": ["title"]}
             schema_path.write_text(json.dumps(schema), encoding="utf-8")
-            job = {"schema_path": "schemas/podcast-script.schema.json"}
-            prompt = "Write a long-form debate-club podcast script."
+            job = {"schema_path": "schemas/source-script.schema.json"}
+            prompt = "Write a factual NotebookLM source dossier."
 
             command = build_claude_command(job, prompt, root)
 

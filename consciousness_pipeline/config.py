@@ -19,8 +19,8 @@ AUDIO_FORMAT = "Debate"
 AUDIO_LENGTH = "Longer"
 AUDIO_LANGUAGE = "English"
 AUDIO_PROMPT = (
-    "Make this a rigorous debate-club style episode. Steelman the theory, "
-    "challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+    "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with "
+    "serious objections, compare nearby theories, and avoid premature resolution."
 )
 
 STATUS_VALUES = (
@@ -28,8 +28,8 @@ STATUS_VALUES = (
     "extracted",
     "research_queued",
     "researched",
-    "script_queued",
-    "scripted",
+    "source_script_queued",
+    "source_script_ready",
     "packet_ready",
     "notebooklm_bundle_ready",
     "audio_requested",

@@ -7,7 +7,7 @@ Podcast episodes combine one or more of these section records through:
 
 - `course/episode-map.json`
 - `episodes/<group-id>/manifest.json`
-- `jobs/podcast-scripts.jsonl`
+- `jobs/source-scripts.jsonl`
 
 For example, `data/research/1.json` is a reusable research input. It becomes part of a podcast only
 when an episode manifest lists it under `research_inputs`.

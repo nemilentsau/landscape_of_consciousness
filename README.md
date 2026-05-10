@@ -6,10 +6,11 @@ The production path is:
 
 1. Extract and segment the downloaded PDF into Kuhn's numbered theory taxonomy.
 2. Generate deterministic course maps and headless-agent job manifests.
-3. Run `codex exec` or `claude --bare -p` jobs to research theories and write episode scripts.
+3. Run `codex exec` or `claude --bare -p` jobs to research theories and write factual source scripts.
 4. Use Codex Computer Use or Claude Code browser/computer control for the final NotebookLM audio handoff.
 
-NotebookLM is a renderer at the end of the process, not the core automation layer.
+NotebookLM is the dialogue and audio renderer at the end of the process, not the core automation layer.
+The local script artifacts are factual research dossiers for NotebookLM, not performed dialogue scripts.
 
 ## Run The Local Pipeline
 
@@ -33,9 +34,9 @@ Generated artifacts:
 - `episodes/<group-id>/manifest.json`
 - `episodes/<group-id>/README.md`
 - `jobs/research.jsonl`
-- `jobs/podcast-scripts.jsonl`
+- `jobs/source-scripts.jsonl`
 - `schemas/research-record.schema.json`
-- `schemas/podcast-script.schema.json`
+- `schemas/source-script.schema.json`
 
 Research JSON files are section-level inputs, not podcast episodes. Episode directories show how
 those section inputs are assembled into a single listening-course episode.
@@ -62,4 +63,7 @@ uv run python -m unittest discover -s tests -v
 
 ## NotebookLM Handoff
 
-After research and script jobs produce `episodes/<group-id>/script.json`, use Computer Use or Claude Code browser control to create NotebookLM notebooks, upload the script/source bundle, choose Debate and Longer audio, and record the resulting URL/status in `course/production-status.csv`.
+After research and source-script jobs produce `episodes/<group-id>/script.json` and
+`episodes/<group-id>/notebooklm_bundle/research_dossier.md`, use Computer Use or Claude Code browser
+control to create NotebookLM notebooks, upload the factual dossier, choose Debate and Longer audio,
+and record the resulting URL/status in `course/production-status.csv`.

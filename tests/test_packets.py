@@ -62,7 +62,10 @@ class PacketRenderingTest(unittest.TestCase):
         self.assertIn("## Podcast Production Guidance", packet)
         self.assertIn("Episode format: Debate", packet)
         self.assertIn("Target length: Long-form", packet)
-        self.assertIn("NotebookLM handoff: use Debate format and Longer length after scripts are generated.", packet)
+        self.assertIn(
+            "NotebookLM handoff: use Debate format and Longer length after factual source scripts are generated.",
+            packet,
+        )
         self.assertIn("Does global broadcast explain consciousness", packet)
         self.assertNotIn("Baars 1988..", packet)
         self.assertNotIn("consciousness?.", packet)

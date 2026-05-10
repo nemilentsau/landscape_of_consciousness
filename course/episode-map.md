@@ -4,7 +4,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-001/manifest.json`
-- Script output: `episodes/group-001/script.json`
+- Factual source script: `episodes/group-001/script.json`
+- NotebookLM dossier: `episodes/group-001/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `1`: `data/research/1.json` + `packets/theories/01-chalmerss-hard-problem-of-consciousness.md`
@@ -17,7 +18,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-002/manifest.json`
-- Script output: `episodes/group-002/script.json`
+- Factual source script: `episodes/group-002/script.json`
+- NotebookLM dossier: `episodes/group-002/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `6`: `data/research/6.json` + `packets/theories/06-is-consciousness-primitive-fundamental.md`
@@ -30,7 +32,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-003/manifest.json`
-- Script output: `episodes/group-003/script.json`
+- Factual source script: `episodes/group-003/script.json`
+- NotebookLM dossier: `episodes/group-003/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `11`: `data/research/11.json` + `packets/theories/11-quantum-theories.md`
@@ -43,7 +46,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-004/manifest.json`
-- Script output: `episodes/group-004/script.json`
+- Factual source script: `episodes/group-004/script.json`
+- NotebookLM dossier: `episodes/group-004/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `16`: `data/research/16.json` + `packets/theories/16-idealisms.md`
@@ -56,7 +60,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-005/manifest.json`
-- Script output: `episodes/group-005/script.json`
+- Factual source script: `episodes/group-005/script.json`
+- NotebookLM dossier: `episodes/group-005/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `21`: `data/research/21.json` + `packets/theories/21-implications.md`
@@ -69,7 +74,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-006/manifest.json`
-- Script output: `episodes/group-006/script.json`
+- Factual source script: `episodes/group-006/script.json`
+- NotebookLM dossier: `episodes/group-006/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `26`: `data/research/26.json` + `packets/theories/26-reflections.md`
@@ -78,7 +84,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-007/manifest.json`
-- Script output: `episodes/group-007/script.json`
+- Factual source script: `episodes/group-007/script.json`
+- NotebookLM dossier: `episodes/group-007/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.1`: `data/research/9.1.json` + `packets/theories/09-01-philosophical-theories.md`
@@ -91,7 +98,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-008/manifest.json`
-- Script output: `episodes/group-008/script.json`
+- Factual source script: `episodes/group-008/script.json`
+- NotebookLM dossier: `episodes/group-008/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.6`: `data/research/9.6.json` + `packets/theories/09-06-embodied-and-enactive-theories.md`
@@ -104,7 +112,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-009/manifest.json`
-- Script output: `episodes/group-009/script.json`
+- Factual source script: `episodes/group-009/script.json`
+- NotebookLM dossier: `episodes/group-009/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.1.1`: `data/research/9.1.1.json` + `packets/theories/09-01-01-eliminative-materialism-illusionism.md`
@@ -117,7 +126,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-010/manifest.json`
-- Script output: `episodes/group-010/script.json`
+- Factual source script: `episodes/group-010/script.json`
+- NotebookLM dossier: `episodes/group-010/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.1.6`: `data/research/9.1.6.json` + `packets/theories/09-01-06-searles-biological-naturalism.md`
@@ -130,7 +140,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-011/manifest.json`
-- Script output: `episodes/group-011/script.json`
+- Factual source script: `episodes/group-011/script.json`
+- NotebookLM dossier: `episodes/group-011/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.1.11`: `data/research/9.1.11.json` + `packets/theories/09-01-11-hardcastles-argument-against-materialism-skeptics.md`
@@ -140,7 +151,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-012/manifest.json`
-- Script output: `episodes/group-012/script.json`
+- Factual source script: `episodes/group-012/script.json`
+- NotebookLM dossier: `episodes/group-012/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.2.1`: `data/research/9.2.1.json` + `packets/theories/09-02-01-edelmans-neural-darwinism-and-reentrant-neural-circuitry.md`
@@ -153,7 +165,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-013/manifest.json`
-- Script output: `episodes/group-013/script.json`
+- Factual source script: `episodes/group-013/script.json`
+- NotebookLM dossier: `episodes/group-013/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.2.6`: `data/research/9.2.6.json` + `packets/theories/09-02-06-grazianos-attention-schema-theory.md`
@@ -166,7 +179,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-014/manifest.json`
-- Script output: `episodes/group-014/script.json`
+- Factual source script: `episodes/group-014/script.json`
+- NotebookLM dossier: `episodes/group-014/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.2.11`: `data/research/9.2.11.json` + `packets/theories/09-02-11-brain-circuits-and-cycles-theories.md`
@@ -178,7 +192,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-015/manifest.json`
-- Script output: `episodes/group-015/script.json`
+- Factual source script: `episodes/group-015/script.json`
+- NotebookLM dossier: `episodes/group-015/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.3.1`: `data/research/9.3.1.json` + `packets/theories/09-03-01-joness-electromagnetic-fields.md`
@@ -191,7 +206,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-016/manifest.json`
-- Script output: `episodes/group-016/script.json`
+- Factual source script: `episodes/group-016/script.json`
+- NotebookLM dossier: `episodes/group-016/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.3.6`: `data/research/9.3.6.json` + `packets/theories/09-03-06-llinass-mindness-state-of-oscillations.md`
@@ -201,7 +217,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-017/manifest.json`
-- Script output: `episodes/group-017/script.json`
+- Factual source script: `episodes/group-017/script.json`
+- NotebookLM dossier: `episodes/group-017/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.4.1`: `data/research/9.4.1.json` + `packets/theories/09-04-01-computational-theories.md`
@@ -214,7 +231,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-018/manifest.json`
-- Script output: `episodes/group-018/script.json`
+- Factual source script: `episodes/group-018/script.json`
+- NotebookLM dossier: `episodes/group-018/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.4.6`: `data/research/9.4.6.json` + `packets/theories/09-04-06-doyles-experience-recorder-and-reproducer.md`
@@ -225,7 +243,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-019/manifest.json`
-- Script output: `episodes/group-019/script.json`
+- Factual source script: `episodes/group-019/script.json`
+- NotebookLM dossier: `episodes/group-019/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.5.1`: `data/research/9.5.1.json` + `packets/theories/09-05-01-predictive-theories-top-down.md`
@@ -238,7 +257,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-020/manifest.json`
-- Script output: `episodes/group-020/script.json`
+- Factual source script: `episodes/group-020/script.json`
+- NotebookLM dossier: `episodes/group-020/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.5.6`: `data/research/9.5.6.json` + `packets/theories/09-05-06-carhart-harriss-entropic-brain-hypothesis.md`
@@ -251,7 +271,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-021/manifest.json`
-- Script output: `episodes/group-021/script.json`
+- Factual source script: `episodes/group-021/script.json`
+- NotebookLM dossier: `episodes/group-021/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.5.11`: `data/research/9.5.11.json` + `packets/theories/09-05-11-projective-consciousness-model.md`
@@ -261,7 +282,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-022/manifest.json`
-- Script output: `episodes/group-022/script.json`
+- Factual source script: `episodes/group-022/script.json`
+- NotebookLM dossier: `episodes/group-022/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.6.1`: `data/research/9.6.1.json` + `packets/theories/09-06-01-embodied-cognition.md`
@@ -274,7 +296,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-023/manifest.json`
-- Script output: `episodes/group-023/script.json`
+- Factual source script: `episodes/group-023/script.json`
+- NotebookLM dossier: `episodes/group-023/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.6.6`: `data/research/9.6.6.json` + `packets/theories/09-06-06-bitbols-radical-neurophenomenology.md`
@@ -285,7 +308,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-024/manifest.json`
-- Script output: `episodes/group-024/script.json`
+- Factual source script: `episodes/group-024/script.json`
+- NotebookLM dossier: `episodes/group-024/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.7.1`: `data/research/9.7.1.json` + `packets/theories/09-07-01-a-clarks-extended-mind.md`
@@ -298,7 +322,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-025/manifest.json`
-- Script output: `episodes/group-025/script.json`
+- Factual source script: `episodes/group-025/script.json`
+- NotebookLM dossier: `episodes/group-025/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.7.6`: `data/research/9.7.6.json` + `packets/theories/09-07-06-jaworskis-hylomorphism.md`
@@ -308,7 +333,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-026/manifest.json`
-- Script output: `episodes/group-026/script.json`
+- Factual source script: `episodes/group-026/script.json`
+- NotebookLM dossier: `episodes/group-026/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.8.1`: `data/research/9.8.1.json` + `packets/theories/09-08-01-first-order-representationalism.md`
@@ -321,7 +347,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-027/manifest.json`
-- Script output: `episodes/group-027/script.json`
+- Factual source script: `episodes/group-027/script.json`
+- NotebookLM dossier: `episodes/group-027/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.8.6`: `data/research/9.8.6.json` + `packets/theories/09-08-06-humphreys-mental-representations-and-brain-attractors.md`
@@ -334,7 +361,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-028/manifest.json`
-- Script output: `episodes/group-028/script.json`
+- Factual source script: `episodes/group-028/script.json`
+- NotebookLM dossier: `episodes/group-028/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.8.11`: `data/research/9.8.11.json` + `packets/theories/09-08-11-tyes-contingentism.md`
@@ -346,7 +374,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-029/manifest.json`
-- Script output: `episodes/group-029/script.json`
+- Factual source script: `episodes/group-029/script.json`
+- NotebookLM dossier: `episodes/group-029/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.9.1`: `data/research/9.9.1.json` + `packets/theories/09-09-01-chomskys-language-and-consciousness.md`
@@ -359,7 +388,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-030/manifest.json`
-- Script output: `episodes/group-030/script.json`
+- Factual source script: `episodes/group-030/script.json`
+- NotebookLM dossier: `episodes/group-030/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.9.6`: `data/research/9.9.6.json` + `packets/theories/09-09-06-parringtons-language-and-tool-driven-consciousness.md`
@@ -368,7 +398,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-031/manifest.json`
-- Script output: `episodes/group-031/script.json`
+- Factual source script: `episodes/group-031/script.json`
+- NotebookLM dossier: `episodes/group-031/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.10.1`: `data/research/9.10.1.json` + `packets/theories/09-10-01-dennetts-evolution-of-minds.md`
@@ -381,7 +412,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-032/manifest.json`
-- Script output: `episodes/group-032/script.json`
+- Factual source script: `episodes/group-032/script.json`
+- NotebookLM dossier: `episodes/group-032/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `9.10.6`: `data/research/9.10.6.json` + `packets/theories/09-10-06-rebers-cellular-basis-of-consciousness.md`
@@ -393,7 +425,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-033/manifest.json`
-- Script output: `episodes/group-033/script.json`
+- Factual source script: `episodes/group-033/script.json`
+- NotebookLM dossier: `episodes/group-033/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `10.1`: `data/research/10.1.json` + `packets/theories/10-01-elliss-strong-emergence-and-top-down-causation.md`
@@ -406,7 +439,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-034/manifest.json`
-- Script output: `episodes/group-034/script.json`
+- Factual source script: `episodes/group-034/script.json`
+- NotebookLM dossier: `episodes/group-034/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `10.6`: `data/research/10.6.json` + `packets/theories/10-06-northoffs-non-reductive-neurophilosophy.md`
@@ -415,7 +449,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-035/manifest.json`
-- Script output: `episodes/group-035/script.json`
+- Factual source script: `episodes/group-035/script.json`
+- NotebookLM dossier: `episodes/group-035/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `11.1`: `data/research/11.1.json` + `packets/theories/11-01-penrose-hameroffs-orchestrated-objective-reduction.md`
@@ -428,7 +463,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-036/manifest.json`
-- Script output: `episodes/group-036/script.json`
+- Factual source script: `episodes/group-036/script.json`
+- NotebookLM dossier: `episodes/group-036/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `11.6`: `data/research/11.6.json` + `packets/theories/11-06-beck-eccless-quantum-processes-in-the-synapse.md`
@@ -441,7 +477,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-037/manifest.json`
-- Script output: `episodes/group-037/script.json`
+- Factual source script: `episodes/group-037/script.json`
+- NotebookLM dossier: `episodes/group-037/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `11.11`: `data/research/11.11.json` + `packets/theories/11-11-faggins-quantum-information-based-panpsychism.md`
@@ -454,7 +491,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-038/manifest.json`
-- Script output: `episodes/group-038/script.json`
+- Factual source script: `episodes/group-038/script.json`
+- NotebookLM dossier: `episodes/group-038/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `11.16`: `data/research/11.16.json` + `packets/theories/11-16-rovellis-relational-physics.md`
@@ -463,7 +501,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-039/manifest.json`
-- Script output: `episodes/group-039/script.json`
+- Factual source script: `episodes/group-039/script.json`
+- NotebookLM dossier: `episodes/group-039/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `12.1`: `data/research/12.1.json` + `packets/theories/12-01-critiques-of-integrated-information-theory.md`
@@ -473,7 +512,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-040/manifest.json`
-- Script output: `episodes/group-040/script.json`
+- Factual source script: `episodes/group-040/script.json`
+- NotebookLM dossier: `episodes/group-040/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `13.1`: `data/research/13.1.json` + `packets/theories/13-01-micropsychism.md`
@@ -486,7 +526,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-041/manifest.json`
-- Script output: `episodes/group-041/script.json`
+- Factual source script: `episodes/group-041/script.json`
+- NotebookLM dossier: `episodes/group-041/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `13.6`: `data/research/13.6.json` + `packets/theories/13-06-chalmerss-panpsychism.md`
@@ -499,7 +540,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-042/manifest.json`
-- Script output: `episodes/group-042/script.json`
+- Factual source script: `episodes/group-042/script.json`
+- NotebookLM dossier: `episodes/group-042/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `13.11`: `data/research/13.11.json` + `packets/theories/13-11-wallaces-panpsychism-inside-physics.md`
@@ -509,7 +551,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-043/manifest.json`
-- Script output: `episodes/group-043/script.json`
+- Factual source script: `episodes/group-043/script.json`
+- NotebookLM dossier: `episodes/group-043/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `14.1`: `data/research/14.1.json` + `packets/theories/14-01-russellian-monism.md`
@@ -522,7 +565,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-044/manifest.json`
-- Script output: `episodes/group-044/script.json`
+- Factual source script: `episodes/group-044/script.json`
+- NotebookLM dossier: `episodes/group-044/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `14.6`: `data/research/14.6.json` + `packets/theories/14-06-teilhard-de-cardins-evolving-consciousness.md`
@@ -535,7 +579,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-045/manifest.json`
-- Script output: `episodes/group-045/script.json`
+- Factual source script: `episodes/group-045/script.json`
+- NotebookLM dossier: `episodes/group-045/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `14.11`: `data/research/14.11.json` + `packets/theories/14-11-bentley-harts-monism-consciousness-being-god.md`
@@ -545,7 +590,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-046/manifest.json`
-- Script output: `episodes/group-046/script.json`
+- Factual source script: `episodes/group-046/script.json`
+- NotebookLM dossier: `episodes/group-046/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `15.1`: `data/research/15.1.json` + `packets/theories/15-01-property-dualism.md`
@@ -558,7 +604,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-047/manifest.json`
-- Script output: `episodes/group-047/script.json`
+- Factual source script: `episodes/group-047/script.json`
+- NotebookLM dossier: `episodes/group-047/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `15.6`: `data/research/15.6.json` + `packets/theories/15-06-fesers-neo-thomistic-neo-aristotelian-common-sense-dualism.md`
@@ -571,7 +618,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-048/manifest.json`
-- Script output: `episodes/group-048/script.json`
+- Factual source script: `episodes/group-048/script.json`
+- NotebookLM dossier: `episodes/group-048/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `15.11`: `data/research/15.11.json` + `packets/theories/15-11-soul-in-the-hebrew-bible-and-jewish-philosophy.md`
@@ -584,7 +632,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-049/manifest.json`
-- Script output: `episodes/group-049/script.json`
+- Factual source script: `episodes/group-049/script.json`
+- NotebookLM dossier: `episodes/group-049/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `15.16`: `data/research/15.16.json` + `packets/theories/15-16-soul-in-indigenous-religions.md`
@@ -597,7 +646,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-050/manifest.json`
-- Script output: `episodes/group-050/script.json`
+- Factual source script: `episodes/group-050/script.json`
+- NotebookLM dossier: `episodes/group-050/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `16.1`: `data/research/16.1.json` + `packets/theories/16-01-indian-cosmic-consciousness.md`
@@ -610,7 +660,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-051/manifest.json`
-- Script output: `episodes/group-051/script.json`
+- Factual source script: `episodes/group-051/script.json`
+- NotebookLM dossier: `episodes/group-051/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `16.6`: `data/research/16.6.json` + `packets/theories/16-06-mcgilchrists-relational-creative-process-idealism.md`
@@ -623,7 +674,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-052/manifest.json`
-- Script output: `episodes/group-052/script.json`
+- Factual source script: `episodes/group-052/script.json`
+- NotebookLM dossier: `episodes/group-052/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `16.11`: `data/research/16.11.json` + `packets/theories/16-11-naders-all-there-is.md`
@@ -636,7 +688,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-053/manifest.json`
-- Script output: `episodes/group-053/script.json`
+- Factual source script: `episodes/group-053/script.json`
+- NotebookLM dossier: `episodes/group-053/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `17.1`: `data/research/17.1.json` + `packets/theories/17-01-bergsons-multiplicity-duration-perception-memory.md`
@@ -649,7 +702,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-054/manifest.json`
-- Script output: `episodes/group-054/script.json`
+- Factual source script: `episodes/group-054/script.json`
+- NotebookLM dossier: `episodes/group-054/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `17.6`: `data/research/17.6.json` + `packets/theories/17-06-wilbers-integral-theory.md`
@@ -662,7 +716,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-055/manifest.json`
-- Script output: `episodes/group-055/script.json`
+- Factual source script: `episodes/group-055/script.json`
+- NotebookLM dossier: `episodes/group-055/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `17.11`: `data/research/17.11.json` + `packets/theories/17-11-grabois-three-aspect-model.md`
@@ -675,7 +730,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-056/manifest.json`
-- Script output: `episodes/group-056/script.json`
+- Factual source script: `episodes/group-056/script.json`
+- NotebookLM dossier: `episodes/group-056/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `17.16`: `data/research/17.16.json` + `packets/theories/17-16-hillers-eternal-discarnate-consciousness.md`
@@ -688,7 +744,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-057/manifest.json`
-- Script output: `episodes/group-057/script.json`
+- Factual source script: `episodes/group-057/script.json`
+- NotebookLM dossier: `episodes/group-057/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `17.21`: `data/research/17.21.json` + `packets/theories/17-21-psychedelic-theories-of-consciousness.md`
@@ -697,7 +754,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-058/manifest.json`
-- Script output: `episodes/group-058/script.json`
+- Factual source script: `episodes/group-058/script.json`
+- NotebookLM dossier: `episodes/group-058/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `18.1`: `data/research/18.1.json` + `packets/theories/18-01-nagels-mind-and-cosmos.md`
@@ -710,7 +768,8 @@
 - Episode question: What is the strongest case for this cluster, and where does it break?
 - Audio target: Debate, Longer, English
 - Episode manifest: `episodes/group-059/manifest.json`
-- Script output: `episodes/group-059/script.json`
+- Factual source script: `episodes/group-059/script.json`
+- NotebookLM dossier: `episodes/group-059/notebooklm_bundle/research_dossier.md`
 - NotebookLM handoff: computer use after script bundle is ready
 - Section inputs:
   - `18.6`: `data/research/18.6.json` + `packets/theories/18-06-nagasawas-mind-body-problem-in-an-infinitely-decomposable.md`

@@ -1,13 +1,13 @@
 # Consciousness Podcast Pipeline Implementation Plan
 
-Goal: build a reproducible production pipeline that starts from Kuhn's downloaded PDF, uses Codex CLI and Claude Code headless jobs for research/script generation, and reserves NotebookLM for the final audio handoff.
+Goal: build a reproducible production pipeline that starts from Kuhn's downloaded PDF, uses Codex CLI and Claude Code headless jobs for research and factual source-script generation, and reserves NotebookLM for the final dialogue/audio handoff.
 
 ## Architecture
 
 - Python package for deterministic local artifacts.
 - JSON/JSONL/CSV as resumable state.
 - `codex exec` and `claude --bare -p` as execution backends.
-- Computer Use or Claude Code browser control only after scripts/source bundles are generated.
+- Computer Use or Claude Code browser control only after factual NotebookLM dossiers are generated.
 
 ## Completed Foundation
 
@@ -16,8 +16,8 @@ Goal: build a reproducible production pipeline that starts from Kuhn's downloade
 - Section segmentation with taxonomy paths.
 - Packet rendering and validation.
 - Episode grouping and production status CSV.
-- Headless research and podcast-script job manifests.
-- JSON schemas for research records and podcast scripts.
+- Headless research and source-script job manifests.
+- JSON schemas for research records and source scripts.
 - Command builders for Codex CLI and Claude Code headless.
 
 ## Current Commands
@@ -37,7 +37,7 @@ PYTHONPATH=. /Users/andreinemilentsau/.cache/codex-runtimes/codex-primary-runtim
 ## Next Work
 
 - Run one Codex research job on a representative mainstream theory.
-- Run one Claude script job on the corresponding episode group.
-- Add validation for completed research/script outputs.
-- Build source-bundle material under `episodes/<group-id>/notebooklm_bundle/`.
+- Run one source-script job on the corresponding episode group.
+- Add validation for completed research/source-script outputs.
+- Build factual NotebookLM dossier material under `episodes/<group-id>/notebooklm_bundle/`.
 - Then test a single NotebookLM handoff with Computer Use or Claude Code browser control.

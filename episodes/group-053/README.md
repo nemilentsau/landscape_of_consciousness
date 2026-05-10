@@ -1,10 +1,11 @@
 # group-053: Anomalous and altered states theories Part 1
 
-This is one podcast episode group. It combines section-level research records into one long-form script.
+This is one podcast episode group. It combines section-level research records into one factual NotebookLM source script.
 
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Script job: `group-053-script` in `jobs/podcast-scripts.jsonl`
-- Script output: `episodes/group-053/script.json`
+- Script job: `group-053-script` in `jobs/source-scripts.jsonl`
+- Script JSON output: `episodes/group-053/script.json`
+- NotebookLM dossier output: `episodes/group-053/notebooklm_bundle/research_dossier.md`
 - NotebookLM bundle: `episodes/group-053/notebooklm_bundle`
 
 ## Section Inputs

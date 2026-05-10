@@ -47,8 +47,8 @@ Epistemic status: active philosophical debate. The distinctions between creature
 Episode format: Debate
 Target length: Long-form
 Language: English
-Debate prompt: Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution.
-NotebookLM handoff: use Debate format and Longer length after scripts are generated.
+Debate prompt: Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution.
+NotebookLM handoff: use Debate format and Longer length after factual source scripts are generated.
 
 ## Sources
 - Kuhn review, section 2, pages 4-4.

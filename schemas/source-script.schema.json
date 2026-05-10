@@ -13,10 +13,7 @@
     "duration_target": {
       "type": "string"
     },
-    "script_markdown": {
-      "type": "string"
-    },
-    "source_bundle_markdown": {
+    "research_dossier_markdown": {
       "type": "string"
     },
     "citations": {
@@ -37,8 +34,7 @@
     "title",
     "episode_question",
     "duration_target",
-    "script_markdown",
-    "source_bundle_markdown",
+    "research_dossier_markdown",
     "citations",
     "missing_inputs"
   ],

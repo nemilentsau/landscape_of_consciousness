@@ -71,7 +71,7 @@ class CourseGenerationTest(unittest.TestCase):
             self.assertEqual(groups[0]["audio_profile"]["length"], "Longer")
             self.assertIn("Podcast Episode Map", group_markdown)
             self.assertEqual(rows[0]["research_status"], "research_queued")
-            self.assertEqual(rows[0]["script_status"], "script_queued")
+            self.assertEqual(rows[0]["script_status"], "source_script_queued")
             self.assertEqual(rows[0]["notebooklm_status"], "not_started")
 
     def test_write_episode_artifacts_makes_section_inputs_explicit(self):
@@ -99,8 +99,11 @@ class CourseGenerationTest(unittest.TestCase):
                 manifest["sections"][0]["packet_path"],
                 "packets/theories/9-2-3-global-workspace-theory.md",
             )
+            self.assertEqual(manifest["script_job_manifest"], "jobs/source-scripts.jsonl")
+            self.assertEqual(manifest["bundle_output_path"], "episodes/group-001/notebooklm_bundle/research_dossier.md")
             self.assertIn("This is one podcast episode group", readme)
             self.assertIn("section-level research records", readme)
+            self.assertIn("factual NotebookLM source script", readme)
             self.assertIn("data/research/9.2.3.json", readme)
 
 

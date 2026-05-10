@@ -87,14 +87,15 @@
     "packets/theories/09-04-05-pribrams-holonomic-brain-theory.md"
   ],
   "script_job_id": "group-017-script",
-  "script_job_manifest": "jobs/podcast-scripts.jsonl",
+  "script_job_manifest": "jobs/source-scripts.jsonl",
   "script_output": "episodes/group-017/script.json",
+  "bundle_output_path": "episodes/group-017/notebooklm_bundle/research_dossier.md",
   "notebooklm_bundle_dir": "episodes/group-017/notebooklm_bundle",
   "notebooklm_handoff": "computer_use_after_script_bundle",
   "audio_profile": {
     "format": "Debate",
     "length": "Longer",
     "language": "English",
-    "prompt": "Make this a rigorous debate-club style episode. Steelman the theory, challenge it with serious objections, compare nearby theories, and avoid premature resolution."
+    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
   }
 }

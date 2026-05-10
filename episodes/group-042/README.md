@@ -1,10 +1,11 @@
 # group-042: Panpsychisms Part 3
 
-This is one podcast episode group. It combines section-level research records into one long-form script.
+This is one podcast episode group. It combines section-level research records into one factual NotebookLM source script.
 
 - Episode question: What is the strongest case for this cluster, and where does it break?
-- Script job: `group-042-script` in `jobs/podcast-scripts.jsonl`
-- Script output: `episodes/group-042/script.json`
+- Script job: `group-042-script` in `jobs/source-scripts.jsonl`
+- Script JSON output: `episodes/group-042/script.json`
+- NotebookLM dossier output: `episodes/group-042/notebooklm_bundle/research_dossier.md`
 - NotebookLM bundle: `episodes/group-042/notebooklm_bundle`
 
 ## Section Inputs

@@ -95,7 +95,7 @@ Episode format: {AUDIO_FORMAT}
 Target length: Long-form
 Language: {AUDIO_LANGUAGE}
 Debate prompt: {AUDIO_PROMPT}
-NotebookLM handoff: use Debate format and {AUDIO_LENGTH} length after scripts are generated.
+NotebookLM handoff: use Debate format and {AUDIO_LENGTH} length after factual source scripts are generated.
 
 ## Sources
 - Kuhn review, section {section.section_id}, pages {section.start_page}-{section.end_page}.

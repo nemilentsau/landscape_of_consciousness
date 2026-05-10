@@ -47,6 +47,7 @@ class EpisodeManifest(TypedDict):
     script_job_id: str
     script_job_manifest: str
     script_output: str
+    bundle_output_path: str
     notebooklm_bundle_dir: str
     notebooklm_handoff: str
     audio_profile: AudioProfile
@@ -113,8 +114,9 @@ def build_episode_manifests(sections: list[Section]) -> list[EpisodeManifest]:
                 "research_inputs": research_inputs,
                 "packet_inputs": packet_inputs,
                 "script_job_id": f"{group_id}-script",
-                "script_job_manifest": "jobs/podcast-scripts.jsonl",
+                "script_job_manifest": "jobs/source-scripts.jsonl",
                 "script_output": f"episodes/{group_id}/script.json",
+                "bundle_output_path": f"episodes/{group_id}/notebooklm_bundle/research_dossier.md",
                 "notebooklm_bundle_dir": f"episodes/{group_id}/notebooklm_bundle",
                 "notebooklm_handoff": "computer_use_after_script_bundle",
                 "audio_profile": group["audio_profile"],
@@ -127,11 +129,13 @@ def render_episode_readme(manifest: EpisodeManifest) -> str:
     lines = [
         f"# {manifest['episode_id']}: {manifest['title']}",
         "",
-        "This is one podcast episode group. It combines section-level research records into one long-form script.",
+        "This is one podcast episode group. It combines section-level research records "
+        "into one factual NotebookLM source script.",
         "",
         f"- Episode question: {manifest['episode_question']}",
         f"- Script job: `{manifest['script_job_id']}` in `{manifest['script_job_manifest']}`",
-        f"- Script output: `{manifest['script_output']}`",
+        f"- Script JSON output: `{manifest['script_output']}`",
+        f"- NotebookLM dossier output: `{manifest['bundle_output_path']}`",
         f"- NotebookLM bundle: `{manifest['notebooklm_bundle_dir']}`",
         "",
         "## Section Inputs",
@@ -190,7 +194,10 @@ def write_course_artifacts(sections: list[Section], output_dir: Path) -> None:
             f"- Audio target: {audio_profile['format']}, {audio_profile['length']}, {audio_profile['language']}"
         )
         group_lines.append(f"- Episode manifest: `episodes/{group['group_id']}/manifest.json`")
-        group_lines.append(f"- Script output: `episodes/{group['group_id']}/script.json`")
+        group_lines.append(f"- Factual source script: `episodes/{group['group_id']}/script.json`")
+        group_lines.append(
+            f"- NotebookLM dossier: `episodes/{group['group_id']}/notebooklm_bundle/research_dossier.md`"
+        )
         group_lines.append("- NotebookLM handoff: computer use after script bundle is ready")
         group_lines.append("- Section inputs:")
         for section_id, slug in zip(group["section_ids"], group["packet_slugs"], strict=True):
@@ -212,6 +219,7 @@ def write_course_artifacts(sections: list[Section], output_dir: Path) -> None:
                 "audio_status",
                 "message",
             ],
+            lineterminator="\n",
         )
         writer.writeheader()
         for group in groups:
@@ -222,7 +230,7 @@ def write_course_artifacts(sections: list[Section], output_dir: Path) -> None:
                         "section_id": section_id,
                         "packet_slug": slug,
                         "research_status": "research_queued",
-                        "script_status": "script_queued",
+                        "script_status": "source_script_queued",
                         "notebooklm_status": "not_started",
                         "notebook_url": "",
                         "audio_status": "not_started",

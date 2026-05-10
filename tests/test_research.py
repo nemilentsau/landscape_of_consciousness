@@ -17,6 +17,7 @@ class ResearchArtifactsTest(unittest.TestCase):
             self.assertIn("not podcast episodes", readme)
             self.assertIn("episodes/<group-id>/manifest.json", readme)
             self.assertIn("course/episode-map.json", readme)
+            self.assertIn("jobs/source-scripts.jsonl", readme)
 
 
 if __name__ == "__main__":

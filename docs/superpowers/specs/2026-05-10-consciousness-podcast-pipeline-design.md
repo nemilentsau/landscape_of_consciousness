@@ -4,13 +4,13 @@ Date: 2026-05-10
 
 ## Context
 
-The local PDF in `papers/` is the canonical source for Robert Lawrence Kuhn's "A landscape of consciousness: Toward a taxonomy of explanations and implications." The project should turn the review into an interesting long-form listening course, but the production center is not NotebookLM browser automation. The center is a reproducible research and script-generation pipeline using headless agents.
+The local PDF in `papers/` is the canonical source for Robert Lawrence Kuhn's "A landscape of consciousness: Toward a taxonomy of explanations and implications." The project should turn the review into an interesting long-form listening course, but the production center is not NotebookLM browser automation. The center is a reproducible research and factual source-script pipeline using headless agents.
 
 Official tool targets:
 
 - OpenAI Codex CLI non-interactive jobs through `codex exec`.
 - Claude Code headless jobs through `claude --bare -p`.
-- NotebookLM only as the final audio-rendering surface, operated by Computer Use or Claude Code after source bundles and scripts exist.
+- NotebookLM only as the final dialogue/audio-rendering surface, operated by Computer Use or Claude Code after factual source dossiers exist.
 
 ## Goals
 
@@ -18,9 +18,9 @@ Official tool targets:
 - Detect Kuhn's numbered theory taxonomy and segment the review into theory/subtheory sections.
 - Build episode-sized groups so tiny theories can be combined and broad categories are split.
 - Generate machine-readable research jobs for Codex CLI or Claude Code headless.
-- Generate machine-readable podcast-script jobs for long-form debate-club episodes.
+- Generate machine-readable source-script jobs that create factual NotebookLM research dossiers.
 - Keep schemas stable so agent outputs can be validated and resumed.
-- Leave the NotebookLM step as an explicit handoff after scripts and source bundles exist.
+- Leave the NotebookLM step as an explicit handoff after factual dossiers exist.
 
 ## Non-Goals
 
@@ -48,14 +48,14 @@ Official tool targets:
 ### Headless Jobs
 
 - `jobs/research.jsonl`: one research job per section.
-- `jobs/podcast-scripts.jsonl`: one long-form script job per episode group.
+- `jobs/source-scripts.jsonl`: one factual source-script job per episode group.
 - `schemas/research-record.schema.json`
-- `schemas/podcast-script.schema.json`
+- `schemas/source-script.schema.json`
 
 ### Agent Outputs
 
 - `data/research/<section-id>.json`: cited research record.
-- `episodes/<group-id>/script.json`: long debate-club podcast script plus NotebookLM source-bundle markdown.
+- `episodes/<group-id>/script.json`: factual source-script JSON containing `research_dossier_markdown`.
 - `episodes/<group-id>/notebooklm_bundle/`: final handoff material for NotebookLM.
 
 ## Research Policy
@@ -69,18 +69,19 @@ Research jobs must produce balanced records:
 
 ## Episode Policy
 
-Podcast script jobs should produce long-form debate-club scripts:
+Source-script jobs should produce factual NotebookLM research dossiers, not dialogue:
 
-- Opening dispute.
-- Steelman.
-- Cross-examination.
-- Serious objections.
+- Episode scope and why the sections are grouped.
+- Per-section factual summaries grounded in Kuhn and research records.
+- Strongest academic case.
+- Serious objections and methodological limits.
+- Comparison axes for theories in the cluster.
+- Epistemic status and claims not to overstate.
 - Implications for AI consciousness, virtual immortality, survival beyond death, and value only where relevant.
-- Verdict without closure.
 
 ## NotebookLM Handoff
 
-NotebookLM receives already-written scripts and source bundles. Computer Use or Claude Code may operate the UI, but that automation must observe the live UI and recover from login/account/manual states. It should not be represented as deterministic local Playwright selectors.
+NotebookLM receives factual dossiers and generates the conversational episode itself. Computer Use or Claude Code may operate the UI, but that automation must observe the live UI and recover from login/account/manual states. It should not be represented as deterministic local Playwright selectors.
 
 ## Verification
 
