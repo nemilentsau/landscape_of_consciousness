@@ -34,6 +34,12 @@ class HeadingDetectionTest(unittest.TestCase):
             "09-02-03-baarss-and-dehaenes-global-workspace-theory",
         )
 
+    def test_heading_slug_normalizes_unicode_apostrophes_like_ascii_apostrophes(self):
+        self.assertEqual(
+            heading_slug("9.2.3", "Baars’s and Dehaene’s global workspace theory"),
+            "09-02-03-baarss-and-dehaenes-global-workspace-theory",
+        )
+
 
 if __name__ == "__main__":
     unittest.main()

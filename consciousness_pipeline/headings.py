@@ -4,6 +4,7 @@ from consciousness_pipeline.models import Heading, PageText
 
 HEADING_RE = re.compile(r"^(?P<section>\d{1,2}(?:\.\d+){0,3})\.\s+(?P<title>\S.*)$")
 FALSE_SENTENCE_START_RE = re.compile(r"^(In|There|Therefore|So,)\b")
+APOSTROPHE_RE = re.compile(r"['’‘ʼ`]")
 
 
 def _clean_line(line: str) -> str:
@@ -52,6 +53,6 @@ def detect_headings(pages: list[PageText]) -> list[Heading]:
 
 def heading_slug(section_id: str, title: str) -> str:
     padded = "-".join(part.zfill(2) for part in section_id.split("."))
-    normalized = title.lower().replace("'", "")
+    normalized = APOSTROPHE_RE.sub("", title.lower())
     normalized = re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")
     return f"{padded}-{normalized}"
