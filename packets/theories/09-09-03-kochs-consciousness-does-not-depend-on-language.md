@@ -1,7 +1,7 @@
 # Koch’s consciousness does not depend on language
 
 ## Course Role
-This packet supports a debate-club episode on What is the strongest case for Koch’s consciousness does not depend on language, and where does it fail?
+This packet supports a long-form listening-course episode on What is the strongest case for Koch’s consciousness does not depend on language, and where does it fail?
 
 ## Kuhn Review Anchor
 - Section: 9.9.3. Koch’s consciousness does not depend on language
@@ -36,11 +36,11 @@ Research incomplete
 - Adjacent packets in Materialism theories -> Language relationships -> Koch’s consciousness does not depend on language
 
 ## Podcast Production Guidance
-Episode format: Debate
+NotebookLM format: Deep Dive
 Target length: Long-form
 Language: English
-Debate prompt: Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution.
-NotebookLM handoff: use Debate format and Longer length after factual source scripts are generated.
+Custom prompt: Generate an extended, rigorous, balanced debate for a curious but serious listener. Steelman physicalist, dualist, idealist, and typological positions; challenge each with serious objections; keep Chalmers's hard problem, phenomenal vs access consciousness, and correlation-vs-explanation distinctions central. Compare nearby theories without prematurely resolving the debate.
+NotebookLM handoff: use Deep Dive format and Long length after factual source scripts are generated.
 
 ## Sources
 - Kuhn review, section 9.9.3, pages 53-53.

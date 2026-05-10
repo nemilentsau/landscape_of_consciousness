@@ -88,9 +88,9 @@
   "notebooklm_bundle_dir": "episodes/group-044/notebooklm_bundle",
   "notebooklm_handoff": "computer_use_after_script_bundle",
   "audio_profile": {
-    "format": "Debate",
-    "length": "Longer",
+    "format": "Deep Dive",
+    "length": "Long",
     "language": "English",
-    "prompt": "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution."
+    "prompt": "Generate an extended, rigorous, balanced debate for a curious but serious listener. Steelman physicalist, dualist, idealist, and typological positions; challenge each with serious objections; keep Chalmers's hard problem, phenomenal vs access consciousness, and correlation-vs-explanation distinctions central. Compare nearby theories without prematurely resolving the debate."
   }
 }

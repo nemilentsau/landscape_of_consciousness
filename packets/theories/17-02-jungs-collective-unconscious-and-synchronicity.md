@@ -1,7 +1,7 @@
 # Jung’s collective unconscious and synchronicity
 
 ## Course Role
-This packet supports a debate-club episode on What is the strongest case for Jung’s collective unconscious and synchronicity, and where does it fail?
+This packet supports a long-form listening-course episode on What is the strongest case for Jung’s collective unconscious and synchronicity, and where does it fail?
 
 ## Kuhn Review Anchor
 - Section: 17.2. Jung’s collective unconscious and synchronicity
@@ -36,11 +36,11 @@ Research incomplete
 - Adjacent packets in Anomalous and altered states theories -> Jung’s collective unconscious and synchronicity
 
 ## Podcast Production Guidance
-Episode format: Debate
+NotebookLM format: Deep Dive
 Target length: Long-form
 Language: English
-Debate prompt: Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution.
-NotebookLM handoff: use Debate format and Longer length after factual source scripts are generated.
+Custom prompt: Generate an extended, rigorous, balanced debate for a curious but serious listener. Steelman physicalist, dualist, idealist, and typological positions; challenge each with serious objections; keep Chalmers's hard problem, phenomenal vs access consciousness, and correlation-vs-explanation distinctions central. Compare nearby theories without prematurely resolving the debate.
+NotebookLM handoff: use Deep Dive format and Long length after factual source scripts are generated.
 
 ## Sources
 - Kuhn review, section 17.2, pages 106-106.

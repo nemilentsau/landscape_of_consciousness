@@ -24,8 +24,8 @@ class ConfigTest(unittest.TestCase):
             / "papers"
             / "A-landscape-of-consciousness--Toward-a-taxonom_2024_Progress-in-Biophysics-a.pdf",
         )
-        self.assertEqual(AUDIO_FORMAT, "Debate")
-        self.assertEqual(AUDIO_LENGTH, "Longer")
+        self.assertEqual(AUDIO_FORMAT, "Deep Dive")
+        self.assertEqual(AUDIO_LENGTH, "Long")
         self.assertEqual(AUDIO_LANGUAGE, "English")
         self.assertIn("manual_action_required", STATUS_VALUES)
         self.assertIsInstance(PROJECT_ROOT, Path)

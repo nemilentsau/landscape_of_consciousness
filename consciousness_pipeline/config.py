@@ -15,12 +15,14 @@ JOBS_DIR = PROJECT_ROOT / "jobs"
 SCHEMAS_DIR = PROJECT_ROOT / "schemas"
 EPISODES_DIR = PROJECT_ROOT / "episodes"
 
-AUDIO_FORMAT = "Debate"
-AUDIO_LENGTH = "Longer"
+AUDIO_FORMAT = "Deep Dive"
+AUDIO_LENGTH = "Long"
 AUDIO_LANGUAGE = "English"
 AUDIO_PROMPT = (
-    "Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with "
-    "serious objections, compare nearby theories, and avoid premature resolution."
+    "Generate an extended, rigorous, balanced debate for a curious but serious listener. Steelman physicalist, "
+    "dualist, idealist, and typological positions; challenge each with serious objections; keep Chalmers's hard "
+    "problem, phenomenal vs access consciousness, and correlation-vs-explanation distinctions central. Compare "
+    "nearby theories without prematurely resolving the debate."
 )
 
 STATUS_VALUES = (

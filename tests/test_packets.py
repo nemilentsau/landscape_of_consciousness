@@ -60,12 +60,13 @@ class PacketRenderingTest(unittest.TestCase):
         packet = render_packet(section, research)
         self.assertIn("# Baars's and Dehaene's global workspace theory", packet)
         self.assertIn("## Podcast Production Guidance", packet)
-        self.assertIn("Episode format: Debate", packet)
+        self.assertIn("NotebookLM format: Deep Dive", packet)
         self.assertIn("Target length: Long-form", packet)
         self.assertIn(
-            "NotebookLM handoff: use Debate format and Longer length after factual source scripts are generated.",
+            "NotebookLM handoff: use Deep Dive format and Long length after factual source scripts are generated.",
             packet,
         )
+        self.assertIn("Steelman physicalist, dualist, idealist, and typological positions", packet)
         self.assertIn("Does global broadcast explain consciousness", packet)
         self.assertNotIn("Baars 1988..", packet)
         self.assertNotIn("consciousness?.", packet)

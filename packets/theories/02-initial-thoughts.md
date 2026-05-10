@@ -1,7 +1,7 @@
 # Initial thoughts
 
 ## Course Role
-This packet supports a debate-club episode on Before arguing over a theory of consciousness, are we even using the word consciousness for one target or for several different targets?
+This packet supports a long-form listening-course episode on Before arguing over a theory of consciousness, are we even using the word consciousness for one target or for several different targets?
 
 ## Kuhn Review Anchor
 - Section: 2. Initial thoughts
@@ -44,11 +44,11 @@ Epistemic status: active philosophical debate. The distinctions between creature
 - Adjacent packets in Initial thoughts
 
 ## Podcast Production Guidance
-Episode format: Debate
+NotebookLM format: Deep Dive
 Target length: Long-form
 Language: English
-Debate prompt: Generate a rigorous debate from the provided factual dossier. Steelman the positions, challenge them with serious objections, compare nearby theories, and avoid premature resolution.
-NotebookLM handoff: use Debate format and Longer length after factual source scripts are generated.
+Custom prompt: Generate an extended, rigorous, balanced debate for a curious but serious listener. Steelman physicalist, dualist, idealist, and typological positions; challenge each with serious objections; keep Chalmers's hard problem, phenomenal vs access consciousness, and correlation-vs-explanation distinctions central. Compare nearby theories without prematurely resolving the debate.
+NotebookLM handoff: use Deep Dive format and Long length after factual source scripts are generated.
 
 ## Sources
 - Kuhn review, section 2, pages 4-4.
