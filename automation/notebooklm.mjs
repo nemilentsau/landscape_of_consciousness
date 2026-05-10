@@ -5,6 +5,7 @@ const root = process.cwd();
 const groupsPath = path.join(root, "course", "notebook-groups.json");
 const packetsDir = path.join(root, "packets", "theories");
 const notebookUrl = "https://notebooklm.google.com/";
+const browserChannel = process.env.NOTEBOOKLM_BROWSER_CHANNEL || "chrome";
 
 function parseMode(argv) {
   if (argv.includes("--dry-run")) return "dry-run";
@@ -102,9 +103,13 @@ async function liveRun(groups) {
   const userDataDir = path.join(root, ".browser-profiles", "notebooklm");
   let context;
   try {
-    context = await chromium.launchPersistentContext(userDataDir, { headless: false });
+    context = await chromium.launchPersistentContext(userDataDir, {
+      channel: browserChannel,
+      headless: false,
+    });
   } catch (error) {
-    console.error("Playwright browser is not installed. Run: npm run playwright:install");
+    console.error(`Unable to launch browser channel "${browserChannel}".`);
+    console.error("Install Google Chrome, or set NOTEBOOKLM_BROWSER_CHANNEL=chromium and run: npm run playwright:install");
     throw error;
   }
   const page = await context.newPage();
@@ -112,7 +117,12 @@ async function liveRun(groups) {
 
   console.log("If Google asks for login, complete it in the opened browser window.");
   console.log("Automation will pause for 60 seconds before checking the NotebookLM page.");
-  await page.waitForTimeout(60000);
+  try {
+    await page.waitForTimeout(60000);
+  } catch (error) {
+    console.error("NotebookLM browser window closed before observation finished.");
+    throw error;
+  }
 
   for (const group of groups) {
     const files = packetPathsFor(group);

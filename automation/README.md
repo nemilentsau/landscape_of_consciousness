@@ -1,6 +1,6 @@
 # NotebookLM Automation
 
-The automation reads `course/notebook-groups.json`, checks the packet files, and uses a persistent browser profile at `.browser-profiles/notebooklm`.
+The automation reads `course/notebook-groups.json`, checks the packet files, and uses installed Google Chrome with a persistent automation profile at `.browser-profiles/notebooklm`.
 
 Run:
 
@@ -9,6 +9,12 @@ npm install
 npm run playwright:install
 npm run notebooklm:dry-run
 npm run notebooklm:live
+```
+
+By default, live mode opens Google Chrome through Playwright's `chrome` channel. To use Playwright's bundled Chromium instead:
+
+```bash
+NOTEBOOKLM_BROWSER_CHANNEL=chromium npm run notebooklm:live
 ```
 
 Manual handoff rules:
