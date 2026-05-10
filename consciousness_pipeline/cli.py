@@ -20,7 +20,12 @@ from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
 from consciousness_pipeline.packets import render_packet, validate_packet
 from consciousness_pipeline.pdf_extract import extract_pages, write_pages_json
-from consciousness_pipeline.research import load_research_record, write_research_readme, write_research_stub
+from consciousness_pipeline.research import (
+    load_research_record,
+    write_notebooklm_research_sources,
+    write_research_readme,
+    write_research_stub,
+)
 from consciousness_pipeline.sections import build_sections
 
 
@@ -101,6 +106,22 @@ def cmd_jobs(args: argparse.Namespace) -> None:
     print("Wrote headless agent job manifests")
 
 
+def cmd_bundle_sources(args: argparse.Namespace) -> None:
+    sections = _read_sections(EXTRACTED_DIR / "sections.json")
+    manifest_path = EPISODES_DIR / args.episode_id / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    bundle_dir = Path(str(manifest["notebooklm_bundle_dir"]))
+    if not bundle_dir.is_absolute():
+        bundle_dir = PROJECT_ROOT / bundle_dir
+    written = write_notebooklm_research_sources(
+        sections=sections,
+        section_ids=tuple(str(section_id) for section_id in manifest["section_ids"]),
+        research_dir=RESEARCH_DIR,
+        output_dir=bundle_dir / "sources",
+    )
+    print(f"Wrote {len(written)} NotebookLM source files")
+
+
 def cmd_run_job(args: argparse.Namespace) -> None:
     manifest = Path(args.manifest)
     if not manifest.is_absolute():
@@ -140,6 +161,9 @@ def build_parser() -> argparse.ArgumentParser:
     run_job_parser.add_argument("--agent", required=True, choices=("codex", "claude"), help="Headless agent backend")
     run_job_parser.add_argument("--dry-run", action="store_true", help="Print the command without executing it")
     run_job_parser.set_defaults(func=cmd_run_job)
+    bundle_sources_parser = subparsers.add_parser("bundle-sources")
+    bundle_sources_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-001")
+    bundle_sources_parser.set_defaults(func=cmd_bundle_sources)
     return parser
 
 

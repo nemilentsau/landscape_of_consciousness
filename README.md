@@ -64,6 +64,13 @@ uv run python -m unittest discover -s tests -v
 ## NotebookLM Handoff
 
 After research and source-script jobs produce `episodes/<group-id>/script.json` and
-`episodes/<group-id>/notebooklm_bundle/research_dossier.md`, use Computer Use or Claude Code browser
-control to create NotebookLM notebooks, upload the factual dossier, choose Debate and Longer audio,
-and record the resulting URL/status in `course/production-status.csv`.
+`episodes/<group-id>/notebooklm_bundle/research_dossier.md`, generate factual per-section Markdown
+sources for the same bundle:
+
+```bash
+uv run python -m consciousness_pipeline.cli bundle-sources --episode-id group-001
+```
+
+Use Computer Use or Claude Code browser control to create NotebookLM notebooks, upload
+`research_dossier.md` plus every Markdown file in `notebooklm_bundle/sources/`, choose Debate and
+Longer audio, and record the resulting URL/status in `course/production-status.csv`.
