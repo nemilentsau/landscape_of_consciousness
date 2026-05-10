@@ -14,8 +14,10 @@ from consciousness_pipeline.config import (
 
 class ConfigTest(unittest.TestCase):
     def test_project_paths_and_audio_defaults(self):
+        active_checkout_root = Path(__file__).resolve().parents[1]
+
         self.assertEqual(__version__, "0.1.0")
-        self.assertEqual(PROJECT_ROOT.name, "landscape_of_consciousness")
+        self.assertEqual(PROJECT_ROOT, active_checkout_root)
         self.assertEqual(DEFAULT_PDF, PROJECT_ROOT / "papers" / "A-landscape-of-consciousness--Toward-a-taxonom_2024_Progress-in-Biophysics-a.pdf")
         self.assertEqual(AUDIO_FORMAT, "Debate")
         self.assertEqual(AUDIO_LENGTH, "Longer")

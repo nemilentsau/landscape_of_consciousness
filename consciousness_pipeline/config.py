@@ -1,7 +1,6 @@
 from pathlib import Path
 
-_PACKAGE_ROOT = Path(__file__).resolve().parents[1]
-PROJECT_ROOT = _PACKAGE_ROOT.parents[1] if _PACKAGE_ROOT.parent.name == ".worktrees" else _PACKAGE_ROOT
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 DEFAULT_PDF = PROJECT_ROOT / "papers" / "A-landscape-of-consciousness--Toward-a-taxonom_2024_Progress-in-Biophysics-a.pdf"
 METADATA_HTML = PROJECT_ROOT / "papers" / "S0079610723001128.html"
