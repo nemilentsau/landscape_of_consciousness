@@ -22,6 +22,25 @@ class ModelsTest(unittest.TestCase):
         self.assertEqual(Heading.from_dict(heading.to_dict()), heading)
         self.assertEqual(Section.from_dict(section.to_dict()), section)
 
+    def test_section_taxonomy_path_is_immutable(self):
+        path = ["Materialism theories"]
+        section = Section(
+            section_id="9",
+            title="Materialism theories",
+            level=1,
+            start_page=12,
+            end_page=57,
+            taxonomy_path=path,
+            text="Body",
+            slug="09-materialism-theories",
+        )
+
+        path.append("Mutated")
+
+        self.assertEqual(section.taxonomy_path, ("Materialism theories",))
+        with self.assertRaises(AttributeError):
+            section.taxonomy_path.append("x")
+
 
 if __name__ == "__main__":
     unittest.main()

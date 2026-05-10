@@ -44,12 +44,17 @@ class Section:
     level: int
     start_page: int
     end_page: int
-    taxonomy_path: list[str]
+    taxonomy_path: tuple[str, ...]
     text: str
     slug: str
 
+    def __post_init__(self) -> None:
+        object.__setattr__(self, "taxonomy_path", tuple(str(item) for item in self.taxonomy_path))
+
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        data = asdict(self)
+        data["taxonomy_path"] = list(self.taxonomy_path)
+        return data
 
     @classmethod
     def from_dict(cls, data: dict[str, Any]) -> "Section":
@@ -59,7 +64,7 @@ class Section:
             level=int(data["level"]),
             start_page=int(data["start_page"]),
             end_page=int(data["end_page"]),
-            taxonomy_path=[str(item) for item in data["taxonomy_path"]],
+            taxonomy_path=tuple(str(item) for item in data["taxonomy_path"]),
             text=str(data["text"]),
             slug=str(data["slug"]),
         )
