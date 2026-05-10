@@ -2,7 +2,9 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-DEFAULT_PDF = PROJECT_ROOT / "papers" / "A-landscape-of-consciousness--Toward-a-taxonom_2024_Progress-in-Biophysics-a.pdf"
+DEFAULT_PDF = (
+    PROJECT_ROOT / "papers" / "A-landscape-of-consciousness--Toward-a-taxonom_2024_Progress-in-Biophysics-a.pdf"
+)
 METADATA_HTML = PROJECT_ROOT / "papers" / "S0079610723001128.html"
 
 EXTRACTED_DIR = PROJECT_ROOT / "data" / "extracted"

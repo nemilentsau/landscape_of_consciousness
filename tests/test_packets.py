@@ -36,9 +36,24 @@ class PacketRenderingTest(unittest.TestCase):
             credibility="Mainstream scientific theory",
             listener_hooks=["The theater metaphor makes the dispute vivid."],
             sources=[
-                SourceRecord(kind="academic", title="A Cognitive Theory of Consciousness", url="", citation="Baars 1988."),
-                SourceRecord(kind="critique", title="Access and phenomenal consciousness", url="", citation="Block 1995"),
-                SourceRecord(kind="critique", title="Can access explain consciousness?", url="", citation="Question 2024."),
+                SourceRecord(
+                    kind="academic",
+                    title="A Cognitive Theory of Consciousness",
+                    url="",
+                    citation="Baars 1988.",
+                ),
+                SourceRecord(
+                    kind="critique",
+                    title="Access and phenomenal consciousness",
+                    url="",
+                    citation="Block 1995",
+                ),
+                SourceRecord(
+                    kind="critique",
+                    title="Can access explain consciousness?",
+                    url="",
+                    citation="Question 2024.",
+                ),
             ],
         )
 

@@ -1,3 +1,4 @@
+from collections.abc import Sequence
 from dataclasses import asdict, dataclass
 from typing import Any
 
@@ -44,7 +45,7 @@ class Section:
     level: int
     start_page: int
     end_page: int
-    taxonomy_path: tuple[str, ...]
+    taxonomy_path: Sequence[str]
     text: str
     slug: str
 
@@ -98,8 +99,8 @@ class ResearchRecord:
     strongest_case: str
     best_objections: str
     credibility: str
-    listener_hooks: tuple[str, ...]
-    sources: tuple[SourceRecord, ...]
+    listener_hooks: Sequence[str]
+    sources: Sequence[SourceRecord]
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "listener_hooks", tuple(str(item) for item in self.listener_hooks))

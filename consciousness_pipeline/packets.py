@@ -1,3 +1,5 @@
+from collections.abc import Sequence
+
 from consciousness_pipeline.config import AUDIO_FORMAT, AUDIO_LANGUAGE, AUDIO_LENGTH, AUDIO_PROMPT
 from consciousness_pipeline.models import ResearchRecord, Section
 
@@ -29,7 +31,7 @@ REQUIRED_NONEMPTY_SECTIONS = (
 )
 
 
-def _bullet_list(items: tuple[str, ...]) -> str:
+def _bullet_list(items: Sequence[str]) -> str:
     if not items:
         return "- No listener hook recorded yet."
     return "\n".join(f"- {item}" for item in items)

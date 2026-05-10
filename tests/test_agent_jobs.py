@@ -2,6 +2,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from typing import Any
 
 from consciousness_pipeline.agent_jobs import write_agent_job_artifacts
 from consciousness_pipeline.models import Section
@@ -20,7 +21,7 @@ def make_section(section_id: str, title: str, parent: str = "Materialism theorie
     )
 
 
-def read_jsonl(path: Path) -> list[dict[str, object]]:
+def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 

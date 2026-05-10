@@ -6,7 +6,13 @@ from consciousness_pipeline.models import Heading, PageText, Section
 class ModelsTest(unittest.TestCase):
     def test_page_heading_and_section_roundtrip(self):
         page = PageText(page=12, text="9. Materialism theories\nBody")
-        heading = Heading(section_id="9", title="Materialism theories", page=12, level=1, line="9. Materialism theories")
+        heading = Heading(
+            section_id="9",
+            title="Materialism theories",
+            page=12,
+            level=1,
+            line="9. Materialism theories",
+        )
         section = Section(
             section_id="9",
             title="Materialism theories",
@@ -39,7 +45,7 @@ class ModelsTest(unittest.TestCase):
 
         self.assertEqual(section.taxonomy_path, ("Materialism theories",))
         with self.assertRaises(AttributeError):
-            section.taxonomy_path.append("x")
+            section.taxonomy_path.__getattribute__("append")("x")
 
 
 if __name__ == "__main__":

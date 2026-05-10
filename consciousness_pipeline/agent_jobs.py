@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.course import group_sections
+from consciousness_pipeline.course import EpisodeGroup, group_sections
 from consciousness_pipeline.models import Section
 
 RESEARCH_SCHEMA: dict[str, Any] = {
@@ -97,7 +97,7 @@ def _research_job(section: Section) -> dict[str, object]:
     }
 
 
-def _script_job(group: dict[str, object]) -> dict[str, object]:
+def _script_job(group: EpisodeGroup) -> dict[str, object]:
     group_id = str(group["group_id"])
     section_ids = [str(item) for item in group["section_ids"]]
     return {
@@ -148,11 +148,11 @@ def write_agent_job_artifacts(
     _write_jsonl(jobs_dir / "podcast-scripts.jsonl", build_script_jobs(sections))
 
 
-def load_jsonl(path: Path) -> list[dict[str, object]]:
+def load_jsonl(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
-def find_job(manifest_path: Path, job_id: str) -> dict[str, object]:
+def find_job(manifest_path: Path, job_id: str) -> dict[str, Any]:
     for job in load_jsonl(manifest_path):
         if job.get("job_id") == job_id:
             return job
@@ -175,7 +175,7 @@ def _load_sections(root: Path) -> dict[str, Section]:
     return {section.section_id: section for section in sections}
 
 
-def build_job_prompt(job: dict[str, object], root: Path) -> str:
+def build_job_prompt(job: dict[str, Any], root: Path) -> str:
     sections = _load_sections(root)
     kind = str(job["kind"])
     if kind == "research":
@@ -187,7 +187,7 @@ def build_job_prompt(job: dict[str, object], root: Path) -> str:
     raise ValueError(f"Unsupported job kind: {kind}")
 
 
-def build_research_prompt(job: dict[str, object], section: Section) -> str:
+def build_research_prompt(job: dict[str, Any], section: Section) -> str:
     return f"""Research one consciousness-theory section for a listening course.
 
 Job ID: {job["job_id"]}
@@ -211,7 +211,7 @@ Section text:
 """
 
 
-def build_script_prompt(job: dict[str, object], sections: list[Section]) -> str:
+def build_script_prompt(job: dict[str, Any], sections: list[Section]) -> str:
     summaries = "\n".join(_section_summary(section) for section in sections)
     research_paths = "\n".join(f"- data/research/{section.section_id}.json" for section in sections)
     return f"""Write one long-form debate-club podcast script for the consciousness listening course.

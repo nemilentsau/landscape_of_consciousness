@@ -18,7 +18,12 @@ class ConfigTest(unittest.TestCase):
 
         self.assertEqual(__version__, "0.1.0")
         self.assertEqual(PROJECT_ROOT, active_checkout_root)
-        self.assertEqual(DEFAULT_PDF, PROJECT_ROOT / "papers" / "A-landscape-of-consciousness--Toward-a-taxonom_2024_Progress-in-Biophysics-a.pdf")
+        self.assertEqual(
+            DEFAULT_PDF,
+            PROJECT_ROOT
+            / "papers"
+            / "A-landscape-of-consciousness--Toward-a-taxonom_2024_Progress-in-Biophysics-a.pdf",
+        )
         self.assertEqual(AUDIO_FORMAT, "Debate")
         self.assertEqual(AUDIO_LENGTH, "Longer")
         self.assertEqual(AUDIO_LANGUAGE, "English")

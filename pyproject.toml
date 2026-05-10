@@ -1,0 +1,42 @@
+[project]
+name = "landscape-of-consciousness"
+version = "0.1.0"
+description = "Pipeline for turning Kuhn's consciousness taxonomy into researched podcast course material."
+requires-python = ">=3.12"
+dependencies = [
+  "pypdf",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pyright",
+  "ruff",
+]
+
+[project.scripts]
+consciousness-pipeline = "consciousness_pipeline.cli:main"
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["consciousness_pipeline*"]
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["B", "E", "F", "I", "UP"]
+
+[tool.pyright]
+include = ["consciousness_pipeline", "tests"]
+exclude = [".venv", ".worktrees", "data", "packets", "papers"]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.12"
+typeCheckingMode = "standard"

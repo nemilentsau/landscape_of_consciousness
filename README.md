@@ -14,7 +14,8 @@ NotebookLM is a renderer at the end of the process, not the core automation laye
 ## Run The Local Pipeline
 
 ```bash
-PYTHONPATH=. /Users/andreinemilentsau/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m consciousness_pipeline.cli all
+uv sync --extra dev
+uv run python -m consciousness_pipeline.cli all
 ```
 
 Generated artifacts:
@@ -36,7 +37,7 @@ Generated artifacts:
 ## Run A Headless Job
 
 ```bash
-PYTHONPATH=. /Users/andreinemilentsau/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m consciousness_pipeline.cli run-job \
+uv run python -m consciousness_pipeline.cli run-job \
   --manifest jobs/research.jsonl \
   --job-id research-9.2.3 \
   --agent codex \
@@ -44,6 +45,14 @@ PYTHONPATH=. /Users/andreinemilentsau/.cache/codex-runtimes/codex-primary-runtim
 ```
 
 Remove `--dry-run` to execute. Use `--agent claude` to run through Claude Code headless. For Claude, configure `ANTHROPIC_API_KEY`; set `CLAUDE_ALLOWED_TOOLS` when a job needs explicit tool approval.
+
+## Quality Checks
+
+```bash
+uv run ruff check .
+uv run pyright
+uv run python -m unittest discover -s tests -v
+```
 
 ## NotebookLM Handoff
 

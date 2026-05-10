@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 import subprocess
+from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
@@ -23,7 +24,7 @@ def check_agent_available(agent: str) -> None:
         raise RuntimeError(f"{agent} CLI is not usable: {detail}")
 
 
-def build_codex_command(job: dict[str, object], prompt: str) -> list[str]:
+def build_codex_command(job: Mapping[str, object], prompt: str) -> list[str]:
     return [
         "codex",
         "exec",
@@ -37,7 +38,7 @@ def build_codex_command(job: dict[str, object], prompt: str) -> list[str]:
     ]
 
 
-def build_claude_command(job: dict[str, object], prompt: str, root: Path = PROJECT_ROOT) -> list[str]:
+def build_claude_command(job: Mapping[str, object], prompt: str, root: Path = PROJECT_ROOT) -> list[str]:
     schema = (root / str(job["schema_path"])).read_text(encoding="utf-8")
     command = [
         "claude",
@@ -55,7 +56,7 @@ def build_claude_command(job: dict[str, object], prompt: str, root: Path = PROJE
     return command
 
 
-def _write_claude_output(job: dict[str, object], stdout: str, root: Path) -> None:
+def _write_claude_output(job: Mapping[str, object], stdout: str, root: Path) -> None:
     output_path = root / str(job["output_path"])
     output_path.parent.mkdir(parents=True, exist_ok=True)
     payload: Any = json.loads(stdout)
@@ -71,7 +72,13 @@ def _write_claude_output(job: dict[str, object], stdout: str, root: Path) -> Non
         output_path.write_text(json.dumps(output, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def run_job(manifest_path: Path, job_id: str, agent: str, root: Path = PROJECT_ROOT, dry_run: bool = False) -> list[str]:
+def run_job(
+    manifest_path: Path,
+    job_id: str,
+    agent: str,
+    root: Path = PROJECT_ROOT,
+    dry_run: bool = False,
+) -> list[str]:
     job = find_job(manifest_path, job_id)
     if not dry_run:
         check_agent_available(agent)

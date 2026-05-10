@@ -1,13 +1,27 @@
 import json
+from collections.abc import Callable, Sequence
 from pathlib import Path
-from typing import Callable
+from typing import Protocol, cast
 
 from pypdf import PdfReader
 
 from consciousness_pipeline.models import PageText
 
 
-def extract_pages(pdf_path: Path, reader_factory: Callable[[str], object] = PdfReader) -> list[PageText]:
+class PdfPage(Protocol):
+    def extract_text(self) -> str | None: ...
+
+
+class PdfReaderLike(Protocol):
+    @property
+    def pages(self) -> Sequence[PdfPage]: ...
+
+
+ReaderFactory = Callable[[str], PdfReaderLike]
+DEFAULT_READER_FACTORY: ReaderFactory = cast(ReaderFactory, PdfReader)
+
+
+def extract_pages(pdf_path: Path, reader_factory: ReaderFactory = DEFAULT_READER_FACTORY) -> list[PageText]:
     reader = reader_factory(str(pdf_path))
     pages: list[PageText] = []
     for index, page in enumerate(reader.pages, start=1):

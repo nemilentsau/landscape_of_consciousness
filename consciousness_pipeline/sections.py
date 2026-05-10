@@ -47,10 +47,10 @@ def _page_text_for_section(
     return "\n\n".join(selected)
 
 
-def _taxonomy_path(stack: list[Heading], heading: Heading) -> list[str]:
+def _taxonomy_path(stack: list[Heading], heading: Heading) -> tuple[str, ...]:
     active = [item for item in stack if item.level < heading.level]
     active.append(heading)
-    return [item.title for item in active]
+    return tuple(item.title for item in active)
 
 
 def build_sections(pages: list[PageText], headings: list[Heading]) -> list[Section]:

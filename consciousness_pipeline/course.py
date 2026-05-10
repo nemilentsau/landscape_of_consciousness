@@ -2,6 +2,7 @@ import csv
 import json
 from collections import defaultdict
 from pathlib import Path
+from typing import TypedDict
 
 from consciousness_pipeline.config import AUDIO_FORMAT, AUDIO_LANGUAGE, AUDIO_LENGTH, AUDIO_PROMPT
 from consciousness_pipeline.models import Section
@@ -9,13 +10,29 @@ from consciousness_pipeline.models import Section
 TOP_LEVEL_GROUP_TITLE = "Top-level sections"
 
 
-def group_sections(sections: list[Section], max_group_size: int = 5) -> list[dict[str, object]]:
+class AudioProfile(TypedDict):
+    format: str
+    length: str
+    language: str
+    prompt: str
+
+
+class EpisodeGroup(TypedDict):
+    group_id: str
+    title: str
+    episode_question: str
+    packet_slugs: list[str]
+    section_ids: list[str]
+    audio_profile: AudioProfile
+
+
+def group_sections(sections: list[Section], max_group_size: int = 5) -> list[EpisodeGroup]:
     buckets: dict[str, list[Section]] = defaultdict(list)
     for section in sections:
         key = " -> ".join(section.taxonomy_path[:-1]) if len(section.taxonomy_path) > 1 else TOP_LEVEL_GROUP_TITLE
         buckets[key].append(section)
 
-    groups: list[dict[str, object]] = []
+    groups: list[EpisodeGroup] = []
     counter = 1
     for key, bucket in buckets.items():
         for offset in range(0, len(bucket), max_group_size):
@@ -62,7 +79,7 @@ def write_course_artifacts(sections: list[Section], output_dir: Path) -> None:
             f"- Audio target: {audio_profile['format']}, {audio_profile['length']}, {audio_profile['language']}"
         )
         group_lines.append(f"- Script output: `episodes/{group['group_id']}/script.json`")
-        group_lines.append(f"- NotebookLM handoff: computer use after script bundle is ready")
+        group_lines.append("- NotebookLM handoff: computer use after script bundle is ready")
         for slug in group["packet_slugs"]:
             group_lines.append(f"- `packets/theories/{slug}.md`")
         group_lines.append("")
@@ -85,7 +102,7 @@ def write_course_artifacts(sections: list[Section], output_dir: Path) -> None:
         )
         writer.writeheader()
         for group in groups:
-            for section_id, slug in zip(group["section_ids"], group["packet_slugs"]):
+            for section_id, slug in zip(group["section_ids"], group["packet_slugs"], strict=True):
                 writer.writerow(
                     {
                         "group_id": group["group_id"],

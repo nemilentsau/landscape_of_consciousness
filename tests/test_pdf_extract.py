@@ -7,15 +7,15 @@ from consciousness_pipeline.pdf_extract import extract_pages, write_pages_json
 
 
 class FakePage:
-    def __init__(self, text):
+    def __init__(self, text: str | None):
         self._text = text
 
-    def extract_text(self):
+    def extract_text(self) -> str | None:
         return self._text
 
 
 class FakeReader:
-    def __init__(self, path):
+    def __init__(self, path: str):
         self.path = path
         self.pages = [FakePage("first page"), FakePage(None), FakePage("third page")]
 
