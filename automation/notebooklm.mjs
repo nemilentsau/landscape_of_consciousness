@@ -17,11 +17,64 @@ function loadGroups() {
   return JSON.parse(raw);
 }
 
+function groupLabel(group, index) {
+  if (group && typeof group === "object" && typeof group.group_id === "string") {
+    return `group ${index} (${group.group_id})`;
+  }
+  return `group ${index}`;
+}
+
+function assertStringField(group, index, field) {
+  if (typeof group[field] !== "string") {
+    throw new Error(`${groupLabel(group, index)} has invalid ${field}: expected string`);
+  }
+}
+
+function assertExactField(group, index, field, expected) {
+  if (group[field] !== expected) {
+    throw new Error(`${groupLabel(group, index)} has invalid ${field}: expected ${expected}`);
+  }
+}
+
+function validateGroups(groups) {
+  if (!Array.isArray(groups)) {
+    throw new Error("notebook-groups.json must be an array");
+  }
+
+  groups.forEach((group, index) => {
+    if (!group || typeof group !== "object" || Array.isArray(group)) {
+      throw new Error(`group ${index} must be an object`);
+    }
+
+    for (const field of ["group_id", "title", "audio_format", "audio_length", "audio_language", "audio_prompt"]) {
+      assertStringField(group, index, field);
+    }
+
+    assertExactField(group, index, "audio_format", "Debate");
+    assertExactField(group, index, "audio_length", "Longer");
+    assertExactField(group, index, "audio_language", "English");
+
+    if (!Array.isArray(group.packet_slugs) || group.packet_slugs.length === 0) {
+      throw new Error(`${groupLabel(group, index)} has invalid packet_slugs: expected non-empty array`);
+    }
+    group.packet_slugs.forEach((slug, slugIndex) => {
+      if (typeof slug !== "string") {
+        throw new Error(`${groupLabel(group, index)} has invalid packet_slugs[${slugIndex}]: expected string`);
+      }
+    });
+
+    if ("section_ids" in group && !Array.isArray(group.section_ids)) {
+      throw new Error(`${groupLabel(group, index)} has invalid section_ids: expected array`);
+    }
+  });
+}
+
 function packetPathsFor(group) {
   return group.packet_slugs.map((slug) => path.join(packetsDir, `${slug}.md`));
 }
 
-function assertPacketFilesExist(files) {
+function validatePacketFiles(groups) {
+  const files = groups.flatMap((group) => packetPathsFor(group));
   const missing = files.filter((file) => !fs.existsSync(file));
   if (missing.length > 0) {
     throw new Error(`Missing packet files:\n${missing.join("\n")}`);
@@ -31,7 +84,6 @@ function assertPacketFilesExist(files) {
 async function dryRun(groups) {
   for (const group of groups) {
     const files = packetPathsFor(group);
-    assertPacketFilesExist(files);
     console.log(`[dry-run] ${group.group_id}: ${group.title}`);
     console.log(`[dry-run] audio=${group.audio_format}/${group.audio_length}/${group.audio_language}`);
     for (const file of files) console.log(`[dry-run] upload ${file}`);
@@ -58,7 +110,6 @@ async function liveRun(groups) {
 
   for (const group of groups) {
     const files = packetPathsFor(group);
-    assertPacketFilesExist(files);
     console.log(`[live] ready to create ${group.group_id}: ${group.title}`);
     console.log(`[live] packet files:\n${files.join("\n")}`);
     console.log("[live] Stop here for the first authenticated observation. Record stable UI labels before enabling clicks.");
@@ -69,6 +120,8 @@ async function liveRun(groups) {
 
 const mode = parseMode(process.argv.slice(2));
 const groups = loadGroups();
+validateGroups(groups);
+validatePacketFiles(groups);
 
 if (mode === "dry-run") {
   await dryRun(groups);
