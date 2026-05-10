@@ -25,6 +25,26 @@ class SectionSegmentationTest(unittest.TestCase):
         self.assertIn("Beta", sections[1].text)
         self.assertEqual(sections[2].slug, "02-second-theory")
 
+    def test_slices_consecutive_same_page_headings(self):
+        pages = [
+            PageText(
+                page=1,
+                text="1. Parent\nParent intro\n1.1. First child\nFirst body\n1.2. Second child\nSecond body",
+            ),
+        ]
+        headings = [
+            Heading(section_id="1", title="Parent", page=1, level=1, line="1. Parent"),
+            Heading(section_id="1.1", title="First child", page=1, level=2, line="1.1. First child"),
+            Heading(section_id="1.2", title="Second child", page=1, level=2, line="1.2. Second child"),
+        ]
+
+        sections = build_sections(pages, headings)
+
+        self.assertIn("First body", sections[1].text)
+        self.assertNotIn("Second body", sections[1].text)
+        self.assertIn("Second body", sections[2].text)
+        self.assertNotIn("First body", sections[2].text)
+
 
 if __name__ == "__main__":
     unittest.main()
