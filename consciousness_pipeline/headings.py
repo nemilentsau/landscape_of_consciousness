@@ -4,7 +4,7 @@ from consciousness_pipeline.models import Heading, PageText
 
 HEADING_RE = re.compile(r"^(?P<section>\d{1,2}(?:\.\d+){0,3})\.\s+(?P<title>\S.*)$")
 FALSE_SENTENCE_START_RE = re.compile(r"^(In|There|Therefore|So,)\b")
-APOSTROPHE_RE = re.compile(r"['’‘ʼ`]")
+APOSTROPHE_RE = re.compile(r"\s*['’‘ʼ`]\s*")
 
 
 def _clean_line(line: str) -> str:

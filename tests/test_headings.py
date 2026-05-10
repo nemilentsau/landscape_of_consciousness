@@ -40,6 +40,21 @@ class HeadingDetectionTest(unittest.TestCase):
             "09-02-03-baarss-and-dehaenes-global-workspace-theory",
         )
 
+    def test_heading_slug_normalizes_spaced_apostrophes_like_unspaced_apostrophes(self):
+        expected = "09-02-03-kochs-consciousness-does-not-depend-on-language"
+        self.assertEqual(
+            heading_slug("9.2.3", "Koch's consciousness does not depend on language"),
+            expected,
+        )
+        self.assertEqual(
+            heading_slug("9.2.3", "Koch’s consciousness does not depend on language"),
+            expected,
+        )
+        self.assertEqual(
+            heading_slug("9.2.3", "Koch ’ s consciousness does not depend on language"),
+            expected,
+        )
+
 
 if __name__ == "__main__":
     unittest.main()
