@@ -1,0 +1,12 @@
+{
+  "name": "landscape-of-consciousness",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "notebooklm:dry-run": "node automation/notebooklm.mjs --dry-run",
+    "notebooklm:live": "node automation/notebooklm.mjs --live"
+  },
+  "dependencies": {
+    "playwright": "^1.44.0"
+  }
+}

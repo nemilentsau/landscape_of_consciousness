@@ -22,4 +22,9 @@ Generated artifacts:
 
 ## NotebookLM Automation
 
-The NotebookLM automation harness is added in the next step. After that setup exists, the dry-run command will be available before any live NotebookLM automation is attempted.
+```bash
+npm install
+npm run notebooklm:dry-run
+```
+
+See `automation/README.md` for live NotebookLM handoff instructions.
