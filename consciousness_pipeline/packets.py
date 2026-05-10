@@ -35,11 +35,15 @@ def _bullet_list(items: tuple[str, ...]) -> str:
     return "\n".join(f"- {item}" for item in items)
 
 
+def _sentence(text: str) -> str:
+    return text if text.endswith((".", "?", "!")) else f"{text}."
+
+
 def _sources(research: ResearchRecord) -> str:
     lines = []
     for source in research.sources:
         suffix = f" {source.url}" if source.url else ""
-        lines.append(f"- {source.kind}: {source.citation}. {source.title}.{suffix}")
+        lines.append(f"- {source.kind}: {_sentence(source.citation)} {_sentence(source.title)}{suffix}")
     if not lines:
         lines.append("- Kuhn review anchor only; external research is incomplete.")
     return "\n".join(lines)
