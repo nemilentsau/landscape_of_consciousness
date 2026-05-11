@@ -262,16 +262,23 @@ Course continuity context:
 Produce thorough research material for NotebookLM to work with. NotebookLM will generate the conversational audio.
 Do not write dialogue, speaker names, stage directions, banter, cold opens, finished narration, or host patter.
 
-The research_dossier_markdown should be factual and structured:
-- episode scope and why these sections are grouped
-- concise thesis of the cluster
-- per-section factual summaries grounded in Kuhn and the research records
-- strongest academic case
-- serious objections and limits
-- comparison axes for theories in the cluster
-- epistemic status and what not to overstate
-- implications only where the sources justify them
-- citation-backed source notes and local input paths
+The research_dossier_markdown should be factual and structured. Use these top-level Markdown
+sections in this order:
+- ## Episode Metadata
+- ## Course Continuity Grounding
+- ## Episode Scope And Why These Sections Are Grouped
+- ## Concise Thesis Of The Cluster
+- ## Per-Section Factual Summaries
+- ## Strongest Academic Case For The Cluster
+- ## Serious Objections And Limits
+- ## Comparison Axes For Theories In This Cluster
+- ## Epistemic Status And What Not To Overstate
+- ## Implications Only Where Sources Justify Them
+- ## Source Notes And Local Input Paths
+
+Under ## Course Continuity Grounding, summarize what prior episode context already covered,
+state what this episode should not re-explain, and identify the transition into the current
+episode. Do not bury course continuity inside the episode-scope section.
 
 Return only JSON matching the schema. The local runner writes research_dossier_markdown to the
 NotebookLM dossier markdown output path for upload.

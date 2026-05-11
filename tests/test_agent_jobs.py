@@ -150,6 +150,8 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("Course context path: episodes/group-002/course_context.md", prompt)
             self.assertIn("Group 001 already covered the hard problem", prompt)
             self.assertIn("Use this context to continue the course", prompt)
+            self.assertIn("## Course Continuity Grounding", prompt)
+            self.assertIn("Do not bury course continuity inside the episode-scope section.", prompt)
 
     def test_write_agent_job_artifacts_removes_legacy_dialogue_script_manifests(self):
         with tempfile.TemporaryDirectory() as tmp:
