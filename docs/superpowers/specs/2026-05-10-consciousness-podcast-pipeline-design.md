@@ -9,8 +9,12 @@ The local PDF in `papers/` is the canonical source for Robert Lawrence Kuhn's "A
 Official tool targets:
 
 - OpenAI Codex CLI non-interactive jobs through `codex exec`.
-- Claude Code headless jobs through `claude --bare -p`.
+- Claude Code headless jobs through `claude -p`.
 - NotebookLM only as the final dialogue/audio-rendering surface, operated by Computer Use or Claude Code after factual source dossiers exist.
+
+Do not use Claude Code `--bare` for this project. `--bare` intentionally skips the usual local
+Claude Code auth/keychain path and turns headless execution into API-key-style auth, which is not
+the desired local workflow.
 
 ## Goals
 

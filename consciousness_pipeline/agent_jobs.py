@@ -194,7 +194,7 @@ def build_job_prompt(job: dict[str, Any], root: Path) -> str:
         return build_research_prompt(job, section)
     if kind == "source_script":
         group_sections_for_job = [sections[str(section_id)] for section_id in job["section_ids"]]
-        return build_script_prompt(job, group_sections_for_job)
+        return build_script_prompt(job, group_sections_for_job, root)
     raise ValueError(f"Unsupported job kind: {kind}")
 
 
@@ -222,9 +222,23 @@ Section text:
 """
 
 
-def build_script_prompt(job: dict[str, Any], sections: list[Section]) -> str:
+def _course_context_block(job: dict[str, Any], root: Path) -> str:
+    context_path = Path(str(job.get("course_context_path", f"episodes/{job['group_id']}/course_context.md")))
+    resolved_context_path = context_path if context_path.is_absolute() else root / context_path
+    if not resolved_context_path.exists():
+        return "Course context: none provided."
+    context_text = _prompt_text(resolved_context_path.read_text(encoding="utf-8"))
+    return (
+        f"Course context path: {context_path}\n"
+        "Use this context to continue the course instead of restarting already-covered material.\n\n"
+        f"{context_text}"
+    )
+
+
+def build_script_prompt(job: dict[str, Any], sections: list[Section], root: Path) -> str:
     summaries = "\n".join(_section_summary(section) for section in sections)
     research_paths = "\n".join(f"- data/research/{section.section_id}.json" for section in sections)
+    course_context = _course_context_block(job, root)
     return f"""Write one factual NotebookLM source dossier for the consciousness listening course.
 
 Job ID: {job["job_id"]}
@@ -242,6 +256,9 @@ Sections:
 Research inputs to read:
 {research_paths}
 
+Course continuity context:
+{course_context}
+
 Produce thorough research material for NotebookLM to work with. NotebookLM will generate the conversational audio.
 Do not write dialogue, speaker names, stage directions, banter, cold opens, finished narration, or host patter.
 
@@ -256,6 +273,6 @@ The research_dossier_markdown should be factual and structured:
 - implications only where the sources justify them
 - citation-backed source notes and local input paths
 
-Write the same research_dossier_markdown to the NotebookLM dossier markdown output path so it can
-be uploaded directly. Return only JSON matching the schema.
+Return only JSON matching the schema. The local runner writes research_dossier_markdown to the
+NotebookLM dossier markdown output path for upload.
 """

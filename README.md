@@ -6,7 +6,7 @@ The production path is:
 
 1. Extract and segment the downloaded PDF into Kuhn's numbered theory taxonomy.
 2. Generate deterministic course maps and headless-agent job manifests.
-3. Run `codex exec` or `claude --bare -p` jobs to research theories and write factual source scripts.
+3. Run `codex exec` or `claude -p` jobs to research theories and write factual source scripts.
 4. Use Codex Computer Use or Claude Code browser/computer control for the final NotebookLM audio handoff.
 
 NotebookLM is the dialogue and audio renderer at the end of the process, not the core automation layer.
@@ -51,7 +51,20 @@ uv run python -m consciousness_pipeline.cli run-job \
   --dry-run
 ```
 
-Remove `--dry-run` to execute. Use `--agent claude` to run through Claude Code headless. For Claude, configure `ANTHROPIC_API_KEY`; set `CLAUDE_ALLOWED_TOOLS` when a job needs explicit tool approval.
+Remove `--dry-run` to execute. Use `--agent claude` to run through the installed/authenticated
+Claude Code CLI in normal print mode. The runner intentionally does not use `--bare`, because
+`--bare` bypasses Claude Code's usual local auth/keychain path and forces API-key-style auth.
+
+To generate a comparison artifact without overwriting the Codex output, override the output paths:
+
+```bash
+uv run python -m consciousness_pipeline.cli run-job \
+  --manifest jobs/source-scripts.jsonl \
+  --job-id group-002-script \
+  --agent claude \
+  --output-path episodes/group-002/claude/script.json \
+  --bundle-output-path episodes/group-002/claude/notebooklm_bundle/research_dossier.md
+```
 
 ## Quality Checks
 
