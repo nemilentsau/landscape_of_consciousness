@@ -167,13 +167,17 @@ def find_job(manifest_path: Path, job_id: str) -> dict[str, Any]:
 
 
 def _section_summary(section: Section) -> str:
-    taxonomy = " -> ".join(section.taxonomy_path)
+    taxonomy = _prompt_text(" -> ".join(section.taxonomy_path))
     return (
-        f"- {section.section_id}. {section.title}\n"
+        f"- {section.section_id}. {_prompt_text(section.title)}\n"
         f"  Pages: {section.start_page}-{section.end_page}\n"
         f"  Taxonomy: {taxonomy}\n"
         f"  Packet: packets/theories/{section.slug}.md"
     )
+
+
+def _prompt_text(text: str) -> str:
+    return text.replace("\x00", "")
 
 
 def _load_sections(root: Path) -> dict[str, Section]:
@@ -214,7 +218,7 @@ Label epistemic status plainly: mainstream scientific theory, active philosophic
 speculative extension, religious/spiritual metaphysics, or fringe/weakly evidenced claim.
 
 Section text:
-{section.text}
+{_prompt_text(section.text)}
 """
 
 

@@ -4,11 +4,11 @@ group-001,2,02-initial-thoughts,researched,source_script_queued,not_started,,not
 group-001,3,03-philosophical-tensions,researched,source_script_queued,not_started,,not_started,
 group-001,4,04-surveys-typologies,researched,source_script_queued,not_started,,not_started,
 group-001,5,05-opposing-worldviews,researched,source_script_queued,not_started,,not_started,
-group-002,6,06-is-consciousness-primitive-fundamental,research_queued,source_script_queued,not_started,,not_started,
-group-002,7,07-identity-theory,research_queued,source_script_queued,not_started,,not_started,
-group-002,8,08-a-landscape,research_queued,source_script_queued,not_started,,not_started,
-group-002,9,09-materialism-theories,research_queued,source_script_queued,not_started,,not_started,
-group-002,10,10-non-reductive-physicalism,research_queued,source_script_queued,not_started,,not_started,
+group-002,6,06-is-consciousness-primitive-fundamental,researched,source_script_ready,audio_requested,https://notebooklm.google.com/notebook/d87d3f1d-f6d8-48d6-a834-d9cbe259ec68,audio_requested,NotebookLM Long Deep Dive generation requested
+group-002,7,07-identity-theory,researched,source_script_ready,audio_requested,https://notebooklm.google.com/notebook/d87d3f1d-f6d8-48d6-a834-d9cbe259ec68,audio_requested,NotebookLM Long Deep Dive generation requested
+group-002,8,08-a-landscape,researched,source_script_ready,audio_requested,https://notebooklm.google.com/notebook/d87d3f1d-f6d8-48d6-a834-d9cbe259ec68,audio_requested,NotebookLM Long Deep Dive generation requested
+group-002,9,09-materialism-theories,researched,source_script_ready,audio_requested,https://notebooklm.google.com/notebook/d87d3f1d-f6d8-48d6-a834-d9cbe259ec68,audio_requested,NotebookLM Long Deep Dive generation requested
+group-002,10,10-non-reductive-physicalism,researched,source_script_ready,audio_requested,https://notebooklm.google.com/notebook/d87d3f1d-f6d8-48d6-a834-d9cbe259ec68,audio_requested,NotebookLM Long Deep Dive generation requested
 group-003,11,11-quantum-theories,research_queued,source_script_queued,not_started,,not_started,
 group-003,12,12-integrated-information-theory,research_queued,source_script_queued,not_started,,not_started,
 group-003,13,13-panpsychisms,research_queued,source_script_queued,not_started,,not_started,
