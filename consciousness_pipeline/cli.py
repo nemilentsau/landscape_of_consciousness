@@ -126,7 +126,14 @@ def cmd_run_job(args: argparse.Namespace) -> None:
     manifest = Path(args.manifest)
     if not manifest.is_absolute():
         manifest = PROJECT_ROOT / manifest
-    command = run_job(manifest, args.job_id, args.agent, dry_run=args.dry_run)
+    command = run_job(
+        manifest,
+        args.job_id,
+        args.agent,
+        dry_run=args.dry_run,
+        output_path=args.output_path,
+        bundle_output_path=args.bundle_output_path,
+    )
     if args.dry_run:
         print(json.dumps(command, indent=2))
 
@@ -160,6 +167,8 @@ def build_parser() -> argparse.ArgumentParser:
     run_job_parser.add_argument("--job-id", required=True, help="Job id from the manifest")
     run_job_parser.add_argument("--agent", required=True, choices=("codex", "claude"), help="Headless agent backend")
     run_job_parser.add_argument("--dry-run", action="store_true", help="Print the command without executing it")
+    run_job_parser.add_argument("--output-path", type=Path, help="Override the job output path")
+    run_job_parser.add_argument("--bundle-output-path", type=Path, help="Override the NotebookLM dossier markdown path")
     run_job_parser.set_defaults(func=cmd_run_job)
     bundle_sources_parser = subparsers.add_parser("bundle-sources")
     bundle_sources_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-001")

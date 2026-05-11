@@ -6,7 +6,7 @@ Goal: build a reproducible production pipeline that starts from Kuhn's downloade
 
 - Python package for deterministic local artifacts.
 - JSON/JSONL/CSV as resumable state.
-- `codex exec` and `claude --bare -p` as execution backends.
+- `codex exec` and `claude -p` as execution backends.
 - Computer Use or Claude Code browser control only after factual NotebookLM dossiers are generated.
 
 ## Completed Foundation

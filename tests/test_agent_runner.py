@@ -1,11 +1,17 @@
 import json
+import os
 import subprocess
 import tempfile
 import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from consciousness_pipeline.agent_runner import build_claude_command, build_codex_command, check_agent_available
+from consciousness_pipeline.agent_runner import (
+    build_claude_command,
+    build_codex_command,
+    check_agent_available,
+    run_job,
+)
 
 
 class AgentRunnerCommandTest(unittest.TestCase):
@@ -27,7 +33,7 @@ class AgentRunnerCommandTest(unittest.TestCase):
         self.assertIn("data/research/9.2.3.json", command)
         self.assertEqual(command[-1], prompt)
 
-    def test_build_claude_command_uses_bare_print_mode_and_json_schema(self):
+    def test_build_claude_command_uses_print_mode_local_auth_and_json_schema(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             schema_path = root / "schemas" / "source-script.schema.json"
@@ -37,14 +43,118 @@ class AgentRunnerCommandTest(unittest.TestCase):
             job = {"schema_path": "schemas/source-script.schema.json"}
             prompt = "Write a factual NotebookLM source dossier."
 
-            command = build_claude_command(job, prompt, root)
+            with patch.dict(os.environ, {"CLAUDE_ALLOWED_TOOLS": "Bash(git *) Edit"}):
+                command = build_claude_command(job, prompt, root)
 
-            self.assertEqual(command[:3], ["claude", "--bare", "-p"])
+            self.assertEqual(command[:2], ["claude", "-p"])
             self.assertIn(prompt, command)
+            self.assertNotIn("--bare", command)
+            self.assertNotIn("--allowedTools", command)
             self.assertIn("--output-format", command)
             self.assertIn("json", command)
             self.assertIn("--json-schema", command)
             self.assertIn(json.dumps(schema), command)
+
+    @patch("consciousness_pipeline.agent_runner.subprocess.run")
+    def test_run_claude_job_allows_comparison_output_paths_and_writes_dossier_bundle(self, run):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sections_path = root / "data" / "extracted" / "sections.json"
+            sections_path.parent.mkdir(parents=True)
+            sections_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "section_id": "6",
+                            "title": "Is consciousness primitive/fundamental?",
+                            "level": 1,
+                            "start_page": 6,
+                            "end_page": 6,
+                            "taxonomy_path": ["Is consciousness primitive/fundamental?"],
+                            "text": "Kuhn section text.",
+                            "slug": "06-is-consciousness-primitive-fundamental",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            schema_path = root / "schemas" / "source-script.schema.json"
+            schema_path.parent.mkdir(parents=True)
+            schema_path.write_text(
+                json.dumps(
+                    {
+                        "type": "object",
+                        "properties": {
+                            "episode_id": {"type": "string"},
+                            "title": {"type": "string"},
+                            "episode_question": {"type": "string"},
+                            "duration_target": {"type": "string"},
+                            "research_dossier_markdown": {"type": "string"},
+                            "citations": {"type": "array", "items": {"type": "string"}},
+                            "missing_inputs": {"type": "array", "items": {"type": "string"}},
+                        },
+                        "required": [
+                            "episode_id",
+                            "title",
+                            "episode_question",
+                            "duration_target",
+                            "research_dossier_markdown",
+                            "citations",
+                            "missing_inputs",
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            manifest_path = root / "jobs" / "source-scripts.jsonl"
+            manifest_path.parent.mkdir(parents=True)
+            job = {
+                "job_id": "group-002-script",
+                "kind": "source_script",
+                "group_id": "group-002",
+                "title": "Top-level sections Part 2",
+                "episode_question": "What is the strongest case for this cluster, and where does it break?",
+                "section_ids": ["6"],
+                "episode_manifest_path": "episodes/group-002/manifest.json",
+                "output_path": "episodes/group-002/script.json",
+                "schema_path": "schemas/source-script.schema.json",
+                "notebooklm_handoff": "computer_use_after_script_bundle",
+                "notebooklm_bundle_dir": "episodes/group-002/notebooklm_bundle",
+                "bundle_output_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+            }
+            manifest_path.write_text(json.dumps(job) + "\n", encoding="utf-8")
+            structured_output = {
+                "episode_id": "group-002",
+                "title": "Top-level sections Part 2",
+                "episode_question": job["episode_question"],
+                "duration_target": "long_form",
+                "research_dossier_markdown": "# Claude dossier\n\nFactual material.",
+                "citations": ["Kuhn 2024"],
+                "missing_inputs": [],
+            }
+            run.side_effect = [
+                subprocess.CompletedProcess(args=["claude", "--version"], returncode=0, stdout="2.1.138", stderr=""),
+                subprocess.CompletedProcess(
+                    args=["claude", "-p"],
+                    returncode=0,
+                    stdout=json.dumps({"result": structured_output}),
+                    stderr="",
+                ),
+            ]
+
+            run_job(
+                manifest_path,
+                "group-002-script",
+                "claude",
+                root=root,
+                output_path=Path("episodes/group-002/claude/script.json"),
+                bundle_output_path=Path("episodes/group-002/claude/notebooklm_bundle/research_dossier.md"),
+            )
+
+            script_path = root / "episodes" / "group-002" / "claude" / "script.json"
+            bundle_path = root / "episodes" / "group-002" / "claude" / "notebooklm_bundle" / "research_dossier.md"
+            self.assertEqual(json.loads(script_path.read_text(encoding="utf-8")), structured_output)
+            self.assertEqual(bundle_path.read_text(encoding="utf-8"), structured_output["research_dossier_markdown"])
 
     @patch("consciousness_pipeline.agent_runner.subprocess.run")
     def test_check_agent_available_reports_broken_cli_stderr(self, run):

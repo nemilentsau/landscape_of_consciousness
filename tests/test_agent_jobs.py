@@ -117,6 +117,42 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertNotIn("\x00", prompt)
             self.assertIn("artifact:  8.", prompt)
 
+    def test_build_script_prompt_includes_existing_episode_course_context(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            section = make_section("6", "Is consciousness primitive/fundamental?", "Top-level sections")
+            sections_path = root / "data" / "extracted" / "sections.json"
+            sections_path.parent.mkdir(parents=True)
+            sections_path.write_text(json.dumps([section.to_dict()], ensure_ascii=False), encoding="utf-8")
+            context_path = root / "episodes" / "group-002" / "course_context.md"
+            context_path.parent.mkdir(parents=True)
+            context_path.write_text(
+                "Group 001 already covered the hard problem. Do not restart from scratch.",
+                encoding="utf-8",
+            )
+            job = {
+                "kind": "source_script",
+                "job_id": "group-002-script",
+                "group_id": "group-002",
+                "title": "Top-level sections Part 2",
+                "episode_question": "What is the strongest case for this cluster, and where does it break?",
+                "section_ids": ["6"],
+                "episode_manifest_path": "episodes/group-002/manifest.json",
+                "output_path": "episodes/group-002/script.json",
+                "schema_path": "schemas/source-script.schema.json",
+                "notebooklm_handoff": "computer_use_after_script_bundle",
+                "notebooklm_bundle_dir": "episodes/group-002/notebooklm_bundle",
+                "bundle_output_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+            }
+
+            prompt = build_job_prompt(job, root)
+
+            self.assertIn("Course context path: episodes/group-002/course_context.md", prompt)
+            self.assertIn("Group 001 already covered the hard problem", prompt)
+            self.assertIn("Use this context to continue the course", prompt)
+            self.assertIn("## Course Continuity Grounding", prompt)
+            self.assertIn("Do not bury course continuity inside the episode-scope section.", prompt)
+
     def test_write_agent_job_artifacts_removes_legacy_dialogue_script_manifests(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
