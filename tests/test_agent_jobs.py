@@ -87,6 +87,36 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertNotIn("opening dispute", prompt)
             self.assertNotIn("cross-examination", prompt)
 
+    def test_build_job_prompt_removes_nul_bytes_from_extracted_pdf_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            section = make_section("8", "A landscape")
+            section = Section(
+                section_id=section.section_id,
+                title=section.title,
+                level=section.level,
+                start_page=8,
+                end_page=11,
+                taxonomy_path=section.taxonomy_path,
+                text="Figure reference contains a PDF extraction artifact: \x00 8.",
+                slug=section.slug,
+            )
+            sections_path = root / "data" / "extracted" / "sections.json"
+            sections_path.parent.mkdir(parents=True)
+            sections_path.write_text(json.dumps([section.to_dict()], ensure_ascii=False), encoding="utf-8")
+            job = {
+                "kind": "research",
+                "job_id": "research-8",
+                "section_id": "8",
+                "output_path": "data/research/8.json",
+                "schema_path": "schemas/research-record.schema.json",
+            }
+
+            prompt = build_job_prompt(job, root)
+
+            self.assertNotIn("\x00", prompt)
+            self.assertIn("artifact:  8.", prompt)
+
     def test_write_agent_job_artifacts_removes_legacy_dialogue_script_manifests(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
