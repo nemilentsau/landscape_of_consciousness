@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Any
 
 from consciousness_pipeline.course import EpisodeGroup, group_sections, write_episode_artifacts
+from consciousness_pipeline.episode_capsules import EPISODE_CAPSULE_SCHEMA
 from consciousness_pipeline.models import Section
 
 RESEARCH_SCHEMA: dict[str, Any] = {
@@ -129,12 +130,40 @@ def _script_job(group: EpisodeGroup) -> dict[str, object]:
     }
 
 
+def _episode_capsule_job(group: EpisodeGroup) -> dict[str, object]:
+    group_id = str(group["group_id"])
+    episode_manifest_path = f"episodes/{group_id}/manifest.json"
+    accepted_dossier_path = f"episodes/{group_id}/notebooklm_bundle/research_dossier.md"
+    return {
+        "job_id": f"{group_id}-capsule",
+        "kind": "course_episode_capsule",
+        "prompt_contract": "course_episode_capsule_v1",
+        "agents": ["codex_exec", "claude_headless"],
+        "group_id": group_id,
+        "title": str(group["title"]),
+        "section_ids": [str(item) for item in group["section_ids"]],
+        "input_paths": [
+            "course/course_contract.md",
+            episode_manifest_path,
+            accepted_dossier_path,
+        ],
+        "episode_manifest_path": episode_manifest_path,
+        "accepted_dossier_path": accepted_dossier_path,
+        "output_path": f"course/episode_capsules/{group_id}.json",
+        "schema_path": "schemas/episode-capsule.schema.json",
+    }
+
+
 def build_research_jobs(sections: list[Section]) -> list[dict[str, object]]:
     return [_research_job(section) for section in sections]
 
 
 def build_script_jobs(sections: list[Section]) -> list[dict[str, object]]:
     return [_script_job(group) for group in group_sections(sections)]
+
+
+def build_episode_capsule_jobs(sections: list[Section]) -> list[dict[str, object]]:
+    return [_episode_capsule_job(group) for group in group_sections(sections)]
 
 
 def write_agent_job_artifacts(
@@ -153,8 +182,10 @@ def write_agent_job_artifacts(
 
     _write_json(schemas_dir / "research-record.schema.json", RESEARCH_SCHEMA)
     _write_json(schemas_dir / "source-script.schema.json", SOURCE_SCRIPT_SCHEMA)
+    _write_json(schemas_dir / "episode-capsule.schema.json", EPISODE_CAPSULE_SCHEMA)
     _write_jsonl(jobs_dir / "research.jsonl", build_research_jobs(sections))
     _write_jsonl(jobs_dir / "source-scripts.jsonl", build_script_jobs(sections))
+    _write_jsonl(jobs_dir / "episode-capsules.jsonl", build_episode_capsule_jobs(sections))
     write_episode_artifacts(sections, episodes_dir)
 
 
@@ -190,14 +221,17 @@ def _load_sections(root: Path) -> dict[str, Section]:
 
 
 def build_job_prompt(job: dict[str, Any], root: Path) -> str:
-    sections = _load_sections(root)
     kind = str(job["kind"])
     if kind == "research":
+        sections = _load_sections(root)
         section = sections[str(job["section_id"])]
         return build_research_prompt(job, section)
     if kind == "source_script":
+        sections = _load_sections(root)
         group_sections_for_job = [sections[str(section_id)] for section_id in job["section_ids"]]
         return build_script_prompt(job, group_sections_for_job, root)
+    if kind == "course_episode_capsule":
+        return build_episode_capsule_prompt(job, root)
     raise ValueError(f"Unsupported job kind: {kind}")
 
 
@@ -236,6 +270,47 @@ def _course_context_block(job: dict[str, Any], root: Path) -> str:
         "Use this context to continue the course instead of restarting already-covered material.\n\n"
         f"{context_text}"
     )
+
+
+def _job_input_text(root: Path, path: object) -> str:
+    input_path = Path(str(path))
+    resolved_path = input_path if input_path.is_absolute() else root / input_path
+    if not resolved_path.exists():
+        return f"Missing input: {input_path}"
+    return f"Input path: {input_path}\n{_prompt_text(resolved_path.read_text(encoding='utf-8'))}"
+
+
+def build_episode_capsule_prompt(job: dict[str, Any], root: Path) -> str:
+    return f"""Create one accepted episode continuity capsule for the consciousness listening course.
+
+Job ID: {job["job_id"]}
+Episode group: {job["group_id"]} - {job["title"]}
+Output path: {job["output_path"]}
+Required schema: {job["schema_path"]}
+
+Your task is to extract durable course continuity from the accepted NotebookLM source dossier:
+do not rewrite the whole course, do not add new facts, and do not use this job to repair or expand the
+source dossier. Only capture continuity that is explicitly supported by the accepted dossier and
+episode manifest.
+
+The capsule must:
+- identify durable concepts introduced or sharpened in this episode
+- preserve distinctions and open tensions that future episodes should remember
+- list material future episodes should not re-explain from scratch
+- add callbacks only when they can point back to the accepted dossier source path
+- keep source_path values traceable to the local dossier path
+
+Course contract:
+{_job_input_text(root, "course/course_contract.md")}
+
+Episode manifest:
+{_job_input_text(root, job["episode_manifest_path"])}
+
+Accepted dossier:
+{_job_input_text(root, job["accepted_dossier_path"])}
+
+Return only JSON matching the schema.
+"""
 
 
 def build_script_prompt(job: dict[str, Any], sections: list[Section], root: Path) -> str:

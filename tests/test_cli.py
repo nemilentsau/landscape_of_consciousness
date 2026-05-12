@@ -56,6 +56,8 @@ class CliTest(unittest.TestCase):
         self.assertIn("jobs", result.stdout)
         self.assertIn("run-job", result.stdout)
         self.assertIn("run-episode", result.stdout)
+        self.assertIn("accept-episode", result.stdout)
+        self.assertIn("write-contract", result.stdout)
         self.assertIn("bundle-sources", result.stdout)
         self.assertIn("all", result.stdout)
 
@@ -148,9 +150,9 @@ class CliTest(unittest.TestCase):
                 cli.main()
 
             context_path = group_dir / "course_context.md"
-            self.assertTrue((course_dir / "course_memory.md").exists())
             self.assertTrue(context_path.exists())
             context = context_path.read_text(encoding="utf-8")
+            self.assertTrue((course_dir / "course_contract.md").exists())
             self.assertIn("Quantum theories", context)
             self.assertIn("Integrated information theory", context)
             self.assertIn("## Source Priority", context)
@@ -162,6 +164,26 @@ class CliTest(unittest.TestCase):
             cli.main()
 
         run_episode.assert_called_once_with("group-003", "codex", dry_run=False)
+
+    def test_accept_episode_command_delegates_to_acceptance_checkpoint(self):
+        argv = ["cli.py", "accept-episode", "--episode-id", "group-002", "--agent", "claude"]
+
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.accept_episode") as accept_episode:
+            cli.main()
+
+        accept_episode.assert_called_once_with("group-002", "claude", dry_run=False)
+
+    def test_write_contract_command_writes_static_course_contract(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            course_dir = Path(tmp) / "course"
+            argv = ["cli.py", "write-contract"]
+
+            with patch.object(sys, "argv", argv), patch.object(cli, "COURSE_DIR", course_dir):
+                cli.main()
+
+            contract_path = course_dir / "course_contract.md"
+            self.assertTrue(contract_path.exists())
+            self.assertIn("## NotebookLM Handoff Rules", contract_path.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

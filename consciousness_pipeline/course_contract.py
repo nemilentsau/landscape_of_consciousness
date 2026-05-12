@@ -1,8 +1,6 @@
-# Course Context For group-003
+from pathlib import Path
 
-## Course Contract
-
-# Consciousness Course Contract
+DEFAULT_COURSE_CONTRACT = """# Consciousness Course Contract
 
 ## Course Purpose
 
@@ -48,39 +46,9 @@ collapsing unresolved philosophical and scientific disputes into premature answe
 - Do not imply that formal elegance or mathematical vocabulary is empirical confirmation.
 - Do not imply that metaphysical breadth is explanatory success.
 - Do not imply that a theory's popularity or vividness settles its truth.
+"""
 
-## Current Episode Scope
 
-Episode: group-003 - Top-level sections Part 3
-
-Episode question: What is the strongest case for this cluster, and where does it break?
-
-Current sections:
-
-- Section 11: Quantum theories. Pages: 61-61.
-- Section 12: Integrated information theory. Pages: 70-71.
-- Section 13: Panpsychisms. Pages: 73-73.
-- Section 14: Monisms. Pages: 77-77.
-- Section 15: Dualisms. Pages: 83-83.
-
-## Selected Prior Grounding
-
-- No accepted prior episode capsules selected.
-
-## Relevant Callbacks
-
-- No selected callback-index entries for this episode scope.
-
-## Do Not Re-Explain
-
-- No accepted prior do-not-reexplain constraints selected.
-
-## Open Tensions To Preserve
-
-- No accepted prior open tensions selected.
-
-## Source Priority
-
-The current research records and packet inputs are factual sources for this episode. The course contract,
-selected episode capsules, and callback index are continuity guidance for framing, pacing, and avoiding
-repetition. Do not treat prior continuity material as new evidence for current episode claims.
+def write_default_course_contract(path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(DEFAULT_COURSE_CONTRACT, encoding="utf-8")

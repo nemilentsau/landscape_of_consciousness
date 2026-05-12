@@ -16,7 +16,9 @@ from consciousness_pipeline.config import (
     SCHEMAS_DIR,
 )
 from consciousness_pipeline.course import write_course_artifacts, write_episode_artifacts
-from consciousness_pipeline.course_context import render_episode_course_context, write_initial_course_memory
+from consciousness_pipeline.course_context import write_episode_course_context
+from consciousness_pipeline.course_contract import write_default_course_contract
+from consciousness_pipeline.episode_acceptance import accept_episode
 from consciousness_pipeline.episode_runner import run_episode
 from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
@@ -101,11 +103,16 @@ def cmd_course(args: argparse.Namespace) -> None:
 
 def cmd_jobs(args: argparse.Namespace) -> None:
     sections = _read_sections(EXTRACTED_DIR / "sections.json")
-    write_course_artifacts(sections, COURSE_DIR)
-    write_episode_artifacts(sections, EPISODES_DIR)
+    write_default_course_contract(COURSE_DIR / "course_contract.md")
     write_research_readme(RESEARCH_DIR)
     write_agent_job_artifacts(sections, JOBS_DIR, SCHEMAS_DIR, EPISODES_DIR)
     print("Wrote headless agent job manifests")
+
+
+def cmd_write_contract(args: argparse.Namespace) -> None:
+    path = COURSE_DIR / "course_contract.md"
+    write_default_course_contract(path)
+    print(f"Wrote course contract: {path}")
 
 
 def cmd_bundle_sources(args: argparse.Namespace) -> None:
@@ -125,14 +132,7 @@ def cmd_bundle_sources(args: argparse.Namespace) -> None:
 
 
 def cmd_write_context(args: argparse.Namespace) -> None:
-    memory_path = COURSE_DIR / "course_memory.md"
-    if not memory_path.exists():
-        write_initial_course_memory(memory_path)
-    manifest_path = EPISODES_DIR / args.episode_id / "manifest.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    context = render_episode_course_context(manifest, memory_path.read_text(encoding="utf-8"))
-    output_path = EPISODES_DIR / args.episode_id / "course_context.md"
-    output_path.write_text(context, encoding="utf-8")
+    output_path = write_episode_course_context(COURSE_DIR.parent, args.episode_id)
     print(f"Wrote course context for {args.episode_id}: {output_path}")
 
 
@@ -158,6 +158,12 @@ def cmd_run_episode(args: argparse.Namespace) -> None:
         print(json.dumps(result, indent=2))
 
 
+def cmd_accept_episode(args: argparse.Namespace) -> None:
+    result = accept_episode(args.episode_id, args.agent, dry_run=args.dry_run)
+    if args.dry_run:
+        print(json.dumps(result, indent=2))
+
+
 def cmd_all(args: argparse.Namespace) -> None:
     cmd_extract(args)
     cmd_headings(args)
@@ -178,6 +184,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("packets", cmd_packets),
         ("course", cmd_course),
         ("jobs", cmd_jobs),
+        ("write-contract", cmd_write_contract),
         ("all", cmd_all),
     ):
         subparser = subparsers.add_parser(name)
@@ -197,6 +204,15 @@ def build_parser() -> argparse.ArgumentParser:
     )
     run_episode_parser.add_argument("--dry-run", action="store_true", help="Print ordered jobs without executing them")
     run_episode_parser.set_defaults(func=cmd_run_episode)
+    accept_episode_parser = subparsers.add_parser("accept-episode")
+    accept_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-002")
+    accept_episode_parser.add_argument(
+        "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
+    )
+    accept_episode_parser.add_argument(
+        "--dry-run", action="store_true", help="Print the capsule job without executing it"
+    )
+    accept_episode_parser.set_defaults(func=cmd_accept_episode)
     bundle_sources_parser = subparsers.add_parser("bundle-sources")
     bundle_sources_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-001")
     bundle_sources_parser.set_defaults(func=cmd_bundle_sources)

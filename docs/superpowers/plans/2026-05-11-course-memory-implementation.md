@@ -1,495 +1,323 @@
-# Course Memory Implementation Plan
+# Course Continuity Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** Use this plan to replace the single rolling-memory design with layered course
+> continuity. Do not run source-dossier jobs inline. Production episode runs must go through
+> `scripts/run_episode` or an equivalent ordered runner.
 
-**Goal:** Add bounded rolling course memory and per-episode course-context generation so `group-003` can be produced without passing all prior research.
+## Goal
 
-**Architecture:** Store durable prior-course context in `course/course_memory.md`, render `episodes/<group-id>/course_context.md` from that memory plus the episode manifest, and keep source-dossier jobs focused on current episode research. The final architecture reserves `course/callback_index.json` for later selective callbacks, but this pass implements rolling summary only.
+Build a scalable course-continuity layer for the consciousness podcast pipeline.
 
-**Tech Stack:** Python package code in `consciousness_pipeline`, JSON episode manifests, Markdown course memory/context files, `uv`, Ruff, Pyright, `unittest`.
+The system should:
 
----
+- run research jobs before source-dossier jobs
+- reject placeholder research before dossier generation
+- create immutable episode capsules only after a dossier is accepted
+- generate per-episode context packs from selected prior context
+- avoid a single global memory blob as the long-term source of truth
 
-## File Structure
+## Implemented State
 
-- Create: `consciousness_pipeline/course_context.py`
-  - Owns course memory rendering and per-episode course context rendering.
-  - Provides pure functions that tests can call without invoking the CLI.
+Implemented in this branch:
 
-- Modify: `consciousness_pipeline/cli.py`
-  - Adds `write-context --episode-id <group-id>`.
-  - Uses existing project paths and writes one episode context file.
+- `scripts/run_episode`
+- `consciousness_pipeline.episode_runner`
+- `run-episode` CLI command
+- `accept-episode` CLI command
+- research-before-source-script ordering
+- placeholder research validation before source-dossier execution
+- static `course/course_contract.md`
+- `course_episode_capsule` headless job manifest
+- capsule validation and deterministic schema artifact
+- explicit accepted-dossier checkpoint
+- callback index generation from accepted capsules
+- deterministic `episodes/<group-id>/course_context.md` renderer from contract, recent capsules, and matching callbacks
+
+## Target Artifacts
+
+### Course Contract
+
+Path: `course/course_contract.md`
+
+Small static production contract. This replaces the long-term role previously assigned to
+`course/course_memory.md`.
+
+Required headings:
+
+- `# Consciousness Course Contract`
+- `## Course Purpose`
+- `## Production Rules`
+- `## Epistemic Discipline`
+- `## Recurring Comparison Axes`
+- `## NotebookLM Handoff Rules`
+- `## Global Do Not Overstate`
+
+### Episode Capsule
+
+Path: `course/episode_capsules/<episode-id>.json`
+
+Created only after the episode source dossier is accepted.
+
+Proposed schema:
+
+```json
+{
+  "schema_version": "episode_capsule_v1",
+  "episode_id": "group-003",
+  "title": "Top-level sections Part 3",
+  "section_ids": ["11", "12", "13", "14", "15"],
+  "accepted_dossier_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+  "thesis": "string",
+  "durable_concepts": [
+    {
+      "concept": "combination_problem",
+      "summary": "string",
+      "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md"
+    }
+  ],
+  "recurring_distinctions": ["string"],
+  "callbacks": [
+    {
+      "concept": "combination_problem",
+      "summary": "string",
+      "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": ["panpsychism"]
+    }
+  ],
+  "do_not_reexplain": ["string"],
+  "open_tensions": ["string"]
+}
+```
+
+### Callback Index
+
+Path: `course/callback_index.json`
+
+Generated or updated from accepted capsules.
+
+Proposed shape:
+
+```json
+{
+  "combination_problem": [
+    {
+      "episode_id": "group-003",
+      "capsule_path": "course/episode_capsules/group-003.json",
+      "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "summary": "string"
+    }
+  ]
+}
+```
+
+### Per-Episode Context Pack
+
+Path: `episodes/<group-id>/course_context.md`
+
+Generated before the episode source-dossier job from:
+
+- `course/course_contract.md`
+- current `episodes/<group-id>/manifest.json`
+- recent episode capsules
+- selected callback-index entries
+
+Required headings:
+
+- `# Course Context For <group-id>`
+- `## Course Contract`
+- `## Current Episode Scope`
+- `## Selected Prior Grounding`
+- `## Relevant Callbacks`
+- `## Do Not Re-Explain`
+- `## Open Tensions To Preserve`
+- `## Source Priority`
+
+## Task 1: Add Course Contract Bootstrap
+
+Files:
+
+- Create or modify: `consciousness_pipeline/course_contract.py`
+- Create: `tests/test_course_contract.py`
+- Generate: `course/course_contract.md`
+
+Steps:
+
+- [ ] Write tests for default contract creation.
+- [ ] Implement `DEFAULT_COURSE_CONTRACT`.
+- [ ] Add CLI command `write-contract`.
+- [ ] Update docs to call the contract static production guidance, not course memory.
+
+Validation:
+
+```bash
+uv run python -m unittest tests.test_course_contract -v
+uv run python -m consciousness_pipeline.cli write-contract
+```
+
+## Task 2: Add Episode Capsule Schema And Validation
+
+Files:
+
+- Create: `schemas/episode-capsule.schema.json`
+- Create: `consciousness_pipeline/episode_capsules.py`
+- Create: `tests/test_episode_capsules.py`
+
+Steps:
+
+- [ ] Define capsule dataclass or schema-shaped validation helper.
+- [ ] Validate required fields and source paths.
+- [ ] Reject capsules with empty durable concepts or missing accepted dossier path.
+- [ ] Keep output JSON deterministic and stable.
+
+Validation:
+
+```bash
+uv run python -m unittest tests.test_episode_capsules -v
+```
+
+## Task 3: Add LLM Capsule Generation Job
+
+Files:
 
 - Modify: `consciousness_pipeline/agent_jobs.py`
-  - Adds `episodes/<group-id>/course_context.md` to source-script job `input_paths`.
-  - Keeps prompt behavior compatible with existing `_course_context_block`.
+- Modify: `consciousness_pipeline/agent_runner.py` if needed
+- Create: `jobs/episode-capsules.jsonl`
+- Create tests in `tests/test_agent_jobs.py` and `tests/test_agent_runner.py`
 
-- Create: `tests/test_course_context.py`
-  - Covers initial memory rendering, group-specific context rendering, and source-priority language.
+Steps:
 
-- Modify: `tests/test_agent_jobs.py`
-  - Asserts source-script manifests include the course context path.
+- [ ] Add a `course_episode_capsule` job kind.
+- [ ] Job input paths must include the accepted dossier and episode manifest.
+- [ ] Job output path should be `course/episode_capsules/<episode-id>.json`.
+- [ ] Prompt must say: extract durable course continuity, do not rewrite the whole course, do not add new facts.
+- [ ] Output must match `schemas/episode-capsule.schema.json`.
 
-- Create: `course/course_memory.md`
-  - Initial curated memory for groups 001 and 002.
-
-- Generated by command: `episodes/group-003/course_context.md`
-  - Per-episode context for the third podcast.
-
-## Task 1: Add Course Context Rendering Tests
-
-**Files:**
-- Create: `tests/test_course_context.py`
-
-- [ ] **Step 1: Write the failing tests**
-
-Create `tests/test_course_context.py` with:
-
-```python
-import json
-import tempfile
-import unittest
-from pathlib import Path
-
-from consciousness_pipeline.course_context import (
-    DEFAULT_COURSE_MEMORY,
-    render_episode_course_context,
-    write_initial_course_memory,
-)
-
-
-class CourseContextTest(unittest.TestCase):
-    def test_write_initial_course_memory_records_durable_prior_context(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            path = Path(tmp) / "course" / "course_memory.md"
-
-            write_initial_course_memory(path)
-
-            text = path.read_text(encoding="utf-8")
-            self.assertEqual(text, DEFAULT_COURSE_MEMORY)
-            self.assertIn("## Durable Concepts Introduced", text)
-            self.assertIn("Group 001", text)
-            self.assertIn("Group 002", text)
-            self.assertIn("## Do Not Re-Explain", text)
-
-    def test_render_episode_course_context_uses_memory_and_current_manifest(self):
-        manifest = {
-            "episode_id": "group-003",
-            "title": "Top-level sections Part 3",
-            "episode_question": "What is the strongest case for this cluster, and where does it break?",
-            "sections": [
-                {"section_id": "11", "title": "Quantum theories", "pages": "13-16"},
-                {"section_id": "12", "title": "Integrated information theory", "pages": "16-20"},
-                {"section_id": "13", "title": "Panpsychisms", "pages": "20-24"},
-                {"section_id": "14", "title": "Monisms", "pages": "24-26"},
-                {"section_id": "15", "title": "Dualisms", "pages": "26-30"},
-            ],
-        }
-
-        text = render_episode_course_context(manifest, DEFAULT_COURSE_MEMORY)
-
-        self.assertIn("# Course Context For group-003", text)
-        self.assertIn("## Prior Course Grounding", text)
-        self.assertIn("## Already Covered", text)
-        self.assertIn("## Current Episode Scope", text)
-        self.assertIn("Quantum theories", text)
-        self.assertIn("Integrated information theory", text)
-        self.assertIn("Panpsychisms", text)
-        self.assertIn("Monisms", text)
-        self.assertIn("Dualisms", text)
-        self.assertIn("Group 003 moves into theories", text)
-        self.assertIn("current research records and current packets are factual sources", text)
-
-    def test_context_renderer_accepts_manifest_json_from_disk_shape(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            manifest_path = root / "episodes" / "group-003" / "manifest.json"
-            memory_path = root / "course" / "course_memory.md"
-            manifest_path.parent.mkdir(parents=True)
-            memory_path.parent.mkdir(parents=True)
-            manifest_path.write_text(
-                json.dumps(
-                    {
-                        "episode_id": "group-003",
-                        "title": "Top-level sections Part 3",
-                        "episode_question": "What is the strongest case for this cluster, and where does it break?",
-                        "sections": [{"section_id": "11", "title": "Quantum theories", "pages": "13-16"}],
-                    }
-                ),
-                encoding="utf-8",
-            )
-            memory_path.write_text(DEFAULT_COURSE_MEMORY, encoding="utf-8")
-
-            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-            text = render_episode_course_context(manifest, memory_path.read_text(encoding="utf-8"))
-
-            self.assertIn("group-003", text)
-            self.assertIn("Quantum theories", text)
-
-
-if __name__ == "__main__":
-    unittest.main()
-```
-
-- [ ] **Step 2: Run the test to verify it fails**
-
-Run:
+Validation:
 
 ```bash
-uv run python -m unittest tests.test_course_context -v
+uv run python -m unittest tests.test_agent_jobs tests.test_agent_runner -v
 ```
 
-Expected: failure because `consciousness_pipeline.course_context` does not exist.
+## Task 4: Add Explicit Accept Step
 
-## Task 2: Implement Course Context Module
+Files:
 
-**Files:**
-- Create: `consciousness_pipeline/course_context.py`
-- Test: `tests/test_course_context.py`
-
-- [ ] **Step 1: Add the minimal module implementation**
-
-Create `consciousness_pipeline/course_context.py`:
-
-```python
-from pathlib import Path
-from typing import Any
-
-
-DEFAULT_COURSE_MEMORY = """# Consciousness Course Memory
-
-## Durable Concepts Introduced
-
-- Group 001 established Chalmers's hard problem as the central challenge for phenomenal consciousness.
-- Group 001 distinguished phenomenal consciousness, access consciousness, reportability, metacognition, wakefulness, and other uses of consciousness.
-- Group 001 established epistemology-versus-ontology and correlation-versus-explanation cautions.
-- Group 002 introduced the fundamentality fork, identity theory, Kuhn's landscape logic, materialism, and non-reductive physicalism.
-
-## Recurring Distinctions
-
-- Phenomenal consciousness versus access consciousness.
-- Correlation, causation, constitution, identity, realization, grounding, and explanation.
-- Empirical neuroscience, formal theory, active philosophical debate, speculative extension, religious or spiritual metaphysics, and weakly evidenced claims.
-- Brain dependence versus completed reduction.
-
-## Episode Ledger
-
-- Group 001: hard problem, initial definitions, philosophical tensions, surveys and typologies, opposing worldviews.
-- Group 002: consciousness as primitive or fundamental, identity theory, Kuhn's landscape, materialism theories, non-reductive physicalism.
-
-## Open Tensions
-
-- The hard problem remains a pressure point rather than a solved premise.
-- Brain dependence is strong evidence, but it does not by itself settle identity or reduction.
-- Broad taxonomies are useful only if epistemic status is kept visible.
-
-## Do Not Re-Explain
-
-- Do not re-teach Mary's room, zombies, or the hard problem from scratch unless a current section needs a short callback.
-- Do not redo the general physicalism-versus-nonphysicalism setup.
-- Do not treat prior course context as new evidence for current episode claims.
-
-## Next Episode Handoff Notes
-
-- Group 003 should move into theories that challenge, extend, or compete with the physicalist frame: quantum theories, IIT, panpsychisms, monisms, and dualisms.
-- Keep epistemic-status tagging sharp because group 003 mixes empirical, formal, speculative, and metaphysical theories.
-"""
-
-
-def write_initial_course_memory(path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(DEFAULT_COURSE_MEMORY, encoding="utf-8")
-
-
-def _section_lines(manifest: dict[str, Any]) -> list[str]:
-    lines: list[str] = []
-    for section in manifest.get("sections", []):
-        section_id = str(section["section_id"])
-        title = str(section["title"])
-        pages = str(section.get("pages", "unknown pages"))
-        lines.append(f"- Section {section_id}: {title}. Pages: {pages}.")
-    return lines
-
-
-def render_episode_course_context(manifest: dict[str, Any], course_memory: str) -> str:
-    episode_id = str(manifest["episode_id"])
-    title = str(manifest["title"])
-    question = str(manifest["episode_question"])
-    section_lines = "\\n".join(_section_lines(manifest))
-    return f"""# Course Context For {episode_id}
-
-## Prior Course Grounding
-
-Use the following bounded course memory as continuity guidance. It is not a replacement for current episode research records or packets.
-
-{course_memory.strip()}
-
-## Already Covered
-
-The course has already introduced the hard problem, phenomenal versus access consciousness, reportability, epistemology versus ontology, correlation versus explanation, broad worldview framing, fundamentality, identity theory, materialism, and non-reductive physicalism.
-
-## Current Episode Scope
-
-Episode: {episode_id} - {title}
-
-Episode question: {question}
-
-Current sections:
-
-{section_lines}
-
-## Transition Into This Episode
-
-Group 003 moves into theories that challenge, extend, or compete with the physicalist frame established in group 002. It should treat quantum theories, integrated information theory, panpsychisms, monisms, and dualisms as the next major neighborhoods in Kuhn's landscape.
-
-## Production Constraint
-
-Do not re-explain Mary's room, zombies, the hard problem from scratch, or the full materialism setup. Use those only as short callbacks when needed to explain the current sections.
-
-## Source Priority
-
-The current research records and current packets are factual sources for this episode. The prior course memory is continuity guidance for framing, pacing, and avoiding repetition.
-"""
-```
-
-- [ ] **Step 2: Run the tests**
-
-Run:
-
-```bash
-uv run python -m unittest tests.test_course_context -v
-```
-
-Expected: all `CourseContextTest` tests pass.
-
-## Task 3: Add CLI Command For Episode Context
-
-**Files:**
 - Modify: `consciousness_pipeline/cli.py`
-- Test: `tests/test_cli.py`
+- Create: `consciousness_pipeline/episode_acceptance.py`
+- Create: `tests/test_episode_acceptance.py`
 
-- [ ] **Step 1: Write the failing CLI test**
+Steps:
 
-Add to `tests/test_cli.py`:
+- [ ] Add command `accept-episode --episode-id <group-id> --agent codex|claude`.
+- [ ] Refuse if `episodes/<group-id>/notebooklm_bundle/research_dossier.md` is missing.
+- [ ] Run the capsule-generation job.
+- [ ] Write `course/episode_capsules/<episode-id>.json`.
+- [ ] Update production status to mark source dossier accepted or ready for NotebookLM.
 
-```python
-def test_write_context_command_writes_episode_context(self):
-    result = subprocess.run(
-        [
-            sys.executable,
-            "-m",
-            "consciousness_pipeline.cli",
-            "write-context",
-            "--episode-id",
-            "group-003",
-        ],
-        cwd=PROJECT_ROOT,
-        text=True,
-        capture_output=True,
-        check=False,
-    )
+Important:
 
-    self.assertEqual(result.returncode, 0, result.stderr)
-    self.assertIn("Wrote course context for group-003", result.stdout)
-    context = PROJECT_ROOT / "episodes" / "group-003" / "course_context.md"
-    self.assertTrue(context.exists())
-    self.assertIn("Quantum theories", context.read_text(encoding="utf-8"))
-```
+- `scripts/run_episode` must not update memory automatically.
+- Acceptance is a human checkpoint. A bad source dossier must not poison future context.
 
-- [ ] **Step 2: Run the test to verify it fails**
-
-Run:
+Validation:
 
 ```bash
-uv run python -m unittest tests.test_cli.CliTest.test_write_context_command_writes_episode_context -v
+uv run python -m unittest tests.test_episode_acceptance -v
 ```
 
-Expected: failure because `write-context` is not yet a recognized subcommand.
+## Task 5: Build Callback Index From Capsules
 
-- [ ] **Step 3: Implement the command**
+Files:
 
-Update `consciousness_pipeline/cli.py` imports:
+- Create: `consciousness_pipeline/callback_index.py`
+- Create: `tests/test_callback_index.py`
+- Generate: `course/callback_index.json`
 
-```python
-from consciousness_pipeline.course_context import render_episode_course_context, write_initial_course_memory
-```
+Steps:
 
-Add this command function:
+- [ ] Read all accepted capsules.
+- [ ] Extract callback entries into a concept-keyed index.
+- [ ] Preserve traceability to capsule and accepted dossier paths.
+- [ ] Keep index deterministic.
 
-```python
-def cmd_write_context(args: argparse.Namespace) -> None:
-    memory_path = COURSE_DIR / "course_memory.md"
-    if not memory_path.exists():
-        write_initial_course_memory(memory_path)
-    manifest_path = EPISODES_DIR / args.episode_id / "manifest.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    context = render_episode_course_context(manifest, memory_path.read_text(encoding="utf-8"))
-    output_path = EPISODES_DIR / args.episode_id / "course_context.md"
-    output_path.write_text(context, encoding="utf-8")
-    print(f"Wrote course context for {args.episode_id}: {output_path}")
-```
-
-Register the parser in `build_parser()`:
-
-```python
-    write_context_parser = subparsers.add_parser("write-context")
-    write_context_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-003")
-    write_context_parser.set_defaults(func=cmd_write_context)
-```
-
-- [ ] **Step 4: Run the CLI test**
-
-Run:
+Validation:
 
 ```bash
-uv run python -m unittest tests.test_cli.CliTest.test_write_context_command_writes_episode_context -v
+uv run python -m unittest tests.test_callback_index -v
 ```
 
-Expected: pass, and `episodes/group-003/course_context.md` exists.
+## Task 6: Generate Context Pack From Contract And Selected Capsules
 
-## Task 4: Include Course Context In Source-Script Job Inputs
+Files:
 
-**Files:**
-- Modify: `consciousness_pipeline/agent_jobs.py`
-- Modify: `tests/test_agent_jobs.py`
+- Replace or refactor: `consciousness_pipeline/course_context.py`
+- Update: `tests/test_course_context.py`
+- Update: `consciousness_pipeline/episode_runner.py`
 
-- [ ] **Step 1: Write the failing manifest test**
+Steps:
 
-In `tests/test_agent_jobs.py`, inside `test_write_agent_job_artifacts_generates_headless_manifests`, add:
+- [ ] Stop using `DEFAULT_COURSE_MEMORY` as the main context source.
+- [ ] Context generation reads `course/course_contract.md`.
+- [ ] It selects recent capsules and relevant callback-index entries.
+- [ ] It renders the required context-pack headings.
+- [ ] It keeps source-priority language mandatory.
+- [ ] It remains bounded by selecting context, not by recompressing every episode.
 
-```python
-self.assertIn("episodes/group-001/course_context.md", script_jobs[0]["input_paths"])
-```
-
-- [ ] **Step 2: Run the test to verify it fails**
-
-Run:
+Validation:
 
 ```bash
-uv run python -m unittest tests.test_agent_jobs.AgentJobGenerationTest.test_write_agent_job_artifacts_generates_headless_manifests -v
+uv run python -m unittest tests.test_course_context tests.test_episode_runner -v
+scripts/run_episode --episode-id group-003 --agent codex --dry-run
 ```
 
-Expected: failure because source-script jobs do not yet list the course context file.
+## Task 7: Documentation And Migration
 
-- [ ] **Step 3: Update `_script_job`**
+Files:
 
-In `consciousness_pipeline/agent_jobs.py`, add `course_context_path` and include it in `input_paths`:
+- Update: `README.md`
+- Update: `docs/superpowers/specs/2026-05-11-course-memory-architecture.md`
+- Update: `course/README.md` if added
 
-```python
-    course_context_path = f"episodes/{group_id}/course_context.md"
-```
+Steps:
 
-Then include:
+- [ ] Explain `scripts/run_episode` as the only production episode runner.
+- [ ] Explain `accept-episode` as the only memory/capsule update entry point.
+- [ ] Mark `run-job` as low-level debugging/comparison only.
+- [ ] Document how `course/course_memory.md` is deprecated or migrated.
 
-```python
-            course_context_path,
-```
+## Full Quality Gate
 
-And add the explicit job field:
-
-```python
-        "course_context_path": course_context_path,
-```
-
-- [ ] **Step 4: Run the targeted test**
-
-Run:
-
-```bash
-uv run python -m unittest tests.test_agent_jobs.AgentJobGenerationTest.test_write_agent_job_artifacts_generates_headless_manifests -v
-```
-
-Expected: pass.
-
-## Task 5: Generate Group 003 Context And Codex Dry Run
-
-**Files:**
-- Generate: `course/course_memory.md`
-- Generate: `episodes/group-003/course_context.md`
-
-- [ ] **Step 1: Generate the context**
-
-Run:
-
-```bash
-uv run python -m consciousness_pipeline.cli write-context --episode-id group-003
-```
-
-Expected output:
-
-```text
-Wrote course context for group-003: ...
-```
-
-- [ ] **Step 2: Inspect the generated context**
-
-Run:
-
-```bash
-rg -n "^#|^##|Quantum theories|Integrated information theory|Panpsychisms|Monisms|Dualisms|Source Priority" episodes/group-003/course_context.md
-```
-
-Expected: headings are present and all five group-003 section titles appear.
-
-- [ ] **Step 3: Dry-run Codex source-dossier command**
-
-Run:
-
-```bash
-uv run python -m consciousness_pipeline.cli run-job \
-  --manifest jobs/source-scripts.jsonl \
-  --job-id group-003-script \
-  --agent codex \
-  --dry-run
-```
-
-Expected: command JSON includes `codex`, `exec`, `--output-schema`, and prompt text that includes `Course context path: episodes/group-003/course_context.md`.
-
-## Task 6: Quality Gate
-
-**Files:**
-- All modified Python and docs files.
-
-- [ ] **Step 1: Run Ruff**
-
-Run:
+Before claiming this work is complete:
 
 ```bash
 uv run ruff check .
-```
-
-Expected: `All checks passed!`
-
-- [ ] **Step 2: Run Pyright**
-
-Run:
-
-```bash
 uv run pyright
+uv run python -m unittest discover -s tests -v
+git diff --check
 ```
 
-Expected: `0 errors, 0 warnings, 0 informations`
+## Rollout For Group 003
 
-- [ ] **Step 3: Run all tests**
-
-Run:
+Correct production order:
 
 ```bash
-uv run python -m unittest discover -s tests -v
+scripts/run_episode --episode-id group-003 --agent codex
 ```
 
-Expected: all tests pass.
+This must run:
 
-## Deferred Final-Design Task: Callback Index
+1. `research-11`
+2. `research-12`
+3. `research-13`
+4. `research-14`
+5. `research-15`
+6. validation that research records are substantive
+7. `group-003-script`
 
-This is not part of phase 1. Keep it in the architecture record for the final design.
+After reviewing and accepting the generated dossier:
 
-Later work should add:
+```bash
+uv run python -m consciousness_pipeline.cli accept-episode --episode-id group-003 --agent codex
+```
 
-- `course/callback_index.json`
-- a small schema for concept anchors
-- a renderer that inserts 1-3 relevant callbacks into `course_context.md`
-- tests proving the renderer does not pass full prior dossiers
-
-The callback index should be introduced only after rolling memory shows concrete limits.
-
+Only the accept step may create the group-003 episode capsule and update the callback index.

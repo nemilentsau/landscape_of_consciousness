@@ -5,7 +5,7 @@ from typing import Any
 
 from consciousness_pipeline.agent_runner import run_job
 from consciousness_pipeline.config import PROJECT_ROOT
-from consciousness_pipeline.course_context import render_episode_course_context, write_initial_course_memory
+from consciousness_pipeline.course_context import write_episode_course_context
 
 RESEARCH_COMPLETENESS_FIELDS = ("core_claim", "strongest_case", "best_objections", "credibility")
 PLACEHOLDER_MARKER = "research incomplete"
@@ -68,15 +68,7 @@ def validate_research_ready(root: Path, section_ids: list[str]) -> None:
 
 
 def write_episode_context(root: Path, episode_id: str, manifest: dict[str, Any]) -> Path:
-    memory_path = root / "course" / "course_memory.md"
-    if not memory_path.exists():
-        write_initial_course_memory(memory_path)
-    context_path = root / "episodes" / episode_id / "course_context.md"
-    context_path.write_text(
-        render_episode_course_context(manifest, memory_path.read_text(encoding="utf-8")),
-        encoding="utf-8",
-    )
-    return context_path
+    return write_episode_course_context(root, episode_id)
 
 
 def plan_episode_jobs(episode_id: str, root: Path = PROJECT_ROOT) -> list[dict[str, str]]:

@@ -1,101 +1,178 @@
-# Course Memory Architecture
+# Course Continuity Architecture
 
 Date: 2026-05-11
+Updated: 2026-05-12
 
 ## Context
 
-The consciousness course should stay coherent across many NotebookLM episodes without passing every previous research record or dossier into every new agent job. Earlier episodes establish recurring distinctions such as the hard problem, phenomenal versus access consciousness, correlation versus explanation, and physicalist versus nonphysicalist framing. Later episodes need those distinctions as course grounding, but they should not re-research or re-explain the earlier episodes in full.
+The consciousness course needs continuity across many NotebookLM episodes without passing every prior
+research record, dossier, or transcript into every new Codex or Claude job. Earlier episodes establish
+recurring distinctions such as the hard problem, phenomenal versus access consciousness, correlation
+versus explanation, and physicalist versus nonphysicalist framing. Later episodes need those distinctions
+as course grounding, but they should not re-research or re-explain the earlier episodes in full.
 
-The current pipeline already supports a per-episode context path. Source-dossier prompts read `episodes/<group-id>/course_context.md` when it exists, and the dossier prompt now requires a separate `## Course Continuity Grounding` section. Group 002 has a hand-authored context file, which proves the shape but does not scale.
+The first course-memory design used `course/course_memory.md` as a single bounded rolling summary. That
+does not scale. After enough episodes, a fixed-size memory file becomes either too compressed to be useful
+or too generic to guide the next episode. Repeated regeneration also risks semantic drift, duplicate
+compression, and accidental promotion of one episode's speculative claims into course-level truth.
 
 ## Goals
 
-- Keep context passed to Codex and Claude source-dossier jobs bounded.
-- Preserve course continuity as the series grows beyond a few episodes.
-- Make current episode sources primary: current research records and packets remain the main evidence.
-- Keep prior episodes available as traceable context, not as bulk prompt input.
-- Document the final architecture now while implementing the simpler rolling-summary phase first.
+- Keep prompt context passed to Codex and Claude bounded and relevant.
+- Preserve course continuity across many episodes without compressing the whole course into one blob.
+- Keep current episode research records and packets primary for factual claims.
+- Make prior episode context traceable to accepted episode artifacts.
+- Make it impossible to silently use placeholder research records as if they were production research.
+- Keep NotebookLM as the final audio renderer, not the research or memory engine.
 
 ## Non-Goals
 
 - Do not pass all previous `data/research/*.json` files to each episode job.
-- Do not make prior dossiers primary sources for new factual claims.
-- Do not add vector search or retrieval infrastructure in the first implementation pass.
-- Do not automate NotebookLM audio generation as part of course memory.
+- Do not pass all previous dossiers to each episode job.
+- Do not use a single ever-regenerated `course_memory.md` as the long-term source of truth.
+- Do not make prior episode summaries primary evidence for new factual claims.
+- Do not automate NotebookLM audio generation as part of course continuity.
 
-## Final Architecture
+## Design Principle
 
-The final design has three layers:
+Course continuity is retrieval and selection, not compression alone.
 
-1. `course/course_memory.md`
-   - A bounded, curated course memory.
-   - Stores durable concepts already introduced, recurring distinctions, open tensions, episode ledger entries, and "do not re-explain" rules.
-   - Updated after an episode dossier has been reviewed and accepted.
+The durable source of continuity should be a set of accepted, immutable episode capsules plus a small
+stable course contract. For each new episode, an LLM should generate a custom context pack from selected
+prior context. The context pack is bounded because it includes only the prior material relevant to the
+current episode.
 
-2. `episodes/<group-id>/course_context.md`
-   - A per-episode prompt input generated from the course memory plus the current episode manifest.
-   - Summarizes what prior episodes already covered, what the current episode should not redo, and how the current episode transitions from the course so far.
-   - Kept short enough to pass to every agent safely.
+## Artifact Layers
 
-3. `course/callback_index.json`
-   - Deferred final-design layer for selective callbacks.
-   - Maps concepts to prior episode anchors and local paths, for example "explanatory gap" to `group-001`, `group-002`, and exact dossier headings.
-   - Later source-dossier jobs should pull only a few relevant callbacks instead of full prior dossiers.
+### 1. Stable Course Contract
 
-## Phase 1 Scope
+Path: `course/course_contract.md`
 
-Start with option 2: rolling summary only.
+This is a small, mostly static operating contract for the entire course. It should stay around 500-800
+words and contain:
 
-Phase 1 creates and uses:
+- course purpose and audience
+- factual-source-not-dialogue rule
+- epistemic-status discipline
+- recurring comparison axes
+- NotebookLM handoff constraints
+- global "do not overstate" rules
 
-- `course/course_memory.md`
-- `episodes/group-003/course_context.md`
-- a deterministic context renderer and CLI command
-- job manifests that list the course context as an input path
+This file is not a summary of the course. It is a production contract.
 
-Phase 1 does not implement `course/callback_index.json`. The architecture document keeps it visible so later work has a target shape.
+### 2. Immutable Episode Capsules
+
+Path: `course/episode_capsules/<episode-id>.json`
+
+Each accepted episode gets one capsule after its source dossier has been reviewed and accepted. Capsules
+are append-only records. They are not repeatedly rewritten into one master memory file.
+
+Each capsule should contain:
+
+- `episode_id`
+- `title`
+- `section_ids`
+- `accepted_dossier_path`
+- `thesis`
+- `durable_concepts`
+- `recurring_distinctions`
+- `callbacks`
+- `do_not_reexplain`
+- `open_tensions`
+- `epistemic_cautions`
+- `useful_for_future_sections`
+
+Capsules should be compact, roughly 300-700 words of total content. They should preserve useful prior
+course anchors without trying to store full episode detail.
+
+### 3. Callback Index
+
+Path: `course/callback_index.json`
+
+The callback index maps concepts to episode capsules and source paths. It lets the context generator select
+relevant old material without reading every prior dossier.
+
+Example entries:
+
+- `hard_problem` -> `group-001`, `group-002`, relevant capsule fields
+- `correlation_vs_explanation` -> `group-001`, `group-002`
+- `physicalism_vs_nonphysicalism` -> `group-002`, future dualism/idealism episodes
+- `combination_problem` -> panpsychism and cosmopsychism episodes
+
+The index can be built incrementally from accepted capsules. It should point to traceable files, not invent
+new course facts.
+
+### 4. Generated Per-Episode Context Pack
+
+Path: `episodes/<group-id>/course_context.md`
+
+This is the bounded prompt input passed to source-dossier jobs. It is generated before an episode from:
+
+- `course/course_contract.md`
+- current `episodes/<group-id>/manifest.json`
+- recent episode capsules, usually one or two
+- selected older capsules via `course/callback_index.json`
+- optional manually pinned callbacks
+
+The context pack is not the source of truth. It is disposable prompt context for one episode.
+
+Stable headings:
+
+- `# Course Context For <group-id>`
+- `## Course Contract`
+- `## Current Episode Scope`
+- `## Selected Prior Grounding`
+- `## Relevant Callbacks`
+- `## Do Not Re-Explain`
+- `## Open Tensions To Preserve`
+- `## Source Priority`
+
+The source priority rule is mandatory: current research records and packets are factual sources for the
+current episode; prior course context is continuity guidance for framing, pacing, and avoiding repetition.
+
+## Required LLM Passes
+
+### After Episode Acceptance: Capsule Generation
+
+An LLM job creates `course/episode_capsules/<episode-id>.json` from:
+
+- accepted `episodes/<group-id>/notebooklm_bundle/research_dossier.md`
+- `episodes/<group-id>/manifest.json`
+- existing `course/course_contract.md`
+
+This pass should extract durable course continuity, not rewrite the whole course.
+
+### Before Episode Production: Context Pack Generation
+
+The local ordered runner creates `episodes/<group-id>/course_context.md` from:
+
+- course contract
+- current manifest
+- selected episode capsules
+- callback index
+
+This deterministic selector decides what previous course material matters for the next episode. The source-dossier
+LLM job receives the resulting context pack, but the context pack is not itself a research or synthesis job.
 
 ## Data Flow
 
-1. After an episode is accepted, the course memory is updated with a short durable summary.
-2. Before running an episode source-dossier job, generate `episodes/<group-id>/course_context.md`.
-3. The source-dossier job receives:
-   - current episode research records
-   - current episode packets
-   - current episode manifest
-   - per-episode course context
-4. The generated dossier must include `## Course Continuity Grounding` as a separate top-level section.
-5. After the dossier is accepted, update the course memory before moving to the next episode.
+1. Run episode production through `scripts/run_episode`, which enforces research jobs before source-dossier jobs.
+2. Review the generated source dossier.
+3. If accepted, run `accept-episode`; it runs the capsule-generation job and validates the capsule.
+4. `accept-episode` updates `course/callback_index.json` from accepted capsules.
+5. Before a later episode, the ordered runner generates `episodes/<group-id>/course_context.md` from selected capsules and callbacks.
+6. Run the later episode through `scripts/run_episode`.
 
-## Course Memory Format
+## Failure Modes To Prevent
 
-`course/course_memory.md` should use stable headings:
+- Treating placeholder research JSON as completed research.
+- Running source-dossier jobs before research jobs.
+- Passing all previous dossiers into every new job.
+- Letting the context pack become a factual source for new claims.
+- Recompressing all prior episodes into an increasingly vague rolling memory.
+- Letting speculative claims become course-level facts without epistemic labels.
 
-- `# Consciousness Course Memory`
-- `## Durable Concepts Introduced`
-- `## Recurring Distinctions`
-- `## Episode Ledger`
-- `## Open Tensions`
-- `## Do Not Re-Explain`
-- `## Next Episode Handoff Notes`
-
-The memory should be compact. It should not become a second research database. If the file grows beyond a few thousand words, the right fix is to compress it or introduce the callback index, not to pass more text.
-
-## Episode Context Format
-
-`episodes/<group-id>/course_context.md` should use stable headings:
-
-- `# Course Context For <group-id>`
-- `## Prior Course Grounding`
-- `## Already Covered`
-- `## Current Episode Scope`
-- `## Transition Into This Episode`
-- `## Production Constraint`
-- `## Source Priority`
-
-The source priority rule is important: current research records and current packets are factual sources; prior course context is continuity guidance.
-
-## Group 003 Design
+## Group 003 Transitional Design
 
 Group 003 covers:
 
@@ -105,15 +182,21 @@ Group 003 covers:
 - 14. Monisms
 - 15. Dualisms
 
-The context should say that group 001 established the basic problem framing and group 002 established the fundamentality, identity, materialism, and non-reductive physicalism setup. Group 003 moves into theories that challenge, extend, or compete with the physicalist frame. It should avoid re-explaining Mary, zombies, the hard problem from scratch, or the full materialism setup, while keeping epistemic-status tagging sharp because the cluster mixes empirical, formal, speculative, and metaphysical theories.
+For the immediate transition, the context pack should use prior context from groups 001 and 002:
+
+- group 001: problem framing, hard problem, phenomenal/access distinction, correlation/explanation caution
+- group 002: fundamentality fork, identity theory, Kuhn's landscape, materialism, non-reductive physicalism
+
+Group 003 should move into theories that challenge, extend, or compete with the physicalist frame while
+keeping epistemic-status labels sharp.
 
 ## Validation
 
-Phase 1 is valid when:
+The architecture is implemented correctly when:
 
-- `uv run python -m consciousness_pipeline.cli write-context --episode-id group-003` creates `episodes/group-003/course_context.md`.
-- The generated context includes prior grounding, current section titles, transition guidance, production constraints, and source priority.
-- `jobs/source-scripts.jsonl` includes `episodes/<group-id>/course_context.md` in source-script job `input_paths`.
-- The source-dossier prompt still includes the required `## Course Continuity Grounding` scaffold.
-- Ruff, Pyright, and unit tests pass.
-
+- `scripts/run_episode --episode-id group-003 --agent codex --dry-run` lists research jobs before the source-dossier job.
+- The runner refuses to run the source-dossier job if any required research record contains `Research incomplete`.
+- Accepted episodes can produce immutable capsule files.
+- `episodes/<group-id>/course_context.md` is generated from contract, manifest, and selected capsules.
+- The context pack contains source-priority language.
+- Unit tests, Ruff, and Pyright pass.
