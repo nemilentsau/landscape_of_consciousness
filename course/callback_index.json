@@ -1,0 +1,172 @@
+{
+  "Ask for the target phenomenon first": [
+    {
+      "accepted_dossier_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-001.json",
+      "episode_id": "group-001",
+      "source_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "summary": "Use this episode as the baseline reminder that later theories must identify whether they explain phenomenal consciousness, access, report, wakefulness, metacognition, self-awareness, emotion, or some other target.",
+      "useful_for_future_sections": [
+        "global workspace theories",
+        "higher-order theories",
+        "predictive-processing and re-entry theories",
+        "AI consciousness"
+      ]
+    }
+  ],
+  "Demand identity criteria for AI and uploading claims": [
+    {
+      "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-002.json",
+      "episode_id": "group-002",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "This episode supports only conditional implications for AI consciousness and uploading: later claims must say whether consciousness or personal preservation depends on function, information pattern, neural continuity, biological process, fundamentality, or some other bridge condition.",
+      "useful_for_future_sections": [
+        "AI consciousness",
+        "machine consciousness",
+        "mind uploading",
+        "virtual immortality"
+      ]
+    }
+  ],
+  "Do not let neural correlates do more work than they can bear": [
+    {
+      "accepted_dossier_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-001.json",
+      "episode_id": "group-001",
+      "source_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "summary": "When later episodes discuss NCCs, lesions, stimulation, anesthesia, no-report paradigms, or adversarial tests, return to this episode's distinction between tracking consciousness and explaining, realizing, constituting, or causing it.",
+      "useful_for_future_sections": [
+        "neural correlates of consciousness",
+        "integrated information theory",
+        "global neuronal workspace theory",
+        "adversarial collaborations"
+      ]
+    }
+  ],
+  "Hard-problem caution for AI and uploading": [
+    {
+      "accepted_dossier_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-001.json",
+      "episode_id": "group-001",
+      "source_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "summary": "This episode supports only a constraint: if consciousness is defined functionally, AI and uploading questions can be framed in terms of access, report, memory, and metacognition; if the target is phenomenality, functional sophistication alone does not establish felt experience.",
+      "useful_for_future_sections": [
+        "AI consciousness",
+        "machine consciousness",
+        "mind uploading",
+        "virtual immortality"
+      ]
+    }
+  ],
+  "Keep the landscape epistemically tagged": [
+    {
+      "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-002.json",
+      "episode_id": "group-002",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "When future episodes move through Kuhn's wide taxonomy, preserve the distinction between mainstream empirical constraints, formal theories, active philosophical views, speculative extensions, spiritual metaphysics, and weakly evidenced anomalous claims.",
+      "useful_for_future_sections": [
+        "quantum theories",
+        "anomalous and altered states theories",
+        "dualisms",
+        "idealisms",
+        "course recap episodes"
+      ]
+    }
+  ],
+  "Maps are not theories": [
+    {
+      "accepted_dossier_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-001.json",
+      "episode_id": "group-001",
+      "source_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "summary": "Use this callback when later episodes rely on Kuhn's taxonomy, Chalmers's Type A-F scheme, neurobiological surveys, explanatory profiles, or databases: maps clarify comparison but can build in priorities and should not be treated as neutral discoveries.",
+      "useful_for_future_sections": [
+        "surveys and typologies",
+        "theory comparison episodes",
+        "formal theory classification",
+        "course recap episodes"
+      ]
+    }
+  ],
+  "Require identity or an identity-like relation": [
+    {
+      "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-002.json",
+      "episode_id": "group-002",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "For any non-fundamental account, return to this episode's audit rule: a theory must say what consciousness is identical with, realized by, constituted by, grounded in, or otherwise dependent on.",
+      "useful_for_future_sections": [
+        "functional and computational theories",
+        "neurobiological mechanism theories",
+        "integrated information theory",
+        "global access theories",
+        "mind uploading"
+      ]
+    }
+  ],
+  "Return to the non-reductive physicalism dilemma": [
+    {
+      "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-002.json",
+      "episode_id": "group-002",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "For emergence, mental causation, and higher-level explanation, use this episode's Kim-style dilemma: mental properties that are too distinct risk property dualism or causal idleness, while mental properties that are not distinct enough collapse toward identity or vocabulary-level nonreduction.",
+      "useful_for_future_sections": [
+        "emergentism",
+        "property dualism",
+        "mental causation",
+        "special sciences",
+        "higher-level psychological explanation"
+      ]
+    }
+  ],
+  "Use brain dependence as constraint, not shortcut": [
+    {
+      "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-002.json",
+      "episode_id": "group-002",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Later neuroscience-heavy episodes can rely on this episode's baseline: lesions, stimulation, anesthesia, sleep, drugs, disorders of consciousness, and NCC work strongly constrain theories but do not by themselves settle metaphysical reduction.",
+      "useful_for_future_sections": [
+        "neural correlates of consciousness",
+        "anesthesia and sleep",
+        "global access theories",
+        "recurrent processing theory",
+        "no-report paradigms"
+      ]
+    }
+  ],
+  "Use the primitive-or-not fork before comparing mechanisms": [
+    {
+      "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-002.json",
+      "episode_id": "group-002",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Later episodes should ask whether a theory treats consciousness as fundamental, emergent, non-fundamental, or illusory before judging its mechanism or evidence.",
+      "useful_for_future_sections": [
+        "panpsychism and panprotopsychism",
+        "Russellian monism",
+        "idealism",
+        "strong emergence",
+        "illusionism"
+      ]
+    }
+  ],
+  "Worldviews are visible commitments, not shortcuts": [
+    {
+      "accepted_dossier_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-001.json",
+      "episode_id": "group-001",
+      "source_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
+      "summary": "Later discussions of physicalism, dualism, idealism, Russellian monism, panpsychism, and neutral monism should use this episode's warning that worldview commitments shape what counts as explanation but do not settle the detailed theory comparison.",
+      "useful_for_future_sections": [
+        "physicalist theories",
+        "dualist theories",
+        "idealist theories",
+        "panpsychism and Russellian monism"
+      ]
+    }
+  ]
+}

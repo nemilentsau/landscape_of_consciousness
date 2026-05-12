@@ -157,6 +157,60 @@ class AgentRunnerCommandTest(unittest.TestCase):
             self.assertEqual(bundle_path.read_text(encoding="utf-8"), structured_output["research_dossier_markdown"])
 
     @patch("consciousness_pipeline.agent_runner.subprocess.run")
+    def test_run_claude_capsule_job_writes_structured_output_without_dossier_bundle(self, run):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            schema_path = root / "schemas" / "episode-capsule.schema.json"
+            schema_path.parent.mkdir(parents=True)
+            schema_path.write_text(
+                json.dumps(
+                    {
+                        "type": "object",
+                        "properties": {"episode_id": {"type": "string"}},
+                        "required": ["episode_id"],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            (root / "course").mkdir(parents=True)
+            (root / "course" / "course_contract.md").write_text("Static course rules.", encoding="utf-8")
+            episode_dir = root / "episodes" / "group-002"
+            episode_dir.mkdir(parents=True)
+            (episode_dir / "manifest.json").write_text('{"episode_id": "group-002"}', encoding="utf-8")
+            dossier = episode_dir / "notebooklm_bundle" / "research_dossier.md"
+            dossier.parent.mkdir(parents=True)
+            dossier.write_text("# Accepted dossier\n", encoding="utf-8")
+            manifest_path = root / "jobs" / "episode-capsules.jsonl"
+            manifest_path.parent.mkdir(parents=True)
+            job = {
+                "job_id": "group-002-capsule",
+                "kind": "course_episode_capsule",
+                "group_id": "group-002",
+                "title": "Top-level sections Part 2",
+                "episode_manifest_path": "episodes/group-002/manifest.json",
+                "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+                "output_path": "course/episode_capsules/group-002.json",
+                "schema_path": "schemas/episode-capsule.schema.json",
+            }
+            manifest_path.write_text(json.dumps(job) + "\n", encoding="utf-8")
+            structured_output = {"episode_id": "group-002"}
+            run.side_effect = [
+                subprocess.CompletedProcess(args=["claude", "--version"], returncode=0, stdout="2.1.138", stderr=""),
+                subprocess.CompletedProcess(
+                    args=["claude", "-p"],
+                    returncode=0,
+                    stdout=json.dumps({"result": structured_output}),
+                    stderr="",
+                ),
+            ]
+
+            run_job(manifest_path, "group-002-capsule", "claude", root=root)
+
+            output_path = root / "course" / "episode_capsules" / "group-002.json"
+            self.assertEqual(json.loads(output_path.read_text(encoding="utf-8")), structured_output)
+            self.assertFalse((root / "episodes" / "group-002" / "notebooklm_bundle" / "script.md").exists())
+
+    @patch("consciousness_pipeline.agent_runner.subprocess.run")
     def test_check_agent_available_reports_broken_cli_stderr(self, run):
         run.return_value = subprocess.CompletedProcess(
             args=["codex", "--version"],

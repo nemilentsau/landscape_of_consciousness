@@ -19,15 +19,25 @@ Goal: build a reproducible production pipeline that starts from Kuhn's downloade
 - Headless research and source-script job manifests.
 - JSON schemas for research records and source scripts.
 - Command builders for Codex CLI and Claude Code headless.
+- Ordered episode runner that executes research jobs before source-dossier jobs.
+- Placeholder research validation before source-dossier execution.
 
 ## Current Commands
 
 ```bash
-PYTHONPATH=. /Users/andreinemilentsau/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m consciousness_pipeline.cli all
+uv run python -m consciousness_pipeline.cli all
 ```
 
+Production episode run:
+
 ```bash
-PYTHONPATH=. /Users/andreinemilentsau/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 -m consciousness_pipeline.cli run-job \
+scripts/run_episode --episode-id group-003 --agent codex --dry-run
+```
+
+Low-level single-job debugging only:
+
+```bash
+uv run python -m consciousness_pipeline.cli run-job \
   --manifest jobs/research.jsonl \
   --job-id research-9.2.3 \
   --agent codex \
@@ -36,8 +46,9 @@ PYTHONPATH=. /Users/andreinemilentsau/.cache/codex-runtimes/codex-primary-runtim
 
 ## Next Work
 
-- Run one Codex research job on a representative mainstream theory.
-- Run one source-script job on the corresponding episode group.
-- Add validation for completed research/source-script outputs.
+- Replace single rolling course memory with course contract, accepted episode capsules, callback index,
+  and generated context packs.
+- Add explicit episode acceptance step before any course-continuity state is updated.
+- Run group 003 through `scripts/run_episode` only after the above document and plan updates are accepted.
 - Build factual NotebookLM dossier material under `episodes/<group-id>/notebooklm_bundle/`.
 - Then test a single NotebookLM handoff with Computer Use or Claude Code browser control.

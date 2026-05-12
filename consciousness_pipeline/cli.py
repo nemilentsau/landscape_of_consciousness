@@ -16,6 +16,10 @@ from consciousness_pipeline.config import (
     SCHEMAS_DIR,
 )
 from consciousness_pipeline.course import write_course_artifacts, write_episode_artifacts
+from consciousness_pipeline.course_context import write_episode_course_context
+from consciousness_pipeline.course_contract import write_default_course_contract
+from consciousness_pipeline.episode_acceptance import accept_episode
+from consciousness_pipeline.episode_runner import run_episode
 from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
 from consciousness_pipeline.packets import render_packet, validate_packet
@@ -99,11 +103,16 @@ def cmd_course(args: argparse.Namespace) -> None:
 
 def cmd_jobs(args: argparse.Namespace) -> None:
     sections = _read_sections(EXTRACTED_DIR / "sections.json")
-    write_course_artifacts(sections, COURSE_DIR)
-    write_episode_artifacts(sections, EPISODES_DIR)
+    write_default_course_contract(COURSE_DIR / "course_contract.md")
     write_research_readme(RESEARCH_DIR)
     write_agent_job_artifacts(sections, JOBS_DIR, SCHEMAS_DIR, EPISODES_DIR)
     print("Wrote headless agent job manifests")
+
+
+def cmd_write_contract(args: argparse.Namespace) -> None:
+    path = COURSE_DIR / "course_contract.md"
+    write_default_course_contract(path)
+    print(f"Wrote course contract: {path}")
 
 
 def cmd_bundle_sources(args: argparse.Namespace) -> None:
@@ -122,6 +131,11 @@ def cmd_bundle_sources(args: argparse.Namespace) -> None:
     print(f"Wrote {len(written)} NotebookLM source files")
 
 
+def cmd_write_context(args: argparse.Namespace) -> None:
+    output_path = write_episode_course_context(COURSE_DIR.parent, args.episode_id)
+    print(f"Wrote course context for {args.episode_id}: {output_path}")
+
+
 def cmd_run_job(args: argparse.Namespace) -> None:
     manifest = Path(args.manifest)
     if not manifest.is_absolute():
@@ -136,6 +150,18 @@ def cmd_run_job(args: argparse.Namespace) -> None:
     )
     if args.dry_run:
         print(json.dumps(command, indent=2))
+
+
+def cmd_run_episode(args: argparse.Namespace) -> None:
+    result = run_episode(args.episode_id, args.agent, dry_run=args.dry_run)
+    if args.dry_run:
+        print(json.dumps(result, indent=2))
+
+
+def cmd_accept_episode(args: argparse.Namespace) -> None:
+    result = accept_episode(args.episode_id, args.agent, dry_run=args.dry_run)
+    if args.dry_run:
+        print(json.dumps(result, indent=2))
 
 
 def cmd_all(args: argparse.Namespace) -> None:
@@ -158,6 +184,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("packets", cmd_packets),
         ("course", cmd_course),
         ("jobs", cmd_jobs),
+        ("write-contract", cmd_write_contract),
         ("all", cmd_all),
     ):
         subparser = subparsers.add_parser(name)
@@ -170,9 +197,28 @@ def build_parser() -> argparse.ArgumentParser:
     run_job_parser.add_argument("--output-path", type=Path, help="Override the job output path")
     run_job_parser.add_argument("--bundle-output-path", type=Path, help="Override the NotebookLM dossier markdown path")
     run_job_parser.set_defaults(func=cmd_run_job)
+    run_episode_parser = subparsers.add_parser("run-episode")
+    run_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-003")
+    run_episode_parser.add_argument(
+        "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
+    )
+    run_episode_parser.add_argument("--dry-run", action="store_true", help="Print ordered jobs without executing them")
+    run_episode_parser.set_defaults(func=cmd_run_episode)
+    accept_episode_parser = subparsers.add_parser("accept-episode")
+    accept_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-002")
+    accept_episode_parser.add_argument(
+        "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
+    )
+    accept_episode_parser.add_argument(
+        "--dry-run", action="store_true", help="Print the capsule job without executing it"
+    )
+    accept_episode_parser.set_defaults(func=cmd_accept_episode)
     bundle_sources_parser = subparsers.add_parser("bundle-sources")
     bundle_sources_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-001")
     bundle_sources_parser.set_defaults(func=cmd_bundle_sources)
+    write_context_parser = subparsers.add_parser("write-context")
+    write_context_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-003")
+    write_context_parser.set_defaults(func=cmd_write_context)
     return parser
 
 

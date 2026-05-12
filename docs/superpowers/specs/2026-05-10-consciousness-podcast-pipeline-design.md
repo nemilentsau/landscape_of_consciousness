@@ -23,6 +23,8 @@ the desired local workflow.
 - Build episode-sized groups so tiny theories can be combined and broad categories are split.
 - Generate machine-readable research jobs for Codex CLI or Claude Code headless.
 - Generate machine-readable source-script jobs that create factual NotebookLM research dossiers.
+- Run whole episodes through an ordered runner that executes research jobs first and blocks source-dossier
+  generation if research records are still placeholders.
 - Keep schemas stable so agent outputs can be validated and resumed.
 - Leave the NotebookLM step as an explicit handoff after factual dossiers exist.
 
@@ -55,6 +57,7 @@ the desired local workflow.
 - `jobs/source-scripts.jsonl`: one factual source-script job per episode group.
 - `schemas/research-record.schema.json`
 - `schemas/source-script.schema.json`
+- `scripts/run_episode`: production entry point for ordered episode execution.
 
 ### Agent Outputs
 
@@ -82,6 +85,10 @@ Source-script jobs should produce factual NotebookLM research dossiers, not dial
 - Comparison axes for theories in the cluster.
 - Epistemic status and claims not to overstate.
 - Implications for AI consciousness, virtual immortality, survival beyond death, and value only where relevant.
+
+Production episode runs must use `scripts/run_episode --episode-id <group-id> --agent codex|claude`.
+`run-job` is a low-level primitive for individual research jobs, comparison artifacts, and debugging. It is
+not the production path for a whole episode because it can bypass research-readiness checks.
 
 ## NotebookLM Handoff
 

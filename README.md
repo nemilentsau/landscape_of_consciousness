@@ -6,8 +6,9 @@ The production path is:
 
 1. Extract and segment the downloaded PDF into Kuhn's numbered theory taxonomy.
 2. Generate deterministic course maps and headless-agent job manifests.
-3. Run `codex exec` or `claude -p` jobs to research theories and write factual source scripts.
-4. Use Codex Computer Use or Claude Code browser/computer control for the final NotebookLM audio handoff.
+3. Run the ordered episode runner to research theories first, validate research records, then write factual source scripts.
+4. Accept the completed source dossier, which creates an immutable continuity capsule and callback index.
+5. Use Codex Computer Use or Claude Code browser/computer control for the final NotebookLM audio handoff.
 
 NotebookLM is the dialogue and audio renderer at the end of the process, not the core automation layer.
 The local script artifacts are factual research dossiers for NotebookLM, not performed dialogue scripts.
@@ -30,18 +31,59 @@ Generated artifacts:
 - `course/exhaustive-index.md`
 - `course/episode-map.md`
 - `course/episode-map.json`
+- `course/course_contract.md`
 - `course/production-status.csv`
 - `episodes/<group-id>/manifest.json`
 - `episodes/<group-id>/README.md`
 - `jobs/research.jsonl`
 - `jobs/source-scripts.jsonl`
+- `jobs/episode-capsules.jsonl`
 - `schemas/research-record.schema.json`
 - `schemas/source-script.schema.json`
+- `schemas/episode-capsule.schema.json`
 
 Research JSON files are section-level inputs, not podcast episodes. Episode directories show how
 those section inputs are assembled into a single listening-course episode.
 
-## Run A Headless Job
+## Run An Episode In The Correct Order
+
+Use the episode runner for production. It runs every required section research job first, checks that the
+resulting `data/research/<section-id>.json` records are no longer placeholders, and only then runs the
+episode source-dossier job.
+
+```bash
+scripts/run_episode --episode-id group-003 --agent codex
+```
+
+Preview the job order without executing anything:
+
+```bash
+scripts/run_episode --episode-id group-003 --agent codex --dry-run
+```
+
+If any research record still contains `Research incomplete`, the runner stops before the source-dossier
+step. Do not manually run an episode source-dossier job before the research jobs have completed and passed
+this gate.
+
+## Accept A Finished Episode Dossier
+
+After a source dossier has been reviewed, accept it before using it as continuity for later episodes:
+
+```bash
+uv run python -m consciousness_pipeline.cli accept-episode --episode-id group-002 --agent codex
+```
+
+This is the only production entry point that may create `course/episode_capsules/<group-id>.json` and
+update `course/callback_index.json`. `scripts/run_episode` intentionally does not update continuity state;
+acceptance is the human checkpoint that prevents a bad dossier from poisoning future context.
+
+`course/course_memory.md` has been removed from the active pipeline. Durable continuity now lives in the
+static `course/course_contract.md`, immutable accepted episode capsules, and the generated callback index.
+
+## Run A Single Headless Job For Debugging
+
+`run-job` is the low-level primitive. Use it for isolated research jobs, comparison artifacts, or debugging,
+not as the production path for a whole episode.
 
 ```bash
 uv run python -m consciousness_pipeline.cli run-job \
@@ -76,7 +118,7 @@ uv run python -m unittest discover -s tests -v
 
 ## NotebookLM Handoff
 
-After research and source-script jobs produce `episodes/<group-id>/script.json` and
+After research and source-dossier jobs produce `episodes/<group-id>/script.json` and
 `episodes/<group-id>/notebooklm_bundle/research_dossier.md`, generate factual per-section Markdown
 sources for the same bundle:
 

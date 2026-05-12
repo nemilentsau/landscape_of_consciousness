@@ -34,6 +34,14 @@ class ToolingConfigTest(unittest.TestCase):
         self.assertIn("uv run ruff check .", instructions)
         self.assertIn("uv run pyright", instructions)
 
+    def test_episode_runner_script_uses_uv_cli_command(self):
+        script = PROJECT_ROOT / "scripts" / "run_episode"
+
+        self.assertTrue(script.exists())
+        self.assertTrue(os.access(script, os.X_OK))
+        text = script.read_text(encoding="utf-8")
+        self.assertIn("uv run python -m consciousness_pipeline.cli run-episode", text)
+
 
 if __name__ == "__main__":
     unittest.main()

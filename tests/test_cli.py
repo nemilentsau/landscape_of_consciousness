@@ -55,6 +55,9 @@ class CliTest(unittest.TestCase):
         self.assertIn("extract", result.stdout)
         self.assertIn("jobs", result.stdout)
         self.assertIn("run-job", result.stdout)
+        self.assertIn("run-episode", result.stdout)
+        self.assertIn("accept-episode", result.stdout)
+        self.assertIn("write-contract", result.stdout)
         self.assertIn("bundle-sources", result.stdout)
         self.assertIn("all", result.stdout)
 
@@ -117,6 +120,70 @@ class CliTest(unittest.TestCase):
             )
             self.assertTrue(source_path.exists())
             self.assertIn("## Core Claim", source_path.read_text(encoding="utf-8"))
+
+    def test_write_context_command_writes_episode_context(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            course_dir = root / "course"
+            episodes_dir = root / "episodes"
+            group_dir = episodes_dir / "group-003"
+            group_dir.mkdir(parents=True)
+            (group_dir / "manifest.json").write_text(
+                json.dumps(
+                    {
+                        "episode_id": "group-003",
+                        "title": "Top-level sections Part 3",
+                        "episode_question": "What is the strongest case for this cluster, and where does it break?",
+                        "sections": [
+                            {"section_id": "11", "title": "Quantum theories", "pages": "13-16"},
+                            {"section_id": "12", "title": "Integrated information theory", "pages": "16-20"},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            argv = ["cli.py", "write-context", "--episode-id", "group-003"]
+
+            with patch.object(sys, "argv", argv), patch.object(cli, "COURSE_DIR", course_dir), patch.object(
+                cli, "EPISODES_DIR", episodes_dir
+            ):
+                cli.main()
+
+            context_path = group_dir / "course_context.md"
+            self.assertTrue(context_path.exists())
+            context = context_path.read_text(encoding="utf-8")
+            self.assertTrue((course_dir / "course_contract.md").exists())
+            self.assertIn("Quantum theories", context)
+            self.assertIn("Integrated information theory", context)
+            self.assertIn("## Source Priority", context)
+
+    def test_run_episode_command_delegates_to_ordered_runner(self):
+        argv = ["cli.py", "run-episode", "--episode-id", "group-003", "--agent", "codex"]
+
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+            cli.main()
+
+        run_episode.assert_called_once_with("group-003", "codex", dry_run=False)
+
+    def test_accept_episode_command_delegates_to_acceptance_checkpoint(self):
+        argv = ["cli.py", "accept-episode", "--episode-id", "group-002", "--agent", "claude"]
+
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.accept_episode") as accept_episode:
+            cli.main()
+
+        accept_episode.assert_called_once_with("group-002", "claude", dry_run=False)
+
+    def test_write_contract_command_writes_static_course_contract(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            course_dir = Path(tmp) / "course"
+            argv = ["cli.py", "write-contract"]
+
+            with patch.object(sys, "argv", argv), patch.object(cli, "COURSE_DIR", course_dir):
+                cli.main()
+
+            contract_path = course_dir / "course_contract.md"
+            self.assertTrue(contract_path.exists())
+            self.assertIn("## NotebookLM Handoff Rules", contract_path.read_text(encoding="utf-8"))
 
 
 if __name__ == "__main__":

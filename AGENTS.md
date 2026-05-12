@@ -29,3 +29,33 @@ uv run python -m unittest discover -s tests -v
 - NotebookLM is only the final audio handoff target. Research and script generation should run through headless Codex CLI or Claude Code jobs.
 - For NotebookLM audio, use Deep Dive format with Long length. Do not choose Debate as the NotebookLM format; debate-style balance belongs in the custom prompt.
 - Keep generated research records schema-shaped so they can be consumed by packet and script generation.
+
+## Production Pipeline Rules
+
+- Do not run episode production through inline shell snippets or ad hoc one-off command sequences.
+- Use `scripts/run_episode --episode-id <group-id> --agent codex|claude` for production episode runs.
+- Run exactly one episode unless the user explicitly asks for a batch.
+- The ordered runner must preserve this sequence:
+  1. generate or refresh `episodes/<group-id>/course_context.md`
+  2. run every required `research-<section-id>` job
+  3. validate that research records are substantive and not placeholders
+  4. run the single `group-id-script` source-dossier job
+- `run-job` is low-level debugging/comparison only. Do not use it as the production path for a whole episode.
+- `script.json` is a historical artifact name. Its content must be factual NotebookLM source material, especially `research_dossier_markdown`; do not create dialogue, host banter, stage directions, or performed scripts.
+
+## Course Continuity Rules
+
+- Do not recreate or rely on `course/course_memory.md`.
+- Long-term continuity lives in:
+  - `course/course_contract.md`
+  - `course/episode_capsules/<group-id>.json`
+  - `course/callback_index.json`
+- Only run `uv run python -m consciousness_pipeline.cli accept-episode --episode-id <group-id> --agent codex|claude` after the user has accepted a generated source dossier.
+- `accept-episode` is the only production command that may create or update episode capsules and callback indexes.
+- Prior continuity is framing guidance, not evidence. Current research records and current packet inputs remain the factual sources for the current episode.
+
+## Headless Agent Rules
+
+- Use the locally installed/authenticated Codex CLI or Claude Code CLI.
+- Do not tell the user to configure API keys for Claude Code headless unless an actual CLI error proves local auth is unavailable.
+- Claude Code should run in normal print mode through the project runner; do not use `--bare` unless the user explicitly requests it.
