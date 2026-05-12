@@ -44,8 +44,9 @@ class AgentJobGenerationTest(unittest.TestCase):
             research_jobs = read_jsonl(root / "jobs" / "research.jsonl")
             script_jobs = read_jsonl(root / "jobs" / "source-scripts.jsonl")
             capsule_jobs = read_jsonl(root / "jobs" / "episode-capsules.jsonl")
+            review_jobs = read_jsonl(root / "jobs" / "episode-reviews.jsonl")
             serialized = json.dumps(
-                {"research": research_jobs, "scripts": script_jobs, "capsules": capsule_jobs}
+                {"research": research_jobs, "scripts": script_jobs, "capsules": capsule_jobs, "reviews": review_jobs}
             ).lower()
 
             self.assertEqual(len(research_jobs), 2)
@@ -83,8 +84,25 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertEqual(capsule_jobs[0]["output_path"], "course/episode_capsules/group-001.json")
             self.assertEqual(capsule_jobs[0]["schema_path"], "schemas/episode-capsule.schema.json")
 
+            self.assertEqual(len(review_jobs), 1)
+            self.assertEqual(review_jobs[0]["kind"], "episode_review")
+            self.assertEqual(review_jobs[0]["job_id"], "group-001-review")
+            self.assertEqual(review_jobs[0]["group_id"], "group-001")
+            self.assertEqual(review_jobs[0]["episode_manifest_path"], "episodes/group-001/manifest.json")
+            self.assertEqual(
+                review_jobs[0]["source_script_path"],
+                "episodes/group-001/script.json",
+            )
+            self.assertEqual(
+                review_jobs[0]["dossier_path"],
+                "episodes/group-001/notebooklm_bundle/research_dossier.md",
+            )
+            self.assertEqual(review_jobs[0]["output_path"], "episodes/group-001/review.json")
+            self.assertEqual(review_jobs[0]["schema_path"], "schemas/episode-review.schema.json")
+
             self.assertTrue((root / "schemas" / "research-record.schema.json").exists())
             self.assertTrue((root / "schemas" / "episode-capsule.schema.json").exists())
+            self.assertTrue((root / "schemas" / "episode-review.schema.json").exists())
             source_script_schema = json.loads((root / "schemas" / "source-script.schema.json").read_text())
             self.assertIn("research_dossier_markdown", source_script_schema["required"])
             self.assertNotIn("script_markdown", source_script_schema["properties"])
@@ -115,6 +133,27 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("do not rewrite the whole course", capsule_prompt)
             self.assertIn("do not add new facts", capsule_prompt)
             self.assertIn("Accepted factual source dossier.", capsule_prompt)
+
+            source_script_path = root / "episodes" / "group-001" / "script.json"
+            source_script_path.write_text(
+                json.dumps(
+                    {
+                        "episode_id": "group-001",
+                        "title": "Materialism theories Part 1",
+                        "episode_question": "What is the strongest case for this cluster?",
+                        "duration_target": "long_form",
+                        "research_dossier_markdown": "Accepted factual source dossier.",
+                        "citations": ["Kuhn 2024"],
+                        "missing_inputs": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            review_prompt = build_job_prompt(review_jobs[0], root)
+            self.assertIn("review gate", review_prompt)
+            self.assertIn("Approve only if", review_prompt)
+            self.assertIn("Do not repair the dossier", review_prompt)
+            self.assertIn("Accepted factual source dossier.", review_prompt)
 
     def test_build_job_prompt_removes_nul_bytes_from_extracted_pdf_text(self):
         with tempfile.TemporaryDirectory() as tmp:
