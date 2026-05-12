@@ -17,6 +17,7 @@ from consciousness_pipeline.config import (
 )
 from consciousness_pipeline.course import write_course_artifacts, write_episode_artifacts
 from consciousness_pipeline.course_context import render_episode_course_context, write_initial_course_memory
+from consciousness_pipeline.episode_runner import run_episode
 from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
 from consciousness_pipeline.packets import render_packet, validate_packet
@@ -151,6 +152,12 @@ def cmd_run_job(args: argparse.Namespace) -> None:
         print(json.dumps(command, indent=2))
 
 
+def cmd_run_episode(args: argparse.Namespace) -> None:
+    result = run_episode(args.episode_id, args.agent, dry_run=args.dry_run)
+    if args.dry_run:
+        print(json.dumps(result, indent=2))
+
+
 def cmd_all(args: argparse.Namespace) -> None:
     cmd_extract(args)
     cmd_headings(args)
@@ -183,6 +190,13 @@ def build_parser() -> argparse.ArgumentParser:
     run_job_parser.add_argument("--output-path", type=Path, help="Override the job output path")
     run_job_parser.add_argument("--bundle-output-path", type=Path, help="Override the NotebookLM dossier markdown path")
     run_job_parser.set_defaults(func=cmd_run_job)
+    run_episode_parser = subparsers.add_parser("run-episode")
+    run_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-003")
+    run_episode_parser.add_argument(
+        "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
+    )
+    run_episode_parser.add_argument("--dry-run", action="store_true", help="Print ordered jobs without executing them")
+    run_episode_parser.set_defaults(func=cmd_run_episode)
     bundle_sources_parser = subparsers.add_parser("bundle-sources")
     bundle_sources_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-001")
     bundle_sources_parser.set_defaults(func=cmd_bundle_sources)

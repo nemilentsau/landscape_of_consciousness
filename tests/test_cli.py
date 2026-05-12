@@ -55,6 +55,7 @@ class CliTest(unittest.TestCase):
         self.assertIn("extract", result.stdout)
         self.assertIn("jobs", result.stdout)
         self.assertIn("run-job", result.stdout)
+        self.assertIn("run-episode", result.stdout)
         self.assertIn("bundle-sources", result.stdout)
         self.assertIn("all", result.stdout)
 
@@ -153,6 +154,14 @@ class CliTest(unittest.TestCase):
             self.assertIn("Quantum theories", context)
             self.assertIn("Integrated information theory", context)
             self.assertIn("## Source Priority", context)
+
+    def test_run_episode_command_delegates_to_ordered_runner(self):
+        argv = ["cli.py", "run-episode", "--episode-id", "group-003", "--agent", "codex"]
+
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+            cli.main()
+
+        run_episode.assert_called_once_with("group-003", "codex", dry_run=False)
 
 
 if __name__ == "__main__":

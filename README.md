@@ -6,7 +6,7 @@ The production path is:
 
 1. Extract and segment the downloaded PDF into Kuhn's numbered theory taxonomy.
 2. Generate deterministic course maps and headless-agent job manifests.
-3. Run `codex exec` or `claude -p` jobs to research theories and write factual source scripts.
+3. Run the ordered episode runner to research theories first, validate research records, then write factual source scripts.
 4. Use Codex Computer Use or Claude Code browser/computer control for the final NotebookLM audio handoff.
 
 NotebookLM is the dialogue and audio renderer at the end of the process, not the core automation layer.
@@ -41,7 +41,30 @@ Generated artifacts:
 Research JSON files are section-level inputs, not podcast episodes. Episode directories show how
 those section inputs are assembled into a single listening-course episode.
 
-## Run A Headless Job
+## Run An Episode In The Correct Order
+
+Use the episode runner for production. It runs every required section research job first, checks that the
+resulting `data/research/<section-id>.json` records are no longer placeholders, and only then runs the
+episode source-dossier job.
+
+```bash
+scripts/run_episode --episode-id group-003 --agent codex
+```
+
+Preview the job order without executing anything:
+
+```bash
+scripts/run_episode --episode-id group-003 --agent codex --dry-run
+```
+
+If any research record still contains `Research incomplete`, the runner stops before the source-dossier
+step. Do not manually run an episode source-dossier job before the research jobs have completed and passed
+this gate.
+
+## Run A Single Headless Job For Debugging
+
+`run-job` is the low-level primitive. Use it for isolated research jobs, comparison artifacts, or debugging,
+not as the production path for a whole episode.
 
 ```bash
 uv run python -m consciousness_pipeline.cli run-job \
