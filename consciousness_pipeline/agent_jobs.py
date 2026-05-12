@@ -99,6 +99,7 @@ def _script_job(group: EpisodeGroup) -> dict[str, object]:
     group_id = str(group["group_id"])
     section_ids = [str(item) for item in group["section_ids"]]
     episode_manifest_path = f"episodes/{group_id}/manifest.json"
+    course_context_path = f"episodes/{group_id}/course_context.md"
     return {
         "job_id": f"{group_id}-script",
         "kind": "source_script",
@@ -115,9 +116,11 @@ def _script_job(group: EpisodeGroup) -> dict[str, object]:
             "data/extracted/sections.json",
             "course/episode-map.json",
             episode_manifest_path,
+            course_context_path,
             *[f"data/research/{section_id}.json" for section_id in section_ids],
         ],
         "episode_manifest_path": episode_manifest_path,
+        "course_context_path": course_context_path,
         "output_path": f"episodes/{group_id}/script.json",
         "schema_path": "schemas/source-script.schema.json",
         "notebooklm_handoff": "computer_use_after_script_bundle",

@@ -118,6 +118,42 @@ class CliTest(unittest.TestCase):
             self.assertTrue(source_path.exists())
             self.assertIn("## Core Claim", source_path.read_text(encoding="utf-8"))
 
+    def test_write_context_command_writes_episode_context(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            course_dir = root / "course"
+            episodes_dir = root / "episodes"
+            group_dir = episodes_dir / "group-003"
+            group_dir.mkdir(parents=True)
+            (group_dir / "manifest.json").write_text(
+                json.dumps(
+                    {
+                        "episode_id": "group-003",
+                        "title": "Top-level sections Part 3",
+                        "episode_question": "What is the strongest case for this cluster, and where does it break?",
+                        "sections": [
+                            {"section_id": "11", "title": "Quantum theories", "pages": "13-16"},
+                            {"section_id": "12", "title": "Integrated information theory", "pages": "16-20"},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            argv = ["cli.py", "write-context", "--episode-id", "group-003"]
+
+            with patch.object(sys, "argv", argv), patch.object(cli, "COURSE_DIR", course_dir), patch.object(
+                cli, "EPISODES_DIR", episodes_dir
+            ):
+                cli.main()
+
+            context_path = group_dir / "course_context.md"
+            self.assertTrue((course_dir / "course_memory.md").exists())
+            self.assertTrue(context_path.exists())
+            context = context_path.read_text(encoding="utf-8")
+            self.assertIn("Quantum theories", context)
+            self.assertIn("Integrated information theory", context)
+            self.assertIn("## Source Priority", context)
+
 
 if __name__ == "__main__":
     unittest.main()

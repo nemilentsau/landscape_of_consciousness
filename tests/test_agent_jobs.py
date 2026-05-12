@@ -59,6 +59,7 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertEqual(script_jobs[0]["section_ids"], ["9.2.3", "9.2.4"])
             self.assertEqual(script_jobs[0]["episode_manifest_path"], "episodes/group-001/manifest.json")
             self.assertIn("episodes/group-001/manifest.json", script_jobs[0]["input_paths"])
+            self.assertIn("episodes/group-001/course_context.md", script_jobs[0]["input_paths"])
             self.assertEqual(script_jobs[0]["output_path"], "episodes/group-001/script.json")
             self.assertEqual(
                 script_jobs[0]["bundle_output_path"],

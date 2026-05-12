@@ -16,6 +16,7 @@ from consciousness_pipeline.config import (
     SCHEMAS_DIR,
 )
 from consciousness_pipeline.course import write_course_artifacts, write_episode_artifacts
+from consciousness_pipeline.course_context import render_episode_course_context, write_initial_course_memory
 from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
 from consciousness_pipeline.packets import render_packet, validate_packet
@@ -122,6 +123,18 @@ def cmd_bundle_sources(args: argparse.Namespace) -> None:
     print(f"Wrote {len(written)} NotebookLM source files")
 
 
+def cmd_write_context(args: argparse.Namespace) -> None:
+    memory_path = COURSE_DIR / "course_memory.md"
+    if not memory_path.exists():
+        write_initial_course_memory(memory_path)
+    manifest_path = EPISODES_DIR / args.episode_id / "manifest.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    context = render_episode_course_context(manifest, memory_path.read_text(encoding="utf-8"))
+    output_path = EPISODES_DIR / args.episode_id / "course_context.md"
+    output_path.write_text(context, encoding="utf-8")
+    print(f"Wrote course context for {args.episode_id}: {output_path}")
+
+
 def cmd_run_job(args: argparse.Namespace) -> None:
     manifest = Path(args.manifest)
     if not manifest.is_absolute():
@@ -173,6 +186,9 @@ def build_parser() -> argparse.ArgumentParser:
     bundle_sources_parser = subparsers.add_parser("bundle-sources")
     bundle_sources_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-001")
     bundle_sources_parser.set_defaults(func=cmd_bundle_sources)
+    write_context_parser = subparsers.add_parser("write-context")
+    write_context_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-003")
+    write_context_parser.set_defaults(func=cmd_write_context)
     return parser
 
 
