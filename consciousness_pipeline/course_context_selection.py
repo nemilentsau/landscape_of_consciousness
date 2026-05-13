@@ -46,7 +46,7 @@ COURSE_CONTEXT_SELECTION_SCHEMA: dict[str, Any] = {
                     "source_path": {"type": "string"},
                     "reason": {"type": "string"},
                 },
-                "required": ["concept", "reason"],
+                "required": ["concept", "episode_id", "source_path", "reason"],
                 "additionalProperties": False,
             },
         },
@@ -150,7 +150,7 @@ def _validate_rejected_near_misses(errors: list[str], selection: Mapping[str, An
         if not isinstance(near_miss, Mapping):
             errors.append(f"rejected_near_misses[{index}] must be an object")
             continue
-        for field in ("concept", "reason"):
+        for field in ("concept", "episode_id", "source_path", "reason"):
             if not _non_empty_string(near_miss.get(field)):
                 errors.append(f"rejected_near_misses[{index}].{field} is required")
 

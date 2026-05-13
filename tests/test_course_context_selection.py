@@ -98,6 +98,8 @@ class CourseContextSelectionTest(unittest.TestCase):
             schema = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(schema["properties"]["schema_version"]["const"], "course_context_selection_v1")
             self.assertIn("selected_callbacks", schema["required"])
+            near_miss_items = schema["properties"]["rejected_near_misses"]["items"]
+            self.assertEqual(set(near_miss_items["required"]), set(near_miss_items["properties"]))
 
 
 if __name__ == "__main__":

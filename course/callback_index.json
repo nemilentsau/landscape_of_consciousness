@@ -30,6 +30,51 @@
       ]
     }
   ],
+  "Boundary problem for conscious subjects": [
+    {
+      "accepted_dossier_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-003.json",
+      "episode_id": "group-003",
+      "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "summary": "This episode establishes subject-bounding as a cross-cutting problem: IIT's exclusion principle, panpsychist combination, cosmopsychist decombination, monist finite-subject emergence, and dualist pairing all ask what makes one conscious subject one subject.",
+      "useful_for_future_sections": [
+        "self and personal identity",
+        "AI consciousness",
+        "collective consciousness",
+        "cosmopsychism or idealism"
+      ]
+    }
+  ],
+  "Bridge audit": [
+    {
+      "accepted_dossier_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-003.json",
+      "episode_id": "group-003",
+      "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "summary": "Use this episode as the point where the course's bridge audit becomes concrete: every theory must say whether consciousness is identical with, constituted by, realized by, grounded in, caused by, or merely correlated with the proposed structure or ontology.",
+      "useful_for_future_sections": [
+        "theories comparing neural correlates with explanations",
+        "AI consciousness",
+        "mind uploading",
+        "causal theories of consciousness"
+      ]
+    }
+  ],
+  "Category-borrowing warning": [
+    {
+      "accepted_dossier_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-003.json",
+      "episode_id": "group-003",
+      "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "summary": "Future episodes can call back to this episode's warning that authority should not be borrowed across categories: mainstream quantum physics does not confirm quantum consciousness, clinical PCI does not prove IIT's full ontology, analytic panpsychism does not prove religious cosmopsychism, and dualism's conceivability arguments do not establish survival after death.",
+      "useful_for_future_sections": [
+        "quantum or field-based proposals",
+        "clinical consciousness measures",
+        "religious or spiritual metaphysics",
+        "afterlife and survival claims"
+      ]
+    }
+  ],
   "Constrained pluralism, not false balance": [
     {
       "accepted_dossier_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
@@ -107,6 +152,21 @@
       ]
     }
   ],
+  "Implications discipline": [
+    {
+      "accepted_dossier_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-003.json",
+      "episode_id": "group-003",
+      "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "summary": "The dossier models constrained implication handling: nothing in the cluster proves current AI consciousness, uploading survival, survival beyond death, or cosmic purpose, even when particular theories make those ideas conceptually possible.",
+      "useful_for_future_sections": [
+        "AI consciousness",
+        "virtual immortality",
+        "survival beyond death",
+        "meaning and value"
+      ]
+    }
+  ],
   "Keep AI, uploading, survival, and meaning implications conditional": [
     {
       "accepted_dossier_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
@@ -168,6 +228,21 @@
         "theory comparison episodes",
         "formal theory classification",
         "course recap episodes"
+      ]
+    }
+  ],
+  "Ontological ambition vs empirical leverage": [
+    {
+      "accepted_dossier_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-003.json",
+      "episode_id": "group-003",
+      "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
+      "summary": "The dossier repeatedly frames these sections as showing that a theory may become more ontologically ambitious exactly where empirical leverage becomes weaker. This is useful as a recurring warning when later theories offer broad metaphysical scope or vivid implications.",
+      "useful_for_future_sections": [
+        "metaphysical theories",
+        "religious and spiritual theories",
+        "cosmic consciousness claims",
+        "theory comparison episodes"
       ]
     }
   ],

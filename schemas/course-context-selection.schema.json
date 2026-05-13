@@ -86,6 +86,8 @@
         },
         "required": [
           "concept",
+          "episode_id",
+          "source_path",
           "reason"
         ],
         "additionalProperties": false
