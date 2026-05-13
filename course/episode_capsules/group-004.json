@@ -1,0 +1,214 @@
+{
+  "schema_version": "episode_capsule_v1",
+  "episode_id": "group-004",
+  "title": "Top-level sections Part 4",
+  "accepted_dossier_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+  "section_ids": [
+    "16",
+    "17",
+    "18",
+    "19",
+    "20"
+  ],
+  "thesis": "This cluster collects four different kinds of pressure on reductive explanations of consciousness: idealism's reversal of the dependence relation, anomalous and altered-state claims as conditional pressure on brain-bound materialism, challenge theories as diagnostic audits of explanatory overconfidence, Closer To Truth pluralism as a constrained-disagreement map, and Chalmers's meta-problem as a research target for hard-problem reports and intuitions. Its strongest point is that each direction sharpens the demand to separate report, access, correlation, and intuition from phenomenal experience; its main limit is that pressure on reduction is not by itself a positive, well-evidenced alternative theory.",
+  "durable_concepts": [
+    {
+      "concept": "Consciousness-first reversal",
+      "summary": "Ontological idealism is introduced as a serious metaphysical option in which mind, awareness, or consciousness is ultimate and the physical world is a stable pattern within it. Serious idealism is not solipsism: Berkeley, absolute idealism, Advaita Vedanta, and contemporary analytic idealism typically locate a shared lawful world in divine, absolute, universal, or cosmic consciousness, and they motivate the position by noting that all physical measurements and models appear within experience.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Idealism's explanatory burdens",
+      "summary": "Idealism faces specific pressure points that future episodes can reuse: weak predictive power once any physical finding can be redescribed as appearance within consciousness, the shared-world problem of explaining why the world is public, stable, mathematically structured, and resistant to will, the brain-dependence problem from anesthesia, lesions, sleep, drugs, stimulation, and neurodegeneration, and a decombination problem for cosmic-consciousness versions that must ground finite subjects, privacy, ignorance, and organism-level boundaries.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Anomalous and altered states as a boundary category",
+      "summary": "Section 17 is not one theory but a cluster of altered-state, ESP, telepathy, clairvoyance, precognition, psychokinesis, OBE, NDE, and survival reports. Its central claim is conditional: robust psi or survival evidence would directly pressure local brain-bound materialism. The dossier separates altered-state science as a mainstream research area from psi and survival claims, which remain contested and weakly evidenced relative to their implications.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Methodological audit of psi and NDE evidence",
+      "summary": "Proponents cite controlled protocols and meta-analyses such as ganzfeld work, Bem's time-reversed experiments, and remote-viewing reviews, along with NDE and OBE prospective studies by van Lommel and Parnia. The dossier records the standard objections: small and disputed effects, publication bias, optional stopping, flexible analysis, file-drawer effects, decline effects, replication failures, and naturalistic competitors including hypoxia, REM intrusion, seizures, drugs, expectation, trauma, memory reconstruction, and temporo-parietal body-model disruption.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Challenge theories as diagnostic audits, not mechanisms",
+      "summary": "Challenge theories from Nagel, McGinn, Harris, Eagleman, Tallis, Nagasawa, Musser, and Davies are framed as category-level warnings against explanatory overconfidence rather than as positive mechanisms. Their common target is the move from neural correlation, information processing, behavior, or physical dependence to the claim that phenomenal subjectivity has thereby been explained.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Cumulative argument from gap, bat, Mary, and zombies",
+      "summary": "The cluster's challenge case is cumulative: Nagel's bat presses subjective point of view, Levine's explanatory gap and Chalmers's hard problem sharpen the reduction challenge, Jackson's Mary asks whether complete physical knowledge omits knowledge of experience, Block's access-versus-phenomenal distinction prevents claiming phenomenality by explaining access, and McGinn's mysterianism adds that the mind-brain link may be natural but cognitively closed to us.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Limits of challenge theories",
+      "summary": "The dossier notes the symmetric objections: a current explanatory gap does not prove that no future physical, functional, biological, predictive, representational, or integrated account can close it; Mary, zombies, and conceivability arguments may track limits in concepts, imagination, introspection, or language; and mysterianism risks becoming unfalsifiable when every failure is treated as evidence of cognitive closure.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Closer To Truth as constrained pluralism",
+      "summary": "Kuhn's Closer To Truth section is read as an anthology of expert pressure points rather than a theory. The best reading is constrained pluralism: expert disagreement is not evidence that all positions are equally plausible, but it shows that consciousness theory still lacks agreed explananda, decisive tests, and a settled relation among first-person experience, brain mechanisms, AI, meaning, and survival.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Pluralism versus false balance",
+      "summary": "The methodological value of Closer To Truth is that it blocks pretending one theory has won, citing many live programs including higher-order, global workspace, recurrent processing, predictive, integrated-information, attention-schema, biological, and representational approaches, and noting adversarial testing of GNWT and IIT. The matching risk is false balance, where brain-based neuroscience, idealism, afterlife hope, anti-AI skepticism, eliminative physicalism, and spiritual practice are heard as equally evidenced.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Meta-problem of consciousness",
+      "summary": "Chalmers's meta-problem asks why humans form problem intuitions about consciousness: why physical explanation feels insufficient, why Mary seems to learn something new, why zombies seem conceivable, why consciousness seems nonphysical, and why experience seems specially valuable. It reframes part of the hard-problem debate as an easy-problem-style target about behaviors, reports, concepts, and intuitions, with predictive-processing accounts, attention-schema theory, evidential approaches, and sociohistorical diagnoses as concrete proposals.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Explaining reports is not automatically explaining experience",
+      "summary": "The dossier records the central objection to deflationary uses of the meta-problem: realists can accept an account of why people make hard-problem reports while still holding that the experience those reports concern remains unexplained. Critics also question whether hard-problem intuitions are universal, spontaneous, or independent of philosophical training, and ask whether illusionism eliminates or merely redescribes the target.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    },
+    {
+      "concept": "Five-pillar academic case for the cluster",
+      "summary": "The strongest academic case is summarized as five pillars: consciousness-first reasoning that puts a special burden on derivations from wholly non-experiential structure; bridge discipline that requires a theory to declare whether it explains phenomenality, access, report, cognition, metacognition, or social-linguistic claims; conditional anomaly in which robust psi, veridical OBE, or survival evidence would matter if established; pluralism with constraint that demands sharper targets and tests; and self-diagnosis through the meta-problem about whether hard-problem intuitions are evidence of a metaphysical gap or artifacts of cognition, language, culture, and introspection.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md"
+    }
+  ],
+  "recurring_distinctions": [
+    "Pressure on reductive explanation versus a positive, well-evidenced alternative theory.",
+    "Idealism as serious metaphysics versus solipsism, mystical testimony, or quantum-physics rhetoric.",
+    "Idealism's appearance-within-consciousness move versus the public, lawful, mathematically structured, brain-dependent world.",
+    "Cosmic, divine, absolute, or universal consciousness versus finite subject boundaries and the decombination problem.",
+    "Altered-state phenomenology as scientifically real versus psi and survival claims as weakly evidenced relative to their implications.",
+    "Vivid or veridical-seeming NDE and OBE reports versus naturalistic competitors such as hypoxia, REM intrusion, seizures, drugs, expectation, trauma, memory reconstruction, and temporo-parietal body-model disruption.",
+    "Controlled protocols and meta-analyses versus publication bias, optional stopping, flexible analysis, file-drawer effects, decline effects, and failed replications.",
+    "Diagnostic challenge theories versus positive mechanistic theories.",
+    "Current explanatory failure versus principled in-principle failure of physical, functional, biological, predictive, representational, or integrated approaches.",
+    "Mysterianism as a cognitive-closure claim versus an unfalsifiable refusal to specify constraints.",
+    "Constrained pluralism versus false balance across mainstream science, philosophy, formal theory, speculative extension, spiritual metaphysics, and weakly evidenced anomalous claims.",
+    "Meta-problem targets such as behaviors, reports, concepts, and intuitions versus phenomenal experience itself.",
+    "Illusionist deflation versus realist insistence that the targeted experience remains unexplained.",
+    "Conditional implications for AI, uploading, survival, meaning, and cosmic purpose versus claims that this cluster settles them."
+  ],
+  "do_not_reexplain": [
+    "Do not restart the hard problem, the phenomenal-versus-access distinction, or the warning that correlates are not automatically causes, identities, constitutive bases, or explanations; this episode reuses those as inherited audit tools.",
+    "Do not re-derive the primitive-or-not fork; future episodes can cite the inherited rule that a non-fundamental theory must specify identity, realization, constitution, grounding, emergence, reduction, or illusion.",
+    "Do not reintroduce serious idealism as if it were solipsism, and do not re-list the standard idealist motivations from the hard problem unless a later section needs a specific version.",
+    "Do not re-explain the basic conditional shape of anomalous and altered-state claims; future episodes can use the established conditional that robust psi or survival evidence would pressure local brain-bound materialism without assuming it has been established.",
+    "Do not re-enumerate the full methodological objection list against psi and NDE evidence each time; this episode has already laid out small and disputed effects, publication bias, optional stopping, flexible analysis, file-drawer effects, decline effects, replication failures, and naturalistic competitors.",
+    "Do not re-explain challenge theories as a unified mechanism; treat them as a recorded audit class and identify which specific argument (bat, gap, Mary, zombies, access-versus-phenomenal, mysterianism) is in play.",
+    "Do not retell Closer To Truth as if it were a theory; future episodes can use it as a constrained pluralism map and a false-balance warning.",
+    "Do not redefine the meta-problem from scratch; later episodes can cite it as the project of explaining hard-problem behaviors, reports, concepts, and intuitions while keeping the distinction between explaining reports and explaining experience."
+  ],
+  "open_tensions": [
+    "Whether idealism's reversal of the dependence relation is genuinely explanatory or mainly a redescription remains unsettled, especially given brain dependence, the shared-world problem, and the decombination problem.",
+    "Whether any version of cosmic, absolute, divine, or universal consciousness can ground finite subject boundaries, privacy, ignorance, and organism-level limits is open.",
+    "Whether contested psi and survival literatures will mature into robust, replicable evidence or remain weakly evidenced relative to their implications is unresolved.",
+    "Whether naturalistic accounts of NDE and OBE phenomenology fully exhaust the data, including any claims of accurate perception while physiologically unconscious, remains contested.",
+    "Whether challenge arguments such as the bat, the explanatory gap, Mary, zombies, and access-versus-phenomenal track real metaphysical limits or conceptual, imaginative, introspective, or linguistic ones is unsettled.",
+    "Whether McGinn-style mysterianism can be specified tightly enough to avoid unfalsifiability while preserving its cognitive-closure thesis is open.",
+    "Whether Closer To Truth pluralism can be combined with a principled ranking and bridge-discipline procedure, rather than collapsing into false balance, is unresolved.",
+    "Whether explaining hard-problem reports and intuitions through the meta-problem dissolves, redescribes, or merely sidesteps the phenomenal target remains the central realism-versus-illusionism tension.",
+    "Whether hard-problem intuitions are universal, spontaneous, and independent of philosophical training is empirically open.",
+    "Whether AI consciousness, uploading, survival beyond death, meaning, or cosmic purpose receive any positive support from this cluster is explicitly limited: only conditional or constraint-style implications are licensed."
+  ],
+  "callbacks": [
+    {
+      "concept": "Use idealism's specific burdens before granting it explanatory credit",
+      "summary": "When later episodes invoke idealism, cosmic consciousness, or appearance-within-consciousness moves, return to this episode's audit: a serious idealist account must address brain dependence, the public lawful shared world, finite subject boundaries, and the decombination problem, and must not lean on mystical testimony or quantum rhetoric for evidential support.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": [
+        "idealism",
+        "cosmic consciousness",
+        "Russellian and panpsychist neighbors",
+        "mystical and contemplative reports",
+        "course recap episodes"
+      ]
+    },
+    {
+      "concept": "Treat anomalous claims as conditional, not established",
+      "summary": "When future episodes touch psi, NDE, OBE, survival, or related literatures, use this episode's conditional framing: such evidence would matter if robust, but current literatures face small and disputed effects, publication bias, optional stopping, flexible analysis, file-drawer effects, decline effects, replication failures, and naturalistic competitors.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": [
+        "anomalous and altered states",
+        "NDE and OBE",
+        "survival and afterlife claims",
+        "parapsychology evidence",
+        "AI consciousness skepticism"
+      ]
+    },
+    {
+      "concept": "Keep altered-state science separate from paranormal interpretation",
+      "summary": "Use this episode's separation rule when later sections discuss altered states, contemplative practice, psychedelics, dissociation, or body-self plasticity: altered-state phenomenology is a mainstream research topic, while psi, survival, and paranormal interpretations remain weakly evidenced and should not be carried by altered-state findings.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": [
+        "altered states science",
+        "psychedelics and meditation",
+        "body schema and self-location",
+        "mystical experience",
+        "survival and afterlife claims"
+      ]
+    },
+    {
+      "concept": "Use challenge theories as audit, not mechanism",
+      "summary": "For Nagel, Levine, Chalmers, Jackson, Block, and McGinn-style arguments, return to this episode's framing: they are diagnostic audits that police the move from access, report, correlation, or behavior to phenomenality, and they do not themselves supply a positive mechanism.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": [
+        "functional and computational theories",
+        "global workspace theories",
+        "higher-order theories",
+        "predictive-processing theories",
+        "integrated information theory",
+        "AI consciousness"
+      ]
+    },
+    {
+      "concept": "Constrained pluralism, not false balance",
+      "summary": "When later episodes survey theories or compare metaphysical worldviews, reuse this episode's distinction: expert disagreement is real and should block premature closure, but it is not evidence that brain-based neuroscience, idealism, afterlife hope, anti-AI skepticism, eliminative physicalism, and spiritual practice are equally evidenced.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": [
+        "course recap episodes",
+        "theory comparison episodes",
+        "AI consciousness debates",
+        "public-facing summaries",
+        "meaning and value implications"
+      ]
+    },
+    {
+      "concept": "Hold the report-versus-experience line for the meta-problem",
+      "summary": "When later episodes engage Chalmers's meta-problem, illusionism, predictive-processing or attention-schema accounts of problem intuitions, return to this episode's distinction: explaining why agents make hard-problem reports is a legitimate research target, but does not by itself establish that the phenomenal experience the reports concern has been explained, dissolved, or shown to be illusory.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": [
+        "meta-problem of consciousness",
+        "illusionism",
+        "attention-schema theory",
+        "predictive-processing accounts",
+        "AI systems that claim consciousness"
+      ]
+    },
+    {
+      "concept": "Apply the five-pillar academic case as a comparison checklist",
+      "summary": "For any future theory in this cluster's neighborhood, ask the five-pillar set from this episode: consciousness-first burden, bridge discipline about which target is explained, conditional anomaly status, constrained pluralism with sharper tests, and self-diagnosis through the meta-problem.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": [
+        "theory comparison episodes",
+        "course recap episodes",
+        "new candidate theories",
+        "AI consciousness",
+        "uploading and survival"
+      ]
+    },
+    {
+      "concept": "Keep AI, uploading, survival, and meaning implications conditional",
+      "summary": "When later episodes discuss AI consciousness, uploading, survival beyond death, meaning, or cosmic purpose, reuse this episode's limits: idealism supplies no accepted machine-consciousness criteria, challenge theories warn against inferring experience from behavior and report, the meta-problem is directly relevant to systems that claim consciousness, functional preservation alone does not preserve a subject without a theory of why the pattern is conscious, and NDE or survival claims would matter only if veridical, which current evidence does not establish.",
+      "source_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
+      "useful_for_future_sections": [
+        "AI consciousness",
+        "machine consciousness",
+        "mind uploading",
+        "virtual immortality",
+        "survival and afterlife claims",
+        "meaning and value implications"
+      ]
+    }
+  ]
+}

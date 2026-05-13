@@ -7,7 +7,7 @@ The production path is:
 1. Extract and segment the downloaded PDF into Kuhn's numbered theory taxonomy.
 2. Generate deterministic course maps and headless-agent job manifests.
 3. Run the ordered episode runner to research theories first, validate research records, then write factual source scripts.
-4. Accept the completed source dossier, which creates an immutable continuity capsule and callback index.
+4. Review and accept the completed source dossier, which creates an immutable continuity capsule and callback index.
 5. Use Codex Computer Use or Claude Code browser/computer control for the final NotebookLM audio handoff.
 
 NotebookLM is the dialogue and audio renderer at the end of the process, not the core automation layer.
@@ -37,9 +37,11 @@ Generated artifacts:
 - `episodes/<group-id>/README.md`
 - `jobs/research.jsonl`
 - `jobs/source-scripts.jsonl`
+- `jobs/episode-reviews.jsonl`
 - `jobs/episode-capsules.jsonl`
 - `schemas/research-record.schema.json`
 - `schemas/source-script.schema.json`
+- `schemas/episode-review.schema.json`
 - `schemas/episode-capsule.schema.json`
 
 Research JSON files are section-level inputs, not podcast episodes. Episode directories show how
@@ -55,6 +57,19 @@ episode source-dossier job.
 scripts/run_episode --episode-id group-003 --agent codex
 ```
 
+For an end-to-end production run with a separate reviewer gate, use Codex for generation and Claude
+Code for review plus continuity acceptance:
+
+```bash
+scripts/run_episode --episode-id group-004 --agent codex --auto-accept
+```
+
+With `--auto-accept`, the runner validates the generated source dossier, writes NotebookLM source
+files, asks the review agent to approve or reject `episodes/<group-id>/review.json`, and only then
+runs the capsule job that updates course continuity. The review agent defaults to Claude Code and can
+be overridden with `--review-agent`. A rejected review stops before `course/episode_capsules/<group-id>.json`
+or `course/callback_index.json` are updated.
+
 Preview the job order without executing anything:
 
 ```bash
@@ -65,17 +80,19 @@ If any research record still contains `Research incomplete`, the runner stops be
 step. Do not manually run an episode source-dossier job before the research jobs have completed and passed
 this gate.
 
-## Accept A Finished Episode Dossier
+## Manually Accept A Finished Episode Dossier
 
-After a source dossier has been reviewed, accept it before using it as continuity for later episodes:
+If you do not use `--auto-accept`, accept a reviewed source dossier before using it as continuity for
+later episodes:
 
 ```bash
 uv run python -m consciousness_pipeline.cli accept-episode --episode-id group-002 --agent codex
 ```
 
-This is the only production entry point that may create `course/episode_capsules/<group-id>.json` and
-update `course/callback_index.json`. `scripts/run_episode` intentionally does not update continuity state;
-acceptance is the human checkpoint that prevents a bad dossier from poisoning future context.
+This command and `scripts/run_episode --auto-accept` are the production entry points that may create
+`course/episode_capsules/<group-id>.json` and update `course/callback_index.json`. Acceptance remains
+the checkpoint that prevents a bad dossier from poisoning future context; the automated path delegates
+that checkpoint to the configured review agent.
 
 `course/course_memory.md` has been removed from the active pipeline. Durable continuity now lives in the
 static `course/course_contract.md`, immutable accepted episode capsules, and the generated callback index.

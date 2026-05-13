@@ -153,7 +153,14 @@ def cmd_run_job(args: argparse.Namespace) -> None:
 
 
 def cmd_run_episode(args: argparse.Namespace) -> None:
-    result = run_episode(args.episode_id, args.agent, dry_run=args.dry_run)
+    review_agent = args.review_agent or ("claude" if args.auto_accept else None)
+    result = run_episode(
+        args.episode_id,
+        args.agent,
+        dry_run=args.dry_run,
+        auto_accept=args.auto_accept,
+        review_agent=review_agent,
+    )
     if args.dry_run:
         print(json.dumps(result, indent=2))
 
@@ -203,6 +210,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
     )
     run_episode_parser.add_argument("--dry-run", action="store_true", help="Print ordered jobs without executing them")
+    run_episode_parser.add_argument(
+        "--auto-accept",
+        action="store_true",
+        help="Run reviewer-gated acceptance after the source dossier is generated",
+    )
+    run_episode_parser.add_argument(
+        "--review-agent",
+        choices=("codex", "claude"),
+        help="Agent backend used for --auto-accept review and capsule generation; defaults to claude",
+    )
     run_episode_parser.set_defaults(func=cmd_run_episode)
     accept_episode_parser = subparsers.add_parser("accept-episode")
     accept_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-002")
