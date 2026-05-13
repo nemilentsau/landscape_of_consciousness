@@ -164,7 +164,59 @@ class CliTest(unittest.TestCase):
         with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
             cli.main()
 
-        run_episode.assert_called_once_with("group-003", "codex", dry_run=False)
+        run_episode.assert_called_once_with(
+            "group-003",
+            "codex",
+            dry_run=False,
+            auto_accept=False,
+            review_agent=None,
+        )
+
+    def test_run_episode_command_accepts_review_agent_for_auto_accept(self):
+        argv = [
+            "cli.py",
+            "run-episode",
+            "--episode-id",
+            "group-003",
+            "--agent",
+            "codex",
+            "--auto-accept",
+            "--review-agent",
+            "claude",
+        ]
+
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+            cli.main()
+
+        run_episode.assert_called_once_with(
+            "group-003",
+            "codex",
+            dry_run=False,
+            auto_accept=True,
+            review_agent="claude",
+        )
+
+    def test_run_episode_auto_accept_defaults_to_claude_reviewer(self):
+        argv = [
+            "cli.py",
+            "run-episode",
+            "--episode-id",
+            "group-003",
+            "--agent",
+            "codex",
+            "--auto-accept",
+        ]
+
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+            cli.main()
+
+        run_episode.assert_called_once_with(
+            "group-003",
+            "codex",
+            dry_run=False,
+            auto_accept=True,
+            review_agent="claude",
+        )
 
     def test_select_context_command_runs_selector_and_writes_context(self):
         argv = ["cli.py", "select-context", "--episode-id", "group-005", "--agent", "claude"]

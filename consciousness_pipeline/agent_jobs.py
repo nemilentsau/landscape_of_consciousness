@@ -5,6 +5,7 @@ from typing import Any
 from consciousness_pipeline.course import EpisodeGroup, group_sections, write_episode_artifacts
 from consciousness_pipeline.course_context_selection import COURSE_CONTEXT_SELECTION_SCHEMA
 from consciousness_pipeline.episode_capsules import EPISODE_CAPSULE_SCHEMA
+from consciousness_pipeline.episode_reviews import EPISODE_REVIEW_SCHEMA
 from consciousness_pipeline.models import Section
 
 RESEARCH_SCHEMA: dict[str, Any] = {
@@ -178,6 +179,33 @@ def _course_context_selection_job(group: EpisodeGroup) -> dict[str, object]:
     }
 
 
+def _episode_review_job(group: EpisodeGroup) -> dict[str, object]:
+    group_id = str(group["group_id"])
+    episode_manifest_path = f"episodes/{group_id}/manifest.json"
+    source_script_path = f"episodes/{group_id}/script.json"
+    dossier_path = f"episodes/{group_id}/notebooklm_bundle/research_dossier.md"
+    return {
+        "job_id": f"{group_id}-review",
+        "kind": "episode_review",
+        "prompt_contract": "episode_dossier_review_gate_v1",
+        "agents": ["claude_headless", "codex_exec"],
+        "group_id": group_id,
+        "title": str(group["title"]),
+        "section_ids": [str(item) for item in group["section_ids"]],
+        "input_paths": [
+            "course/course_contract.md",
+            episode_manifest_path,
+            source_script_path,
+            dossier_path,
+        ],
+        "episode_manifest_path": episode_manifest_path,
+        "source_script_path": source_script_path,
+        "dossier_path": dossier_path,
+        "output_path": f"episodes/{group_id}/review.json",
+        "schema_path": "schemas/episode-review.schema.json",
+    }
+
+
 def build_research_jobs(sections: list[Section]) -> list[dict[str, object]]:
     return [_research_job(section) for section in sections]
 
@@ -192,6 +220,10 @@ def build_episode_capsule_jobs(sections: list[Section]) -> list[dict[str, object
 
 def build_course_context_selection_jobs(sections: list[Section]) -> list[dict[str, object]]:
     return [_course_context_selection_job(group) for group in group_sections(sections)]
+
+
+def build_episode_review_jobs(sections: list[Section]) -> list[dict[str, object]]:
+    return [_episode_review_job(group) for group in group_sections(sections)]
 
 
 def write_agent_job_artifacts(
@@ -212,10 +244,12 @@ def write_agent_job_artifacts(
     _write_json(schemas_dir / "source-script.schema.json", SOURCE_SCRIPT_SCHEMA)
     _write_json(schemas_dir / "episode-capsule.schema.json", EPISODE_CAPSULE_SCHEMA)
     _write_json(schemas_dir / "course-context-selection.schema.json", COURSE_CONTEXT_SELECTION_SCHEMA)
+    _write_json(schemas_dir / "episode-review.schema.json", EPISODE_REVIEW_SCHEMA)
     _write_jsonl(jobs_dir / "research.jsonl", build_research_jobs(sections))
     _write_jsonl(jobs_dir / "source-scripts.jsonl", build_script_jobs(sections))
     _write_jsonl(jobs_dir / "episode-capsules.jsonl", build_episode_capsule_jobs(sections))
     _write_jsonl(jobs_dir / "course-context-selections.jsonl", build_course_context_selection_jobs(sections))
+    _write_jsonl(jobs_dir / "episode-reviews.jsonl", build_episode_review_jobs(sections))
     write_episode_artifacts(sections, episodes_dir)
 
 
@@ -264,6 +298,8 @@ def build_job_prompt(job: dict[str, Any], root: Path) -> str:
         return build_episode_capsule_prompt(job, root)
     if kind == "course_context_selection":
         return build_course_context_selection_prompt(job, root)
+    if kind == "episode_review":
+        return build_episode_review_prompt(job, root)
     raise ValueError(f"Unsupported job kind: {kind}")
 
 
@@ -400,6 +436,48 @@ Episode manifest:
 
 Accepted dossier:
 {_job_input_text(root, job["accepted_dossier_path"])}
+
+Return only JSON matching the schema.
+"""
+
+
+def build_episode_review_prompt(job: dict[str, Any], root: Path) -> str:
+    return f"""Review one generated NotebookLM source dossier as a continuity acceptance gate.
+
+Job ID: {job["job_id"]}
+Episode group: {job["group_id"]} - {job["title"]}
+Output path: {job["output_path"]}
+Required schema: {job["schema_path"]}
+
+This is a review gate. Approve only if the source dossier is suitable to become durable course
+continuity for later episodes.
+
+Do not repair the dossier, do not rewrite it, and do not create a replacement. Only review it.
+
+Approve only if:
+- the source script JSON and dossier are present and coherent
+- missing_inputs is empty
+- the dossier is factual NotebookLM source material, not host dialogue, stage directions, banter, or a performed script
+- it uses course continuity without treating prior capsules as evidence
+- claims are epistemically tagged where the course contract requires it
+- major claims are traceable to citations, research inputs, or local source paths
+- it does not overstate speculative, spiritual, anomalous, or weakly evidenced claims
+- it preserves serious objections and unresolved tensions
+
+Set approved to false if there are blocking issues that would poison future course continuity. Put only
+blocking acceptance failures in blocking_issues. Put smaller editorial concerns in non_blocking_notes.
+
+Course contract:
+{_job_input_text(root, "course/course_contract.md")}
+
+Episode manifest:
+{_job_input_text(root, job["episode_manifest_path"])}
+
+Source script JSON:
+{_job_input_text(root, job["source_script_path"])}
+
+NotebookLM dossier:
+{_job_input_text(root, job["dossier_path"])}
 
 Return only JSON matching the schema.
 """
