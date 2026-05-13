@@ -1,0 +1,27 @@
+{
+  "schema_version": "episode_review_v1",
+  "episode_id": "group-004",
+  "approved": true,
+  "summary": "The group-004 source dossier is factual NotebookLM source material covering Kuhn sections 16-20 (Idealisms, Anomalous/altered states, Challenge theories, Closer To Truth views, Chalmers's meta-problem). It uses prior course continuity as inherited audit tools rather than as evidence, applies explicit epistemic tagging (mainstream science vs active philosophical debate vs religious/spiritual metaphysics vs weakly evidenced anomalous claim), and preserves serious objections on every section. Idealism is not asserted; psi, NDEs, survival, and uploading are kept conditional and unproven; challenge theories are framed as audits not mechanisms; Closer To Truth pluralism is marked as a constraint map, not an evidence-ranking system; the meta-problem is explicitly distinguished from a settled solution. The dossier carries an empty missing_inputs and contains no speaker labels, banter, or stage directions. Suitable to become durable course continuity.",
+  "blocking_issues": [],
+  "non_blocking_notes": [
+    "Citation 'Guyer, P., & Horstmann, R.-P. (2026)' is dated in-year; if a forthcoming SEP revision was intended, downstream packets should keep that date pinned to the actual revision date once available.",
+    "'Recent adversarial testing of GNWT and IIT' in section 19 leans on Melloni et al. 2025; when reused as continuity, the dossier could note that the Cogitate result was a between-theory adjudication, not a definitive falsification.",
+    "Section 18 lists Nagasawa, Musser, Davies, Tallis, Eagleman, Harris under one common target ('challenge theorists'); future episodes invoking this grouping should not flatten the substantial differences among these authors.",
+    "The 'Implications Only Where Sources Justify Them' section is cautious but could be tightened in later episodes so that 'NDE and survival claims would matter if veridical' is not read as residual endorsement.",
+    "Minor proofread: in 'Epistemic Status And What Not To Overstate' the phrase 'cosmic function as explanations' reads as a typo for 'cosmic' functioning as an explanation; not blocking but worth a clean-up pass.",
+    "Review JSON could not be written to episodes/group-004/review.json because file-write permission for that path was not granted; the StructuredOutput response carries the full review."
+  ],
+  "checked_items": [
+    "script.json and notebooklm_bundle/research_dossier.md are both present and their research_dossier_markdown content matches",
+    "missing_inputs is an empty array",
+    "Dossier contains no speaker labels, host dialogue, banter, stage directions, or performed narration; structure is sectioned Markdown prose",
+    "Prior course context is invoked as inherited audit tools, explicitly not as evidence ('Prior course context... should use them as inherited audit tools')",
+    "Epistemic tagging is present and section-specific: idealism as active philosophical debate / religious-spiritual metaphysics; altered-state science as mainstream; psi/survival as weakly evidenced; challenge theories and meta-problem as methodological audits",
+    "Major claims traceable: 39-entry citations list plus local input paths under Source Notes; section-by-section authors named in-line",
+    "Speculative/anomalous claims are not overstated: psi 'small, disputed, vulnerable to publication bias'; NDEs have naturalistic competitors; idealism 'serious metaphysics, not established science'; uploading/survival kept conditional",
+    "Serious objections preserved per section (idealism's brain dependence and decombination; replication failures of Bem/ganzfeld; mysterianism risks unfalsifiability; Closer To Truth risks false balance; meta-problem may explain smoke not fire)",
+    "Course contract do-not-overstate items honored: no claim that NCCs solve the hard problem; no claim that formal/mathematical vocabulary equals empirical confirmation; no claim that metaphysical breadth equals explanatory success",
+    "Comparison axes section maps to the course contract's recurring axes (target phenomenon, ontology, bridge relation, evidence type, failure mode, epistemic status)"
+  ]
+}
