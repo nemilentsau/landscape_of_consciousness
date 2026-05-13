@@ -6,6 +6,7 @@ from typing import Any
 from consciousness_pipeline.agent_runner import run_job
 from consciousness_pipeline.config import PROJECT_ROOT
 from consciousness_pipeline.course_context import write_episode_course_context
+from consciousness_pipeline.course_context_selection import validate_course_context_selection
 
 RESEARCH_COMPLETENESS_FIELDS = ("core_claim", "strongest_case", "best_objections", "credibility")
 PLACEHOLDER_MARKER = "research incomplete"
@@ -29,6 +30,14 @@ def _research_manifest_path(root: Path) -> Path:
 
 def _source_script_manifest_path(root: Path) -> Path:
     return root / "jobs" / "source-scripts.jsonl"
+
+
+def _context_selection_manifest_path(root: Path) -> Path:
+    return root / "jobs" / "course-context-selections.jsonl"
+
+
+def _context_selection_output_path(root: Path, episode_id: str) -> Path:
+    return root / "episodes" / episode_id / "context_selection.json"
 
 
 def _section_ids(manifest: dict[str, Any]) -> list[str]:
@@ -67,8 +76,36 @@ def validate_research_ready(root: Path, section_ids: list[str]) -> None:
         raise ResearchReadinessError(f"Research records are not production-ready:\n- {detail}")
 
 
-def write_episode_context(root: Path, episode_id: str, manifest: dict[str, Any]) -> Path:
-    return write_episode_course_context(root, episode_id)
+def write_episode_context(
+    root: Path,
+    episode_id: str,
+    manifest: dict[str, Any],
+    selection_path: Path | None = None,
+) -> Path:
+    return write_episode_course_context(root, episode_id, selection_path=selection_path)
+
+
+def select_episode_context(
+    episode_id: str,
+    agent: str,
+    root: Path = PROJECT_ROOT,
+    dry_run: bool = False,
+) -> list[str]:
+    command = run_job(
+        _context_selection_manifest_path(root),
+        f"{episode_id}-context-selection",
+        agent,
+        root=root,
+        dry_run=dry_run,
+    )
+    if dry_run:
+        return command
+    selection_path = _context_selection_output_path(root, episode_id)
+    if not selection_path.exists():
+        raise RuntimeError(f"{selection_path.relative_to(root)} was not written by the context selection job")
+    validate_course_context_selection(_read_json(selection_path), root=root)
+    write_episode_course_context(root, episode_id, selection_path=selection_path)
+    return command
 
 
 def plan_episode_jobs(episode_id: str, root: Path = PROJECT_ROOT) -> list[dict[str, str]]:
@@ -76,9 +113,18 @@ def plan_episode_jobs(episode_id: str, root: Path = PROJECT_ROOT) -> list[dict[s
     research_manifest = _research_manifest_path(root)
     source_script_manifest = _source_script_manifest_path(root)
     plan = [
+        {
+            "kind": "course_context_selection",
+            "manifest": str(_context_selection_manifest_path(root)),
+            "job_id": f"{episode_id}-context-selection",
+        },
+    ]
+    plan.extend(
+        [
         {"kind": "research", "manifest": str(research_manifest), "job_id": f"research-{section_id}"}
         for section_id in _section_ids(manifest)
-    ]
+        ]
+    )
     plan.append(
         {
             "kind": "source_script",
@@ -100,8 +146,8 @@ def run_episode(
     if dry_run:
         return [[step["manifest"], step["job_id"]] for step in plan_episode_jobs(episode_id, root)]
 
-    write_episode_context(root, episode_id, manifest)
     commands: list[list[str]] = []
+    commands.append(select_episode_context(episode_id, agent, root=root))
     research_manifest = _research_manifest_path(root)
     for section_id in section_ids:
         commands.append(run_job(research_manifest, f"research-{section_id}", agent, root=root))

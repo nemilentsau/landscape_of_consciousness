@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Any
 
 from consciousness_pipeline.course import EpisodeGroup, group_sections, write_episode_artifacts
+from consciousness_pipeline.course_context_selection import COURSE_CONTEXT_SELECTION_SCHEMA
 from consciousness_pipeline.episode_capsules import EPISODE_CAPSULE_SCHEMA
 from consciousness_pipeline.models import Section
 
@@ -154,6 +155,29 @@ def _episode_capsule_job(group: EpisodeGroup) -> dict[str, object]:
     }
 
 
+def _course_context_selection_job(group: EpisodeGroup) -> dict[str, object]:
+    group_id = str(group["group_id"])
+    episode_manifest_path = f"episodes/{group_id}/manifest.json"
+    return {
+        "job_id": f"{group_id}-context-selection",
+        "kind": "course_context_selection",
+        "prompt_contract": "course_context_selection_v1",
+        "agents": ["codex_exec", "claude_headless"],
+        "group_id": group_id,
+        "title": str(group["title"]),
+        "section_ids": [str(item) for item in group["section_ids"]],
+        "input_paths": [
+            "course/course_contract.md",
+            "course/callback_index.json",
+            "course/episode_capsules",
+            episode_manifest_path,
+        ],
+        "episode_manifest_path": episode_manifest_path,
+        "output_path": f"episodes/{group_id}/context_selection.json",
+        "schema_path": "schemas/course-context-selection.schema.json",
+    }
+
+
 def build_research_jobs(sections: list[Section]) -> list[dict[str, object]]:
     return [_research_job(section) for section in sections]
 
@@ -164,6 +188,10 @@ def build_script_jobs(sections: list[Section]) -> list[dict[str, object]]:
 
 def build_episode_capsule_jobs(sections: list[Section]) -> list[dict[str, object]]:
     return [_episode_capsule_job(group) for group in group_sections(sections)]
+
+
+def build_course_context_selection_jobs(sections: list[Section]) -> list[dict[str, object]]:
+    return [_course_context_selection_job(group) for group in group_sections(sections)]
 
 
 def write_agent_job_artifacts(
@@ -183,9 +211,11 @@ def write_agent_job_artifacts(
     _write_json(schemas_dir / "research-record.schema.json", RESEARCH_SCHEMA)
     _write_json(schemas_dir / "source-script.schema.json", SOURCE_SCRIPT_SCHEMA)
     _write_json(schemas_dir / "episode-capsule.schema.json", EPISODE_CAPSULE_SCHEMA)
+    _write_json(schemas_dir / "course-context-selection.schema.json", COURSE_CONTEXT_SELECTION_SCHEMA)
     _write_jsonl(jobs_dir / "research.jsonl", build_research_jobs(sections))
     _write_jsonl(jobs_dir / "source-scripts.jsonl", build_script_jobs(sections))
     _write_jsonl(jobs_dir / "episode-capsules.jsonl", build_episode_capsule_jobs(sections))
+    _write_jsonl(jobs_dir / "course-context-selections.jsonl", build_course_context_selection_jobs(sections))
     write_episode_artifacts(sections, episodes_dir)
 
 
@@ -232,6 +262,8 @@ def build_job_prompt(job: dict[str, Any], root: Path) -> str:
         return build_script_prompt(job, group_sections_for_job, root)
     if kind == "course_episode_capsule":
         return build_episode_capsule_prompt(job, root)
+    if kind == "course_context_selection":
+        return build_course_context_selection_prompt(job, root)
     raise ValueError(f"Unsupported job kind: {kind}")
 
 
@@ -278,6 +310,66 @@ def _job_input_text(root: Path, path: object) -> str:
     if not resolved_path.exists():
         return f"Missing input: {input_path}"
     return f"Input path: {input_path}\n{_prompt_text(resolved_path.read_text(encoding='utf-8'))}"
+
+
+def _compact_capsule_metadata(root: Path) -> str:
+    capsule_dir = root / "course" / "episode_capsules"
+    if not capsule_dir.exists():
+        return "[]"
+    capsules: list[dict[str, Any]] = []
+    for capsule_path in sorted(capsule_dir.glob("*.json")):
+        capsule = json.loads(capsule_path.read_text(encoding="utf-8"))
+        capsules.append(
+            {
+                "episode_id": capsule.get("episode_id"),
+                "title": capsule.get("title"),
+                "accepted_dossier_path": capsule.get("accepted_dossier_path"),
+                "section_ids": capsule.get("section_ids", []),
+                "thesis": capsule.get("thesis"),
+                "durable_concepts": capsule.get("durable_concepts", []),
+                "recurring_distinctions": capsule.get("recurring_distinctions", []),
+                "do_not_reexplain": capsule.get("do_not_reexplain", []),
+                "open_tensions": capsule.get("open_tensions", []),
+            }
+        )
+    return json.dumps(capsules, indent=2, ensure_ascii=False)
+
+
+def build_course_context_selection_prompt(job: dict[str, Any], root: Path) -> str:
+    return f"""Select course continuity context for the next consciousness listening-course episode.
+
+Job ID: {job["job_id"]}
+Episode group: {job["group_id"]} - {job["title"]}
+Output path: {job["output_path"]}
+Required schema: {job["schema_path"]}
+
+Your task is to choose compact continuity guidance for this episode. This is a selection job, not a
+research job. Use compact capsule metadata and the callback index; do not read or summarize full prior
+dossiers, do not add new course facts, and do not invent callbacks. Every selected callback must already
+exist in course/callback_index.json with the same concept, episode_id, capsule_path, and source_path.
+
+Selection rules:
+- Select recent capsules only when they help pacing, transitions, do-not-reexplain constraints, or open tensions.
+- Select relevant capsules when their compact metadata directly frames the current episode scope.
+- Select callbacks for semantic relevance to the current episode, not literal string overlap.
+- Prefer a small set of high-value callbacks over broad recall.
+- Put plausible but rejected items in rejected_near_misses with concise reasons.
+- Reasons must explain why the item helps this exact episode.
+
+Course contract:
+{_job_input_text(root, "course/course_contract.md")}
+
+Episode manifest:
+{_job_input_text(root, job["episode_manifest_path"])}
+
+Callback index:
+{_job_input_text(root, "course/callback_index.json")}
+
+Accepted compact capsule metadata:
+{_compact_capsule_metadata(root)}
+
+Return only JSON matching the schema.
+"""
 
 
 def build_episode_capsule_prompt(job: dict[str, Any], root: Path) -> str:

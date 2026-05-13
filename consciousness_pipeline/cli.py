@@ -19,7 +19,7 @@ from consciousness_pipeline.course import write_course_artifacts, write_episode_
 from consciousness_pipeline.course_context import write_episode_course_context
 from consciousness_pipeline.course_contract import write_default_course_contract
 from consciousness_pipeline.episode_acceptance import accept_episode
-from consciousness_pipeline.episode_runner import run_episode
+from consciousness_pipeline.episode_runner import run_episode, select_episode_context
 from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
 from consciousness_pipeline.packets import render_packet, validate_packet
@@ -136,6 +136,12 @@ def cmd_write_context(args: argparse.Namespace) -> None:
     print(f"Wrote course context for {args.episode_id}: {output_path}")
 
 
+def cmd_select_context(args: argparse.Namespace) -> None:
+    command = select_episode_context(args.episode_id, args.agent, dry_run=args.dry_run)
+    if args.dry_run:
+        print(json.dumps(command, indent=2))
+
+
 def cmd_run_job(args: argparse.Namespace) -> None:
     manifest = Path(args.manifest)
     if not manifest.is_absolute():
@@ -213,6 +219,15 @@ def build_parser() -> argparse.ArgumentParser:
         "--dry-run", action="store_true", help="Print the capsule job without executing it"
     )
     accept_episode_parser.set_defaults(func=cmd_accept_episode)
+    select_context_parser = subparsers.add_parser("select-context")
+    select_context_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-005")
+    select_context_parser.add_argument(
+        "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
+    )
+    select_context_parser.add_argument(
+        "--dry-run", action="store_true", help="Print the context-selection command without executing it"
+    )
+    select_context_parser.set_defaults(func=cmd_select_context)
     bundle_sources_parser = subparsers.add_parser("bundle-sources")
     bundle_sources_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-001")
     bundle_sources_parser.set_defaults(func=cmd_bundle_sources)

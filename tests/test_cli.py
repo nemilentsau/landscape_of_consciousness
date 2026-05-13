@@ -57,6 +57,7 @@ class CliTest(unittest.TestCase):
         self.assertIn("run-job", result.stdout)
         self.assertIn("run-episode", result.stdout)
         self.assertIn("accept-episode", result.stdout)
+        self.assertIn("select-context", result.stdout)
         self.assertIn("write-contract", result.stdout)
         self.assertIn("bundle-sources", result.stdout)
         self.assertIn("all", result.stdout)
@@ -164,6 +165,16 @@ class CliTest(unittest.TestCase):
             cli.main()
 
         run_episode.assert_called_once_with("group-003", "codex", dry_run=False)
+
+    def test_select_context_command_runs_selector_and_writes_context(self):
+        argv = ["cli.py", "select-context", "--episode-id", "group-005", "--agent", "claude"]
+
+        with patch.object(sys, "argv", argv), patch(
+            "consciousness_pipeline.cli.select_episode_context"
+        ) as select_episode_context:
+            cli.main()
+
+        select_episode_context.assert_called_once_with("group-005", "claude", dry_run=False)
 
     def test_accept_episode_command_delegates_to_acceptance_checkpoint(self):
         argv = ["cli.py", "accept-episode", "--episode-id", "group-002", "--agent", "claude"]
