@@ -1,0 +1,26 @@
+{
+  "schema_version": "episode_review_v1",
+  "episode_id": "group-005",
+  "approved": true,
+  "summary": "Dossier for group-005 (sections 21-25: Implications, Meaning/purpose/value, AI consciousness, Virtual immortality, Survival beyond death) is suitable to become durable course continuity. It is factual NotebookLM source material with no host dialogue, banter, or stage directions; uses prior course context only as framing; carries an explicit epistemic-status section that labels mainstream scientific theory, active philosophical debate, speculative extension, religious/spiritual metaphysics, and weakly evidenced claims separately; and preserves the serious objections (brain dependence, Chinese Room, IIT/anti-computationalism, copy/replica problem, hypoxia and reconstruction accounts of NDEs, contamination critiques of reincarnation cases, Hume/Moore worries for meaning). Speculative survival, uploading, and AI consciousness claims are conditionalized rather than asserted. Citations and local input paths support traceability.",
+  "blocking_issues": [],
+  "non_blocking_notes": [
+    "AWARE-II is described as reporting 'EEG activity compatible with consciousness during CPR in some cases' — accurate as stated, but later episodes citing this dossier should remember the AWARE-II EEG signature claim is interpretively contested and should not harden into 'EEG evidence of consciousness during cardiac arrest'.",
+    "The Course Continuity Grounding paragraph summarizes the immediately prior episode at some length; for future capsule extraction, treat that paragraph as framing, not as a license to import its claims as established without reverifying against current research records.",
+    "The Source Notes section lists 'core source families' as author surnames grouped by topic. This is fine for the dossier, but downstream capsule/callback extraction should pull specific citations from the citations[] list rather than from the prose families."
+  ],
+  "checked_items": [
+    "script.json and research_dossier.md are both present and content-aligned",
+    "manifest.json sections 21-25 each have a corresponding factual summary in the dossier",
+    "missing_inputs in script.json is []",
+    "No host dialogue, speaker labels, stage directions, or performed banter present",
+    "Dedicated 'Epistemic Status And What Not To Overstate' section tags claims by status (mainstream, active debate, speculative extension, weakly evidenced, religious/spiritual metaphysics)",
+    "Course continuity paragraph explicitly states prior context is used for framing only, not as evidence",
+    "Citations list includes Kuhn 2024 plus theory-specific sources (Butlin, Chalmers, Sandberg/Bostrom, Searle, Parfit, Parnia, Stevenson/Tucker, Gennaro/Fishman, Metz, Flanagan, Kitcher, Wolf, etc.)",
+    "Local input paths to data/research/21-25.json and packets/theories/21-25 are listed",
+    "Speculative claims about AI consciousness, uploading, and post-mortem survival are conditionalized rather than asserted",
+    "Serious objections preserved in 'Serious Objections And Limits' and per-section objection paragraphs",
+    "Global do-not-overstate constraints from the course contract are echoed in the dossier's final 'Do not overstate' paragraph",
+    "Bridge-relation discipline (identity vs realization vs constitution vs psychological continuity vs resurrection) is explicit in the comparison axes"
+  ]
+}
