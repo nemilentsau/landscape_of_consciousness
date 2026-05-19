@@ -4,6 +4,7 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
+from consciousness_pipeline.course_context_selection import validate_course_context_selection
 from consciousness_pipeline.course_contract import write_default_course_contract
 
 
@@ -62,12 +63,14 @@ def _unique_lines(values: list[str]) -> list[str]:
     return result
 
 
-def _render_capsule_summary(capsule: Mapping[str, Any]) -> list[str]:
+def _render_capsule_summary(capsule: Mapping[str, Any], selection: Mapping[str, Any] | None = None) -> list[str]:
     lines = [
         f"### {capsule['episode_id']}: {capsule['title']}",
         "",
         f"- Thesis: {capsule['thesis']}",
     ]
+    if selection is not None:
+        lines.append(f"- Selection: {selection['selection_type']}. {selection['reason']}")
     durable_concepts = capsule.get("durable_concepts", [])
     if durable_concepts:
         lines.append("- Durable concepts:")
@@ -97,15 +100,40 @@ def _render_callbacks(callbacks: Mapping[str, list[Mapping[str, Any]]]) -> list[
     return lines
 
 
+def _render_selected_callbacks(callbacks: list[Mapping[str, Any]] | None) -> list[str]:
+    if callbacks is None:
+        return []
+    if not callbacks:
+        return ["- No selected callback-index entries for this episode scope.", ""]
+    grouped: dict[str, list[Mapping[str, Any]]] = {}
+    for callback in callbacks:
+        grouped.setdefault(str(callback["concept"]), []).append(callback)
+    lines: list[str] = []
+    for concept, entries in grouped.items():
+        lines.append(f"### {concept}")
+        for entry in entries:
+            summary = str(entry.get("summary") or entry["reason"])
+            lines.append(
+                f"- {summary} "
+                f"(episode {entry['episode_id']}; source `{entry['source_path']}`; "
+                f"capsule `{entry['capsule_path']}`; selection reason: {entry['reason']})"
+            )
+        lines.append("")
+    return lines
+
+
 def render_episode_course_context(
     manifest: Mapping[str, Any],
     course_contract: str,
     prior_capsules: list[Mapping[str, Any]] | None = None,
     callback_index: Mapping[str, list[Mapping[str, Any]]] | None = None,
+    capsule_selection: Mapping[str, Mapping[str, Any]] | None = None,
+    selected_callbacks: list[Mapping[str, Any]] | None = None,
 ) -> str:
     prior_capsules = prior_capsules or []
     callback_index = callback_index or {}
-    callbacks = _selected_callbacks(manifest, callback_index)
+    callbacks = _selected_callbacks(manifest, callback_index) if selected_callbacks is None else {}
+    capsule_selection = capsule_selection or {}
     episode_id = str(manifest["episode_id"])
     title = str(manifest["title"])
     question = str(manifest["episode_question"])
@@ -114,7 +142,7 @@ def render_episode_course_context(
     prior_lines: list[str] = []
     if prior_capsules:
         for capsule in prior_capsules:
-            prior_lines.extend(_render_capsule_summary(capsule))
+            prior_lines.extend(_render_capsule_summary(capsule, capsule_selection.get(str(capsule["episode_id"]))))
     else:
         prior_lines.extend(["- No accepted prior episode capsules selected.", ""])
 
@@ -152,7 +180,7 @@ Current sections:
 
 ## Relevant Callbacks
 
-{"\n".join(_render_callbacks(callbacks)).strip()}
+{"\n".join(_render_selected_callbacks(selected_callbacks) or _render_callbacks(callbacks)).strip()}
 
 ## Do Not Re-Explain
 
@@ -191,17 +219,70 @@ def _load_callback_index(root: Path) -> Mapping[str, list[Mapping[str, Any]]]:
     return _read_json(path)
 
 
-def write_episode_course_context(root: Path, episode_id: str, recent_count: int = 2) -> Path:
+def _selection_callback_details(
+    selection: Mapping[str, Any],
+    callback_index: Mapping[str, list[Mapping[str, Any]]],
+) -> list[Mapping[str, Any]]:
+    detailed: list[Mapping[str, Any]] = []
+    for selected in selection.get("selected_callbacks", []):
+        selected_detail = dict(selected)
+        for entry in callback_index.get(str(selected["concept"]), []):
+            if (
+                str(entry.get("episode_id")) == str(selected["episode_id"])
+                and str(entry.get("capsule_path")) == str(selected["capsule_path"])
+                and str(entry.get("source_path")) == str(selected["source_path"])
+            ):
+                selected_detail["summary"] = str(entry["summary"])
+                break
+        detailed.append(selected_detail)
+    return detailed
+
+
+def _load_selection_capsules(
+    root: Path,
+    selection: Mapping[str, Any],
+) -> tuple[list[Mapping[str, Any]], dict[str, Mapping[str, Any]]]:
+    capsules: list[Mapping[str, Any]] = []
+    selection_by_episode: dict[str, Mapping[str, Any]] = {}
+    for selected in selection.get("selected_capsules", []):
+        episode_id = str(selected["episode_id"])
+        capsules.append(_read_json(root / "course" / "episode_capsules" / f"{episode_id}.json"))
+        selection_by_episode[episode_id] = selected
+    return capsules, selection_by_episode
+
+
+def write_episode_course_context(
+    root: Path,
+    episode_id: str,
+    recent_count: int = 2,
+    selection_path: Path | None = None,
+) -> Path:
     contract_path = root / "course" / "course_contract.md"
     if not contract_path.exists():
         write_default_course_contract(contract_path)
     manifest_path = root / "episodes" / episode_id / "manifest.json"
     manifest = _read_json(manifest_path)
+    selected_callbacks: list[Mapping[str, Any]] | None = None
+    capsule_selection: dict[str, Mapping[str, Any]] | None = None
+    if selection_path is None:
+        candidate = root / "episodes" / episode_id / "context_selection.json"
+        if candidate.exists():
+            selection_path = candidate
+    if selection_path is not None:
+        resolved_selection_path = selection_path if selection_path.is_absolute() else root / selection_path
+        selection = _read_json(resolved_selection_path)
+        validate_course_context_selection(selection, root=root)
+        prior_capsules, capsule_selection = _load_selection_capsules(root, selection)
+        selected_callbacks = _selection_callback_details(selection, _load_callback_index(root))
+    else:
+        prior_capsules = _load_prior_capsules(root, episode_id, recent_count)
     context = render_episode_course_context(
         manifest,
         contract_path.read_text(encoding="utf-8"),
-        prior_capsules=_load_prior_capsules(root, episode_id, recent_count),
+        prior_capsules=prior_capsules,
         callback_index=_load_callback_index(root),
+        capsule_selection=capsule_selection,
+        selected_callbacks=selected_callbacks,
     )
     output_path = root / "episodes" / episode_id / "course_context.md"
     output_path.write_text(context, encoding="utf-8")

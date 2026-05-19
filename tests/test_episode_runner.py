@@ -35,6 +35,16 @@ def _complete_research(section_id: str) -> dict[str, object]:
     }
 
 
+def _context_selection(episode_id: str) -> dict[str, object]:
+    return {
+        "schema_version": "course_context_selection_v1",
+        "episode_id": episode_id,
+        "selected_capsules": [],
+        "selected_callbacks": [],
+        "rejected_near_misses": [],
+    }
+
+
 class EpisodeRunnerTest(unittest.TestCase):
     def test_run_episode_refuses_script_when_research_is_placeholder(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -49,6 +59,7 @@ class EpisodeRunnerTest(unittest.TestCase):
                     "script_job_id": "group-003-script",
                 },
             )
+            _write_jsonl(root / "jobs" / "course-context-selections.jsonl", [{"job_id": "group-003-context-selection"}])
             _write_jsonl(
                 root / "jobs" / "research.jsonl",
                 [{"job_id": "research-11"}, {"job_id": "research-12"}],
@@ -73,6 +84,11 @@ class EpisodeRunnerTest(unittest.TestCase):
 
             def fake_run_job(manifest_path: Path, job_id: str, agent: str, **kwargs):
                 calls.append((manifest_path.name, job_id))
+                if job_id == "group-003-context-selection":
+                    _write_json(
+                        root / "episodes" / "group-003" / "context_selection.json",
+                        _context_selection("group-003"),
+                    )
                 return [agent, job_id]
 
             with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job):
@@ -80,7 +96,14 @@ class EpisodeRunnerTest(unittest.TestCase):
                     run_episode("group-003", "codex", root=root)
 
             self.assertIn("data/research/11.json", str(context.exception))
-            self.assertEqual(calls, [("research.jsonl", "research-11"), ("research.jsonl", "research-12")])
+            self.assertEqual(
+                calls,
+                [
+                    ("course-context-selections.jsonl", "group-003-context-selection"),
+                    ("research.jsonl", "research-11"),
+                    ("research.jsonl", "research-12"),
+                ],
+            )
 
     def test_run_episode_runs_research_then_script_after_research_is_complete(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -95,6 +118,7 @@ class EpisodeRunnerTest(unittest.TestCase):
                     "script_job_id": "group-003-script",
                 },
             )
+            _write_jsonl(root / "jobs" / "course-context-selections.jsonl", [{"job_id": "group-003-context-selection"}])
             _write_jsonl(root / "jobs" / "research.jsonl", [{"job_id": "research-11"}, {"job_id": "research-12"}])
             _write_jsonl(root / "jobs" / "source-scripts.jsonl", [{"job_id": "group-003-script"}])
             _write_json(root / "data" / "research" / "11.json", _complete_research("11"))
@@ -104,6 +128,11 @@ class EpisodeRunnerTest(unittest.TestCase):
 
             def fake_run_job(manifest_path: Path, job_id: str, agent: str, **kwargs):
                 calls.append((manifest_path.name, job_id))
+                if job_id == "group-003-context-selection":
+                    _write_json(
+                        root / "episodes" / "group-003" / "context_selection.json",
+                        _context_selection("group-003"),
+                    )
                 return [agent, job_id]
 
             with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job):
@@ -112,6 +141,7 @@ class EpisodeRunnerTest(unittest.TestCase):
             self.assertEqual(
                 calls,
                 [
+                    ("course-context-selections.jsonl", "group-003-context-selection"),
                     ("research.jsonl", "research-11"),
                     ("research.jsonl", "research-12"),
                     ("source-scripts.jsonl", "group-003-script"),
@@ -143,6 +173,7 @@ class EpisodeRunnerTest(unittest.TestCase):
                     "notebooklm_bundle_dir": "episodes/group-003/notebooklm_bundle",
                 },
             )
+            _write_jsonl(root / "jobs" / "course-context-selections.jsonl", [{"job_id": "group-003-context-selection"}])
             _write_jsonl(root / "jobs" / "research.jsonl", [{"job_id": "research-11"}])
             _write_jsonl(root / "jobs" / "source-scripts.jsonl", [{"job_id": "group-003-script"}])
             _write_jsonl(root / "jobs" / "episode-reviews.jsonl", [{"job_id": "group-003-review"}])
@@ -153,6 +184,11 @@ class EpisodeRunnerTest(unittest.TestCase):
 
             def fake_run_job(manifest_path: Path, job_id: str, agent: str, **kwargs):
                 calls.append((manifest_path.name, job_id, agent))
+                if job_id == "group-003-context-selection":
+                    _write_json(
+                        root / "episodes" / "group-003" / "context_selection.json",
+                        _context_selection("group-003"),
+                    )
                 if job_id == "group-003-script":
                     _write_json(
                         root / "episodes" / "group-003" / "script.json",
@@ -196,6 +232,7 @@ class EpisodeRunnerTest(unittest.TestCase):
             self.assertEqual(
                 calls,
                 [
+                    ("course-context-selections.jsonl", "group-003-context-selection", "codex"),
                     ("research.jsonl", "research-11", "codex"),
                     ("source-scripts.jsonl", "group-003-script", "codex"),
                     ("episode-reviews.jsonl", "group-003-review", "claude"),
@@ -238,12 +275,18 @@ class EpisodeRunnerTest(unittest.TestCase):
                     "notebooklm_bundle_dir": "episodes/group-003/notebooklm_bundle",
                 },
             )
+            _write_jsonl(root / "jobs" / "course-context-selections.jsonl", [{"job_id": "group-003-context-selection"}])
             _write_jsonl(root / "jobs" / "research.jsonl", [{"job_id": "research-11"}])
             _write_jsonl(root / "jobs" / "source-scripts.jsonl", [{"job_id": "group-003-script"}])
             _write_jsonl(root / "jobs" / "episode-reviews.jsonl", [{"job_id": "group-003-review"}])
             _write_json(root / "data" / "research" / "11.json", _complete_research("11"))
 
             def fake_run_job(manifest_path: Path, job_id: str, agent: str, **kwargs):
+                if job_id == "group-003-context-selection":
+                    _write_json(
+                        root / "episodes" / "group-003" / "context_selection.json",
+                        _context_selection("group-003"),
+                    )
                 if job_id == "group-003-script":
                     _write_json(
                         root / "episodes" / "group-003" / "script.json",

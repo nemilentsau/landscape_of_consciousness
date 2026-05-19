@@ -44,9 +44,16 @@ class AgentJobGenerationTest(unittest.TestCase):
             research_jobs = read_jsonl(root / "jobs" / "research.jsonl")
             script_jobs = read_jsonl(root / "jobs" / "source-scripts.jsonl")
             capsule_jobs = read_jsonl(root / "jobs" / "episode-capsules.jsonl")
+            selection_jobs = read_jsonl(root / "jobs" / "course-context-selections.jsonl")
             review_jobs = read_jsonl(root / "jobs" / "episode-reviews.jsonl")
             serialized = json.dumps(
-                {"research": research_jobs, "scripts": script_jobs, "capsules": capsule_jobs, "reviews": review_jobs}
+                {
+                    "research": research_jobs,
+                    "scripts": script_jobs,
+                    "capsules": capsule_jobs,
+                    "selections": selection_jobs,
+                    "reviews": review_jobs,
+                }
             ).lower()
 
             self.assertEqual(len(research_jobs), 2)
@@ -84,6 +91,15 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertEqual(capsule_jobs[0]["output_path"], "course/episode_capsules/group-001.json")
             self.assertEqual(capsule_jobs[0]["schema_path"], "schemas/episode-capsule.schema.json")
 
+            self.assertEqual(len(selection_jobs), 1)
+            self.assertEqual(selection_jobs[0]["kind"], "course_context_selection")
+            self.assertEqual(selection_jobs[0]["job_id"], "group-001-context-selection")
+            self.assertEqual(selection_jobs[0]["group_id"], "group-001")
+            self.assertEqual(selection_jobs[0]["episode_manifest_path"], "episodes/group-001/manifest.json")
+            self.assertIn("course/callback_index.json", selection_jobs[0]["input_paths"])
+            self.assertEqual(selection_jobs[0]["output_path"], "episodes/group-001/context_selection.json")
+            self.assertEqual(selection_jobs[0]["schema_path"], "schemas/course-context-selection.schema.json")
+
             self.assertEqual(len(review_jobs), 1)
             self.assertEqual(review_jobs[0]["kind"], "episode_review")
             self.assertEqual(review_jobs[0]["job_id"], "group-001-review")
@@ -102,6 +118,7 @@ class AgentJobGenerationTest(unittest.TestCase):
 
             self.assertTrue((root / "schemas" / "research-record.schema.json").exists())
             self.assertTrue((root / "schemas" / "episode-capsule.schema.json").exists())
+            self.assertTrue((root / "schemas" / "course-context-selection.schema.json").exists())
             self.assertTrue((root / "schemas" / "episode-review.schema.json").exists())
             source_script_schema = json.loads((root / "schemas" / "source-script.schema.json").read_text())
             self.assertIn("research_dossier_markdown", source_script_schema["required"])
@@ -133,6 +150,12 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("do not rewrite the whole course", capsule_prompt)
             self.assertIn("do not add new facts", capsule_prompt)
             self.assertIn("Accepted factual source dossier.", capsule_prompt)
+
+            (root / "course" / "callback_index.json").write_text("{}", encoding="utf-8")
+            selection_prompt = build_job_prompt(selection_jobs[0], root)
+            self.assertIn("Select course continuity context", selection_prompt)
+            self.assertIn("compact capsule metadata", selection_prompt)
+            self.assertIn("Return only JSON matching the schema", selection_prompt)
 
             source_script_path = root / "episodes" / "group-001" / "script.json"
             source_script_path.write_text(

@@ -126,6 +126,95 @@ class CourseContextTest(unittest.TestCase):
             self.assertIn("Relevant IIT callback.", text)
             self.assertNotIn("Should not be selected.", text)
 
+    def test_write_episode_course_context_uses_explicit_selection_file(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            group_dir = root / "episodes" / "group-005"
+            group_dir.mkdir(parents=True)
+            (group_dir / "manifest.json").write_text(
+                json.dumps(
+                    {
+                        "episode_id": "group-005",
+                        "title": "Top-level sections Part 5",
+                        "episode_question": "What follows if consciousness theories differ?",
+                        "sections": [
+                            {
+                                "section_id": "23",
+                                "title": "Artificial intelligence (AI) consciousness",
+                                "pages": "123-124",
+                            },
+                            {"section_id": "24", "title": "Virtual immortality", "pages": "125-127"},
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            course_dir = root / "course"
+            capsule_dir = course_dir / "episode_capsules"
+            capsule_dir.mkdir(parents=True)
+            (course_dir / "course_contract.md").write_text("# Contract\n\nDo rigorous continuity.", encoding="utf-8")
+            for prior in (capsule("group-001", "hard_problem"), capsule("group-002", "identity_criteria")):
+                dossier = root / str(prior["accepted_dossier_path"])
+                dossier.parent.mkdir(parents=True, exist_ok=True)
+                dossier.write_text("Accepted dossier.", encoding="utf-8")
+                (capsule_dir / f"{prior['episode_id']}.json").write_text(json.dumps(prior), encoding="utf-8")
+            (course_dir / "callback_index.json").write_text(
+                json.dumps(
+                    {
+                        "machine_personhood_bridge": [
+                            {
+                                "episode_id": "group-002",
+                                "capsule_path": "course/episode_capsules/group-002.json",
+                                "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+                                "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+                                "summary": "Uploading claims need explicit identity criteria.",
+                                "useful_for_future_sections": ["Synthetic minds"],
+                            }
+                        ]
+                    }
+                ),
+                encoding="utf-8",
+            )
+            selection_path = group_dir / "context_selection.json"
+            selection_path.write_text(
+                json.dumps(
+                    {
+                        "schema_version": "course_context_selection_v1",
+                        "episode_id": "group-005",
+                        "selected_capsules": [
+                            {
+                                "episode_id": "group-002",
+                                "selection_type": "relevant",
+                                "reason": "Identity criteria constrain AI and upload sections.",
+                            }
+                        ],
+                        "selected_callbacks": [
+                            {
+                                "concept": "machine_personhood_bridge",
+                                "episode_id": "group-002",
+                                "capsule_path": "course/episode_capsules/group-002.json",
+                                "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+                                "reason": (
+                                    "Episode 5 asks whether artificial or uploaded systems preserve consciousness."
+                                ),
+                            }
+                        ],
+                        "rejected_near_misses": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            output_path = write_episode_course_context(root, "group-005", selection_path=selection_path)
+
+            text = output_path.read_text(encoding="utf-8")
+            self.assertIn("group-002 thesis", text)
+            self.assertNotIn("group-001 thesis", text)
+            self.assertIn("Selection: relevant", text)
+            self.assertIn("Identity criteria constrain AI and upload sections.", text)
+            self.assertIn("machine_personhood_bridge", text)
+            self.assertIn("Episode 5 asks whether artificial or uploaded systems preserve consciousness.", text)
+
 
 if __name__ == "__main__":
     unittest.main()
