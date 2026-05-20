@@ -11,6 +11,10 @@
 - NotebookLM bundle directory: `episodes/group-001/notebooklm_bundle`
 - Primary local manifest: `episodes/group-001/manifest.json`
 
+## Course Continuity Grounding
+
+This is the first accepted course episode, so there are no prior episode capsules, callback-index entries, or do-not-reexplain constraints to import. Treat this dossier as establishing the course's baseline distinctions rather than recalling earlier course memory.
+
 ## Episode Scope And Why These Sections Are Grouped
 
 This dossier covers Kuhn's top-level sections 1-5, pages 2-5, as represented in the local packets and research records. The sections are grouped because they do not yet argue for one detailed mechanism of consciousness. Instead, they establish the course's opening framework: the hard problem, the meaning of "consciousness," recurring philosophical tensions, the need for surveys and typologies, and the worldviews that shape what later theories count as explanation.
