@@ -3,8 +3,14 @@
   "callbacks": [
     {
       "concept": "Bridge audit",
+      "family": "bridge_relation_required",
       "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
       "summary": "Use this episode as the point where the course's bridge audit becomes concrete: every theory must say whether consciousness is identical with, constituted by, realized by, grounded in, caused by, or merely correlated with the proposed structure or ontology.",
+      "tags": [
+        "bridge_relations",
+        "identity",
+        "causation"
+      ],
       "useful_for_future_sections": [
         "theories comparing neural correlates with explanations",
         "AI consciousness",
@@ -14,8 +20,14 @@
     },
     {
       "concept": "Ontological ambition vs empirical leverage",
+      "family": "metaphysical_breadth_not_explanation",
       "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
       "summary": "The dossier repeatedly frames these sections as showing that a theory may become more ontologically ambitious exactly where empirical leverage becomes weaker. This is useful as a recurring warning when later theories offer broad metaphysical scope or vivid implications.",
+      "tags": [
+        "ontology",
+        "empirical_leverage",
+        "overreach"
+      ],
       "useful_for_future_sections": [
         "metaphysical theories",
         "religious and spiritual theories",
@@ -25,8 +37,15 @@
     },
     {
       "concept": "Category-borrowing warning",
+      "family": "formalism_not_confirmation",
       "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
       "summary": "Future episodes can call back to this episode's warning that authority should not be borrowed across categories: mainstream quantum physics does not confirm quantum consciousness, clinical PCI does not prove IIT's full ontology, analytic panpsychism does not prove religious cosmopsychism, and dualism's conceivability arguments do not establish survival after death.",
+      "tags": [
+        "category_error",
+        "quantum",
+        "iit",
+        "spiritual_metaphysics"
+      ],
       "useful_for_future_sections": [
         "quantum or field-based proposals",
         "clinical consciousness measures",
@@ -36,8 +55,14 @@
     },
     {
       "concept": "Boundary problem for conscious subjects",
+      "family": "identity_continuity_required",
       "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
       "summary": "This episode establishes subject-bounding as a cross-cutting problem: IIT's exclusion principle, panpsychist combination, cosmopsychist decombination, monist finite-subject emergence, and dualist pairing all ask what makes one conscious subject one subject.",
+      "tags": [
+        "subject_boundaries",
+        "combination_problem",
+        "identity"
+      ],
       "useful_for_future_sections": [
         "self and personal identity",
         "AI consciousness",
@@ -47,8 +72,15 @@
     },
     {
       "concept": "Implications discipline",
+      "family": "epistemic_false_balance",
       "source_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
       "summary": "The dossier models constrained implication handling: nothing in the cluster proves current AI consciousness, uploading survival, survival beyond death, or cosmic purpose, even when particular theories make those ideas conceptually possible.",
+      "tags": [
+        "implications",
+        "ai",
+        "uploading",
+        "survival"
+      ],
       "useful_for_future_sections": [
         "AI consciousness",
         "virtual immortality",
@@ -61,7 +93,6 @@
     "The full hard/easy problem distinction and the inherited hard-problem pressure on phenomenal consciousness.",
     "The basic distinction between phenomenal consciousness, access, reportability, wakefulness, metacognition, attention, and behavior.",
     "The warning that neural correlates do not automatically establish causes, constitutive bases, identities, or explanations.",
-    "Mary, zombies, Nagel's bat, and Levine's explanatory gap as if newly introduced.",
     "Physicalism, dualism, and non-reductive physicalism from the ground up.",
     "The broad empirical case that ordinary human consciousness depends on functioning brains.",
     "Kuhn's landscape as a map rather than a verdict.",
@@ -124,9 +155,7 @@
     "Whether any quantum variable can be shown to survive at the right biological scale and timescale, couple to neural organization, and explain why experience feels like anything.",
     "Whether IIT's phenomenological axioms genuinely force its physical postulates, especially exclusion, or whether the derivation is under-argued.",
     "Whether Phi or intrinsic causal structure tracks consciousness itself rather than integration, complexity, or a formally interesting causal property.",
-    "Whether anti-functionalism can be empirically handled when behaviorally equivalent systems differ in consciousness according to IIT.",
     "Whether panpsychism avoids brute emergence or merely relocates the hard problem into combination, causal relevance, and empirical-access problems.",
-    "Whether Russellian intrinsic-nature claims can do explanatory work if the consciousness-involving intrinsic properties make no detectable physical difference.",
     "Whether monism can specify one underlying reality and finite-subject boundaries without collapsing into materialism, idealism, dualism, or a verbal compromise.",
     "Whether dualism can preserve mental causation without violating causal closure or retreating into epiphenomenalism.",
     "How any theory in this cluster should draw boundaries around one conscious subject.",
@@ -139,12 +168,7 @@
     "Phenomenal consciousness vs access, reportability, behavior, intelligence, or generic complexity.",
     "Formal precision or mathematical vocabulary vs empirical confirmation.",
     "Metaphysical breadth or ontological ambition vs explanatory success.",
-    "Panpsychism's simple experiential or proto-experiential ingredients vs human-like beliefs, thoughts, or feelings in particles.",
-    "Panpsychism's combination problem vs cosmopsychism's decombination problem.",
-    "Monism as a one-reality metaphysics vs a worked-out theory of consciousness.",
-    "Substance dualism, property dualism, interactionist dualism, and epiphenomenal risk.",
-    "Religious or spiritual metaphysics vs scientific evidence for consciousness claims.",
-    "Conceptual possibility of AI consciousness, uploading, or survival beyond death vs empirical establishment."
+    "Religious or spiritual metaphysics vs scientific evidence for consciousness claims."
   ],
   "schema_version": "episode_capsule_v1",
   "section_ids": [
