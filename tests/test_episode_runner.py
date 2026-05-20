@@ -195,6 +195,53 @@ class EpisodeRunnerTest(unittest.TestCase):
                 ],
             )
 
+    def test_run_episode_evaluates_research_before_source_script_gate_finishes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_json(
+                root / "episodes" / "group-003" / "manifest.json",
+                {
+                    "episode_id": "group-003",
+                    "title": "Top-level sections Part 3",
+                    "episode_question": "What is the strongest case for this cluster, and where does it break?",
+                    "section_ids": ["11"],
+                    "script_job_id": "group-003-script",
+                },
+            )
+            _write_jsonl(root / "jobs" / "course-context-selections.jsonl", [{"job_id": "group-003-context-selection"}])
+            _write_jsonl(root / "jobs" / "research.jsonl", [{"job_id": "research-11"}])
+            _write_jsonl(root / "jobs" / "source-scripts.jsonl", [{"job_id": "group-003-script"}])
+            _write_json(root / "data" / "research" / "11.json", _complete_research("11"))
+
+            stages: list[str] = []
+
+            def fake_run_job(manifest_path: Path, job_id: str, agent: str, **kwargs):
+                if job_id == "group-003-context-selection":
+                    _write_json(
+                        root / "episodes" / "group-003" / "context_selection.json",
+                        _context_selection("group-003"),
+                    )
+                if job_id == "group-003-script":
+                    _write_ready_script(root, "group-003")
+                return [agent, job_id]
+
+            def fake_evaluate_episode(root_path: Path, episode_id: str, *, stage: str):
+                stages.append(stage)
+                return {
+                    "episode_id": episode_id,
+                    "stage": stage,
+                    "ok": True,
+                    "summary": {"errors": 0, "warnings": 0, "issues": 0},
+                    "issues": [],
+                }
+
+            with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job), patch(
+                "consciousness_pipeline.episode_runner.evaluate_episode", side_effect=fake_evaluate_episode
+            ):
+                run_episode("group-003", "codex", root=root)
+
+            self.assertEqual(stages, ["context", "research", "dossier"])
+
     def test_run_episode_auto_accepts_only_after_review_agent_approves(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

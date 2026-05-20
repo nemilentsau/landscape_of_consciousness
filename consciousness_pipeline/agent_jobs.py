@@ -321,6 +321,9 @@ Use Kuhn's section text as the anchor, then do balanced web research:
 Return only JSON matching the schema. Do not write a podcast script in this job.
 Label epistemic status plainly: mainstream scientific theory, active philosophical debate,
 speculative extension, religious/spiritual metaphysics, or fringe/weakly evidenced claim.
+Validation note: the runner performs project validation after this job. Do not import or rely on
+`jsonschema`; it is not guaranteed in headless runtimes. If you self-check, use standard JSON parsing
+and the required field names in the schema file.
 
 Section text:
 {_prompt_text(section.text)}
@@ -405,6 +408,9 @@ Accepted compact capsule metadata:
 {_compact_capsule_metadata(root)}
 
 Return only JSON matching the schema.
+Validation note: the runner validates this selection against the schema and callback index. Do not
+import or rely on `jsonschema`; if you self-check, use standard JSON parsing and direct callback-index
+lookups only.
 """
 
 
@@ -454,6 +460,8 @@ Accepted dossier:
 {_job_input_text(root, job["accepted_dossier_path"])}
 
 Return only JSON matching the schema.
+Validation note: the runner validates this capsule and rebuilds the callback index. Do not import or
+rely on `jsonschema`; if you self-check, use standard JSON parsing and the schema's required fields.
 """
 
 
@@ -496,6 +504,8 @@ NotebookLM dossier:
 {_job_input_text(root, job["dossier_path"])}
 
 Return only JSON matching the schema.
+Validation note: the runner validates this review output. Do not import or rely on `jsonschema`; if
+you self-check, use standard JSON parsing and the schema's required fields.
 """
 
 
@@ -546,4 +556,8 @@ episode. Do not bury course continuity inside the episode-scope section.
 
 Return only JSON matching the schema. The local runner writes research_dossier_markdown to the
 NotebookLM dossier markdown output path for upload.
+Validation note: the runner evaluates `--stage dossier` after this job. Do not import or rely on
+`jsonschema`; it is not guaranteed in headless runtimes. If you self-check, use
+`uv run python -m consciousness_pipeline.cli evaluate-episode --episode-id {job["group_id"]} --stage dossier`
+after writing both the JSON output and dossier markdown.
 """

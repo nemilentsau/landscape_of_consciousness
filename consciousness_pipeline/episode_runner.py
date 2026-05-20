@@ -301,6 +301,7 @@ def run_episode(
         commands.append(run_job(research_manifest, f"research-{section_id}", agent, root=root))
 
     validate_research_ready(root, section_ids)
+    _raise_evaluation_errors(root, episode_id, "research")
     commands.append(
         run_job(
             _source_script_manifest_path(root),

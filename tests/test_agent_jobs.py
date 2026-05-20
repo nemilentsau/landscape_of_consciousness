@@ -137,6 +137,9 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("factual NotebookLM source dossier", prompt)
             self.assertIn("Do not write dialogue", prompt)
             self.assertIn("NotebookLM will generate the conversational audio", prompt)
+            self.assertIn("Do not import or rely on", prompt)
+            self.assertIn("`jsonschema`", prompt)
+            self.assertIn("--stage dossier", prompt)
             self.assertNotIn("opening dispute", prompt)
             self.assertNotIn("cross-examination", prompt)
 
@@ -158,6 +161,8 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("Select course continuity context", selection_prompt)
             self.assertIn("compact capsule metadata", selection_prompt)
             self.assertIn("Return only JSON matching the schema", selection_prompt)
+            self.assertIn("import or rely on", selection_prompt)
+            self.assertIn("`jsonschema`", selection_prompt)
 
             source_script_path = root / "episodes" / "group-001" / "script.json"
             source_script_path.write_text(

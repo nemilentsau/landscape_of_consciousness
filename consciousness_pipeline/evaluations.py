@@ -8,13 +8,14 @@ from typing import Any, Literal
 from consciousness_pipeline.episode_capsules import EpisodeCapsuleValidationError, validate_episode_capsule
 
 EvaluationSeverity = Literal["error", "warning"]
-EvaluationStage = Literal["context", "dossier", "bundle", "accepted"]
+EvaluationStage = Literal["context", "research", "dossier", "bundle", "accepted"]
 
 STAGE_RANK: dict[EvaluationStage, int] = {
     "context": 1,
-    "dossier": 2,
-    "bundle": 3,
-    "accepted": 4,
+    "research": 2,
+    "dossier": 3,
+    "bundle": 4,
+    "accepted": 5,
 }
 
 RESEARCH_COMPLETENESS_FIELDS = ("core_claim", "strongest_case", "best_objections", "credibility")
@@ -431,7 +432,6 @@ def _evaluate_dossier(
     config: EpisodeEvaluationConfig,
     issues: list[EvaluationIssue],
 ) -> None:
-    _evaluate_research_records(root, manifest, config, issues)
     script = _evaluate_script_json(root, episode_id, manifest, config, issues)
     _evaluate_dossier_markdown(root, episode_id, manifest, script, issues)
 
@@ -696,6 +696,8 @@ def evaluate_episode(
             manifest = {}
     if manifest:
         _evaluate_context(root, episode_id, manifest, config, issues)
+        if _should_check(stage, "research"):
+            _evaluate_research_records(root, manifest, config, issues)
         if _should_check(stage, "dossier"):
             _evaluate_dossier(root, episode_id, manifest, config, issues)
         if _should_check(stage, "bundle"):

@@ -193,6 +193,34 @@ class EpisodeEvaluationTest(unittest.TestCase):
             check_ids = {issue["check_id"] for issue in report["issues"]}  # type: ignore[index]
             self.assertIn("bundle_source_count", check_ids)
 
+    def test_evaluate_episode_has_first_class_research_stage(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_episode_root(root)
+            (root / "data" / "research" / "1.json").write_text(
+                json.dumps(
+                    {
+                        "section_id": "1",
+                        "opening_question": "What is missing?",
+                        "core_claim": "Research incomplete: use Kuhn's section text as the starting point.",
+                        "strongest_case": "Research incomplete",
+                        "best_objections": "Research incomplete",
+                        "credibility": "Research incomplete",
+                        "listener_hooks": [],
+                        "sources": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            report = evaluate_episode(root, "group-001", stage="research")
+
+            self.assertFalse(report["ok"])
+            check_ids = {issue["check_id"] for issue in report["issues"]}  # type: ignore[index]
+            self.assertIn("research_field_incomplete", check_ids)
+            self.assertIn("research_sources_missing", check_ids)
+            self.assertNotIn("script_missing", check_ids)
+
     def test_evaluate_episode_flags_performed_dialogue_dossiers(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
