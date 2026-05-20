@@ -9,6 +9,7 @@ from consciousness_pipeline.course_context import write_episode_course_context
 from consciousness_pipeline.course_context_selection import validate_course_context_selection
 from consciousness_pipeline.episode_acceptance import accept_episode
 from consciousness_pipeline.episode_reviews import validate_episode_review
+from consciousness_pipeline.evaluations import EvaluationStage, evaluate_episode
 from consciousness_pipeline.models import Section
 from consciousness_pipeline.research import write_notebooklm_research_sources
 
@@ -30,6 +31,10 @@ class SourceDossierReadinessError(RuntimeError):
 
 
 class EpisodeReviewGateError(RuntimeError):
+    pass
+
+
+class EpisodeEvaluationGateError(RuntimeError):
     pass
 
 
@@ -89,6 +94,24 @@ def _review_output_path(root: Path, episode_id: str) -> Path:
 
 def _is_placeholder(value: object) -> bool:
     return isinstance(value, str) and PLACEHOLDER_MARKER in value.casefold()
+
+
+def _raise_evaluation_errors(root: Path, episode_id: str, stage: EvaluationStage) -> None:
+    report = evaluate_episode(root, episode_id, stage=stage)
+    summary = report.get("summary", {})
+    error_count = int(summary.get("errors", 0)) if isinstance(summary, dict) else 0
+    if error_count == 0:
+        return
+    issues = report.get("issues", [])
+    detail_lines: list[str] = []
+    if isinstance(issues, list):
+        for issue in issues:
+            if not isinstance(issue, dict) or issue.get("severity") != "error":
+                continue
+            path = f" ({issue['path']})" if issue.get("path") else ""
+            detail_lines.append(f"{issue.get('check_id')}: {issue.get('message')}{path}")
+    detail = "\n- ".join(detail_lines)
+    raise EpisodeEvaluationGateError(f"{episode_id} failed {stage} evaluation:\n- {detail}")
 
 
 def validate_research_ready(root: Path, section_ids: list[str]) -> None:
@@ -272,6 +295,7 @@ def run_episode(
 
     commands: list[list[str]] = []
     commands.append(select_episode_context(episode_id, agent, root=root))
+    _raise_evaluation_errors(root, episode_id, "context")
     research_manifest = _research_manifest_path(root)
     for section_id in section_ids:
         commands.append(run_job(research_manifest, f"research-{section_id}", agent, root=root))
@@ -285,11 +309,14 @@ def run_episode(
             root=root,
         )
     )
+    validate_source_dossier_ready(root, episode_id, manifest)
+    _raise_evaluation_errors(root, episode_id, "dossier")
     if auto_accept:
-        validate_source_dossier_ready(root, episode_id, manifest)
         bundle_episode_sources(root, episode_id, manifest)
+        _raise_evaluation_errors(root, episode_id, "bundle")
         commands.append(review_episode(root, episode_id, str(review_agent)))
         commands.extend(accept_episode(episode_id, str(review_agent), root=root))
+        _raise_evaluation_errors(root, episode_id, "accepted")
     return commands
 
 

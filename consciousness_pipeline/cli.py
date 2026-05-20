@@ -251,7 +251,7 @@ def build_parser() -> argparse.ArgumentParser:
     evaluate_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-005")
     evaluate_episode_parser.add_argument(
         "--stage",
-        choices=("context", "bundle", "accepted"),
+        choices=("context", "dossier", "bundle", "accepted"),
         default="accepted",
         help="How much of the episode lifecycle to evaluate",
     )
