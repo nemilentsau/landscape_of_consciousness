@@ -67,19 +67,19 @@ Current sections:
 
 ### group-004: Top-level sections Part 4
 
-- Thesis: This cluster collects four different kinds of pressure on reductive explanations of consciousness: idealism's reversal of the dependence relation, anomalous and altered-state claims as conditional pressure on brain-bound materialism, challenge theories as diagnostic audits of explanatory overconfidence, Closer To Truth pluralism as a constrained-disagreement map, and Chalmers's meta-problem as a research target for...
+- Thesis: This cluster collects four different kinds of pressure on reductive explanations of consciousness: idealism's reversal of the dependence relation, anomalous and altered-state claims as conditional pressure on brain-bound materialism, challenge theor...
 - Selection: recent. The immediate prior capsule sets the transition into implication questions: keep AI, uploading, survival, meaning, anomaly, pluralism, and meta-problem claims conditional without re-explaining the whole challenge-theory cluster.
 - Durable concept handles: Consciousness-first reversal, Idealism's explanatory burdens, Anomalous and altered states as a boundary category; 9 more in capsule.
 
 ### group-002: Top-level sections Part 2
 
-- Thesis: This cluster sharpens the course's metaphysical audit: before detailed consciousness theories can be compared, each view must say whether consciousness is fundamental, what it is identical with or dependent on if it is not fundamental, where it sits in Kuhn's landscape, and whether its physicalism is reductive, non-reductive, or not physicalist. Its strongest pressure is the combination of deep empirical brain depen...
+- Thesis: This cluster sharpens the course's metaphysical audit: before detailed consciousness theories can be compared, each view must say whether consciousness is fundamental, what it is identical with or dependent on if it is not fundamental, where it sits...
 - Selection: relevant. AI consciousness and virtual immortality turn on the primitive-or-not fork and on identity, realization, grounding, or dependence criteria; this capsule keeps functional and informational continuity from being treated as sufficient by itself.
 - Durable concept handles: Primitive-or-not fork, Identity-demand audit, Kuhn's landscape as organizing taxonomy; 4 more in capsule.
 
 ### group-003: Top-level sections Part 3
 
-- Thesis: The cluster is strongest as an ontological stress test for reductive materialism: quantum theories, IIT, panpsychisms, monisms, and dualisms all refuse to let phenomenal character be absorbed into access, report, behavior, or neural correlation without an explicit bridge, but each becomes fragile where formal ambition or metaphysical breadth outruns mechanism, measurement, or empirical leverage.
+- Thesis: The cluster is strongest as an ontological stress test for reductive materialism: quantum theories, IIT, panpsychisms, monisms, and dualisms all refuse to let phenomenal character be absorbed into access, report, behavior, or neural correlation with...
 - Selection: relevant. The current episode tests implications of ontologically ambitious views, so the prior subject-boundary, bridge-audit, and empirical-leverage cautions are directly useful for AI, uploading, survival, and cosmic-purpose claims.
 - Durable concept handles: Quantum relevance is stronger than quantum fundamentality, Quantum cognition is not quantum brain physics, IIT identity claim; 7 more in capsule.
 

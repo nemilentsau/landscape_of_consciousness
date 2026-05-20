@@ -67,7 +67,7 @@ def _unique_lines(values: list[str]) -> list[str]:
     return result
 
 
-def _shorten(value: object, limit: int = 420) -> str:
+def _shorten(value: object, limit: int = 250) -> str:
     text = " ".join(str(value).split())
     if len(text) <= limit:
         return text

@@ -57,6 +57,7 @@ class CliTest(unittest.TestCase):
         self.assertIn("run-job", result.stdout)
         self.assertIn("run-episode", result.stdout)
         self.assertIn("accept-episode", result.stdout)
+        self.assertIn("evaluate-episode", result.stdout)
         self.assertIn("select-context", result.stdout)
         self.assertIn("write-contract", result.stdout)
         self.assertIn("bundle-sources", result.stdout)
@@ -235,6 +236,23 @@ class CliTest(unittest.TestCase):
             cli.main()
 
         accept_episode.assert_called_once_with("group-002", "claude", dry_run=False)
+
+    def test_evaluate_episode_command_prints_report(self):
+        argv = ["cli.py", "evaluate-episode", "--episode-id", "group-002", "--stage", "context"]
+
+        with patch.object(sys, "argv", argv), patch(
+            "consciousness_pipeline.cli.evaluate_episode",
+            return_value={
+                "episode_id": "group-002",
+                "stage": "context",
+                "ok": True,
+                "summary": {"errors": 0, "warnings": 0, "issues": 0},
+                "issues": [],
+            },
+        ) as evaluate_episode:
+            cli.main()
+
+        evaluate_episode.assert_called_once_with(cli.PROJECT_ROOT, "group-002", stage="context")
 
     def test_write_contract_command_writes_static_course_contract(self):
         with tempfile.TemporaryDirectory() as tmp:
