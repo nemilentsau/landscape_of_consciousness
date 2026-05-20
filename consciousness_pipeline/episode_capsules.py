@@ -34,6 +34,8 @@ EPISODE_CAPSULE_SCHEMA: dict[str, Any] = {
                 "type": "object",
                 "properties": {
                     "concept": {"type": "string"},
+                    "family": {"type": "string"},
+                    "tags": {"type": "array", "items": {"type": "string"}},
                     "summary": {"type": "string"},
                     "source_path": {"type": "string"},
                     "useful_for_future_sections": {"type": "array", "items": {"type": "string"}},
@@ -106,6 +108,17 @@ def _validate_entries(
             future_sections = entry.get("useful_for_future_sections")
             if not isinstance(future_sections, list):
                 errors.append(f"{field}[{index}].useful_for_future_sections must be a list")
+            family = entry.get("family")
+            if family is not None and not _non_empty_string(family):
+                errors.append(f"{field}[{index}].family must be a non-empty string when provided")
+            tags = entry.get("tags")
+            if tags is not None:
+                if not isinstance(tags, list):
+                    errors.append(f"{field}[{index}].tags must be a list when provided")
+                else:
+                    for tag_index, tag in enumerate(tags):
+                        if not _non_empty_string(tag):
+                            errors.append(f"{field}[{index}].tags[{tag_index}] must be a non-empty string")
         if root is not None and _non_empty_string(entry.get("source_path")):
             source_path = _resolve_project_path(root, entry["source_path"])
             if not source_path.exists():

@@ -1,21 +1,4 @@
 {
-  "Apply the five-part academic case as a comparison checklist for downstream claims": [
-    {
-      "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "capsule_path": "course/episode_capsules/group-005.json",
-      "episode_id": "group-005",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When future episodes evaluate any downstream implication of a consciousness theory, run this episode's checklist: is implication discipline being respected, is sentience being used as an ethical bridge without becoming evidence of consciousness, is AI consciousness assessed through architecture-sensitive indicators, does the upload or survival claim separate information from subject preservation, and is the survival or meaning claim being held against brain dependence and the three meaning questions.",
-      "useful_for_future_sections": [
-        "course recap episodes",
-        "theory comparison episodes",
-        "AI consciousness",
-        "mind uploading",
-        "survival and afterlife claims",
-        "meaning and value implications"
-      ]
-    }
-  ],
   "Apply the five-pillar academic case as a comparison checklist": [
     {
       "accepted_dossier_path": "episodes/group-004/notebooklm_bundle/research_dossier.md",
@@ -47,13 +30,19 @@
       ]
     }
   ],
-  "Block false balance across mainstream science, philosophy, speculation, religion, and weakly evidenced anomalies": [
+  "Block false balance across implication domains": [
     {
       "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
       "capsule_path": "course/episode_capsules/group-005.json",
       "episode_id": "group-005",
+      "family": "epistemic_false_balance",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When later episodes summarize the cluster or its implications, reuse this episode's epistemic-status grid: brain-based neuroscience, analytic metaphysics, AI-welfare forecasting, transhumanist speculation, religious doctrine, and anomalous empirical claims do not have the same evidential status, and a rigorous episode should preserve live disagreement without presenting every implication as equally supported.",
+      "summary": "Brain-based neuroscience, analytic metaphysics, AI-welfare forecasting, transhumanist speculation, religious doctrine, and anomalous empirical claims do not have the same evidential status. Preserve live disagreement without presenting every implication as equally supported.",
+      "tags": [
+        "epistemic_status",
+        "false_balance",
+        "implications"
+      ],
       "useful_for_future_sections": [
         "course recap episodes",
         "public-facing summaries",
@@ -90,22 +79,6 @@
         "AI consciousness",
         "mind uploading",
         "causal theories of consciousness"
-      ]
-    }
-  ],
-  "Catalogue metaphysical and theological survival routes without granting evidence": [
-    {
-      "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "capsule_path": "course/episode_capsules/group-005.json",
-      "episode_id": "group-005",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When future episodes invoke dualist survival, Christian or other theistic resurrection, or constitution-based personal identity, return to this episode's catalogue: substance-dualist preservation, van Inwagen's body-snatching, Baker's first-person-perspective constitution view, and Zimmerman's falling-elevator model are metaphysical and theological options, not laboratory evidence.",
-      "useful_for_future_sections": [
-        "survival and afterlife claims",
-        "theistic resurrection arguments",
-        "personal identity at death",
-        "religion and consciousness",
-        "dualism and idealism implications"
       ]
     }
   ],
@@ -175,14 +148,19 @@
       "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
       "capsule_path": "course/episode_capsules/group-005.json",
       "episode_id": "group-005",
+      "family": "bridge_relation_required",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When later episodes or recap sections invoke AI consciousness, uploading, survival, or meaning conclusions, return to this episode's bridge-discipline rule: ask which relation (identity, realization, constitution, organizational invariance, psychological continuity, bodily continuity, divine preservation, soul-body pairing, resurrection, memory transfer, generic subjectivity) is doing the work, and refuse implications until it is named.",
+      "summary": "When future episodes draw consequences about AI consciousness, uploading, survival, moral status, or meaning, ask which relation is doing the work: identity, realization, constitution, organizational invariance, psychological continuity, bodily continuity, soul-body pairing, divine preservation, resurrection, memory transfer, or generic subjectivity. Do not grant the implication until the bridge is named.",
+      "tags": [
+        "bridge_relations",
+        "implications",
+        "theory_comparison"
+      ],
       "useful_for_future_sections": [
         "course recap episodes",
         "theory comparison episodes",
         "AI consciousness",
         "mind uploading",
-        "virtual immortality",
         "survival and afterlife claims",
         "meaning and value implications"
       ]
@@ -208,14 +186,46 @@
       "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
       "capsule_path": "course/episode_capsules/group-005.json",
       "episode_id": "group-005",
+      "family": "brain_dependence_constraint",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When later episodes engage afterlife, resurrection, NDE, reincarnation, or related survival claims, reuse this episode's framing: brain dependence and death by neurologic criteria are the mainstream constraint, and Gennaro and Fishman's argument from brain damage anchors the extrapolation that total destruction of brain systems is strong evidence against continuing ordinary mental life.",
+      "summary": "For afterlife, NDE, reincarnation, resurrection, or survival claims, keep ordinary brain dependence and death by neurologic criteria as the mainstream scientific constraint. Metaphysical possibility and unusual reports do not by themselves establish continuing personal consciousness.",
+      "tags": [
+        "brain_dependence",
+        "survival",
+        "nde",
+        "afterlife"
+      ],
       "useful_for_future_sections": [
         "survival and afterlife claims",
         "near-death experience research",
         "reincarnation research",
         "theistic resurrection arguments",
         "personal identity at death"
+      ]
+    }
+  ],
+  "Hold substrate independence open with both sides on the table": [
+    {
+      "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-005.json",
+      "episode_id": "group-005",
+      "family": "bridge_relation_required",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "When machine consciousness or uploading returns, preserve both sides: multiple realizability and computational functionalism make nonbiological consciousness possible in principle, while biological naturalism, IIT-style intrinsic causal structure, absent-qualia worries, and embodied or affective views warn that computation or behavior may not be enough.",
+      "tags": [
+        "ai",
+        "substrate_independence",
+        "functionalism",
+        "biological_naturalism",
+        "iit"
+      ],
+      "useful_for_future_sections": [
+        "AI consciousness",
+        "virtual immortality",
+        "mind uploading",
+        "biological naturalism",
+        "integrated information theory",
+        "embodied cognition"
       ]
     }
   ],
@@ -232,23 +242,6 @@
         "attention-schema theory",
         "predictive-processing accounts",
         "AI systems that claim consciousness"
-      ]
-    }
-  ],
-  "Hold the substrate-independence question open with both sides on the table": [
-    {
-      "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "capsule_path": "course/episode_capsules/group-005.json",
-      "episode_id": "group-005",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When uploading, machine consciousness, or substrate questions return, reuse this episode's pairing: multiple realizability and computational functionalism on one side, Searle's Chinese Room, biological naturalism, IIT intrinsic-causal-structure, Block-style absent qualia, and embodied or affective views on the other. Neither side has been settled; an implication that relies on one side must say so.",
-      "useful_for_future_sections": [
-        "AI consciousness",
-        "virtual immortality",
-        "mind uploading",
-        "biological naturalism",
-        "integrated information theory",
-        "embodied cognition"
       ]
     }
   ],
@@ -297,22 +290,6 @@
         "body schema and self-location",
         "mystical experience",
         "survival and afterlife claims"
-      ]
-    }
-  ],
-  "Keep naturalistic nonpersonal continuity distinct from ordinary survival": [
-    {
-      "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "capsule_path": "course/episode_capsules/group-005.json",
-      "episode_id": "group-005",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When later episodes address consolation, secular meaning, or eternalist or generic-subjectivity views, reuse this episode's distinction: Clark's generic subjective continuity and block-universe eternalism are nonpersonal continuity theses that do not preserve the dead person's memories or personal identity, and should not be presented as ordinary survival.",
-      "useful_for_future_sections": [
-        "secular consolation and meaning",
-        "survival and afterlife claims",
-        "naturalistic philosophy of death",
-        "block-universe and eternalism",
-        "course recap episodes"
       ]
     }
   ],
@@ -394,29 +371,20 @@
       ]
     }
   ],
-  "Separate cosmic purpose, meaning in life, and objective value": [
+  "Separate information preservation from subject preservation for uploads": [
     {
       "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
       "capsule_path": "course/episode_capsules/group-005.json",
       "episode_id": "group-005",
+      "family": "identity_continuity_required",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When later episodes discuss meaning, value, religion, or the implications of naturalism, return to this episode's three-question split: absence of cosmic purpose does not entail no meaning in life, and meaning in life does not by itself settle objective value. Flanagan, Kitcher, Wolf, Metz, and psychological research on coherence, purpose, and existential mattering are the established naturalistic anchors; Hume-style and Moore-style worries remain.",
-      "useful_for_future_sections": [
-        "meaning and value implications",
-        "religion and consciousness",
-        "secular humanism",
-        "moral status and value theory",
-        "course recap episodes"
-      ]
-    }
-  ],
-  "Separate information preservation from subject preservation for any upload": [
-    {
-      "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "capsule_path": "course/episode_capsules/group-005.json",
-      "episode_id": "group-005",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When later episodes touch whole-brain emulation, digital successors, memorial chatbots, or transhumanist immortality, return to this episode's distinction: a successful upload claim must state both a consciousness criterion (will the digital system be phenomenally conscious) and a personal-identity criterion (will it be the original subject rather than a successor or copy), and must address the copy problem, fission, gradual versus destructive replacement, and connectome underspecification.",
+      "summary": "An upload claim needs both a consciousness criterion and a personal-identity criterion. A copied pattern, memory set, connectome, or digital successor may preserve information without preserving the original first-person subject.",
+      "tags": [
+        "uploading",
+        "personal_identity",
+        "continuity",
+        "copy_problem"
+      ],
       "useful_for_future_sections": [
         "mind uploading",
         "virtual immortality",
@@ -447,8 +415,14 @@
       "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
       "capsule_path": "course/episode_capsules/group-005.json",
       "episode_id": "group-005",
+      "family": "target_phenomenon_discipline",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When future episodes discuss animal welfare, disorders of consciousness, AI sentience, or moral status under uncertainty, reuse this episode's framing: sentience grounds a serious ethical bridge to moral status, but moral urgency does not make a theory true and is not itself evidence that a system is conscious.",
+      "summary": "Sentience can be morally decisive if present, but moral urgency is not evidence that a system is conscious. Use this distinction when discussing animals, disorders of consciousness, AI welfare, or precautionary policy.",
+      "tags": [
+        "sentience",
+        "moral_status",
+        "precaution"
+      ],
       "useful_for_future_sections": [
         "AI welfare and ethics",
         "animal consciousness",
@@ -463,8 +437,15 @@
       "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
       "capsule_path": "course/episode_capsules/group-005.json",
       "episode_id": "group-005",
+      "family": "ai_fluency_not_consciousness",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "summary": "When later episodes evaluate AI consciousness claims, return to Butlin and colleagues' indicator method, Dehaene's C1/C2 distinction, Graziano's attention schema, and Chalmers's catalog of current LLM obstacles (recurrence, agency, global workspace, persistent world modeling, embodiment), and refuse to treat fluent language, role-played distress, or claimed self-awareness as sufficient on their own.",
+      "summary": "Future AI-consciousness claims should use theory-derived indicators such as recurrence, global availability, self-modeling, agency, world modeling, embodiment, and attention-like control. Fluent language, role-played distress, or claims of self-awareness are not sufficient on their own.",
+      "tags": [
+        "ai",
+        "measurement",
+        "self_report",
+        "phenomenal_consciousness"
+      ],
       "useful_for_future_sections": [
         "AI consciousness",
         "large language model claims",

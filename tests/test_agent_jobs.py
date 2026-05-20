@@ -149,6 +149,8 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("extract durable course continuity", capsule_prompt)
             self.assertIn("do not rewrite the whole course", capsule_prompt)
             self.assertIn("do not add new facts", capsule_prompt)
+            self.assertIn("Default memory budget", capsule_prompt)
+            self.assertIn("Callback family is provisional and free-form", capsule_prompt)
             self.assertIn("Accepted factual source dossier.", capsule_prompt)
 
             (root / "course" / "callback_index.json").write_text("{}", encoding="utf-8")

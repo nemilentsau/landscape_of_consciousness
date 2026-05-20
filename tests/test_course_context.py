@@ -28,7 +28,10 @@ def capsule(episode_id: str, concept: str) -> dict[str, object]:
         "section_ids": ["1"],
         "thesis": f"{episode_id} thesis",
         "durable_concepts": [
-            {"concept": concept, "summary": f"{concept} summary", "source_path": "course/test.md"}
+            {"concept": concept, "summary": f"{concept} summary", "source_path": "course/test.md"},
+            {"concept": f"{concept}_extra_1", "summary": "extra summary 1", "source_path": "course/test.md"},
+            {"concept": f"{concept}_extra_2", "summary": "extra summary 2", "source_path": "course/test.md"},
+            {"concept": f"{concept}_extra_3", "summary": "extra summary 3", "source_path": "course/test.md"},
         ],
         "recurring_distinctions": ["correlation vs explanation"],
         "do_not_reexplain": [f"{episode_id} do not reteach"],
@@ -51,6 +54,8 @@ class CourseContextTest(unittest.TestCase):
                         "accepted_dossier_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
                         "source_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
                         "summary": "Compare formal measure claims against explanation.",
+                        "family": "formalism_not_confirmation",
+                        "tags": ["iit", "formal_theory"],
                         "useful_for_future_sections": ["Integrated information theory"],
                     }
                 ]
@@ -67,9 +72,14 @@ class CourseContextTest(unittest.TestCase):
         self.assertIn("## Source Priority", text)
         self.assertIn("Static rules.", text)
         self.assertIn("group-002 thesis", text)
+        self.assertIn("Durable concept handles:", text)
+        self.assertIn("1 more in capsule", text)
+        self.assertNotIn("brain_dependence summary", text)
         self.assertIn("Quantum theories", text)
         self.assertIn("Integrated information theory", text)
         self.assertIn("Compare formal measure claims", text)
+        self.assertIn("family `formalism_not_confirmation`", text)
+        self.assertIn("tags `iit`, `formal_theory`", text)
         self.assertIn("current research records and packet inputs are factual sources", text)
         self.assertNotIn("## Prior Course Grounding", text)
 
@@ -168,6 +178,8 @@ class CourseContextTest(unittest.TestCase):
                                 "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
                                 "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
                                 "summary": "Uploading claims need explicit identity criteria.",
+                                "family": "identity_continuity_required",
+                                "tags": ["ai", "uploading"],
                                 "useful_for_future_sections": ["Synthetic minds"],
                             }
                         ]
@@ -214,6 +226,8 @@ class CourseContextTest(unittest.TestCase):
             self.assertIn("Identity criteria constrain AI and upload sections.", text)
             self.assertIn("machine_personhood_bridge", text)
             self.assertIn("Episode 5 asks whether artificial or uploaded systems preserve consciousness.", text)
+            self.assertIn("family `identity_continuity_required`", text)
+            self.assertIn("tags `ai`, `uploading`", text)
 
 
 if __name__ == "__main__":
