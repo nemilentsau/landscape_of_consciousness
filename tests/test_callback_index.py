@@ -34,6 +34,8 @@ def write_capsule(root: Path, episode_id: str, concept: str) -> Path:
                 "callbacks": [
                     {
                         "concept": concept,
+                        "family": "target_phenomenon_discipline",
+                        "tags": ["phenomenal_consciousness", "course_memory"],
                         "summary": f"{concept} callback summary",
                         "source_path": f"episodes/{episode_id}/notebooklm_bundle/research_dossier.md",
                         "useful_for_future_sections": ["panpsychism"],
@@ -66,6 +68,8 @@ class CallbackIndexTest(unittest.TestCase):
             )
             self.assertEqual(hard_problem["source_path"], "episodes/group-002/notebooklm_bundle/research_dossier.md")
             self.assertEqual(hard_problem["useful_for_future_sections"], ["panpsychism"])
+            self.assertEqual(hard_problem["family"], "target_phenomenon_discipline")
+            self.assertEqual(hard_problem["tags"], ["phenomenal_consciousness", "course_memory"])
 
     def test_write_callback_index_is_deterministic_json(self):
         with tempfile.TemporaryDirectory() as tmp:

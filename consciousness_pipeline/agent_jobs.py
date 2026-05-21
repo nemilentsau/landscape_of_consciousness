@@ -321,6 +321,9 @@ Use Kuhn's section text as the anchor, then do balanced web research:
 Return only JSON matching the schema. Do not write a podcast script in this job.
 Label epistemic status plainly: mainstream scientific theory, active philosophical debate,
 speculative extension, religious/spiritual metaphysics, or fringe/weakly evidenced claim.
+Validation note: the runner performs project validation after this job. Do not import or rely on
+`jsonschema`; it is not guaranteed in headless runtimes. If you self-check, use standard JSON parsing
+and the required field names in the schema file.
 
 Section text:
 {_prompt_text(section.text)}
@@ -405,6 +408,9 @@ Accepted compact capsule metadata:
 {_compact_capsule_metadata(root)}
 
 Return only JSON matching the schema.
+Validation note: the runner validates this selection against the schema and callback index. Do not
+import or rely on `jsonschema`; if you self-check, use standard JSON parsing and direct callback-index
+lookups only.
 """
 
 
@@ -422,11 +428,28 @@ source dossier. Only capture continuity that is explicitly supported by the acce
 episode manifest.
 
 The capsule must:
-- identify durable concepts introduced or sharpened in this episode
-- preserve distinctions and open tensions that future episodes should remember
-- list material future episodes should not re-explain from scratch
+- identify only the durable concepts likely to matter in future episodes
+- preserve only the sharpest distinctions and open tensions that future episodes should remember
+- list only material future episodes should not re-explain from scratch
 - add callbacks only when they can point back to the accepted dossier source path
+- merge overlapping concepts and callbacks instead of restating every section summary
+- prefer fewer, sharper callbacks over comprehensive recap
+- include callback family and tags as required advisory grouping hints for future selection
 - keep source_path values traceable to the local dossier path
+
+Default memory budget unless this is explicitly a synthesis episode:
+- 6-10 durable concepts
+- 4-7 recurring distinctions
+- 4-7 do-not-reexplain items
+- 5-8 open tensions
+- 4-7 callbacks
+
+Callback family is required but provisional and free-form, not a strict enum. Callback tags are required,
+topic-level strings. Useful seed families include:
+target_phenomenon_discipline, bridge_relation_required, epistemic_false_balance,
+brain_dependence_constraint, report_not_experience, ai_fluency_not_consciousness,
+identity_continuity_required, anomalous_claims_conditional, formalism_not_confirmation,
+and metaphysical_breadth_not_explanation.
 
 Course contract:
 {_job_input_text(root, "course/course_contract.md")}
@@ -438,6 +461,8 @@ Accepted dossier:
 {_job_input_text(root, job["accepted_dossier_path"])}
 
 Return only JSON matching the schema.
+Validation note: the runner validates this capsule and rebuilds the callback index. Do not import or
+rely on `jsonschema`; if you self-check, use standard JSON parsing and the schema's required fields.
 """
 
 
@@ -480,6 +505,8 @@ NotebookLM dossier:
 {_job_input_text(root, job["dossier_path"])}
 
 Return only JSON matching the schema.
+Validation note: the runner validates this review output. Do not import or rely on `jsonschema`; if
+you self-check, use standard JSON parsing and the schema's required fields.
 """
 
 
@@ -530,4 +557,8 @@ episode. Do not bury course continuity inside the episode-scope section.
 
 Return only JSON matching the schema. The local runner writes research_dossier_markdown to the
 NotebookLM dossier markdown output path for upload.
+Validation note: the runner evaluates `--stage dossier` after this job. Do not import or rely on
+`jsonschema`; it is not guaranteed in headless runtimes. If you self-check, use
+`uv run python -m consciousness_pipeline.cli evaluate-episode --episode-id {job["group_id"]} --stage dossier`
+after writing both the JSON output and dossier markdown.
 """

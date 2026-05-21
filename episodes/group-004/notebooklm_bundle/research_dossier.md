@@ -20,6 +20,8 @@ This episode should not restart those foundations. It should use them as inherit
 
 This dossier covers Kuhn sections 16-20: Idealisms; Anomalous and altered states theories; Challenge theories; Closer to truth views; and Chalmers's meta-problem of consciousness. They are grouped because each tests explanatory overconfidence from a different direction. Idealism reverses the dependence relation and treats consciousness or mind as ultimate. Anomalous and altered-state theories ask whether unusual reports, altered states, psi claims, NDEs, or OBEs pressure brain-bound accounts. Challenge theories are stress tests for theories that explain access, report, cognition, or correlation while leaving phenomenal experience unaddressed. Closer To Truth views provide an expert constraint map rather than a mechanism. The meta-problem asks why humans form hard-problem intuitions at all.
 
+Manifest section titles covered: Idealisms; Anomalous and altered states theories; Challenge theories; Closer to truth views; Chalmers’s meta-problem of consciousness.
+
 The grouping requires strict epistemic tagging. Altered-state science and body-self plasticity are mainstream research topics. Psi, survival, and paranormal claims remain contested and weakly evidenced relative to their implications. Idealism is active philosophical debate, with some versions also belonging to religious or spiritual metaphysics. Challenge theories and the meta-problem are philosophical and methodological audits, not empirical mechanisms by themselves.
 
 ## Concise Thesis Of The Cluster

@@ -21,16 +21,19 @@ def build_callback_index(capsule_dir: Path, root: Path | None = None) -> dict[st
         validate_episode_capsule(capsule, root=root)
         for callback in capsule.get("callbacks", []):
             concept = str(callback["concept"])
-            index.setdefault(concept, []).append(
-                {
-                    "episode_id": str(capsule["episode_id"]),
-                    "capsule_path": _relative_project_path(root, capsule_path),
-                    "accepted_dossier_path": str(capsule["accepted_dossier_path"]),
-                    "source_path": str(callback["source_path"]),
-                    "summary": str(callback["summary"]),
-                    "useful_for_future_sections": [str(item) for item in callback["useful_for_future_sections"]],
-                }
-            )
+            entry = {
+                "episode_id": str(capsule["episode_id"]),
+                "capsule_path": _relative_project_path(root, capsule_path),
+                "accepted_dossier_path": str(capsule["accepted_dossier_path"]),
+                "source_path": str(callback["source_path"]),
+                "summary": str(callback["summary"]),
+                "useful_for_future_sections": [str(item) for item in callback["useful_for_future_sections"]],
+            }
+            if callback.get("family") is not None:
+                entry["family"] = str(callback["family"])
+            if callback.get("tags") is not None:
+                entry["tags"] = [str(item) for item in callback["tags"]]
+            index.setdefault(concept, []).append(entry)
     return {
         concept: sorted(entries, key=lambda entry: entry["episode_id"]) for concept, entries in sorted(index.items())
     }

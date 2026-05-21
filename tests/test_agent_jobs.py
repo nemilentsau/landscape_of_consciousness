@@ -137,6 +137,9 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("factual NotebookLM source dossier", prompt)
             self.assertIn("Do not write dialogue", prompt)
             self.assertIn("NotebookLM will generate the conversational audio", prompt)
+            self.assertIn("Do not import or rely on", prompt)
+            self.assertIn("`jsonschema`", prompt)
+            self.assertIn("--stage dossier", prompt)
             self.assertNotIn("opening dispute", prompt)
             self.assertNotIn("cross-examination", prompt)
 
@@ -149,6 +152,8 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("extract durable course continuity", capsule_prompt)
             self.assertIn("do not rewrite the whole course", capsule_prompt)
             self.assertIn("do not add new facts", capsule_prompt)
+            self.assertIn("Default memory budget", capsule_prompt)
+            self.assertIn("Callback family is required but provisional and free-form", capsule_prompt)
             self.assertIn("Accepted factual source dossier.", capsule_prompt)
 
             (root / "course" / "callback_index.json").write_text("{}", encoding="utf-8")
@@ -156,6 +161,8 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("Select course continuity context", selection_prompt)
             self.assertIn("compact capsule metadata", selection_prompt)
             self.assertIn("Return only JSON matching the schema", selection_prompt)
+            self.assertIn("import or rely on", selection_prompt)
+            self.assertIn("`jsonschema`", selection_prompt)
 
             source_script_path = root / "episodes" / "group-001" / "script.json"
             source_script_path.write_text(

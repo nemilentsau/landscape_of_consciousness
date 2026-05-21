@@ -10,6 +10,11 @@
 - NotebookLM handoff: `computer_use_after_script_bundle`
 - NotebookLM bundle directory: `episodes/group-001/notebooklm_bundle`
 - Primary local manifest: `episodes/group-001/manifest.json`
+- Manifest section titles covered: Chalmers’s “hard problem” of consciousness; Initial thoughts; Philosophical tensions; Surveys & typologies; Opposing worldviews
+
+## Course Continuity Grounding
+
+This is the first accepted course episode, so there are no prior episode capsules, callback-index entries, or do-not-reexplain constraints to import. Treat this dossier as establishing the course's baseline distinctions rather than recalling earlier course memory.
 
 ## Episode Scope And Why These Sections Are Grouped
 

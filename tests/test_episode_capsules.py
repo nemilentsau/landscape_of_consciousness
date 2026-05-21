@@ -33,6 +33,8 @@ def make_capsule() -> dict[str, object]:
         "callbacks": [
             {
                 "concept": "hard_problem",
+                "family": "target_phenomenon_discipline",
+                "tags": ["hard_problem", "phenomenal_consciousness"],
                 "summary": "Use as a pressure point, not a solved premise.",
                 "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
                 "useful_for_future_sections": ["panpsychism", "integrated information theory"],
@@ -67,6 +69,26 @@ class EpisodeCapsuleTest(unittest.TestCase):
             with self.assertRaises(EpisodeCapsuleValidationError) as context:
                 validate_episode_capsule(capsule, root=root)
             self.assertIn("durable_concepts", str(context.exception))
+
+    def test_validate_capsule_requires_callback_family_and_tags(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            capsule = make_capsule()
+            callbacks = capsule["callbacks"]
+            assert isinstance(callbacks, list)
+            callback = callbacks[0]
+            assert isinstance(callback, dict)
+            del callback["family"]
+            del callback["tags"]
+            dossier = root / str(capsule["accepted_dossier_path"])
+            dossier.parent.mkdir(parents=True)
+            dossier.write_text("# Accepted dossier\n", encoding="utf-8")
+
+            with self.assertRaises(EpisodeCapsuleValidationError) as context:
+                validate_episode_capsule(capsule, root=root)
+            message = str(context.exception)
+            self.assertIn("callbacks[0].family", message)
+            self.assertIn("callbacks[0].tags", message)
 
     def test_validate_capsule_rejects_missing_source_paths(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -7,6 +7,10 @@ from typing import Any
 from consciousness_pipeline.course_context_selection import validate_course_context_selection
 from consciousness_pipeline.course_contract import write_default_course_contract
 
+MAX_RENDERED_DURABLE_CONCEPTS = 3
+MAX_RENDERED_DO_NOT_REEXPLAIN = 3
+MAX_RENDERED_OPEN_TENSIONS = 5
+
 
 def _section_lines(manifest: Mapping[str, Any]) -> list[str]:
     lines: list[str] = []
@@ -63,26 +67,58 @@ def _unique_lines(values: list[str]) -> list[str]:
     return result
 
 
+def _shorten(value: object, limit: int = 250) -> str:
+    text = " ".join(str(value).split())
+    if len(text) <= limit:
+        return text
+    return text[: limit - 1].rstrip() + "..."
+
+
+def _relevance_score(value: str, search_terms: set[str]) -> int:
+    text_terms = set(_normalise(value).split())
+    return len(text_terms & search_terms)
+
+
+def _ranked_unique_lines(values: list[str], search_text: str, limit: int) -> list[str]:
+    unique = _unique_lines(values)
+    search_terms = {term for term in search_text.split() if len(term) > 2}
+    ranked = sorted(
+        enumerate(unique),
+        key=lambda item: (-_relevance_score(item[1], search_terms), item[0]),
+    )
+    return [value for _, value in ranked[:limit]]
+
+
 def _render_capsule_summary(capsule: Mapping[str, Any], selection: Mapping[str, Any] | None = None) -> list[str]:
     lines = [
         f"### {capsule['episode_id']}: {capsule['title']}",
         "",
-        f"- Thesis: {capsule['thesis']}",
+        f"- Thesis: {_shorten(capsule['thesis'])}",
     ]
     if selection is not None:
         lines.append(f"- Selection: {selection['selection_type']}. {selection['reason']}")
     durable_concepts = capsule.get("durable_concepts", [])
     if durable_concepts:
-        lines.append("- Durable concepts:")
-        for item in durable_concepts:
-            lines.append(f"  - {item['concept']}: {item['summary']}")
-    distinctions = capsule.get("recurring_distinctions", [])
-    if distinctions:
-        lines.append("- Recurring distinctions:")
-        for item in distinctions:
-            lines.append(f"  - {item}")
+        concept_names = [str(item["concept"]) for item in durable_concepts[:MAX_RENDERED_DURABLE_CONCEPTS]]
+        remaining = len(durable_concepts) - len(concept_names)
+        suffix = f"; {remaining} more in capsule" if remaining > 0 else ""
+        lines.append(f"- Durable concept handles: {', '.join(concept_names)}{suffix}.")
     lines.append("")
     return lines
+
+
+def _callback_context(entry: Mapping[str, Any]) -> str:
+    details: list[str] = [
+        f"episode {entry['episode_id']}",
+        f"source `{entry['source_path']}`",
+        f"capsule `{entry['capsule_path']}`",
+    ]
+    if entry.get("family"):
+        details.append(f"family `{entry['family']}`")
+    tags = entry.get("tags")
+    if isinstance(tags, list) and tags:
+        details.append("tags " + ", ".join(f"`{tag}`" for tag in tags))
+    return "; ".join(details)
 
 
 def _render_callbacks(callbacks: Mapping[str, list[Mapping[str, Any]]]) -> list[str]:
@@ -92,10 +128,7 @@ def _render_callbacks(callbacks: Mapping[str, list[Mapping[str, Any]]]) -> list[
     for concept, entries in callbacks.items():
         lines.append(f"### {concept}")
         for entry in entries:
-            lines.append(
-                f"- {entry['summary']} "
-                f"(episode {entry['episode_id']}; source `{entry['source_path']}`; capsule `{entry['capsule_path']}`)"
-            )
+            lines.append(f"- {entry['summary']} ({_callback_context(entry)})")
         lines.append("")
     return lines
 
@@ -113,10 +146,10 @@ def _render_selected_callbacks(callbacks: list[Mapping[str, Any]] | None) -> lis
         lines.append(f"### {concept}")
         for entry in entries:
             summary = str(entry.get("summary") or entry["reason"])
+            context = _callback_context(entry)
             lines.append(
                 f"- {summary} "
-                f"(episode {entry['episode_id']}; source `{entry['source_path']}`; "
-                f"capsule `{entry['capsule_path']}`; selection reason: {entry['reason']})"
+                f"({context}; selection reason: {entry['reason']})"
             )
         lines.append("")
     return lines
@@ -152,6 +185,9 @@ def render_episode_course_context(
     open_tensions = _unique_lines(
         [str(item) for capsule in prior_capsules for item in capsule.get("open_tensions", [])]
     )
+    search_text = _manifest_search_text(manifest)
+    do_not_reexplain = _ranked_unique_lines(do_not_reexplain, search_text, MAX_RENDERED_DO_NOT_REEXPLAIN)
+    open_tensions = _ranked_unique_lines(open_tensions, search_text, MAX_RENDERED_OPEN_TENSIONS)
 
     do_not_lines = [f"- {item}" for item in do_not_reexplain] or [
         "- No accepted prior do-not-reexplain constraints selected."
@@ -233,6 +269,10 @@ def _selection_callback_details(
                 and str(entry.get("source_path")) == str(selected["source_path"])
             ):
                 selected_detail["summary"] = str(entry["summary"])
+                if entry.get("family"):
+                    selected_detail["family"] = str(entry["family"])
+                if isinstance(entry.get("tags"), list):
+                    selected_detail["tags"] = [str(tag) for tag in entry["tags"]]
                 break
         detailed.append(selected_detail)
     return detailed

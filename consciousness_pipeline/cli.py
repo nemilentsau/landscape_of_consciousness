@@ -20,6 +20,7 @@ from consciousness_pipeline.course_context import write_episode_course_context
 from consciousness_pipeline.course_contract import write_default_course_contract
 from consciousness_pipeline.episode_acceptance import accept_episode
 from consciousness_pipeline.episode_runner import run_episode, select_episode_context
+from consciousness_pipeline.evaluations import evaluate_episode
 from consciousness_pipeline.headings import detect_headings
 from consciousness_pipeline.models import Heading, PageText, Section
 from consciousness_pipeline.packets import render_packet, validate_packet
@@ -177,6 +178,16 @@ def cmd_accept_episode(args: argparse.Namespace) -> None:
         print(json.dumps(result, indent=2))
 
 
+def cmd_evaluate_episode(args: argparse.Namespace) -> None:
+    report = evaluate_episode(PROJECT_ROOT, args.episode_id, stage=args.stage)
+    print(json.dumps(report, indent=2, ensure_ascii=False))
+    summary = report["summary"]
+    if isinstance(summary, dict) and int(summary["errors"]) > 0:
+        raise SystemExit(1)
+    if args.fail_on_warnings and isinstance(summary, dict) and int(summary["warnings"]) > 0:
+        raise SystemExit(1)
+
+
 def cmd_all(args: argparse.Namespace) -> None:
     cmd_extract(args)
     cmd_headings(args)
@@ -236,6 +247,20 @@ def build_parser() -> argparse.ArgumentParser:
         "--dry-run", action="store_true", help="Print the capsule job without executing it"
     )
     accept_episode_parser.set_defaults(func=cmd_accept_episode)
+    evaluate_episode_parser = subparsers.add_parser("evaluate-episode")
+    evaluate_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-005")
+    evaluate_episode_parser.add_argument(
+        "--stage",
+        choices=("context", "research", "dossier", "bundle", "accepted"),
+        default="accepted",
+        help="How much of the episode lifecycle to evaluate",
+    )
+    evaluate_episode_parser.add_argument(
+        "--fail-on-warnings",
+        action="store_true",
+        help="Exit nonzero when warnings are present, not only errors",
+    )
+    evaluate_episode_parser.set_defaults(func=cmd_evaluate_episode)
     select_context_parser = subparsers.add_parser("select-context")
     select_context_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-005")
     select_context_parser.add_argument(

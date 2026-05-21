@@ -1,1 +1,188 @@
-{"schema_version":"episode_capsule_v1","episode_id":"group-002","title":"Top-level sections Part 2","accepted_dossier_path":"episodes/group-002/notebooklm_bundle/research_dossier.md","section_ids":["6","7","8","9","10"],"thesis":"This cluster sharpens the course's metaphysical audit: before detailed consciousness theories can be compared, each view must say whether consciousness is fundamental, what it is identical with or dependent on if it is not fundamental, where it sits in Kuhn's landscape, and whether its physicalism is reductive, non-reductive, or not physicalist. Its strongest pressure is the combination of deep empirical brain dependence with the continuing gap between dependence, correlation, identity, constitution, realization, grounding, and explanation.","durable_concepts":[{"concept":"Primitive-or-not fork","summary":"Kuhn's section 6 frames fundamentality as a gateway question: if consciousness is primitive, it cannot be totally explained by a deeper non-conscious level; if it is not primitive, later theories owe an account of illusion, emergence, identity, realization, grounding, or reduction.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md"},{"concept":"Identity-demand audit","summary":"Classic mind-brain identity theory is used as more than one historical view: every complete non-fundamental theory must eventually say what consciousness is, not merely what causes, accompanies, predicts, measures, or reports it.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md"},{"concept":"Kuhn's landscape as organizing taxonomy","summary":"Section 8 is an organizing hinge rather than a mechanism. It arrays materialism, non-reductive physicalism, quantum theories, IIT, panpsychisms, monisms, dualisms, idealisms, anomalous and altered-states theories, and challenge theories so later episodes can compare targets, ontology, evidence, and testability.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md"},{"concept":"Materialism as a broad research family","summary":"Materialism is introduced as the dominant brain-based family for ordinary human consciousness, not as one theory. It includes identity, functional, computational, neurobiological, representational, embodied, biological-naturalist, a posteriori physicalist, and illusionist or deflationary programs.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md"},{"concept":"Brain dependence is not completed reduction","summary":"Lesions, stimulation, anesthesia, sleep, drugs, disorders-of-consciousness work, and neural-correlate research strongly constrain theories, but the dossier repeatedly warns that dependence and correlation do not by themselves establish identity, constitution, or reduction of phenomenal character.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md"},{"concept":"Non-reductive physicalism as boundary position","summary":"Non-reductive physicalism keeps consciousness wholly physical and rejects a second substance while denying that mental properties are identical with, translatable into, or fully explained by physical states and laws. It preserves higher-level explanation but must specify the dependence relation.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md"},{"concept":"Epistemic tagging against false equivalence","summary":"The landscape's breadth is useful only if future episodes distinguish mainstream scientific constraints, active philosophical debate, formal theory, speculative extension, religious or spiritual metaphysics, and weakly evidenced anomalous claims.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md"}],"recurring_distinctions":["Primitive or fundamental consciousness versus weak emergence, strong emergence, non-fundamentality, or illusion.","Identity, type identity, token identity, functional identity, neural identity, informational identity, realization, constitution, grounding, supervenience, emergence, psychophysical law, correlation, and causation.","Brain dependence and empirical constraint versus reductive physicalism or completed explanation.","Materialism as a family versus any single materialist theory.","Reductive materialism, a posteriori physicalism, biological naturalism, illusionism, non-reductive physicalism, property-dualist-adjacent physicalism, and nonphysicalism.","Phenomenal consciousness versus access, report, metacognition, neural correlates, subjectivity, intentionality, and higher-level psychology.","A taxonomy or landscape versus evidence, mechanism, ranking, or adjudication.","Empirically constrained neuroscience, analytic metaphysics, speculative physics, religious or spiritual metaphysics, and weakly evidenced anomalous claims.","Higher-level psychological or special-science explanation versus strict microphysical reduction."],"do_not_reexplain":["Do not reargue Mary, zombies, or the basic physicalism-versus-nonphysicalism setup except where a later section directly needs them.","Do not restart the hard problem or phenomenal-versus-access distinction from scratch; this episode uses those as inherited background from group 001.","Do not reintroduce Kuhn's landscape as if it were new; future episodes can use it as the course map while naming the relevant category and epistemic status.","Do not explain materialism as one unified theory; future episodes should identify the specific materialist subfamily under discussion.","Do not repeat the full empirical case that ordinary human consciousness is deeply brain-dependent unless a later theory needs a specific item of evidence.","Do not let neural correlates, access mechanisms, report mechanisms, or information flow stand in for identity or explanation without stating the bridge relation.","Do not re-explain non-reductive physicalism's basic two-commitment setup every time; use the established tension between physical dependence and irreducible higher-level mental properties."],"open_tensions":["Whether the explanatory gap shows that consciousness is metaphysically fundamental or instead reflects introspective, conceptual, or current scientific limits remains unsettled.","Fundamental-consciousness views must explain why allegedly basic consciousness is so tightly filtered through neural organization, and panpsychist or Russellian variants still face the combination problem.","Identity theory keeps pressure on non-fundamental accounts, but it faces multiple realizability, modal objections, the explanatory gap, and the need to specify the level and criteria of identity.","Kuhn's broad landscape helps orient inquiry while risking false equivalence between empirical neuroscience, live philosophical metaphysics, speculative physics, spiritual metaphysics, and weakly evidenced anomalous claims.","Materialism has the strongest empirical leverage for ordinary human consciousness, but brain dependence does not automatically reduce or identify phenomenal character.","Searle's biological naturalism remains classification-sensitive: it is brain-based but resists many standard materialist reductions and insists on first-person ontology.","Non-reductive physicalism remains unstable unless it answers causal exclusion and specifies whether mental properties are genuinely distinct, causally efficacious, reducible after all, or only conceptually non-reductive.","AI consciousness, uploading, survival beyond death, and cosmic purpose receive only conditional or negative constraints here; sections 6-10 do not establish any of them."],"callbacks":[{"concept":"Use the primitive-or-not fork before comparing mechanisms","summary":"Later episodes should ask whether a theory treats consciousness as fundamental, emergent, non-fundamental, or illusory before judging its mechanism or evidence.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md","useful_for_future_sections":["panpsychism and panprotopsychism","Russellian monism","idealism","strong emergence","illusionism"]},{"concept":"Require identity or an identity-like relation","summary":"For any non-fundamental account, return to this episode's audit rule: a theory must say what consciousness is identical with, realized by, constituted by, grounded in, or otherwise dependent on.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md","useful_for_future_sections":["functional and computational theories","neurobiological mechanism theories","integrated information theory","global access theories","mind uploading"]},{"concept":"Keep the landscape epistemically tagged","summary":"When future episodes move through Kuhn's wide taxonomy, preserve the distinction between mainstream empirical constraints, formal theories, active philosophical views, speculative extensions, spiritual metaphysics, and weakly evidenced anomalous claims.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md","useful_for_future_sections":["quantum theories","anomalous and altered states theories","dualisms","idealisms","course recap episodes"]},{"concept":"Use brain dependence as constraint, not shortcut","summary":"Later neuroscience-heavy episodes can rely on this episode's baseline: lesions, stimulation, anesthesia, sleep, drugs, disorders of consciousness, and NCC work strongly constrain theories but do not by themselves settle metaphysical reduction.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md","useful_for_future_sections":["neural correlates of consciousness","anesthesia and sleep","global access theories","recurrent processing theory","no-report paradigms"]},{"concept":"Return to the non-reductive physicalism dilemma","summary":"For emergence, mental causation, and higher-level explanation, use this episode's Kim-style dilemma: mental properties that are too distinct risk property dualism or causal idleness, while mental properties that are not distinct enough collapse toward identity or vocabulary-level nonreduction.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md","useful_for_future_sections":["emergentism","property dualism","mental causation","special sciences","higher-level psychological explanation"]},{"concept":"Demand identity criteria for AI and uploading claims","summary":"This episode supports only conditional implications for AI consciousness and uploading: later claims must say whether consciousness or personal preservation depends on function, information pattern, neural continuity, biological process, fundamentality, or some other bridge condition.","source_path":"episodes/group-002/notebooklm_bundle/research_dossier.md","useful_for_future_sections":["AI consciousness","machine consciousness","mind uploading","virtual immortality"]}]}
+{
+  "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+  "callbacks": [
+    {
+      "concept": "Use the primitive-or-not fork before comparing mechanisms",
+      "family": "metaphysical_breadth_not_explanation",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Later episodes should ask whether a theory treats consciousness as fundamental, emergent, non-fundamental, or illusory before judging its mechanism or evidence.",
+      "tags": [
+        "fundamentality",
+        "emergence",
+        "illusionism"
+      ],
+      "useful_for_future_sections": [
+        "panpsychism and panprotopsychism",
+        "Russellian monism",
+        "idealism",
+        "strong emergence",
+        "illusionism"
+      ]
+    },
+    {
+      "concept": "Require identity or an identity-like relation",
+      "family": "bridge_relation_required",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "For any non-fundamental account, return to this episode's audit rule: a theory must say what consciousness is identical with, realized by, constituted by, grounded in, or otherwise dependent on.",
+      "tags": [
+        "identity",
+        "realization",
+        "grounding"
+      ],
+      "useful_for_future_sections": [
+        "functional and computational theories",
+        "neurobiological mechanism theories",
+        "integrated information theory",
+        "global access theories",
+        "mind uploading"
+      ]
+    },
+    {
+      "concept": "Keep the landscape epistemically tagged",
+      "family": "epistemic_false_balance",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "When future episodes move through Kuhn's wide taxonomy, preserve the distinction between mainstream empirical constraints, formal theories, active philosophical views, speculative extensions, spiritual metaphysics, and weakly evidenced anomalous claims.",
+      "tags": [
+        "epistemic_status",
+        "taxonomy",
+        "weak_evidence"
+      ],
+      "useful_for_future_sections": [
+        "quantum theories",
+        "anomalous and altered states theories",
+        "dualisms",
+        "idealisms",
+        "course recap episodes"
+      ]
+    },
+    {
+      "concept": "Use brain dependence as constraint, not shortcut",
+      "family": "brain_dependence_constraint",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Later neuroscience-heavy episodes can rely on this episode's baseline: lesions, stimulation, anesthesia, sleep, drugs, disorders of consciousness, and NCC work strongly constrain theories but do not by themselves settle metaphysical reduction.",
+      "tags": [
+        "brain_dependence",
+        "neuroscience",
+        "physicalism"
+      ],
+      "useful_for_future_sections": [
+        "neural correlates of consciousness",
+        "anesthesia and sleep",
+        "global access theories",
+        "recurrent processing theory",
+        "no-report paradigms"
+      ]
+    },
+    {
+      "concept": "Return to the non-reductive physicalism dilemma",
+      "family": "bridge_relation_required",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "For emergence, mental causation, and higher-level explanation, use this episode's Kim-style dilemma: mental properties that are too distinct risk property dualism or causal idleness, while mental properties that are not distinct enough collapse toward identity or vocabulary-level nonreduction.",
+      "tags": [
+        "non_reductive_physicalism",
+        "mental_causation",
+        "exclusion"
+      ],
+      "useful_for_future_sections": [
+        "emergentism",
+        "property dualism",
+        "mental causation",
+        "special sciences",
+        "higher-level psychological explanation"
+      ]
+    },
+    {
+      "concept": "Demand identity criteria for AI and uploading claims",
+      "family": "identity_continuity_required",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "This episode supports only conditional implications for AI consciousness and uploading: later claims must say whether consciousness or personal preservation depends on function, information pattern, neural continuity, biological process, fundamentality, or some other bridge condition.",
+      "tags": [
+        "ai",
+        "uploading",
+        "identity_criteria"
+      ],
+      "useful_for_future_sections": [
+        "AI consciousness",
+        "machine consciousness",
+        "mind uploading",
+        "virtual immortality"
+      ]
+    }
+  ],
+  "do_not_reexplain": [
+    "Do not reargue Mary, zombies, or the basic physicalism-versus-nonphysicalism setup except where a later section directly needs them.",
+    "Do not restart the hard problem or phenomenal-versus-access distinction from scratch; this episode uses those as inherited background from group 001.",
+    "Do not reintroduce Kuhn's landscape as if it were new; future episodes can use it as the course map while naming the relevant category and epistemic status.",
+    "Do not explain materialism as one unified theory; future episodes should identify the specific materialist subfamily under discussion.",
+    "Do not repeat the full empirical case that ordinary human consciousness is deeply brain-dependent unless a later theory needs a specific item of evidence.",
+    "Do not let neural correlates, access mechanisms, report mechanisms, or information flow stand in for identity or explanation without stating the bridge relation.",
+    "Do not re-explain non-reductive physicalism's basic two-commitment setup every time; use the established tension between physical dependence and irreducible higher-level mental properties."
+  ],
+  "durable_concepts": [
+    {
+      "concept": "Primitive-or-not fork",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Kuhn's section 6 frames fundamentality as a gateway question: if consciousness is primitive, it cannot be totally explained by a deeper non-conscious level; if it is not primitive, later theories owe an account of illusion, emergence, identity, realization, grounding, or reduction."
+    },
+    {
+      "concept": "Identity-demand audit",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Classic mind-brain identity theory is used as more than one historical view: every complete non-fundamental theory must eventually say what consciousness is, not merely what causes, accompanies, predicts, measures, or reports it."
+    },
+    {
+      "concept": "Kuhn's landscape as organizing taxonomy",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Section 8 is an organizing hinge rather than a mechanism. It arrays materialism, non-reductive physicalism, quantum theories, IIT, panpsychisms, monisms, dualisms, idealisms, anomalous and altered-states theories, and challenge theories so later episodes can compare targets, ontology, evidence, and testability."
+    },
+    {
+      "concept": "Materialism as a broad research family",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Materialism is introduced as the dominant brain-based family for ordinary human consciousness, not as one theory. It includes identity, functional, computational, neurobiological, representational, embodied, biological-naturalist, a posteriori physicalist, and illusionist or deflationary programs."
+    },
+    {
+      "concept": "Brain dependence is not completed reduction",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Lesions, stimulation, anesthesia, sleep, drugs, disorders-of-consciousness work, and neural-correlate research strongly constrain theories, but the dossier repeatedly warns that dependence and correlation do not by themselves establish identity, constitution, or reduction of phenomenal character."
+    },
+    {
+      "concept": "Non-reductive physicalism as boundary position",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "Non-reductive physicalism keeps consciousness wholly physical and rejects a second substance while denying that mental properties are identical with, translatable into, or fully explained by physical states and laws. It preserves higher-level explanation but must specify the dependence relation."
+    },
+    {
+      "concept": "Epistemic tagging against false equivalence",
+      "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+      "summary": "The landscape's breadth is useful only if future episodes distinguish mainstream scientific constraints, active philosophical debate, formal theory, speculative extension, religious or spiritual metaphysics, and weakly evidenced anomalous claims."
+    }
+  ],
+  "episode_id": "group-002",
+  "open_tensions": [
+    "Whether the explanatory gap shows that consciousness is metaphysically fundamental or instead reflects introspective, conceptual, or current scientific limits remains unsettled.",
+    "Fundamental-consciousness views must explain why allegedly basic consciousness is so tightly filtered through neural organization, and panpsychist or Russellian variants still face the combination problem.",
+    "Identity theory keeps pressure on non-fundamental accounts, but it faces multiple realizability, modal objections, the explanatory gap, and the need to specify the level and criteria of identity.",
+    "Kuhn's broad landscape helps orient inquiry while risking false equivalence between empirical neuroscience, live philosophical metaphysics, speculative physics, spiritual metaphysics, and weakly evidenced anomalous claims.",
+    "Materialism has the strongest empirical leverage for ordinary human consciousness, but brain dependence does not automatically reduce or identify phenomenal character.",
+    "Searle's biological naturalism remains classification-sensitive: it is brain-based but resists many standard materialist reductions and insists on first-person ontology.",
+    "Non-reductive physicalism remains unstable unless it answers causal exclusion and specifies whether mental properties are genuinely distinct, causally efficacious, reducible after all, or only conceptually non-reductive.",
+    "AI consciousness, uploading, survival beyond death, and cosmic purpose receive only conditional or negative constraints here; sections 6-10 do not establish any of them."
+  ],
+  "recurring_distinctions": [
+    "Primitive or fundamental consciousness versus weak emergence, strong emergence, non-fundamentality, or illusion.",
+    "Identity, type identity, token identity, functional identity, neural identity, informational identity, realization, constitution, grounding, supervenience, emergence, psychophysical law, correlation, and causation.",
+    "Brain dependence and empirical constraint versus reductive physicalism or completed explanation.",
+    "Materialism as a family versus any single materialist theory.",
+    "Reductive materialism, a posteriori physicalism, biological naturalism, illusionism, non-reductive physicalism, property-dualist-adjacent physicalism, and nonphysicalism.",
+    "Phenomenal consciousness versus access, report, metacognition, neural correlates, subjectivity, intentionality, and higher-level psychology.",
+    "Empirically constrained neuroscience, analytic metaphysics, speculative physics, religious or spiritual metaphysics, and weakly evidenced anomalous claims."
+  ],
+  "schema_version": "episode_capsule_v1",
+  "section_ids": [
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "thesis": "This cluster sharpens the course's metaphysical audit: before detailed consciousness theories can be compared, each view must say whether consciousness is fundamental, what it is identical with or dependent on if it is not fundamental, where it sits in Kuhn's landscape, and whether its physicalism is reductive, non-reductive, or not physicalist. Its strongest pressure is the combination of deep empirical brain dependence with the continuing gap between dependence, correlation, identity, constitution, realization, grounding, and explanation.",
+  "title": "Top-level sections Part 2"
+}

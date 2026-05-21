@@ -1,190 +1,35 @@
 {
-  "schema_version": "episode_capsule_v1",
-  "episode_id": "group-005",
-  "title": "Top-level sections Part 5",
   "accepted_dossier_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-  "section_ids": [
-    "21",
-    "22",
-    "23",
-    "24",
-    "25"
-  ],
-  "thesis": "This cluster pivots from theories of consciousness to consequences under uncertainty across implications, meaning, AI consciousness, virtual immortality, and survival beyond death. Its strongest case is that consciousness theories already shape moral status judgments, machine-mind possibilities, upload coherence, and end-of-life interpretation, so implication discipline is intellectually honest rather than optional. Its limit is that every downstream implication breaks at a bridge: meaning does not follow automatically from materialism or its denial, AI consciousness does not follow from fluent language or self-report, uploading does not follow from copying memories or a connectome, and survival does not follow from near-death reports, religious hope, or metaphysical possibility. The cluster's value is to force each theory to declare what must be preserved, instantiated, measured, or evidenced before its implication is justified.",
-  "durable_concepts": [
-    {
-      "concept": "Implications as a disciplined pivot from taxonomy to consequences",
-      "summary": "Section 21 is not a new explanation of consciousness but a conditional consequence test. Physicalist and biological theories tend to make consciousness dependent on organized living brains, narrowing prospects for AI consciousness, digital immortality, and postmortem survival. Functionalist, computational, global-workspace, higher-order, and information-based theories make nonbiological consciousness more intelligible in principle. Dualist, idealist, and some panpsychist or theistic frameworks make survival or cosmic meaning less conceptually alien without thereby supplying empirical evidence. The strongest case for taking implications seriously is practical: theories shape moral status judgments under uncertainty.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Sentience as the ethical bridge for moral status",
-      "summary": "Shepherd, Birch, Gruen, Sebo, Long, and Butlin treat conscious experience, especially suffering and enjoyment, as central to whether a being can be wronged. This does not settle metaphysics but it explains why AI consciousness, animal consciousness, and disorders of consciousness cannot wait for perfect theory before entering ethics. The capsule preserves the link without collapsing moral importance into evidence of consciousness.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Implication overreach as the standing risk",
-      "summary": "Doerig, Schurger, and Herzog warn that empirical theories of consciousness need stricter criteria, and moral urgency does not make a theory true. A view can organize questions about AI, uploading, death, and value without being confirmed enough to license confident metaphysical conclusions. Future episodes should treat implication overreach as the default failure mode of this cluster.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Materialism, naturalism, and the really hard problem of meaning",
-      "summary": "A materialist account makes built-in cosmic purpose, providential design, and afterlife-centered consolation harder to rationalize as scientific implications, but does not prove nihilism. Physics, cosmology, evolutionary biology, and neuroscience do not need cosmic intention as an explanatory variable, and Weinberg captures the emotional force of an intelligible-yet-purposeless universe. Philosophy of biology separates biological function from cosmic teleology so that hearts, eyes, and homeostatic systems can have functions shaped by selection without a final aim.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Naturalistic and humanist programs for meaning in life",
-      "summary": "Flanagan frames meaning as the really hard problem, Kitcher defends secular humanism, Wolf advances fitting-fulfillment as engagement with projects worthy of love, and Metz develops objective naturalist accounts of meaning in life that do not require God or an immortal soul. Psychological research analyzes meaning in terms of coherence, purpose, and existential mattering and finds modest but real associations between perceived meaning and health.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Three distinct meaning questions that must not be collapsed",
-      "summary": "Kuhn's materialist implication can compress cosmic purpose, meaning in life, and objective value into one question. The absence of cosmic purpose does not entail that lives cannot be meaningful, sentience is not the only proposed ground of value, and Hume-style and Moore-style worries remain: facts about brains, evolution, preferences, or flourishing do not automatically yield what one ought to do. Anti-realists, error theorists, and moral naturalists each press different parts of this terrain.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Multiple realizability and the computational route to AI consciousness",
-      "summary": "Functionalism individuates mental states by their roles in a cognitive system rather than by the material that implements them, and the computational theory of mind adds that some mental processes may be computationally describable. On these views, carbon neurons are one implementation of the relevant causal organization, not a metaphysical necessity. Turing's imitation game did not solve phenomenal consciousness but made machine mentality a legitimate scientific and philosophical target.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Architecture-sensitive AI indicators rather than behavior alone",
-      "summary": "Dehaene, Lau, and Kouider distinguish unconscious processing from conscious global availability and self-monitoring (C1, C2) and argue that machine architectures could in principle implement such computations. Butlin and colleagues translate recurrent processing, global workspace, higher-order, predictive-processing, and attention-schema theories into AI-checkable indicators including integrated perceptual processing, global broadcasting, self-modeling, attention-like control, agency, and embodied interaction. Chalmers argues current LLMs face obstacles in recurrence, agency, global workspace, persistent world modeling, and embodiment while leaving open that successors could add these capacities. Graziano's attention schema theory offers an engineering route by treating subjective-awareness claims as arising from an internal model of attention.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Biological-naturalist, IIT, and embodied objections to substrate-independent AI consciousness",
-      "summary": "Searle's Chinese Room argues formal symbol manipulation is not sufficient for understanding or consciousness; biological naturalism allows that an artificial machine could be conscious only if it duplicated the brain's relevant causal powers. The simulation objection notes that simulating a rainstorm does not make anything wet. Block-style absent-qualia cases press that functional organization could be matched while phenomenology is absent. IIT-inspired critics such as Koch argue consciousness depends on intrinsic integrated causal structure, so ordinary programmable computers may have little or no consciousness despite intelligent behavior. Embodied and biological critics add affect, metabolism, homeostasis, development, sensorimotor coupling, and social life as possible constitutive or enabling factors.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "No accepted AI consciousness meter; precaution under uncertainty",
-      "summary": "Self-reports are cheap, prompt-sensitive, and trainable; LLMs can role-play fear, pain, selfhood, or denial. Bender and colleagues' stochastic-parrot critique warns against treating fluent language as grounded understanding or experience. The Butlin indicator method is more rigorous than casual anthropomorphism but remains theory-laden and conditional. The practical conclusion is precaution under uncertainty, not certainty that current AI systems are conscious or certainty that machines can never be conscious. Long and Sebo, Birch, and AI-welfare authors turn this into a precautionary problem for policy.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Virtual immortality requires two unsettled claims to both hold",
-      "summary": "First, a nonbiological system must be able to instantiate phenomenal consciousness rather than merely simulate intelligent behavior. Second, the uploaded system must preserve personal identity or first-person continuity rather than merely reproduce memories, personality, and speech patterns. If consciousness is fixed by physical or functional organization, whole-brain emulation may be possible in principle. If consciousness depends on biological causal powers, IIT-style intrinsic integrated causal structure, noncomputational features, a soul, or an irreducible subject, strong virtual immortality may fail in principle.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Functionalist case for uploading via organizational invariance and WBE roadmap",
-      "summary": "Chalmers's fading- and dancing-qualia arguments use gradual replacement thought experiments: if neurons were replaced one by one by functionally equivalent silicon, it seems implausible that experience would silently fade or invert while behavior and introspective reports remain unchanged. Sandberg and Bostrom's whole-brain-emulation roadmap decomposes the project into acquisition, interpretation, modeling, simulation, and embodiment or environmental interaction without invoking a violation of physical law. It frames an engineering target without showing uploading is near.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Psychological continuity and Parfit-style survival for uploads",
-      "summary": "What matters may be continuation of memory, character, agency, projects, and causal psychological structure rather than persistence of the same atoms. Haggstrom argues that if weak survival is enough, an upload preserving memories and personality may count as survival unless one posits an extra further fact. Cerullo defends branching identity possibilities in which multiple sufficiently continuous successors might each be genuine continuations.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "The copy problem, fission, and connectome underspecification",
-      "summary": "Even a conscious digital successor with exact memories may not be the numerically same subject. Schneider emphasizes that pattern copying may create a digital successor with the original's memories while the biological subject dies. Fission cases sharpen the problem: if one scan creates five equal successors, identity cannot remain one-one in the ordinary numerical sense. Pigliucci and Hopkins argue that uploading talk can smuggle in a quasi-dualist transferable-mind picture while officially materialist. The technical target is also underspecified: a connectome may be only a wiring diagram, while synaptic strengths, neuromodulators, glia, proteins, molecular memory traces, metabolism, development, embodiment, and brain-body regulation may matter.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Brain dependence as the central scientific constraint on survival",
-      "summary": "Damage to specific brain systems damages perception, memory, language, personality, emotion, agency, and consciousness. Brain death or death by neurologic criteria is a clinical standard built around irreversible loss of whole-brain function. Gennaro and Fishman's argument from brain damage makes the extrapolation explicit: if partial brain destruction partially destroys mental function, total destruction is strong evidence against continuing ordinary mental life.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Metaphysical and theological survival routes",
-      "summary": "Dualism argues that if the subject of experience is not identical to the body or brain, bodily death need not logically entail personal annihilation. Theistic resurrection arguments try to make survival compatible with materialism: van Inwagen imagines divine preservation of the body or a crucial body-part, Baker's constitution view links personal identity to the same first-person perspective rather than strict material identity, and Zimmerman proposes a falling-elevator model in which a resurrection body buds from the dying body to preserve causal continuity. These are metaphysical and theological arguments, not laboratory evidence.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Empirical survival research is suggestive but contested",
-      "summary": "Prospective NDE studies report lucid memories in some cardiac-arrest survivors. Parnia's AWARE work found a small minority reporting explicit awareness around resuscitation, and AWARE-II reported recalled experiences plus EEG activity compatible with consciousness during CPR in some cases. UVA's Stevenson-Tucker reincarnation research reports young children with apparently verifiable statements about deceased persons, sometimes with associated phobias or birthmarks. Hypoxia, drugs, REM intrusion, temporal-lobe phenomena, expectation, memory editing, contamination, leading questions, selective reporting, cultural expectation, and long investigative delays remain serious alternative explanations; hidden-target tests have not produced robust independent confirmation.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Naturalistic nonpersonal continuity as a distinct option",
-      "summary": "Thomas Clark's generic subjective continuity denies that anyone will experience their own absence and suggests subjectivity continues wherever new conscious organisms exist, but concedes the dead person's memories and personal identity do not continue. A block-universe or eternalist reading of relativity can say past life-events remain real in four-dimensional spacetime, but does not by itself supply a new stream of postmortem experience. These are nonpersonal continuity theses, not ordinary survival.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Five-part academic case for the cluster",
-      "summary": "First, implication discipline is intellectually honest: a theory's ontology has consequences for moral status, machine minds, uploads, death, and purpose. Second, sentience is a serious ethical bridge into moral status. Third, AI consciousness is a genuine theory test through theory-derived indicators rather than casual anthropomorphism or dogmatic denial. Fourth, uploading exposes the difference between information preservation and subject preservation as a conditional on functional organization and psychological continuity. Fifth, survival beyond death is a hard boundary condition that forces clarity about personal identity, subjecthood, memory, and embodiment across physicalism, dualism, idealism, theistic materialism, NDE and reincarnation research, and naturalistic consolation.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    },
-    {
-      "concept": "Bridge discipline as the cluster's central methodological rule",
-      "summary": "Every claim in this cluster should be asked: what exactly continues or matters - function, information pattern, biological process, intrinsic causal structure, psychological continuity, bodily continuity, soul, divine act, generic subjectivity, or a completed life in spacetime? Without that answer, the implication is rhetoric rather than theory. This rule unifies AI, meaning, uploading, and survival discussions in this and future episodes.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md"
-    }
-  ],
-  "recurring_distinctions": [
-    "Theories of consciousness versus their downstream implications under uncertainty.",
-    "Behavior, fluent language, and self-report versus phenomenal experience itself.",
-    "Information preservation versus subject preservation in uploading scenarios.",
-    "Numerical personal identity versus qualitative psychological continuity.",
-    "Brain dependence as mainstream constraint versus metaphysical possibility of survival.",
-    "Cosmic purpose versus meaning in life versus objective value as three distinct meaning questions.",
-    "Biological function shaped by selection versus cosmic teleology.",
-    "Naturalism that undercuts cosmic design versus a positive claim of nihilism or moral anti-realism.",
-    "Multiple realizability and computational functionalism versus biological naturalism and IIT-style intrinsic causal structure.",
-    "Architecture-sensitive AI indicators (Butlin, Dehaene C1/C2, attention schema) versus casual anthropomorphism or dogmatic machine denial.",
-    "Stochastic-parrot fluency versus grounded understanding or experience.",
-    "Simulation of a process versus instantiation of the process with the right causal powers.",
-    "Connectome wiring diagram versus the full target including synaptic strengths, neuromodulators, glia, proteins, molecular traces, metabolism, embodiment, and brain-body regulation.",
-    "Chalmers-style organizational invariance and fading- or dancing-qualia intuition versus absent-qualia and substrate-essential objections.",
-    "Psychological continuity sufficient for survival versus a numerical further fact that copying cannot preserve.",
-    "Gradual replacement versus destructive scan-and-copy framings of upload.",
-    "Theistic resurrection routes (van Inwagen, Baker, Zimmerman) versus substance dualism and versus naturalistic survival denial.",
-    "NDE and reincarnation as legitimate clinical and phenomenological phenomena versus established evidence of postmortem personal survival.",
-    "Naturalistic nonpersonal continuity (Clark, eternalism) versus ordinary personal survival.",
-    "Moral importance and precautionary urgency versus evidence that the target system is conscious.",
-    "Under-attribution of AI sentience versus over-attribution from training, role-play, and user projection.",
-    "Mainstream scientific theory, active philosophical debate, formal theory, speculative extension, religious or spiritual metaphysics, and weakly evidenced claim as distinct epistemic categories within this cluster."
-  ],
-  "do_not_reexplain": [
-    "Do not restart the hard problem, Mary, zombies, Nagel's bat, the explanatory gap, or the phenomenal-versus-access distinction; this cluster inherits them as audit tools from earlier episodes.",
-    "Do not redo the primitive-or-not fork or the warning that correlation is not identity, realization, constitution, grounding, or explanation; reuse the inherited rule.",
-    "Do not re-enumerate Kuhn's whole taxonomy of physicalist, biological, functional, computational, quantum, IIT, panpsychist, monist, dualist, idealist, anomalous, and challenge approaches; cite the section and move to its implication.",
-    "Do not re-state the conditional shape of anomalous and altered-state claims established in the prior episode; treat psi, NDE, OBE, and survival evidence as conditional and contested by default.",
-    "Do not re-list the standard methodological objections to psi and NDE evidence (small effects, publication bias, optional stopping, flexible analysis, file drawer, decline effects, replication failures, naturalistic competitors); cite them and move on.",
-    "Do not re-derive multiple realizability, the computational theory of mind, Searle's Chinese Room, biological naturalism, IIT intrinsic-causal-structure framing, or Block's absent-qualia case; cite each by name.",
-    "Do not re-explain Butlin and colleagues' indicator method, Dehaene's C1/C2 distinction, Graziano's attention schema, or Chalmers's obstacles for current LLMs; this episode has already established their roles.",
-    "Do not re-explain Chalmers's fading-qualia and dancing-qualia arguments or the Sandberg and Bostrom whole-brain-emulation roadmap from scratch; reuse them as named anchors for upload discussions.",
-    "Do not re-explain the copy problem, fission cases, or connectome underspecification each time uploading is mentioned; treat them as standing constraints on any upload claim.",
-    "Do not re-explain brain dependence and death by neurologic criteria as new arguments; treat them as the mainstream constraint on survival claims.",
-    "Do not re-explain Clark's generic subjective continuity or block-universe eternalism as if they were ordinary survival theses; remember they are nonpersonal continuity options.",
-    "Do not re-litigate naturalistic meaning programs (Flanagan, Kitcher, Wolf, Metz) or the separation of cosmic purpose, meaning in life, and objective value; cite the established frame."
-  ],
-  "open_tensions": [
-    "Whether moral status under uncertainty can be operationalized for AI systems without either over-attributing experience from fluency and self-report or dogmatically denying machine sentience remains unresolved.",
-    "Whether any architecture-derived AI consciousness indicator set (Butlin and colleagues, C1/C2, attention schema) can become an accepted consciousness meter rather than a theory-laden conditional checklist is open.",
-    "Whether functional organization plus multiple realizability is sufficient for phenomenal consciousness, or whether biological causal powers, IIT-style intrinsic structure, embodiment, or noncomputational features are required, remains unsettled.",
-    "Whether psychological continuity is sufficient for personal survival or whether a numerical further fact blocks uploads from being the original subject is unresolved.",
-    "Whether destructive scan-and-copy uploads differ in personal-survival status from gradual replacement uploads, and whether fission cases admit any one-one identity story, is open.",
-    "Whether a connectome plus standard simulation captures enough of synaptic dynamics, neuromodulators, glia, proteins, molecular traces, metabolism, development, embodiment, and brain-body regulation to preserve a subject is technically underspecified.",
-    "Whether NDE and reincarnation literatures will mature into robust independently verified evidence or remain weakly evidenced relative to their implications is unresolved.",
-    "Whether theistic resurrection accounts (van Inwagen body-snatching, Baker constitution, Zimmerman falling-elevator) can preserve numerical identity without smuggling in substance dualism is open.",
-    "Whether naturalistic nonpersonal continuity (Clark, eternalism) provides any consolation a listener would actually accept as survival is open.",
-    "Whether materialism entails moral anti-realism or nihilism, or whether moral naturalism and humanistic value theory succeed without cosmic purpose, remains contested.",
-    "Whether sentience is the unique or merely one ground of moral status alongside agency, rationality, relationships, ecological embeddedness, and social practice is unresolved.",
-    "Whether precautionary AI-welfare policy should treat present systems as plausibly sentient or only as a future possibility for which research and policy capacity should be built remains open.",
-    "Whether the cluster's implications are equally evidenced across brain-based neuroscience, analytic metaphysics, AI-welfare forecasting, transhumanist speculation, religious doctrine, and anomalous empirical claims, or whether they must be ranked, is an explicit false-balance hazard."
-  ],
   "callbacks": [
     {
       "concept": "Force theories to declare their bridge before granting implications",
-      "summary": "When later episodes or recap sections invoke AI consciousness, uploading, survival, or meaning conclusions, return to this episode's bridge-discipline rule: ask which relation (identity, realization, constitution, organizational invariance, psychological continuity, bodily continuity, divine preservation, soul-body pairing, resurrection, memory transfer, generic subjectivity) is doing the work, and refuse implications until it is named.",
+      "family": "bridge_relation_required",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "When future episodes draw consequences about AI consciousness, uploading, survival, moral status, or meaning, ask which relation is doing the work: identity, realization, constitution, organizational invariance, psychological continuity, bodily continuity, soul-body pairing, divine preservation, resurrection, memory transfer, or generic subjectivity. Do not grant the implication until the bridge is named.",
+      "tags": [
+        "bridge_relations",
+        "implications",
+        "theory_comparison"
+      ],
       "useful_for_future_sections": [
         "course recap episodes",
         "theory comparison episodes",
         "AI consciousness",
         "mind uploading",
-        "virtual immortality",
         "survival and afterlife claims",
         "meaning and value implications"
       ]
     },
     {
       "concept": "Treat moral importance and evidence of consciousness as separate questions",
-      "summary": "When future episodes discuss animal welfare, disorders of consciousness, AI sentience, or moral status under uncertainty, reuse this episode's framing: sentience grounds a serious ethical bridge to moral status, but moral urgency does not make a theory true and is not itself evidence that a system is conscious.",
+      "family": "target_phenomenon_discipline",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Sentience can be morally decisive if present, but moral urgency is not evidence that a system is conscious. Use this distinction when discussing animals, disorders of consciousness, AI welfare, or precautionary policy.",
+      "tags": [
+        "sentience",
+        "moral_status",
+        "precaution"
+      ],
       "useful_for_future_sections": [
         "AI welfare and ethics",
         "animal consciousness",
@@ -195,8 +40,15 @@
     },
     {
       "concept": "Use architecture-sensitive AI indicators rather than fluency or self-report",
-      "summary": "When later episodes evaluate AI consciousness claims, return to Butlin and colleagues' indicator method, Dehaene's C1/C2 distinction, Graziano's attention schema, and Chalmers's catalog of current LLM obstacles (recurrence, agency, global workspace, persistent world modeling, embodiment), and refuse to treat fluent language, role-played distress, or claimed self-awareness as sufficient on their own.",
+      "family": "ai_fluency_not_consciousness",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Future AI-consciousness claims should use theory-derived indicators such as recurrence, global availability, self-modeling, agency, world modeling, embodiment, and attention-like control. Fluent language, role-played distress, or claims of self-awareness are not sufficient on their own.",
+      "tags": [
+        "ai",
+        "measurement",
+        "self_report",
+        "phenomenal_consciousness"
+      ],
       "useful_for_future_sections": [
         "AI consciousness",
         "large language model claims",
@@ -206,9 +58,17 @@
       ]
     },
     {
-      "concept": "Hold the substrate-independence question open with both sides on the table",
-      "summary": "When uploading, machine consciousness, or substrate questions return, reuse this episode's pairing: multiple realizability and computational functionalism on one side, Searle's Chinese Room, biological naturalism, IIT intrinsic-causal-structure, Block-style absent qualia, and embodied or affective views on the other. Neither side has been settled; an implication that relies on one side must say so.",
+      "concept": "Hold substrate independence open with both sides on the table",
+      "family": "bridge_relation_required",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "When machine consciousness or uploading returns, preserve both sides: multiple realizability and computational functionalism make nonbiological consciousness possible in principle, while biological naturalism, IIT-style intrinsic causal structure, absent-qualia worries, and embodied or affective views warn that computation or behavior may not be enough.",
+      "tags": [
+        "ai",
+        "substrate_independence",
+        "functionalism",
+        "biological_naturalism",
+        "iit"
+      ],
       "useful_for_future_sections": [
         "AI consciousness",
         "virtual immortality",
@@ -219,9 +79,16 @@
       ]
     },
     {
-      "concept": "Separate information preservation from subject preservation for any upload",
-      "summary": "When later episodes touch whole-brain emulation, digital successors, memorial chatbots, or transhumanist immortality, return to this episode's distinction: a successful upload claim must state both a consciousness criterion (will the digital system be phenomenally conscious) and a personal-identity criterion (will it be the original subject rather than a successor or copy), and must address the copy problem, fission, gradual versus destructive replacement, and connectome underspecification.",
+      "concept": "Separate information preservation from subject preservation for uploads",
+      "family": "identity_continuity_required",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "An upload claim needs both a consciousness criterion and a personal-identity criterion. A copied pattern, memory set, connectome, or digital successor may preserve information without preserving the original first-person subject.",
+      "tags": [
+        "uploading",
+        "personal_identity",
+        "continuity",
+        "copy_problem"
+      ],
       "useful_for_future_sections": [
         "mind uploading",
         "virtual immortality",
@@ -232,8 +99,15 @@
     },
     {
       "concept": "Hold brain dependence as the mainstream constraint on survival claims",
-      "summary": "When later episodes engage afterlife, resurrection, NDE, reincarnation, or related survival claims, reuse this episode's framing: brain dependence and death by neurologic criteria are the mainstream constraint, and Gennaro and Fishman's argument from brain damage anchors the extrapolation that total destruction of brain systems is strong evidence against continuing ordinary mental life.",
+      "family": "brain_dependence_constraint",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "For afterlife, NDE, reincarnation, resurrection, or survival claims, keep ordinary brain dependence and death by neurologic criteria as the mainstream scientific constraint. Metaphysical possibility and unusual reports do not by themselves establish continuing personal consciousness.",
+      "tags": [
+        "brain_dependence",
+        "survival",
+        "nde",
+        "afterlife"
+      ],
       "useful_for_future_sections": [
         "survival and afterlife claims",
         "near-death experience research",
@@ -243,58 +117,15 @@
       ]
     },
     {
-      "concept": "Catalogue metaphysical and theological survival routes without granting evidence",
-      "summary": "When future episodes invoke dualist survival, Christian or other theistic resurrection, or constitution-based personal identity, return to this episode's catalogue: substance-dualist preservation, van Inwagen's body-snatching, Baker's first-person-perspective constitution view, and Zimmerman's falling-elevator model are metaphysical and theological options, not laboratory evidence.",
+      "concept": "Block false balance across implication domains",
+      "family": "epistemic_false_balance",
       "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "useful_for_future_sections": [
-        "survival and afterlife claims",
-        "theistic resurrection arguments",
-        "personal identity at death",
-        "religion and consciousness",
-        "dualism and idealism implications"
-      ]
-    },
-    {
-      "concept": "Keep naturalistic nonpersonal continuity distinct from ordinary survival",
-      "summary": "When later episodes address consolation, secular meaning, or eternalist or generic-subjectivity views, reuse this episode's distinction: Clark's generic subjective continuity and block-universe eternalism are nonpersonal continuity theses that do not preserve the dead person's memories or personal identity, and should not be presented as ordinary survival.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "useful_for_future_sections": [
-        "secular consolation and meaning",
-        "survival and afterlife claims",
-        "naturalistic philosophy of death",
-        "block-universe and eternalism",
-        "course recap episodes"
-      ]
-    },
-    {
-      "concept": "Separate cosmic purpose, meaning in life, and objective value",
-      "summary": "When later episodes discuss meaning, value, religion, or the implications of naturalism, return to this episode's three-question split: absence of cosmic purpose does not entail no meaning in life, and meaning in life does not by itself settle objective value. Flanagan, Kitcher, Wolf, Metz, and psychological research on coherence, purpose, and existential mattering are the established naturalistic anchors; Hume-style and Moore-style worries remain.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "useful_for_future_sections": [
-        "meaning and value implications",
-        "religion and consciousness",
-        "secular humanism",
-        "moral status and value theory",
-        "course recap episodes"
-      ]
-    },
-    {
-      "concept": "Apply the five-part academic case as a comparison checklist for downstream claims",
-      "summary": "When future episodes evaluate any downstream implication of a consciousness theory, run this episode's checklist: is implication discipline being respected, is sentience being used as an ethical bridge without becoming evidence of consciousness, is AI consciousness assessed through architecture-sensitive indicators, does the upload or survival claim separate information from subject preservation, and is the survival or meaning claim being held against brain dependence and the three meaning questions.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
-      "useful_for_future_sections": [
-        "course recap episodes",
-        "theory comparison episodes",
-        "AI consciousness",
-        "mind uploading",
-        "survival and afterlife claims",
-        "meaning and value implications"
-      ]
-    },
-    {
-      "concept": "Block false balance across mainstream science, philosophy, speculation, religion, and weakly evidenced anomalies",
-      "summary": "When later episodes summarize the cluster or its implications, reuse this episode's epistemic-status grid: brain-based neuroscience, analytic metaphysics, AI-welfare forecasting, transhumanist speculation, religious doctrine, and anomalous empirical claims do not have the same evidential status, and a rigorous episode should preserve live disagreement without presenting every implication as equally supported.",
-      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Brain-based neuroscience, analytic metaphysics, AI-welfare forecasting, transhumanist speculation, religious doctrine, and anomalous empirical claims do not have the same evidential status. Preserve live disagreement without presenting every implication as equally supported.",
+      "tags": [
+        "epistemic_status",
+        "false_balance",
+        "implications"
+      ],
       "useful_for_future_sections": [
         "course recap episodes",
         "public-facing summaries",
@@ -303,5 +134,95 @@
         "religion and afterlife episodes"
       ]
     }
-  ]
+  ],
+  "do_not_reexplain": [
+    "Do not restart the hard problem, Mary, zombies, Nagel's bat, the explanatory gap, or the phenomenal-versus-access distinction; use them as inherited audit tools.",
+    "Do not redo the primitive-or-not fork or the warning that correlation is not identity, realization, constitution, grounding, or explanation.",
+    "Do not re-enumerate Kuhn's whole taxonomy; name the relevant theory family and move to its implication.",
+    "Do not re-list all methodological objections to psi, NDE, and survival evidence; cite the established conditional-and-contested framing.",
+    "Do not re-derive multiple realizability, Searle's Chinese Room, biological naturalism, IIT intrinsic-causal-structure framing, or absent-qualia worries from scratch.",
+    "Do not re-explain the copy problem, fission, gradual versus destructive replacement, or connectome underspecification every time uploading is mentioned."
+  ],
+  "durable_concepts": [
+    {
+      "concept": "Implications as consequence tests under uncertainty",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Sections 21-25 pivot from theories of consciousness to consequences for value, machine minds, uploading, and death. Their claims are conditional: no downstream implication is stronger than the theory, evidence, and bridge relation that support it."
+    },
+    {
+      "concept": "Sentience as moral-status bridge, not evidence",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Conscious experience, especially suffering and enjoyment, is a serious ground for moral status. But the ethical importance of sentience must be separated from evidence that a particular animal, patient, AI system, or upload is conscious."
+    },
+    {
+      "concept": "Meaning questions split into purpose, meaning in life, and value",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Materialism can undercut built-in cosmic purpose without proving nihilism. Cosmic purpose, meaning in life, and objective value are distinct questions, with naturalistic accounts from Flanagan, Kitcher, Wolf, Metz, and empirical psychology addressing only parts of the terrain."
+    },
+    {
+      "concept": "AI consciousness needs architecture-sensitive indicators",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Functionalist and computational views make AI consciousness possible in principle, but current evaluation should look for theory-derived architectural indicators rather than fluency, self-report, user attachment, or role-play."
+    },
+    {
+      "concept": "Substrate independence remains disputed",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Multiple realizability and computational functionalism support nonbiological consciousness in principle, while Searle, biological naturalism, IIT-style intrinsic structure, absent-qualia cases, embodiment, affect, metabolism, and homeostasis preserve serious objections."
+    },
+    {
+      "concept": "Uploading requires both consciousness and identity criteria",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Strong virtual immortality requires a digital system to be phenomenally conscious and to preserve the original subject rather than merely create a successor. Functional organization, memories, personality, and connectome structure are not enough unless a theory explains why they preserve first-person continuity."
+    },
+    {
+      "concept": "Copy problem and technical underspecification constrain uploads",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Pattern copying, fission cases, and destructive scan-and-copy scenarios pressure numerical identity. Whole-brain emulation also remains underspecified because a connectome may omit synaptic strengths, neuromodulators, glia, molecular traces, metabolism, development, embodiment, and brain-body regulation."
+    },
+    {
+      "concept": "Brain dependence is the survival default constraint",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Brain damage, anesthesia, neurodegeneration, and death by neurologic criteria make ordinary continuing mental life after total brain failure scientifically difficult. Dualist, idealist, theistic, NDE, reincarnation, and resurrection routes must be tagged by their epistemic status."
+    },
+    {
+      "concept": "Nonpersonal continuity is not ordinary survival",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "Clark's generic subjective continuity and block-universe eternalism offer naturalistic continuity frames, but they do not preserve the dead person's memories, projects, relationships, or first-person point of view."
+    },
+    {
+      "concept": "False-balance control for high-stakes implications",
+      "source_path": "episodes/group-005/notebooklm_bundle/research_dossier.md",
+      "summary": "The cluster mixes mainstream science, active philosophy, formal theory, speculation, religious metaphysics, and weakly evidenced anomalous claims. These domains must remain live but epistemically ranked."
+    }
+  ],
+  "episode_id": "group-005",
+  "open_tensions": [
+    "Whether architecture-derived AI indicators can become an accepted consciousness meter rather than a theory-laden conditional checklist remains open.",
+    "Whether functional organization is sufficient for phenomenal consciousness, or whether biology, intrinsic causal structure, embodiment, affect, or noncomputational features are required, remains unsettled.",
+    "Whether precautionary AI-welfare policy should treat present systems as plausible sentience candidates or only prepare for future systems remains unresolved.",
+    "Whether psychological continuity is enough for personal survival, or whether numerical identity requires a further fact that copying cannot preserve, remains open.",
+    "Whether whole-brain emulation can capture enough neural, bodily, developmental, and environmental detail to preserve a subject remains technically underspecified.",
+    "Whether NDE, reincarnation, and survival literatures will mature into robust independently verified evidence or remain weak relative to their implications is unresolved.",
+    "Whether materialism undercuts cosmic purpose while still leaving objective value and meaning in life defensible remains contested.",
+    "Whether nonpersonal continuity views offer meaningful consolation or merely change the subject from survival to continuity of experience somewhere is open."
+  ],
+  "recurring_distinctions": [
+    "Theory of consciousness versus downstream implication.",
+    "Moral importance of sentience versus evidence that a being is sentient.",
+    "Fluent behavior and self-report versus phenomenal experience.",
+    "Information preservation versus subject preservation.",
+    "Psychological continuity versus numerical personal identity.",
+    "Brain dependence as mainstream constraint versus metaphysical possibility.",
+    "Cosmic purpose versus meaning in life versus objective value."
+  ],
+  "schema_version": "episode_capsule_v1",
+  "section_ids": [
+    "21",
+    "22",
+    "23",
+    "24",
+    "25"
+  ],
+  "thesis": "This cluster pivots from consciousness theories to consequences under uncertainty: meaning, moral status, AI consciousness, virtual immortality, and survival beyond death. Its durable lesson is bridge discipline. Implications matter, but each one breaks unless the theory states what relation, criterion, or evidence licenses it.",
+  "title": "Top-level sections Part 5"
 }

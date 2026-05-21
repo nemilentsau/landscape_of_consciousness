@@ -45,6 +45,49 @@ def _context_selection(episode_id: str) -> dict[str, object]:
     }
 
 
+def _write_ready_script(root: Path, episode_id: str, *, citations: list[str] | None = None) -> None:
+    _write_json(
+        root / "episodes" / episode_id / "script.json",
+        {
+            "episode_id": episode_id,
+            "title": "Top-level sections Part 3",
+            "episode_question": "What is the strongest case for this cluster, and where does it break?",
+            "duration_target": "long_form",
+            "research_dossier_markdown": READY_DOSSIER,
+            "citations": citations or ["Kuhn 2024", "Atmanspacher 2024"],
+            "missing_inputs": [],
+        },
+    )
+    dossier = root / "episodes" / episode_id / "notebooklm_bundle" / "research_dossier.md"
+    dossier.parent.mkdir(parents=True, exist_ok=True)
+    dossier.write_text(READY_DOSSIER, encoding="utf-8")
+
+
+def _write_ready_capsule(root: Path, episode_id: str) -> None:
+    _write_json(
+        root / "course" / "episode_capsules" / f"{episode_id}.json",
+        {
+            "schema_version": "episode_capsule_v1",
+            "episode_id": episode_id,
+            "title": "Top-level sections Part 3",
+            "accepted_dossier_path": f"episodes/{episode_id}/notebooklm_bundle/research_dossier.md",
+            "section_ids": ["11"],
+            "thesis": "A compact thesis.",
+            "durable_concepts": [
+                {
+                    "concept": "theory discipline",
+                    "summary": "Keep implications tied to theory and evidence.",
+                    "source_path": f"episodes/{episode_id}/notebooklm_bundle/research_dossier.md",
+                }
+            ],
+            "recurring_distinctions": [],
+            "do_not_reexplain": [],
+            "open_tensions": [],
+            "callbacks": [],
+        },
+    )
+
+
 class EpisodeRunnerTest(unittest.TestCase):
     def test_run_episode_refuses_script_when_research_is_placeholder(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -89,6 +132,8 @@ class EpisodeRunnerTest(unittest.TestCase):
                         root / "episodes" / "group-003" / "context_selection.json",
                         _context_selection("group-003"),
                     )
+                if job_id == "group-003-script":
+                    _write_ready_script(root, "group-003")
                 return [agent, job_id]
 
             with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job):
@@ -133,6 +178,8 @@ class EpisodeRunnerTest(unittest.TestCase):
                         root / "episodes" / "group-003" / "context_selection.json",
                         _context_selection("group-003"),
                     )
+                if job_id == "group-003-script":
+                    _write_ready_script(root, "group-003")
                 return [agent, job_id]
 
             with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job):
@@ -147,6 +194,53 @@ class EpisodeRunnerTest(unittest.TestCase):
                     ("source-scripts.jsonl", "group-003-script"),
                 ],
             )
+
+    def test_run_episode_evaluates_research_before_source_script_gate_finishes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            _write_json(
+                root / "episodes" / "group-003" / "manifest.json",
+                {
+                    "episode_id": "group-003",
+                    "title": "Top-level sections Part 3",
+                    "episode_question": "What is the strongest case for this cluster, and where does it break?",
+                    "section_ids": ["11"],
+                    "script_job_id": "group-003-script",
+                },
+            )
+            _write_jsonl(root / "jobs" / "course-context-selections.jsonl", [{"job_id": "group-003-context-selection"}])
+            _write_jsonl(root / "jobs" / "research.jsonl", [{"job_id": "research-11"}])
+            _write_jsonl(root / "jobs" / "source-scripts.jsonl", [{"job_id": "group-003-script"}])
+            _write_json(root / "data" / "research" / "11.json", _complete_research("11"))
+
+            stages: list[str] = []
+
+            def fake_run_job(manifest_path: Path, job_id: str, agent: str, **kwargs):
+                if job_id == "group-003-context-selection":
+                    _write_json(
+                        root / "episodes" / "group-003" / "context_selection.json",
+                        _context_selection("group-003"),
+                    )
+                if job_id == "group-003-script":
+                    _write_ready_script(root, "group-003")
+                return [agent, job_id]
+
+            def fake_evaluate_episode(root_path: Path, episode_id: str, *, stage: str):
+                stages.append(stage)
+                return {
+                    "episode_id": episode_id,
+                    "stage": stage,
+                    "ok": True,
+                    "summary": {"errors": 0, "warnings": 0, "issues": 0},
+                    "issues": [],
+                }
+
+            with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job), patch(
+                "consciousness_pipeline.episode_runner.evaluate_episode", side_effect=fake_evaluate_episode
+            ):
+                run_episode("group-003", "codex", root=root)
+
+            self.assertEqual(stages, ["context", "research", "dossier"])
 
     def test_run_episode_auto_accepts_only_after_review_agent_approves(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -190,21 +284,7 @@ class EpisodeRunnerTest(unittest.TestCase):
                         _context_selection("group-003"),
                     )
                 if job_id == "group-003-script":
-                    _write_json(
-                        root / "episodes" / "group-003" / "script.json",
-                        {
-                            "episode_id": "group-003",
-                            "title": "Top-level sections Part 3",
-                            "episode_question": "What is the strongest case for this cluster, and where does it break?",
-                            "duration_target": "long_form",
-                            "research_dossier_markdown": READY_DOSSIER,
-                            "citations": ["Kuhn 2024", "Atmanspacher 2024"],
-                            "missing_inputs": [],
-                        },
-                    )
-                    dossier = root / "episodes" / "group-003" / "notebooklm_bundle" / "research_dossier.md"
-                    dossier.parent.mkdir(parents=True, exist_ok=True)
-                    dossier.write_text(READY_DOSSIER, encoding="utf-8")
+                    _write_ready_script(root, "group-003")
                 if job_id == "group-003-review":
                     _write_json(
                         root / "episodes" / "group-003" / "review.json",
@@ -222,6 +302,7 @@ class EpisodeRunnerTest(unittest.TestCase):
 
             def fake_accept_episode(episode_id: str, agent: str, **kwargs):
                 accepted.append((episode_id, agent))
+                _write_ready_capsule(root, episode_id)
                 return [[agent, f"{episode_id}-capsule"]]
 
             with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job), patch(
@@ -288,21 +369,7 @@ class EpisodeRunnerTest(unittest.TestCase):
                         _context_selection("group-003"),
                     )
                 if job_id == "group-003-script":
-                    _write_json(
-                        root / "episodes" / "group-003" / "script.json",
-                        {
-                            "episode_id": "group-003",
-                            "title": "Top-level sections Part 3",
-                            "episode_question": "What is the strongest case for this cluster, and where does it break?",
-                            "duration_target": "long_form",
-                            "research_dossier_markdown": READY_DOSSIER,
-                            "citations": ["Kuhn 2024", "Atmanspacher 2024"],
-                            "missing_inputs": [],
-                        },
-                    )
-                    dossier = root / "episodes" / "group-003" / "notebooklm_bundle" / "research_dossier.md"
-                    dossier.parent.mkdir(parents=True, exist_ok=True)
-                    dossier.write_text(READY_DOSSIER, encoding="utf-8")
+                    _write_ready_script(root, "group-003")
                 if job_id == "group-003-review":
                     _write_json(
                         root / "episodes" / "group-003" / "review.json",
