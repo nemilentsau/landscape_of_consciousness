@@ -58,6 +58,7 @@ class CliTest(unittest.TestCase):
         self.assertIn("run-episode", result.stdout)
         self.assertIn("accept-episode", result.stdout)
         self.assertIn("evaluate-episode", result.stdout)
+        self.assertIn("write-audio-review", result.stdout)
         self.assertIn("select-context", result.stdout)
         self.assertIn("write-contract", result.stdout)
         self.assertIn("bundle-sources", result.stdout)
@@ -253,6 +254,27 @@ class CliTest(unittest.TestCase):
             cli.main()
 
         evaluate_episode.assert_called_once_with(cli.PROJECT_ROOT, "group-002", stage="context")
+
+    def test_write_audio_review_command_writes_pending_checklist(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            status_path = root / "course" / "production-status.csv"
+            status_path.parent.mkdir(parents=True)
+            status_path.write_text(
+                "group_id,section_id,packet_slug,research_status,script_status,notebooklm_status,notebook_url,"
+                "audio_status,message\n"
+                "group-006,26,26-reflections,researched,source_script_ready,notebooklm_bundle_ready,"
+                "https://example.test/notebook,audio_ready,ready\n",
+                encoding="utf-8",
+            )
+            argv = ["cli.py", "write-audio-review", "--episode-id", "group-006"]
+
+            with patch.object(sys, "argv", argv), patch.object(cli, "PROJECT_ROOT", root):
+                cli.main()
+
+            review_path = root / "episodes" / "group-006" / "audio_review.md"
+            self.assertTrue(review_path.exists())
+            self.assertIn("Review status: pending_human_listen", review_path.read_text(encoding="utf-8"))
 
     def test_write_contract_command_writes_static_course_contract(self):
         with tempfile.TemporaryDirectory() as tmp:

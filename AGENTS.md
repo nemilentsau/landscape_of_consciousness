@@ -15,6 +15,13 @@
 
 All Python code must be checked with Ruff and Pyright.
 
+Tests must be meaningful behavioral checks, not coverage padding. Before adding or changing tests, use the
+project testing guidance in `.claude/skills/testing/SKILL.md` and make sure each test would catch a real
+regression. Prefer assertions on outcomes, persisted artifacts, validation errors, and state transitions.
+Cover important branches, boundaries, and failure modes; remove redundant tests that exercise the same
+equivalence class. Do not add brittle prompt-string checks, mock-call checks, or snapshots unless they are
+the only practical way to protect a real contract.
+
 Before claiming Python work is complete, run:
 
 ```bash

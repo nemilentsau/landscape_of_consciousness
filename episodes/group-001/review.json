@@ -1,0 +1,19 @@
+{
+  "schema_version": "episode_review_v1",
+  "episode_id": "group-001",
+  "approved": true,
+  "summary": "Retrospective source-dossier review for group-001. The accepted dossier is factual NotebookLM source material for sections 1-5: Chalmers's hard problem, initial thoughts, philosophical tensions, surveys and typologies, and opposing worldviews. It establishes the course target, comparison axes, and epistemic caution without speaker labels, host banter, stage directions, or performed dialogue. The dossier is suitable as durable course continuity.",
+  "blocking_issues": [],
+  "non_blocking_notes": [
+    "The dossier predates the verdict-matrix template, so it does not include the recommended `## Verdict Matrix` heading.",
+    "NotebookLM audio is still marked `not_started` in the production ledger."
+  ],
+  "checked_items": [
+    "script.json exists and reports an empty missing_inputs array",
+    "notebooklm_bundle/research_dossier.md exists and matches the factual source-dossier purpose",
+    "manifest sections 1-5 are represented in the dossier",
+    "No host dialogue, speaker labels, banter, or stage directions are present",
+    "The hard problem, phenomenal/access distinction, typology discipline, and worldview comparison are framed as course tools rather than settled verdicts",
+    "Source notes and local input paths are present for traceability"
+  ]
+}

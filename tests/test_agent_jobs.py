@@ -65,7 +65,7 @@ class AgentJobGenerationTest(unittest.TestCase):
 
             self.assertEqual(len(script_jobs), 1)
             self.assertEqual(script_jobs[0]["kind"], "source_script")
-            self.assertEqual(script_jobs[0]["prompt_contract"], "notebooklm_factual_source_script_v1")
+            self.assertEqual(script_jobs[0]["prompt_contract"], "notebooklm_factual_source_script_v2")
             self.assertEqual(script_jobs[0]["duration_target"], "long_form")
             self.assertEqual(script_jobs[0]["section_ids"], ["9.2.3", "9.2.4"])
             self.assertEqual(script_jobs[0]["episode_manifest_path"], "episodes/group-001/manifest.json")
@@ -123,8 +123,6 @@ class AgentJobGenerationTest(unittest.TestCase):
             source_script_schema = json.loads((root / "schemas" / "source-script.schema.json").read_text())
             self.assertIn("research_dossier_markdown", source_script_schema["required"])
             self.assertNotIn("script_markdown", source_script_schema["properties"])
-            self.assertFalse((root / "jobs" / "podcast-scripts.jsonl").exists())
-            self.assertFalse((root / "schemas" / "podcast-script.schema.json").exists())
             self.assertNotIn("playwright", serialized)
 
             sections_path = root / "data" / "extracted" / "sections.json"
@@ -250,27 +248,6 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("Use this context to continue the course", prompt)
             self.assertIn("## Course Continuity Grounding", prompt)
             self.assertIn("Do not bury course continuity inside the episode-scope section.", prompt)
-
-    def test_write_agent_job_artifacts_removes_legacy_dialogue_script_manifests(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            sections = [make_section("9.2.3", "Global workspace theory")]
-            legacy_job = root / "jobs" / "podcast-scripts.jsonl"
-            legacy_schema = root / "schemas" / "podcast-script.schema.json"
-            legacy_job.parent.mkdir(parents=True)
-            legacy_schema.parent.mkdir(parents=True)
-            legacy_job.write_text("legacy dialogue job\n", encoding="utf-8")
-            legacy_schema.write_text('{"legacy": true}\n', encoding="utf-8")
-
-            write_agent_job_artifacts(
-                sections,
-                jobs_dir=root / "jobs",
-                schemas_dir=root / "schemas",
-                episodes_dir=root / "episodes",
-            )
-
-            self.assertFalse(legacy_job.exists())
-            self.assertFalse(legacy_schema.exists())
 
 
 if __name__ == "__main__":

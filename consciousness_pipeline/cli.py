@@ -4,6 +4,7 @@ from pathlib import Path
 
 from consciousness_pipeline.agent_jobs import write_agent_job_artifacts
 from consciousness_pipeline.agent_runner import run_job
+from consciousness_pipeline.audio_reviews import DEFAULT_REVIEW_STATUS, VALID_REVIEW_STATUSES, write_audio_review
 from consciousness_pipeline.config import (
     COURSE_DIR,
     DEFAULT_PDF,
@@ -188,6 +189,11 @@ def cmd_evaluate_episode(args: argparse.Namespace) -> None:
         raise SystemExit(1)
 
 
+def cmd_write_audio_review(args: argparse.Namespace) -> None:
+    path = write_audio_review(PROJECT_ROOT, args.episode_id, args.review_status)
+    print(f"Wrote audio review checklist: {path}")
+
+
 def cmd_all(args: argparse.Namespace) -> None:
     cmd_extract(args)
     cmd_headings(args)
@@ -251,7 +257,7 @@ def build_parser() -> argparse.ArgumentParser:
     evaluate_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-005")
     evaluate_episode_parser.add_argument(
         "--stage",
-        choices=("context", "research", "dossier", "bundle", "accepted"),
+        choices=("context", "research", "dossier", "bundle", "accepted", "audio"),
         default="accepted",
         help="How much of the episode lifecycle to evaluate",
     )
@@ -261,6 +267,15 @@ def build_parser() -> argparse.ArgumentParser:
         help="Exit nonzero when warnings are present, not only errors",
     )
     evaluate_episode_parser.set_defaults(func=cmd_evaluate_episode)
+    audio_review_parser = subparsers.add_parser("write-audio-review")
+    audio_review_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-006")
+    audio_review_parser.add_argument(
+        "--review-status",
+        choices=VALID_REVIEW_STATUSES,
+        default=DEFAULT_REVIEW_STATUS,
+        help="Initial audio review status",
+    )
+    audio_review_parser.set_defaults(func=cmd_write_audio_review)
     select_context_parser = subparsers.add_parser("select-context")
     select_context_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-005")
     select_context_parser.add_argument(

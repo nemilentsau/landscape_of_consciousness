@@ -106,7 +106,7 @@ def _script_job(group: EpisodeGroup) -> dict[str, object]:
     return {
         "job_id": f"{group_id}-script",
         "kind": "source_script",
-        "prompt_contract": "notebooklm_factual_source_script_v1",
+        "prompt_contract": "notebooklm_factual_source_script_v2",
         "agents": ["codex_exec", "claude_headless"],
         "group_id": group_id,
         "title": str(group["title"]),
@@ -235,10 +235,6 @@ def write_agent_job_artifacts(
     jobs_dir.mkdir(parents=True, exist_ok=True)
     schemas_dir.mkdir(parents=True, exist_ok=True)
     episodes_dir.mkdir(parents=True, exist_ok=True)
-
-    for legacy_path in (jobs_dir / "podcast-scripts.jsonl", schemas_dir / "podcast-script.schema.json"):
-        if legacy_path.exists():
-            legacy_path.unlink()
 
     _write_json(schemas_dir / "research-record.schema.json", RESEARCH_SCHEMA)
     _write_json(schemas_dir / "source-script.schema.json", SOURCE_SCRIPT_SCHEMA)
@@ -543,6 +539,7 @@ sections in this order:
 - ## Course Continuity Grounding
 - ## Episode Scope And Why These Sections Are Grouped
 - ## Concise Thesis Of The Cluster
+- ## Verdict Matrix
 - ## Per-Section Factual Summaries
 - ## Strongest Academic Case For The Cluster
 - ## Serious Objections And Limits
@@ -554,6 +551,11 @@ sections in this order:
 Under ## Course Continuity Grounding, summarize what prior episode context already covered,
 state what this episode should not re-explain, and identify the transition into the current
 episode. Do not bury course continuity inside the episode-scope section.
+
+Under ## Verdict Matrix, include a compact table that lets NotebookLM compare the covered
+positions without drifting into false balance. Use these columns when applicable: Target,
+Ontology, Bridge relation, Strongest evidence, Strongest objection, What would change our
+mind, and What not to infer. Keep it factual and sourced; mark uncertainty explicitly.
 
 Return only JSON matching the schema. The local runner writes research_dossier_markdown to the
 NotebookLM dossier markdown output path for upload.

@@ -1,3 +1,4 @@
+import csv
 import json
 import re
 from collections import Counter
@@ -8,7 +9,7 @@ from typing import Any, Literal
 from consciousness_pipeline.episode_capsules import EpisodeCapsuleValidationError, validate_episode_capsule
 
 EvaluationSeverity = Literal["error", "warning"]
-EvaluationStage = Literal["context", "research", "dossier", "bundle", "accepted"]
+EvaluationStage = Literal["context", "research", "dossier", "bundle", "accepted", "audio"]
 
 STAGE_RANK: dict[EvaluationStage, int] = {
     "context": 1,
@@ -16,6 +17,7 @@ STAGE_RANK: dict[EvaluationStage, int] = {
     "dossier": 3,
     "bundle": 4,
     "accepted": 5,
+    "audio": 6,
 }
 
 RESEARCH_COMPLETENESS_FIELDS = ("core_claim", "strongest_case", "best_objections", "credibility")
@@ -25,6 +27,7 @@ REQUIRED_DOSSIER_HEADINGS = (
     "## Course Continuity Grounding",
     "## Source Notes And Local Input Paths",
 )
+RECOMMENDED_DOSSIER_HEADINGS = ("## Verdict Matrix",)
 REQUIRED_SOURCE_HEADINGS = (
     "## Kuhn Review Anchor",
     "## Research Question",
@@ -392,6 +395,17 @@ def _evaluate_dossier_markdown(
                 root,
                 value=heading,
             )
+    for heading in RECOMMENDED_DOSSIER_HEADINGS:
+        if heading not in dossier:
+            _issue(
+                issues,
+                "dossier_verdict_matrix_missing",
+                "warning",
+                "NotebookLM dossier is missing the recommended verdict matrix heading",
+                dossier_path,
+                root,
+                value=heading,
+            )
     if PERFORMED_SCRIPT_LINE.search(dossier):
         _issue(
             issues,
@@ -669,6 +683,63 @@ def _evaluate_callback_index(root: Path, episode_id: str, issues: list[Evaluatio
             )
 
 
+def _production_status_rows(root: Path, episode_id: str) -> list[dict[str, str]]:
+    status_path = root / "course" / "production-status.csv"
+    if not status_path.exists():
+        return []
+    with status_path.open(newline="", encoding="utf-8") as handle:
+        return [row for row in csv.DictReader(handle) if row.get("group_id") == episode_id]
+
+
+def _evaluate_audio_review(root: Path, episode_id: str, issues: list[EvaluationIssue]) -> None:
+    status_path = root / "course" / "production-status.csv"
+    review_path = root / "episodes" / episode_id / "audio_review.md"
+    rows = _production_status_rows(root, episode_id)
+    audio_statuses = {str(row.get("audio_status", "")).strip() for row in rows}
+    if not rows:
+        _issue(
+            issues,
+            "audio_status_missing",
+            "warning",
+            "Episode is not represented in the production status ledger",
+            status_path,
+            root,
+        )
+        return
+    if "audio_ready" not in audio_statuses:
+        _issue(
+            issues,
+            "audio_not_ready",
+            "warning",
+            "Episode is not marked audio_ready in the production status ledger",
+            status_path,
+            root,
+            value=", ".join(sorted(status for status in audio_statuses if status)) or "empty",
+            limit="audio_ready",
+        )
+        return
+    if not review_path.exists():
+        _issue(
+            issues,
+            "audio_review_missing",
+            "error",
+            "Audio-ready episode is missing a post-audio review artifact",
+            review_path,
+            root,
+        )
+        return
+    review = _read_text(review_path)
+    if "Review status: pending_human_listen" in review or "## Decision\n\nPending." in review:
+        _issue(
+            issues,
+            "audio_review_pending",
+            "warning",
+            "Audio review artifact exists but still needs a human listening decision",
+            review_path,
+            root,
+        )
+
+
 def evaluate_episode(
     root: Path,
     episode_id: str,
@@ -705,6 +776,8 @@ def evaluate_episode(
         if _should_check(stage, "accepted"):
             _evaluate_capsule(root, episode_id, config, issues)
             _evaluate_callback_index(root, episode_id, issues)
+        if _should_check(stage, "audio"):
+            _evaluate_audio_review(root, episode_id, issues)
 
     error_count = sum(1 for issue in issues if issue.severity == "error")
     warning_count = sum(1 for issue in issues if issue.severity == "warning")

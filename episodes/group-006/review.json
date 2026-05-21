@@ -1,0 +1,19 @@
+{
+  "schema_version": "episode_review_v1",
+  "episode_id": "group-006",
+  "approved": true,
+  "summary": "Retrospective source-dossier review for group-006. The accepted dossier is factual NotebookLM source material for section 26, Reflections. It closes the top-level orientation arc by treating pluralism as disciplined uncertainty, not as a verdict that all theories are equal. It preserves the difference between progress in empirical consciousness science, unresolved hard-problem pressure, and Kuhn's personal metaphysical hunch.",
+  "blocking_issues": [],
+  "non_blocking_notes": [
+    "The dossier predates the verdict-matrix template, so it does not include the recommended `## Verdict Matrix` heading.",
+    "The rendered audio is marked `audio_ready`, so it still needs a separate human audio review decision."
+  ],
+  "checked_items": [
+    "script.json exists and reports an empty missing_inputs array",
+    "notebooklm_bundle/research_dossier.md exists and is source material rather than performed dialogue",
+    "manifest section 26 is represented in the dossier",
+    "No host dialogue, speaker labels, banter, or stage directions are present",
+    "The dossier distinguishes taxonomy, synthesis, evidence ranking, metaphysical preference, and open problem status",
+    "Source notes and local input paths are present for traceability"
+  ]
+}
