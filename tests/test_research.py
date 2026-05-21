@@ -3,8 +3,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.models import ResearchRecord, Section, SourceRecord
-from consciousness_pipeline.research import (
+from consciousness_pipeline.core.models import ResearchRecord, Section, SourceRecord
+from consciousness_pipeline.research.records import (
     render_notebooklm_research_source,
     write_notebooklm_research_sources,
     write_research_readme,

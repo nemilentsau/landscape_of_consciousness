@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.audio_reviews import episode_audio_status, write_audio_review
+from consciousness_pipeline.episodes.audio_reviews import episode_audio_status, write_audio_review
 
 
 class AudioReviewsTest(unittest.TestCase):

@@ -4,8 +4,8 @@ from collections import defaultdict
 from pathlib import Path
 from typing import TypedDict
 
-from consciousness_pipeline.config import AUDIO_FORMAT, AUDIO_LANGUAGE, AUDIO_LENGTH, AUDIO_PROMPT
-from consciousness_pipeline.models import Section
+from consciousness_pipeline.core.config import AUDIO_FORMAT, AUDIO_LANGUAGE, AUDIO_LENGTH, AUDIO_PROMPT
+from consciousness_pipeline.core.models import Section
 
 TOP_LEVEL_GROUP_TITLE = "Top-level sections"
 

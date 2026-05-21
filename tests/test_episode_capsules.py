@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.episode_capsules import (
+from consciousness_pipeline.course.capsules import (
     EPISODE_CAPSULE_SCHEMA,
     EpisodeCapsuleValidationError,
     validate_episode_capsule,

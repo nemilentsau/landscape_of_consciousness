@@ -14,7 +14,7 @@ dev = [
 ]
 
 [project.scripts]
-consciousness-pipeline = "consciousness_pipeline.cli:main"
+consciousness-pipeline = "consciousness_pipeline.cli.main:main"
 
 [build-system]
 requires = ["setuptools>=69"]

@@ -2,10 +2,10 @@ import csv
 import json
 from pathlib import Path
 
-from consciousness_pipeline.agent_runner import run_job
-from consciousness_pipeline.callback_index import write_callback_index
-from consciousness_pipeline.config import PROJECT_ROOT
-from consciousness_pipeline.episode_capsules import validate_episode_capsule
+from consciousness_pipeline.agents.runner import run_job
+from consciousness_pipeline.core.config import PROJECT_ROOT
+from consciousness_pipeline.course.callback_index import write_callback_index
+from consciousness_pipeline.course.capsules import validate_episode_capsule
 
 
 class EpisodeAcceptanceError(RuntimeError):

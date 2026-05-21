@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.pdf_extract import extract_pages, write_pages_json
+from consciousness_pipeline.ingest.pdf_extract import extract_pages, write_pages_json
 
 
 class FakePage:

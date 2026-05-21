@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from consciousness_pipeline.episode_runner import ResearchReadinessError, run_episode
+from consciousness_pipeline.episodes.runner import ResearchReadinessError, run_episode
 
 READY_DOSSIER = "## Episode Metadata\n\n## Course Continuity Grounding\n\n## Source Notes And Local Input Paths\n"
 
@@ -136,7 +136,7 @@ class EpisodeRunnerTest(unittest.TestCase):
                     _write_ready_script(root, "group-003")
                 return [agent, job_id]
 
-            with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job):
+            with patch("consciousness_pipeline.episodes.runner.run_job", side_effect=fake_run_job):
                 with self.assertRaises(ResearchReadinessError) as context:
                     run_episode("group-003", "codex", root=root)
 
@@ -182,7 +182,7 @@ class EpisodeRunnerTest(unittest.TestCase):
                     _write_ready_script(root, "group-003")
                 return [agent, job_id]
 
-            with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job):
+            with patch("consciousness_pipeline.episodes.runner.run_job", side_effect=fake_run_job):
                 run_episode("group-003", "codex", root=root)
 
             self.assertEqual(
@@ -235,8 +235,8 @@ class EpisodeRunnerTest(unittest.TestCase):
                     "issues": [],
                 }
 
-            with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job), patch(
-                "consciousness_pipeline.episode_runner.evaluate_episode", side_effect=fake_evaluate_episode
+            with patch("consciousness_pipeline.episodes.runner.run_job", side_effect=fake_run_job), patch(
+                "consciousness_pipeline.episodes.runner.evaluate_episode", side_effect=fake_evaluate_episode
             ):
                 run_episode("group-003", "codex", root=root)
 
@@ -305,8 +305,8 @@ class EpisodeRunnerTest(unittest.TestCase):
                 _write_ready_capsule(root, episode_id)
                 return [[agent, f"{episode_id}-capsule"]]
 
-            with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job), patch(
-                "consciousness_pipeline.episode_runner.accept_episode", side_effect=fake_accept_episode
+            with patch("consciousness_pipeline.episodes.runner.run_job", side_effect=fake_run_job), patch(
+                "consciousness_pipeline.episodes.runner.accept_episode", side_effect=fake_accept_episode
             ):
                 run_episode("group-003", "codex", root=root, auto_accept=True, review_agent="claude")
 
@@ -385,8 +385,8 @@ class EpisodeRunnerTest(unittest.TestCase):
                     )
                 return [agent, job_id]
 
-            with patch("consciousness_pipeline.episode_runner.run_job", side_effect=fake_run_job), patch(
-                "consciousness_pipeline.episode_runner.accept_episode"
+            with patch("consciousness_pipeline.episodes.runner.run_job", side_effect=fake_run_job), patch(
+                "consciousness_pipeline.episodes.runner.accept_episode"
             ) as accept_episode:
                 with self.assertRaises(RuntimeError) as context:
                     run_episode("group-003", "codex", root=root, auto_accept=True, review_agent="claude")

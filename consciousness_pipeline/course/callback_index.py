@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.episode_capsules import validate_episode_capsule
+from consciousness_pipeline.course.capsules import validate_episode_capsule
 
 
 def _relative_project_path(root: Path | None, path: Path) -> str:

@@ -5,7 +5,7 @@ from typing import Protocol, cast
 
 from pypdf import PdfReader
 
-from consciousness_pipeline.models import PageText
+from consciousness_pipeline.core.models import PageText
 
 
 class PdfPage(Protocol):

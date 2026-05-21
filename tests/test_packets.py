@@ -3,9 +3,9 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.models import ResearchRecord, Section, SourceRecord
-from consciousness_pipeline.packets import render_packet, validate_packet
-from consciousness_pipeline.research import load_research_record
+from consciousness_pipeline.core.models import ResearchRecord, Section, SourceRecord
+from consciousness_pipeline.research.packets import render_packet, validate_packet
+from consciousness_pipeline.research.records import load_research_record
 
 
 class PacketRenderingTest(unittest.TestCase):

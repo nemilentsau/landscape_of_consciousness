@@ -1,6 +1,6 @@
 import re
 
-from consciousness_pipeline.models import Heading, PageText
+from consciousness_pipeline.core.models import Heading, PageText
 
 HEADING_RE = re.compile(r"^(?P<section>\d{1,2}(?:\.\d+){0,3})\.\s+(?P<title>\S.*)$")
 FALSE_SENTENCE_START_RE = re.compile(r"^(In|There|Therefore|So,)\b")

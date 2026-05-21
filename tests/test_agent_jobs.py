@@ -4,8 +4,9 @@ import unittest
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.agent_jobs import build_job_prompt, write_agent_job_artifacts
-from consciousness_pipeline.models import Section
+from consciousness_pipeline.agents.jobs import write_agent_job_artifacts
+from consciousness_pipeline.agents.prompts import build_job_prompt
+from consciousness_pipeline.core.models import Section
 
 
 def make_section(section_id: str, title: str, parent: str = "Materialism theories") -> Section:

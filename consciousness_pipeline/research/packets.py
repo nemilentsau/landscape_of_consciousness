@@ -1,7 +1,7 @@
 from collections.abc import Sequence
 
-from consciousness_pipeline.config import AUDIO_FORMAT, AUDIO_LANGUAGE, AUDIO_LENGTH, AUDIO_PROMPT
-from consciousness_pipeline.models import ResearchRecord, Section
+from consciousness_pipeline.core.config import AUDIO_FORMAT, AUDIO_LANGUAGE, AUDIO_LENGTH, AUDIO_PROMPT
+from consciousness_pipeline.core.models import ResearchRecord, Section
 
 REQUIRED_MARKERS = (
     "# ",

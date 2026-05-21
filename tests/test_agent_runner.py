@@ -6,7 +6,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from consciousness_pipeline.agent_runner import (
+from consciousness_pipeline.agents.runner import (
     build_claude_command,
     build_codex_command,
     check_agent_available,
@@ -55,7 +55,7 @@ class AgentRunnerCommandTest(unittest.TestCase):
             self.assertIn("--json-schema", command)
             self.assertIn(json.dumps(schema), command)
 
-    @patch("consciousness_pipeline.agent_runner.subprocess.run")
+    @patch("consciousness_pipeline.agents.runner.subprocess.run")
     def test_run_claude_job_allows_comparison_output_paths_and_writes_dossier_bundle(self, run):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -156,7 +156,7 @@ class AgentRunnerCommandTest(unittest.TestCase):
             self.assertEqual(json.loads(script_path.read_text(encoding="utf-8")), structured_output)
             self.assertEqual(bundle_path.read_text(encoding="utf-8"), structured_output["research_dossier_markdown"])
 
-    @patch("consciousness_pipeline.agent_runner.subprocess.run")
+    @patch("consciousness_pipeline.agents.runner.subprocess.run")
     def test_run_claude_capsule_job_writes_structured_output_without_dossier_bundle(self, run):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -210,7 +210,7 @@ class AgentRunnerCommandTest(unittest.TestCase):
             self.assertEqual(json.loads(output_path.read_text(encoding="utf-8")), structured_output)
             self.assertFalse((root / "episodes" / "group-002" / "notebooklm_bundle" / "script.md").exists())
 
-    @patch("consciousness_pipeline.agent_runner.subprocess.run")
+    @patch("consciousness_pipeline.agents.runner.subprocess.run")
     def test_check_agent_available_reports_broken_cli_stderr(self, run):
         run.return_value = subprocess.CompletedProcess(
             args=["codex", "--version"],

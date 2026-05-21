@@ -3,8 +3,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.callback_index import write_callback_index
-from consciousness_pipeline.evaluations import evaluate_episode
+from consciousness_pipeline.course.callback_index import write_callback_index
+from consciousness_pipeline.quality.evaluations import evaluate_episode
 
 
 def _research_record(section_id: str) -> dict[str, object]:

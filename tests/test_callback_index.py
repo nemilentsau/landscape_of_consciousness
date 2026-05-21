@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.callback_index import build_callback_index, write_callback_index
+from consciousness_pipeline.course.callback_index import build_callback_index, write_callback_index
 
 
 def write_capsule(root: Path, episode_id: str, concept: str) -> Path:

@@ -2,7 +2,7 @@ import json
 from collections.abc import Sequence
 from pathlib import Path
 
-from consciousness_pipeline.models import ResearchRecord, Section, SourceRecord
+from consciousness_pipeline.core.models import ResearchRecord, Section, SourceRecord
 
 RESEARCH_README = """# Section Research Records
 

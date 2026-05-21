@@ -1,7 +1,7 @@
 import re
 
-from consciousness_pipeline.headings import heading_slug
-from consciousness_pipeline.models import Heading, PageText, Section
+from consciousness_pipeline.core.models import Heading, PageText, Section
+from consciousness_pipeline.ingest.headings import heading_slug
 
 
 def _normalize_line(line: str) -> str:

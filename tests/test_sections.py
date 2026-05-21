@@ -1,7 +1,7 @@
 import unittest
 
-from consciousness_pipeline.models import Heading, PageText
-from consciousness_pipeline.sections import build_sections
+from consciousness_pipeline.core.models import Heading, PageText
+from consciousness_pipeline.ingest.sections import build_sections
 
 
 class SectionSegmentationTest(unittest.TestCase):

@@ -1,7 +1,7 @@
 import unittest
 
-from consciousness_pipeline.headings import detect_headings, heading_slug
-from consciousness_pipeline.models import PageText
+from consciousness_pipeline.core.models import PageText
+from consciousness_pipeline.ingest.headings import detect_headings, heading_slug
 
 
 class HeadingDetectionTest(unittest.TestCase):

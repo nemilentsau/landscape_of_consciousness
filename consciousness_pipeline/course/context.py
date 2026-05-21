@@ -4,8 +4,8 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.course_context_selection import validate_course_context_selection
-from consciousness_pipeline.course_contract import write_default_course_contract
+from consciousness_pipeline.course.context_selection import validate_course_context_selection
+from consciousness_pipeline.course.contract import write_default_course_contract
 
 MAX_RENDERED_DURABLE_CONCEPTS = 3
 MAX_RENDERED_DO_NOT_REEXPLAIN = 3

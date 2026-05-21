@@ -2,10 +2,9 @@ import argparse
 import json
 from pathlib import Path
 
-from consciousness_pipeline.agent_jobs import write_agent_job_artifacts
-from consciousness_pipeline.agent_runner import run_job
-from consciousness_pipeline.audio_reviews import DEFAULT_REVIEW_STATUS, VALID_REVIEW_STATUSES, write_audio_review
-from consciousness_pipeline.config import (
+from consciousness_pipeline.agents.jobs import write_agent_job_artifacts
+from consciousness_pipeline.agents.runner import run_job
+from consciousness_pipeline.core.config import (
     COURSE_DIR,
     DEFAULT_PDF,
     EPISODES_DIR,
@@ -16,23 +15,28 @@ from consciousness_pipeline.config import (
     RESEARCH_DIR,
     SCHEMAS_DIR,
 )
-from consciousness_pipeline.course import write_course_artifacts, write_episode_artifacts
-from consciousness_pipeline.course_context import write_episode_course_context
-from consciousness_pipeline.course_contract import write_default_course_contract
-from consciousness_pipeline.episode_acceptance import accept_episode
-from consciousness_pipeline.episode_runner import run_episode, select_episode_context
-from consciousness_pipeline.evaluations import evaluate_episode
-from consciousness_pipeline.headings import detect_headings
-from consciousness_pipeline.models import Heading, PageText, Section
-from consciousness_pipeline.packets import render_packet, validate_packet
-from consciousness_pipeline.pdf_extract import extract_pages, write_pages_json
-from consciousness_pipeline.research import (
+from consciousness_pipeline.core.models import Heading, PageText, Section
+from consciousness_pipeline.course.context import write_episode_course_context
+from consciousness_pipeline.course.contract import write_default_course_contract
+from consciousness_pipeline.course.map import write_course_artifacts, write_episode_artifacts
+from consciousness_pipeline.episodes.acceptance import accept_episode
+from consciousness_pipeline.episodes.audio_reviews import (
+    DEFAULT_REVIEW_STATUS,
+    VALID_REVIEW_STATUSES,
+    write_audio_review,
+)
+from consciousness_pipeline.episodes.runner import run_episode, select_episode_context
+from consciousness_pipeline.ingest.headings import detect_headings
+from consciousness_pipeline.ingest.pdf_extract import extract_pages, write_pages_json
+from consciousness_pipeline.ingest.sections import build_sections
+from consciousness_pipeline.quality.evaluations import evaluate_episode
+from consciousness_pipeline.research.packets import render_packet, validate_packet
+from consciousness_pipeline.research.records import (
     load_research_record,
     write_notebooklm_research_sources,
     write_research_readme,
     write_research_stub,
 )
-from consciousness_pipeline.sections import build_sections
 
 
 def _read_pages(path: Path) -> list[PageText]:

@@ -1,6 +1,6 @@
 import unittest
 
-from consciousness_pipeline.models import Heading, PageText, Section
+from consciousness_pipeline.core.models import Heading, PageText, Section
 
 
 class ModelsTest(unittest.TestCase):

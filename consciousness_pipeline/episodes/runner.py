@@ -3,15 +3,15 @@ import json
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.agent_runner import run_job
-from consciousness_pipeline.config import PROJECT_ROOT
-from consciousness_pipeline.course_context import write_episode_course_context
-from consciousness_pipeline.course_context_selection import validate_course_context_selection
-from consciousness_pipeline.episode_acceptance import accept_episode
-from consciousness_pipeline.episode_reviews import validate_episode_review
-from consciousness_pipeline.evaluations import EvaluationStage, evaluate_episode
-from consciousness_pipeline.models import Section
-from consciousness_pipeline.research import write_notebooklm_research_sources
+from consciousness_pipeline.agents.runner import run_job
+from consciousness_pipeline.core.config import PROJECT_ROOT
+from consciousness_pipeline.core.models import Section
+from consciousness_pipeline.course.context import write_episode_course_context
+from consciousness_pipeline.course.context_selection import validate_course_context_selection
+from consciousness_pipeline.course.reviews import validate_episode_review
+from consciousness_pipeline.episodes.acceptance import accept_episode
+from consciousness_pipeline.quality.evaluations import EvaluationStage, evaluate_episode
+from consciousness_pipeline.research.records import write_notebooklm_research_sources
 
 RESEARCH_COMPLETENESS_FIELDS = ("core_claim", "strongest_case", "best_objections", "credibility")
 PLACEHOLDER_MARKER = "research incomplete"

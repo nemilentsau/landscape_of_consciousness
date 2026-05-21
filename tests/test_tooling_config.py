@@ -3,7 +3,7 @@ import re
 import tomllib
 import unittest
 
-from consciousness_pipeline.config import PROJECT_ROOT
+from consciousness_pipeline.core.config import PROJECT_ROOT
 
 
 class ToolingConfigTest(unittest.TestCase):

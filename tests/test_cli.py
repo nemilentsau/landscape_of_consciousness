@@ -6,8 +6,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from consciousness_pipeline import cli
-from consciousness_pipeline.models import ResearchRecord, Section, SourceRecord
+from consciousness_pipeline.cli import main as cli
+from consciousness_pipeline.core.models import ResearchRecord, Section, SourceRecord
 
 
 def make_section() -> Section:
@@ -77,7 +77,7 @@ class CliTest(unittest.TestCase):
         ]
 
         with patch.object(sys, "argv", argv), patch(
-            "consciousness_pipeline.cli.run_job",
+            "consciousness_pipeline.cli.main.run_job",
             side_effect=RuntimeError("codex CLI is not usable: ENOENT"),
         ):
             with self.assertRaises(SystemExit) as context:
@@ -163,7 +163,7 @@ class CliTest(unittest.TestCase):
     def test_run_episode_command_delegates_to_ordered_runner(self):
         argv = ["cli.py", "run-episode", "--episode-id", "group-003", "--agent", "codex"]
 
-        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.main.run_episode") as run_episode:
             cli.main()
 
         run_episode.assert_called_once_with(
@@ -187,7 +187,7 @@ class CliTest(unittest.TestCase):
             "claude",
         ]
 
-        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.main.run_episode") as run_episode:
             cli.main()
 
         run_episode.assert_called_once_with(
@@ -209,7 +209,7 @@ class CliTest(unittest.TestCase):
             "--auto-accept",
         ]
 
-        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.main.run_episode") as run_episode:
             cli.main()
 
         run_episode.assert_called_once_with(
@@ -224,7 +224,7 @@ class CliTest(unittest.TestCase):
         argv = ["cli.py", "select-context", "--episode-id", "group-005", "--agent", "claude"]
 
         with patch.object(sys, "argv", argv), patch(
-            "consciousness_pipeline.cli.select_episode_context"
+            "consciousness_pipeline.cli.main.select_episode_context"
         ) as select_episode_context:
             cli.main()
 
@@ -233,7 +233,7 @@ class CliTest(unittest.TestCase):
     def test_accept_episode_command_delegates_to_acceptance_checkpoint(self):
         argv = ["cli.py", "accept-episode", "--episode-id", "group-002", "--agent", "claude"]
 
-        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.accept_episode") as accept_episode:
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.main.accept_episode") as accept_episode:
             cli.main()
 
         accept_episode.assert_called_once_with("group-002", "claude", dry_run=False)
@@ -242,7 +242,7 @@ class CliTest(unittest.TestCase):
         argv = ["cli.py", "evaluate-episode", "--episode-id", "group-002", "--stage", "context"]
 
         with patch.object(sys, "argv", argv), patch(
-            "consciousness_pipeline.cli.evaluate_episode",
+            "consciousness_pipeline.cli.main.evaluate_episode",
             return_value={
                 "episode_id": "group-002",
                 "stage": "context",

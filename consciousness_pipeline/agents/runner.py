@@ -5,8 +5,9 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.agent_jobs import build_job_prompt, find_job
-from consciousness_pipeline.config import PROJECT_ROOT
+from consciousness_pipeline.agents.jobs import find_job
+from consciousness_pipeline.agents.prompts import build_job_prompt
+from consciousness_pipeline.core.config import PROJECT_ROOT
 
 
 def check_agent_available(agent: str) -> None:

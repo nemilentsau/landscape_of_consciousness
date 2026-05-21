@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 
 from consciousness_pipeline import __version__
-from consciousness_pipeline.config import (
+from consciousness_pipeline.core.config import (
     AUDIO_FORMAT,
     AUDIO_LANGUAGE,
     AUDIO_LENGTH,

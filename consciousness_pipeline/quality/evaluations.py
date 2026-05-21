@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Literal
 
-from consciousness_pipeline.episode_capsules import EpisodeCapsuleValidationError, validate_episode_capsule
+from consciousness_pipeline.course.capsules import EpisodeCapsuleValidationError, validate_episode_capsule
 
 EvaluationSeverity = Literal["error", "warning"]
 EvaluationStage = Literal["context", "research", "dossier", "bundle", "accepted", "audio"]

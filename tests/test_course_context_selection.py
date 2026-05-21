@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.course_context_selection import (
+from consciousness_pipeline.course.context_selection import (
     CourseContextSelectionValidationError,
     validate_course_context_selection,
     write_course_context_selection_schema,
