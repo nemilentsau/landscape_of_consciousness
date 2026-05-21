@@ -12,6 +12,7 @@ from consciousness_pipeline.agents.contracts import (
 from consciousness_pipeline.agents.jobs import find_job
 from consciousness_pipeline.agents.prompts import build_job_prompt
 from consciousness_pipeline.core.config import PROJECT_ROOT
+from consciousness_pipeline.quality.evaluations import REQUIRED_DOSSIER_HEADINGS
 
 
 def check_agent_available(agent: str) -> None:
@@ -136,9 +137,15 @@ def _write_source_script_bundle(job: Mapping[str, object], output: Any, root: Pa
     bundle_output_path = job.get("bundle_output_path")
     if not isinstance(dossier, str) or not bundle_output_path:
         return
+    if not _looks_like_source_dossier(dossier):
+        return
     dossier_path = _resolve_project_path(root, bundle_output_path)
     dossier_path.parent.mkdir(parents=True, exist_ok=True)
     dossier_path.write_text(dossier, encoding="utf-8")
+
+
+def _looks_like_source_dossier(dossier: str) -> bool:
+    return bool(dossier.strip()) and all(heading in dossier for heading in REQUIRED_DOSSIER_HEADINGS)
 
 
 def run_job(

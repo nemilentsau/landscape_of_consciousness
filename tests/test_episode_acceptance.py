@@ -32,7 +32,7 @@ def write_status(path: Path) -> None:
                 "group_id": "group-002",
                 "section_id": "6",
                 "packet_slug": "06-is-consciousness-primitive-fundamental",
-                "research_status": "researched",
+                "research_status": "research_queued",
                 "script_status": "source_script_queued",
                 "notebooklm_status": "not_started",
                 "notebook_url": "",
@@ -102,6 +102,7 @@ class EpisodeAcceptanceTest(unittest.TestCase):
             self.assertIn("hard_problem", callback_index)
             with (root / "course" / "production-status.csv").open(newline="", encoding="utf-8") as handle:
                 rows = list(csv.DictReader(handle))
+            self.assertEqual(rows[0]["research_status"], "researched")
             self.assertEqual(rows[0]["script_status"], "source_script_ready")
             self.assertEqual(rows[0]["notebooklm_status"], "notebooklm_bundle_ready")
             self.assertIn("capsule generated", rows[0]["message"])

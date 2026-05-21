@@ -1,4 +1,28 @@
 {
+  "Architecture, not fluency, anchors AI consciousness claims from this cluster": [
+    {
+      "accepted_dossier_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-007.json",
+      "episode_id": "group-007",
+      "family": "ai_fluency_not_consciousness",
+      "source_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "summary": "Computational and functionalist materialism keep AI consciousness conceptually open, but Butlin and colleagues' work is best treated as a conditional indicator program over recurrence, global availability, higher-order monitoring, agency, and world modeling. Homeostatic and biological views raise the bar by requiring rich self-regulation, embodiment, and affect-like control; EM views push attention to hardware field organization.",
+      "tags": [
+        "ai",
+        "indicators",
+        "functionalism",
+        "embodiment",
+        "self_report"
+      ],
+      "useful_for_future_sections": [
+        "AI consciousness",
+        "machine sentience evaluation",
+        "computational theories",
+        "homeostatic and affective theories",
+        "policy under uncertainty"
+      ]
+    }
+  ],
   "Ask for the target phenomenon first": [
     {
       "accepted_dossier_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
@@ -17,6 +41,30 @@
         "higher-order theories",
         "predictive-processing and re-entry theories",
         "AI consciousness"
+      ]
+    }
+  ],
+  "Block correlation inflation across neural, field, computational, and interoceptive markers": [
+    {
+      "accepted_dossier_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-007.json",
+      "episode_id": "group-007",
+      "family": "report_not_experience",
+      "source_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "summary": "An NCC, gamma synchrony, stable working-memory field, integrated-information measure, criticality index, free-energy minimum, or allostatic signature can track, enable, or precede consciousness without being identical with experience. Future episodes should hold this caution uniformly across substrates rather than relaxing it for a favored theory.",
+      "tags": [
+        "ncc",
+        "correlation",
+        "constitution",
+        "field_theories",
+        "information_measures"
+      ],
+      "useful_for_future_sections": [
+        "neural correlates of consciousness",
+        "electromagnetic field theories",
+        "integrated information theory",
+        "criticality and complexity",
+        "predictive processing"
       ]
     }
   ],
@@ -60,6 +108,29 @@
         "AI consciousness",
         "collective consciousness",
         "cosmopsychism or idealism"
+      ]
+    }
+  ],
+  "Brain and body dependence constrains theories without constituting them": [
+    {
+      "accepted_dossier_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-007.json",
+      "episode_id": "group-007",
+      "family": "brain_dependence_constraint",
+      "source_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "summary": "Anesthesia, sleep, coma, seizures, lesions, stimulation, drugs, neuromodulation, interoceptive disturbance, and mood disorders are intervention-sensitive evidence that any serious theory must respect. They make ordinary disembodied consciousness implausible while leaving the question of whether brain mechanisms constitute or merely enable phenomenal experience open.",
+      "tags": [
+        "brain_dependence",
+        "intervention",
+        "clinical_evidence",
+        "materialism"
+      ],
+      "useful_for_future_sections": [
+        "remaining materialist subfamilies",
+        "dualist and idealist replies",
+        "survival and afterlife claims",
+        "disorders of consciousness",
+        "anesthesia and sleep research"
       ]
     }
   ],
@@ -374,6 +445,29 @@
       ]
     }
   ],
+  "Keep hard-problem and gap arguments as audits, not as mechanisms": [
+    {
+      "accepted_dossier_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-007.json",
+      "episode_id": "group-007",
+      "family": "epistemic_false_balance",
+      "source_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "summary": "Chalmers's hard problem, Levine's explanatory gap, Nagel's bat, Jackson's Mary, Block's phenomenal/access distinction, and zombie arguments function in this cluster as diagnostic tests of materialist explanation. They do not refute materialism on their own and they do not supply positive mechanisms, but they do mark when a theory has explained access without explaining phenomenality.",
+      "tags": [
+        "hard_problem",
+        "explanatory_gap",
+        "audit",
+        "phenomenal_consciousness"
+      ],
+      "useful_for_future_sections": [
+        "remaining materialist subfamilies",
+        "dualism and idealism episodes",
+        "panpsychism",
+        "illusionism",
+        "theory comparison episodes"
+      ]
+    }
+  ],
   "Keep the hard criteria demand attached to every empirical theory": [
     {
       "accepted_dossier_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
@@ -415,6 +509,29 @@
         "dualisms",
         "idealisms",
         "course recap episodes"
+      ]
+    }
+  ],
+  "Make every materialist theory declare its bridge relation": [
+    {
+      "accepted_dossier_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-007.json",
+      "episode_id": "group-007",
+      "family": "bridge_relation_required",
+      "source_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "summary": "When future episodes invoke identity theory, functionalism, NCC research, EM field accounts, computational or homeostatic views, ask whether the theory claims identity, realization, constitution, grounding, causal enabling, correlation, prediction, or organizational invariance. Do not let a mechanism stand in for the relation that connects it to phenomenal experience.",
+      "tags": [
+        "bridge_relations",
+        "physicalism",
+        "materialism",
+        "theory_comparison"
+      ],
+      "useful_for_future_sections": [
+        "later materialism subfamilies",
+        "integrated information theory",
+        "global neuronal workspace",
+        "AI consciousness",
+        "theory comparison episodes"
       ]
     }
   ],
@@ -503,6 +620,30 @@
       ]
     }
   ],
+  "Reject overbreadth as a covert win for any materialist mechanism": [
+    {
+      "accepted_dossier_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-007.json",
+      "episode_id": "group-007",
+      "family": "formalism_not_confirmation",
+      "source_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "summary": "Functionalism, computation, information, homeostasis, free-energy minimization, and field integration can be defined so broadly that thermostats, the internet, seizures, generic control loops, and almost any brain qualify. A theory that licenses these implications without extra structure is too permissive, not vindicated.",
+      "tags": [
+        "overbreadth",
+        "functionalism",
+        "computation",
+        "free_energy",
+        "falsifiability"
+      ],
+      "useful_for_future_sections": [
+        "free-energy and active inference",
+        "computational theories",
+        "panpsychist comparisons",
+        "AI consciousness",
+        "theory comparison episodes"
+      ]
+    }
+  ],
   "Require identity or an identity-like relation": [
     {
       "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
@@ -567,6 +708,30 @@
         "whole-brain emulation",
         "personal identity",
         "transhumanist speculation"
+      ]
+    }
+  ],
+  "Target the phenomenon before counting a materialist explanation as success": [
+    {
+      "accepted_dossier_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-007.json",
+      "episode_id": "group-007",
+      "family": "target_phenomenon_discipline",
+      "source_path": "episodes/group-007/notebooklm_bundle/research_dossier.md",
+      "summary": "Global workspace and recurrent theories often explain access or local recurrence; higher-order theories target metacognition; homeostatic theories target felt bodily self and valence; EM theories often target binding and unity; philosophical physicalism targets ontology. A theory that succeeds on one target should not be credited with explaining phenomenal character across all targets.",
+      "tags": [
+        "target_phenomenon",
+        "access",
+        "phenomenality",
+        "report"
+      ],
+      "useful_for_future_sections": [
+        "global neuronal workspace",
+        "higher-order theories",
+        "recurrent processing",
+        "attention schema theory",
+        "integrated information theory",
+        "theory comparison episodes"
       ]
     }
   ],
