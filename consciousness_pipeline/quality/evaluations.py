@@ -38,6 +38,7 @@ REQUIRED_SOURCE_HEADINGS = (
     "## Sources",
 )
 PERFORMED_SCRIPT_LINE = re.compile(r"^\s*(host|speaker\s*\d+|narrator)\s*:", re.IGNORECASE | re.MULTILINE)
+AUDIO_READY_STATUSES = {"audio_ready", "audio_review_pending", "audio_accepted"}
 
 
 @dataclass(frozen=True)
@@ -706,16 +707,16 @@ def _evaluate_audio_review(root: Path, episode_id: str, issues: list[EvaluationI
             root,
         )
         return
-    if "audio_ready" not in audio_statuses:
+    if not audio_statuses.intersection(AUDIO_READY_STATUSES):
         _issue(
             issues,
             "audio_not_ready",
             "warning",
-            "Episode is not marked audio_ready in the production status ledger",
+            "Episode is not marked audio-ready in the production status ledger",
             status_path,
             root,
             value=", ".join(sorted(status for status in audio_statuses if status)) or "empty",
-            limit="audio_ready",
+            limit=", ".join(sorted(AUDIO_READY_STATUSES)),
         )
         return
     if not review_path.exists():

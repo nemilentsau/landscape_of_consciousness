@@ -1,3 +1,4 @@
+import csv
 import json
 import subprocess
 import sys
@@ -59,6 +60,7 @@ class CliTest(unittest.TestCase):
         self.assertIn("accept-episode", result.stdout)
         self.assertIn("evaluate-episode", result.stdout)
         self.assertIn("write-audio-review", result.stdout)
+        self.assertIn("record-notebooklm-status", result.stdout)
         self.assertIn("select-context", result.stdout)
         self.assertIn("write-contract", result.stdout)
         self.assertIn("bundle-sources", result.stdout)
@@ -275,6 +277,39 @@ class CliTest(unittest.TestCase):
             review_path = root / "episodes" / "group-006" / "audio_review.md"
             self.assertTrue(review_path.exists())
             self.assertIn("Review status: pending_human_listen", review_path.read_text(encoding="utf-8"))
+
+    def test_record_notebooklm_status_command_updates_ledger(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            status_path = root / "course" / "production-status.csv"
+            status_path.parent.mkdir(parents=True)
+            status_path.write_text(
+                "group_id,section_id,packet_slug,research_status,script_status,notebooklm_status,notebook_url,"
+                "audio_status,message\n"
+                "group-001,1,01-one,researched,source_script_ready,notebooklm_bundle_ready,,not_started,\n",
+                encoding="utf-8",
+            )
+            argv = [
+                "cli.py",
+                "record-notebooklm-status",
+                "--episode-id",
+                "group-001",
+                "--audio-status",
+                "audio_requested",
+                "--notebook-url",
+                "https://notebooklm.example/group-001",
+                "--message",
+                "NotebookLM accepted Long Deep Dive audio request",
+            ]
+
+            with patch.object(sys, "argv", argv), patch.object(cli, "PROJECT_ROOT", root):
+                cli.main()
+
+            with status_path.open(newline="", encoding="utf-8") as handle:
+                rows = list(csv.DictReader(handle))
+            self.assertEqual(rows[0]["audio_status"], "audio_requested")
+            self.assertEqual(rows[0]["notebook_url"], "https://notebooklm.example/group-001")
+            self.assertEqual(rows[0]["message"], "NotebookLM accepted Long Deep Dive audio request")
 
     def test_write_contract_command_writes_static_course_contract(self):
         with tempfile.TemporaryDirectory() as tmp:

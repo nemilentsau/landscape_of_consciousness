@@ -36,6 +36,9 @@ STATUS_VALUES = (
     "notebooklm_bundle_ready",
     "audio_requested",
     "audio_ready",
+    "audio_review_pending",
+    "audio_accepted",
+    "audio_regenerate_requested",
     "failed",
     "manual_action_required",
 )

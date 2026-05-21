@@ -2,7 +2,24 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.episodes.audio_reviews import episode_audio_status, write_audio_review
+from consciousness_pipeline.episodes.audio_reviews import (
+    NotebookLMStatusError,
+    episode_audio_status,
+    record_notebooklm_status,
+    write_audio_review,
+)
+
+
+def write_status(path: Path) -> None:
+    path.parent.mkdir(parents=True)
+    path.write_text(
+        "group_id,section_id,packet_slug,research_status,script_status,notebooklm_status,notebook_url,"
+        "audio_status,message\n"
+        "group-001,1,one,researched,source_script_ready,notebooklm_bundle_ready,,not_started,\n"
+        "group-001,2,two,researched,source_script_ready,notebooklm_bundle_ready,,not_started,\n"
+        "group-002,3,three,researched,source_script_ready,notebooklm_bundle_ready,,not_started,\n",
+        encoding="utf-8",
+    )
 
 
 class AudioReviewsTest(unittest.TestCase):
@@ -57,6 +74,112 @@ class AudioReviewsTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             with self.assertRaisesRegex(ValueError, "Unsupported audio review status"):
                 write_audio_review(Path(tmp), "group-006", review_status="approvedish")
+
+    def test_record_notebooklm_status_updates_all_episode_rows(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            status_path = root / "course" / "production-status.csv"
+            write_status(status_path)
+
+            path = record_notebooklm_status(
+                root,
+                "group-001",
+                "audio_requested",
+                notebook_url="https://notebooklm.example/group-001",
+                message="NotebookLM accepted Long Deep Dive audio request from six-file bundle",
+            )
+
+            self.assertEqual(path, status_path)
+            rows = status_path.read_text(encoding="utf-8").splitlines()
+            self.assertIn(
+                "group-001,1,one,researched,source_script_ready,notebooklm_bundle_ready,"
+                "https://notebooklm.example/group-001,audio_requested,"
+                "NotebookLM accepted Long Deep Dive audio request from six-file bundle",
+                rows,
+            )
+            self.assertIn(
+                "group-001,2,two,researched,source_script_ready,notebooklm_bundle_ready,"
+                "https://notebooklm.example/group-001,audio_requested,"
+                "NotebookLM accepted Long Deep Dive audio request from six-file bundle",
+                rows,
+            )
+            self.assertIn(
+                "group-002,3,three,researched,source_script_ready,notebooklm_bundle_ready,,not_started,",
+                rows,
+            )
+
+    def test_record_notebooklm_status_allows_retrospective_request_without_url(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            status_path = root / "course" / "production-status.csv"
+            write_status(status_path)
+
+            record_notebooklm_status(
+                root,
+                "group-001",
+                "audio_requested",
+                message="Retrospective reconciliation: handoff started before URL capture was enforced",
+            )
+
+            status = episode_audio_status(root, "group-001")
+            self.assertEqual(status["audio_status"], "audio_requested")
+            self.assertNotIn("notebook_url", status)
+
+    def test_record_notebooklm_status_requires_url_for_ready_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_status(root / "course" / "production-status.csv")
+
+            with self.assertRaisesRegex(NotebookLMStatusError, "requires a NotebookLM URL"):
+                record_notebooklm_status(root, "group-001", "audio_ready", message="Audio is available")
+
+    def test_record_notebooklm_status_requires_message_for_verified_state(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_status(root / "course" / "production-status.csv")
+
+            with self.assertRaisesRegex(NotebookLMStatusError, "requires a message"):
+                record_notebooklm_status(root, "group-001", "audio_requested")
+
+    def test_record_notebooklm_status_rejects_unknown_audio_status(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_status(root / "course" / "production-status.csv")
+
+            with self.assertRaisesRegex(NotebookLMStatusError, "Unsupported audio status"):
+                record_notebooklm_status(root, "group-001", "maybe_ready", message="unclear")
+
+    def test_record_notebooklm_status_rejects_missing_episode(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_status(root / "course" / "production-status.csv")
+
+            with self.assertRaisesRegex(NotebookLMStatusError, "group-999"):
+                record_notebooklm_status(root, "group-999", "audio_requested", message="No matching rows")
+
+    def test_record_notebooklm_status_is_idempotent(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            status_path = root / "course" / "production-status.csv"
+            write_status(status_path)
+
+            record_notebooklm_status(
+                root,
+                "group-001",
+                "audio_requested",
+                notebook_url="https://notebooklm.example/group-001",
+                message="NotebookLM accepted request",
+            )
+            first_write = status_path.read_text(encoding="utf-8")
+            record_notebooklm_status(
+                root,
+                "group-001",
+                "audio_requested",
+                notebook_url="https://notebooklm.example/group-001",
+                message="NotebookLM accepted request",
+            )
+
+            self.assertEqual(status_path.read_text(encoding="utf-8"), first_write)
 
 
 if __name__ == "__main__":

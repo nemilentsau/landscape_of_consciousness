@@ -37,6 +37,7 @@ uv run python -m unittest discover -s tests -v
 - For NotebookLM audio, use Deep Dive format with Long length. Do not choose Debate as the NotebookLM format; debate-style balance belongs in the custom prompt.
 - For NotebookLM audio handoff, upload the full bundle as separate files: `episodes/<group-id>/notebooklm_bundle/research_dossier.md` plus every Markdown file in `episodes/<group-id>/notebooklm_bundle/sources/`. For the current top-level episode pattern this is six files total.
 - Do not concatenate, paste, summarize, or otherwise collapse the NotebookLM bundle into one copied-text source. A one-source NotebookLM notebook is invalid for this project unless the user explicitly asks for that degraded mode in the same turn.
+- Every Codex-run NotebookLM handoff must end by recording the verified state with `uv run python -m consciousness_pipeline.cli record-notebooklm-status --episode-id <group-id> --audio-status audio_requested --notebook-url <url> --message "<evidence note>"`. Do not leave a handoff at `not_started` after NotebookLM has accepted an audio request.
 - Do not claim the NotebookLM file picker is blocked unless a real browser or OS file picker path has been attempted and the actual error has been reported. If browser automation cannot set files through the extension, use a native/browser file picker path or stop and ask the user to take over that upload step; do not substitute copied text.
 - Keep generated research records schema-shaped so they can be consumed by packet and script generation.
 
