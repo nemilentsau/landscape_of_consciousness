@@ -434,7 +434,7 @@ The capsule must:
 - add callbacks only when they can point back to the accepted dossier source path
 - merge overlapping concepts and callbacks instead of restating every section summary
 - prefer fewer, sharper callbacks over comprehensive recap
-- use optional callback family and tags as advisory grouping hints when they help future selection
+- include callback family and tags as required advisory grouping hints for future selection
 - keep source_path values traceable to the local dossier path
 
 Default memory budget unless this is explicitly a synthesis episode:
@@ -444,7 +444,8 @@ Default memory budget unless this is explicitly a synthesis episode:
 - 5-8 open tensions
 - 4-7 callbacks
 
-Callback family is provisional and free-form, not a strict enum. Useful seed families include:
+Callback family is required but provisional and free-form, not a strict enum. Callback tags are required,
+topic-level strings. Useful seed families include:
 target_phenomenon_discipline, bridge_relation_required, epistemic_false_balance,
 brain_dependence_constraint, report_not_experience, ai_fluency_not_consciousness,
 identity_continuity_required, anomalous_claims_conditional, formalism_not_confirmation,

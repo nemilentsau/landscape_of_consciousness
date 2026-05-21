@@ -70,7 +70,7 @@ class EpisodeCapsuleTest(unittest.TestCase):
                 validate_episode_capsule(capsule, root=root)
             self.assertIn("durable_concepts", str(context.exception))
 
-    def test_validate_capsule_accepts_legacy_callbacks_without_family_or_tags(self):
+    def test_validate_capsule_requires_callback_family_and_tags(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             capsule = make_capsule()
@@ -84,7 +84,11 @@ class EpisodeCapsuleTest(unittest.TestCase):
             dossier.parent.mkdir(parents=True)
             dossier.write_text("# Accepted dossier\n", encoding="utf-8")
 
-            validate_episode_capsule(capsule, root=root)
+            with self.assertRaises(EpisodeCapsuleValidationError) as context:
+                validate_episode_capsule(capsule, root=root)
+            message = str(context.exception)
+            self.assertIn("callbacks[0].family", message)
+            self.assertIn("callbacks[0].tags", message)
 
     def test_validate_capsule_rejects_missing_source_paths(self):
         with tempfile.TemporaryDirectory() as tmp:

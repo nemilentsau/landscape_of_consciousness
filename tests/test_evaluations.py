@@ -119,14 +119,13 @@ def write_episode_root(root: Path, *, bloated: bool = False) -> None:
     callbacks = [
         {
             "concept": "target discipline",
+            "family": "target_phenomenon_discipline",
+            "tags": ["phenomenal_consciousness"],
             "summary": "Keep the target phenomenon explicit.",
             "source_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
             "useful_for_future_sections": ["all future sections"],
         }
     ]
-    if not bloated:
-        callbacks[0]["family"] = "target_phenomenon_discipline"
-        callbacks[0]["tags"] = ["phenomenal_consciousness"]
     (capsule_dir / "group-001.json").write_text(
         json.dumps(
             {
@@ -167,7 +166,7 @@ class EpisodeEvaluationTest(unittest.TestCase):
             self.assertTrue(report["ok"])
             self.assertEqual(report["summary"], {"errors": 0, "warnings": 0, "issues": 0})
 
-    def test_evaluate_episode_warns_on_memory_bloat_and_missing_callback_metadata(self):
+    def test_evaluate_episode_warns_on_memory_bloat(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             write_episode_root(root, bloated=True)
@@ -178,8 +177,6 @@ class EpisodeEvaluationTest(unittest.TestCase):
             check_ids = {issue["check_id"] for issue in report["issues"]}  # type: ignore[index]
             self.assertIn("context_word_budget", check_ids)
             self.assertIn("capsule_durable_concepts_budget", check_ids)
-            self.assertIn("callback_family_missing", check_ids)
-            self.assertIn("callback_tags_missing", check_ids)
 
     def test_evaluate_episode_flags_bundle_source_count_errors(self):
         with tempfile.TemporaryDirectory() as tmp:

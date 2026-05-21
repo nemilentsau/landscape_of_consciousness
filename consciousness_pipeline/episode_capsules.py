@@ -40,7 +40,7 @@ EPISODE_CAPSULE_SCHEMA: dict[str, Any] = {
                     "source_path": {"type": "string"},
                     "useful_for_future_sections": {"type": "array", "items": {"type": "string"}},
                 },
-                "required": ["concept", "summary", "source_path", "useful_for_future_sections"],
+                "required": ["concept", "family", "tags", "summary", "source_path", "useful_for_future_sections"],
                 "additionalProperties": False,
             },
         },
@@ -109,16 +109,15 @@ def _validate_entries(
             if not isinstance(future_sections, list):
                 errors.append(f"{field}[{index}].useful_for_future_sections must be a list")
             family = entry.get("family")
-            if family is not None and not _non_empty_string(family):
-                errors.append(f"{field}[{index}].family must be a non-empty string when provided")
+            if not _non_empty_string(family):
+                errors.append(f"{field}[{index}].family is required")
             tags = entry.get("tags")
-            if tags is not None:
-                if not isinstance(tags, list):
-                    errors.append(f"{field}[{index}].tags must be a list when provided")
-                else:
-                    for tag_index, tag in enumerate(tags):
-                        if not _non_empty_string(tag):
-                            errors.append(f"{field}[{index}].tags[{tag_index}] must be a non-empty string")
+            if not isinstance(tags, list) or not tags:
+                errors.append(f"{field}[{index}].tags must be a non-empty list")
+            else:
+                for tag_index, tag in enumerate(tags):
+                    if not _non_empty_string(tag):
+                        errors.append(f"{field}[{index}].tags[{tag_index}] must be a non-empty string")
         if root is not None and _non_empty_string(entry.get("source_path")):
             source_path = _resolve_project_path(root, entry["source_path"])
             if not source_path.exists():

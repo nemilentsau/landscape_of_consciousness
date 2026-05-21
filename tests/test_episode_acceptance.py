@@ -63,6 +63,8 @@ def make_capsule(root: Path) -> dict[str, object]:
         "callbacks": [
             {
                 "concept": "hard_problem",
+                "family": "target_phenomenon_discipline",
+                "tags": ["hard_problem", "phenomenal_consciousness"],
                 "summary": "Use as the central pressure point.",
                 "source_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
                 "useful_for_future_sections": ["integrated information theory"],

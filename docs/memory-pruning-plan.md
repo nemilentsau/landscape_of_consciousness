@@ -132,28 +132,22 @@ The prompt should say:
 - prefer fewer, sharper callbacks
 - mark synthesis exceptions explicitly
 
-### Step 2. Add Optional Callback Family And Tags
+### Step 2. Require Callback Family And Tags
 
-Extend the episode capsule schema with optional callback fields:
+Extend the episode capsule schema with required callback fields:
 
 ```json
 "family": {"type": "string"},
 "tags": {"type": "array", "items": {"type": "string"}}
 ```
 
-These fields should be allowed on callback entries but not required at first. This keeps old capsules valid while enabling gradual grouping and topic-aware selection.
+These fields are required on callback entries. The family value remains free-form, and tags remain topic-level hints; requiring the fields keeps headless structured-output validation compatible and prevents new capsules from silently losing selection metadata.
 
 Do not validate `family` against a fixed enum in the first implementation. Keep it free-form and document the known seed families in this plan or a later small registry file. Add enum validation only if the family set becomes stable and the added strictness clearly helps.
 
 ### Step 3. Canonicalize The Callback Index
 
-Update `build_callback_index` so it exposes callback `family` and `tags` when present.
-
-Initial behavior can remain backward-compatible:
-
-- if `family` exists, include it in callback index entries
-- if `tags` exist, include them in callback index entries
-- if neither exists, continue using `concept` and `useful_for_future_sections`
+Update `build_callback_index` so it exposes callback `family` and `tags` for every callback entry.
 
 Later, context selection can prefer diversity across families unless the selected episode needs multiple callbacks from the same family. It should avoid near-duplicates, not mechanically enforce one callback per family.
 

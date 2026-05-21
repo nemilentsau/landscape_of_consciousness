@@ -149,6 +149,28 @@
       ]
     }
   ],
+  "Do not let AI urgency lower the evidence standard": [
+    {
+      "accepted_dossier_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-006.json",
+      "episode_id": "group-006",
+      "family": "ai_fluency_not_consciousness",
+      "source_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "summary": "The dossier supports urgent, theory-derived AI consciousness criteria, not certainty about current systems. Fluent language, self-report, and role-play remain insufficient; uncertainty motivates better indicators rather than casual anthropomorphism or blanket dismissal.",
+      "tags": [
+        "ai",
+        "indicators",
+        "self_report",
+        "moral_status"
+      ],
+      "useful_for_future_sections": [
+        "AI consciousness",
+        "AI welfare",
+        "machine sentience evaluation",
+        "policy under uncertainty"
+      ]
+    }
+  ],
   "Do not let neural correlates do more work than they can bear": [
     {
       "accepted_dossier_path": "episodes/group-001/notebooklm_bundle/research_dossier.md",
@@ -352,6 +374,28 @@
       ]
     }
   ],
+  "Keep the hard criteria demand attached to every empirical theory": [
+    {
+      "accepted_dossier_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-006.json",
+      "episode_id": "group-006",
+      "family": "bridge_relation_required",
+      "source_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "summary": "Future uses of empirical theories should ask for clear targets, necessity and sufficiency commitments, risky predictions, preregistered tests, scope limits, and a distinction between prediction and explanation. This is the reflections cluster's strongest methodological carryover.",
+      "tags": [
+        "hard_criteria",
+        "testability",
+        "prediction",
+        "explanation"
+      ],
+      "useful_for_future_sections": [
+        "empirical theories of consciousness",
+        "theory comparison episodes",
+        "NCC discussions",
+        "AI consciousness criteria"
+      ]
+    }
+  ],
   "Keep the landscape epistemically tagged": [
     {
       "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
@@ -395,6 +439,28 @@
       ]
     }
   ],
+  "Mark Kuhn's Dualism-Idealism hunch as disclosed speculation": [
+    {
+      "accepted_dossier_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-006.json",
+      "episode_id": "group-006",
+      "family": "metaphysical_breadth_not_explanation",
+      "source_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "summary": "Kuhn's personal inclination toward a Dualism-Idealism mashup, with quantum consciousness and eliminative or representational materialism as surprising runners-up, is useful as intellectual candor. Because he says he can describe but not defend it, future episodes should not treat it as the survey's conclusion.",
+      "tags": [
+        "kuhn",
+        "dualism",
+        "idealism",
+        "speculation"
+      ],
+      "useful_for_future_sections": [
+        "dualism",
+        "idealism",
+        "quantum consciousness",
+        "course recap episodes"
+      ]
+    }
+  ],
   "Ontological ambition vs empirical leverage": [
     {
       "accepted_dossier_path": "episodes/group-003/notebooklm_bundle/research_dossier.md",
@@ -413,6 +479,27 @@
         "religious and spiritual theories",
         "cosmic consciousness claims",
         "theory comparison episodes"
+      ]
+    }
+  ],
+  "Preserve disciplined pluralism without false balance": [
+    {
+      "accepted_dossier_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-006.json",
+      "episode_id": "group-006",
+      "family": "epistemic_false_balance",
+      "source_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "summary": "The reflections support wide comparison and humility, but not equal evidential standing for mainstream neuroscience, active philosophy, formal theory, speculative metaphysics, religious doctrine, anomalous claims, and personal hunches. Keep the map broad and the evidence tags sharp.",
+      "tags": [
+        "pluralism",
+        "epistemic_status",
+        "false_balance"
+      ],
+      "useful_for_future_sections": [
+        "course recap episodes",
+        "public-facing summaries",
+        "metaphysical comparison episodes",
+        "AI and survival implications"
       ]
     }
   ],
@@ -480,6 +567,28 @@
         "whole-brain emulation",
         "personal identity",
         "transhumanist speculation"
+      ]
+    }
+  ],
+  "Treat adversarial collaboration as maturation, not settlement": [
+    {
+      "accepted_dossier_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-006.json",
+      "episode_id": "group-006",
+      "family": "formalism_not_confirmation",
+      "source_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "summary": "The GNW-IIT adversarial testing program shows a healthier methodological norm: rival theories make explicit predictions under shared procedures. It should be remembered as progress in constraining theories, not as a final solution to consciousness.",
+      "tags": [
+        "adversarial_collaboration",
+        "gnw",
+        "iit",
+        "methodology"
+      ],
+      "useful_for_future_sections": [
+        "global neuronal workspace",
+        "integrated information theory",
+        "empirical theory testing",
+        "scientific methodology"
       ]
     }
   ],
@@ -615,6 +724,27 @@
         "Russellian and panpsychist neighbors",
         "mystical and contemplative reports",
         "course recap episodes"
+      ]
+    }
+  ],
+  "Use the landscape as a comparison map, not a verdict": [
+    {
+      "accepted_dossier_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "capsule_path": "course/episode_capsules/group-006.json",
+      "episode_id": "group-006",
+      "family": "metaphysical_breadth_not_explanation",
+      "source_path": "episodes/group-006/notebooklm_bundle/research_dossier.md",
+      "summary": "Kuhn's taxonomy can orient listeners across theory families, implications, and evidential domains, but it does not adjudicate which ontology or mechanism is correct. Future recap or comparison episodes should use the map to structure questions, not as proof that the mapped categories carve nature correctly.",
+      "tags": [
+        "taxonomy",
+        "theory_comparison",
+        "synthesis"
+      ],
+      "useful_for_future_sections": [
+        "course recap episodes",
+        "theory comparison episodes",
+        "introductory framing for new clusters",
+        "methodology episodes"
       ]
     }
   ],
