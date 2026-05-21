@@ -20,8 +20,8 @@ As of 2026-05-21, accepted continuity exists for the six top-level orientation e
 | Episode | Listener title | Sections | Continuity | NotebookLM audio status |
 | --- | --- | --- | --- | --- |
 | `group-001` | The Hard Problem And The Map Legend | 1-5 | capsule accepted, review present | `audio_review_pending` |
-| `group-002` | Brain Dependence, Identity, And The Physicalist Fork | 6-10 | capsule accepted, review present | `audio_requested` |
-| `group-003` | Big Ontologies Under Pressure | 11-15 | capsule accepted, review present | `audio_requested` |
+| `group-002` | Brain Dependence, Identity, And The Physicalist Fork | 6-10 | capsule accepted, review present | `audio_review_pending` |
+| `group-003` | Big Ontologies Under Pressure | 11-15 | capsule accepted, review present | `audio_review_pending` |
 | `group-004` | Idealism, Anomalies, And The Challenge Arguments | 16-20 | capsule accepted, review present | `audio_ready` |
 | `group-005` | Consequences Under Uncertainty | 21-25 | capsule accepted, review present | `audio_ready` |
 | `group-006` | Disciplined Pluralism After The Landscape | 26 | capsule accepted, review present | `audio_ready` |
@@ -33,7 +33,7 @@ after the notebook is revisited and the generated audio is actually available.
 
 Use `episodes/<group-id>/audio_review.md` for rendered-audio QA. It is separate from `review.json`,
 which evaluates the factual source dossier before continuity acceptance.
-Audio review checklists exist for `group-001`, `group-004`, `group-005`, and `group-006`; all four are
+Audio review checklists exist for `group-001` through `group-006`; all six are
 pending a human listening decision.
 
 ## Active Improvement Roadmap
