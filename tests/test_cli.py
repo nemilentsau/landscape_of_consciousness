@@ -6,8 +6,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from consciousness_pipeline import cli
-from consciousness_pipeline.models import ResearchRecord, Section, SourceRecord
+from consciousness_pipeline.cli import main as cli
+from consciousness_pipeline.core.models import ResearchRecord, Section, SourceRecord
 
 
 def make_section() -> Section:
@@ -58,6 +58,7 @@ class CliTest(unittest.TestCase):
         self.assertIn("run-episode", result.stdout)
         self.assertIn("accept-episode", result.stdout)
         self.assertIn("evaluate-episode", result.stdout)
+        self.assertIn("write-audio-review", result.stdout)
         self.assertIn("select-context", result.stdout)
         self.assertIn("write-contract", result.stdout)
         self.assertIn("bundle-sources", result.stdout)
@@ -76,7 +77,7 @@ class CliTest(unittest.TestCase):
         ]
 
         with patch.object(sys, "argv", argv), patch(
-            "consciousness_pipeline.cli.run_job",
+            "consciousness_pipeline.cli.main.run_job",
             side_effect=RuntimeError("codex CLI is not usable: ENOENT"),
         ):
             with self.assertRaises(SystemExit) as context:
@@ -162,7 +163,7 @@ class CliTest(unittest.TestCase):
     def test_run_episode_command_delegates_to_ordered_runner(self):
         argv = ["cli.py", "run-episode", "--episode-id", "group-003", "--agent", "codex"]
 
-        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.main.run_episode") as run_episode:
             cli.main()
 
         run_episode.assert_called_once_with(
@@ -186,7 +187,7 @@ class CliTest(unittest.TestCase):
             "claude",
         ]
 
-        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.main.run_episode") as run_episode:
             cli.main()
 
         run_episode.assert_called_once_with(
@@ -208,7 +209,7 @@ class CliTest(unittest.TestCase):
             "--auto-accept",
         ]
 
-        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.run_episode") as run_episode:
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.main.run_episode") as run_episode:
             cli.main()
 
         run_episode.assert_called_once_with(
@@ -223,7 +224,7 @@ class CliTest(unittest.TestCase):
         argv = ["cli.py", "select-context", "--episode-id", "group-005", "--agent", "claude"]
 
         with patch.object(sys, "argv", argv), patch(
-            "consciousness_pipeline.cli.select_episode_context"
+            "consciousness_pipeline.cli.main.select_episode_context"
         ) as select_episode_context:
             cli.main()
 
@@ -232,7 +233,7 @@ class CliTest(unittest.TestCase):
     def test_accept_episode_command_delegates_to_acceptance_checkpoint(self):
         argv = ["cli.py", "accept-episode", "--episode-id", "group-002", "--agent", "claude"]
 
-        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.accept_episode") as accept_episode:
+        with patch.object(sys, "argv", argv), patch("consciousness_pipeline.cli.main.accept_episode") as accept_episode:
             cli.main()
 
         accept_episode.assert_called_once_with("group-002", "claude", dry_run=False)
@@ -241,7 +242,7 @@ class CliTest(unittest.TestCase):
         argv = ["cli.py", "evaluate-episode", "--episode-id", "group-002", "--stage", "context"]
 
         with patch.object(sys, "argv", argv), patch(
-            "consciousness_pipeline.cli.evaluate_episode",
+            "consciousness_pipeline.cli.main.evaluate_episode",
             return_value={
                 "episode_id": "group-002",
                 "stage": "context",
@@ -253,6 +254,27 @@ class CliTest(unittest.TestCase):
             cli.main()
 
         evaluate_episode.assert_called_once_with(cli.PROJECT_ROOT, "group-002", stage="context")
+
+    def test_write_audio_review_command_writes_pending_checklist(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            status_path = root / "course" / "production-status.csv"
+            status_path.parent.mkdir(parents=True)
+            status_path.write_text(
+                "group_id,section_id,packet_slug,research_status,script_status,notebooklm_status,notebook_url,"
+                "audio_status,message\n"
+                "group-006,26,26-reflections,researched,source_script_ready,notebooklm_bundle_ready,"
+                "https://example.test/notebook,audio_ready,ready\n",
+                encoding="utf-8",
+            )
+            argv = ["cli.py", "write-audio-review", "--episode-id", "group-006"]
+
+            with patch.object(sys, "argv", argv), patch.object(cli, "PROJECT_ROOT", root):
+                cli.main()
+
+            review_path = root / "episodes" / "group-006" / "audio_review.md"
+            self.assertTrue(review_path.exists())
+            self.assertIn("Review status: pending_human_listen", review_path.read_text(encoding="utf-8"))
 
     def test_write_contract_command_writes_static_course_contract(self):
         with tempfile.TemporaryDirectory() as tmp:

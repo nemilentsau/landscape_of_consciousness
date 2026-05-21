@@ -1,36 +1,36 @@
 {
-  "type": "object",
+  "additionalProperties": false,
   "properties": {
-    "schema_version": {
-      "type": "string",
-      "const": "episode_review_v1"
+    "approved": {
+      "type": "boolean"
+    },
+    "blocking_issues": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "checked_items": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
     },
     "episode_id": {
       "type": "string"
     },
-    "approved": {
-      "type": "boolean"
+    "non_blocking_notes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "episode_review_v1",
+      "type": "string"
     },
     "summary": {
       "type": "string"
-    },
-    "blocking_issues": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "non_blocking_notes": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "checked_items": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
     }
   },
   "required": [
@@ -42,5 +42,5 @@
     "non_blocking_notes",
     "checked_items"
   ],
-  "additionalProperties": false
+  "type": "object"
 }

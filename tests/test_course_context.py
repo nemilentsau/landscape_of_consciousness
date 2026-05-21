@@ -3,7 +3,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.course_context import render_episode_course_context, write_episode_course_context
+from consciousness_pipeline.course.context import render_episode_course_context, write_episode_course_context
 
 
 def manifest() -> dict[str, object]:

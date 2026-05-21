@@ -2,7 +2,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.course_contract import DEFAULT_COURSE_CONTRACT, write_default_course_contract
+from consciousness_pipeline.course.contract import DEFAULT_COURSE_CONTRACT, write_default_course_contract
 
 
 class CourseContractTest(unittest.TestCase):

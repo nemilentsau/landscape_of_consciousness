@@ -1,0 +1,12 @@
+{
+    "hooks": {
+        "Stop": [
+            {
+                "hooks": []
+            }
+        ]
+    },
+    "permissions": {
+        "defaultMode": "bypassPermissions"
+    }
+}

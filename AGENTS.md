@@ -15,6 +15,13 @@
 
 All Python code must be checked with Ruff and Pyright.
 
+Tests must be meaningful behavioral checks, not coverage padding. Before adding or changing tests, use the
+project testing guidance in `.claude/skills/testing/SKILL.md` and make sure each test would catch a real
+regression. Prefer assertions on outcomes, persisted artifacts, validation errors, and state transitions.
+Cover important branches, boundaries, and failure modes; remove redundant tests that exercise the same
+equivalence class. Do not add brittle prompt-string checks, mock-call checks, or snapshots unless they are
+the only practical way to protect a real contract.
+
 Before claiming Python work is complete, run:
 
 ```bash
@@ -45,6 +52,9 @@ uv run python -m unittest discover -s tests -v
   4. run the single `group-id-script` source-dossier job
 - `run-job` is low-level debugging/comparison only. Do not use it as the production path for a whole episode.
 - `script.json` is a historical artifact name. Its content must be factual NotebookLM source material, especially `research_dossier_markdown`; do not create dialogue, host banter, stage directions, or performed scripts.
+- Job kinds, manifest filenames, schema filenames, prompt contracts, allowed headless agents, and JSON schema objects must stay centralized in `consciousness_pipeline/agents/contracts.py` and `consciousness_pipeline/contracts/schemas.py`.
+- Treat `jobs/*.jsonl` and `schemas/*.json` as generated runtime artifacts. Refresh them with `uv run python -m consciousness_pipeline.cli jobs`; do not hand-edit them or add duplicate CLI constants.
+- Job rows must not carry `schema_path`. Runners and prompts derive schema paths from the job kind through the contract registry.
 
 ## Course Continuity Rules
 

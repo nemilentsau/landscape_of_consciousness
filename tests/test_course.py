@@ -4,8 +4,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from consciousness_pipeline.course import group_sections, write_course_artifacts, write_episode_artifacts
-from consciousness_pipeline.models import Section
+from consciousness_pipeline.core.models import Section
+from consciousness_pipeline.course.map import group_sections, write_course_artifacts, write_episode_artifacts
 
 
 def make_section(section_id, title, parent="Materialism theories"):

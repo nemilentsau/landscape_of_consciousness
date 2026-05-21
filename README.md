@@ -2,6 +2,24 @@
 
 Pipeline for turning Robert Lawrence Kuhn's "A landscape of consciousness" review into a long-form podcast listening course.
 
+## Current State
+
+As of 2026-05-21, the six top-level orientation episodes (`group-001` through `group-006`) have accepted
+source dossiers and episode capsules. The durable continuity layer is active:
+
+- `course/course_contract.md`
+- `course/listener-facing-titles.md`
+- `course/episode_capsules/group-001.json` through `course/episode_capsules/group-006.json`
+- `course/callback_index.json`
+- source-dossier reviews in `episodes/group-001/review.json` through `episodes/group-006/review.json`
+- generated per-episode context packs in `episodes/<group-id>/course_context.md`
+
+NotebookLM audio handoff is not complete for every accepted dossier. `course/production-status.csv` is the
+handoff ledger: groups 004-006 are marked `audio_ready`, group 002 is `audio_requested`, and groups 001/003
+still need NotebookLM handoff/status reconciliation.
+
+The current quality-improvement pass is tracked in `docs/episode-quality-implementation-plan.md`.
+
 The production path is:
 
 1. Extract and segment the downloaded PDF into Kuhn's numbered theory taxonomy.
@@ -32,20 +50,38 @@ Generated artifacts:
 - `course/episode-map.md`
 - `course/episode-map.json`
 - `course/course_contract.md`
+- `course/listener-facing-titles.md`
+- `course/episode_capsules/<group-id>.json`
+- `course/callback_index.json`
 - `course/production-status.csv`
 - `episodes/<group-id>/manifest.json`
 - `episodes/<group-id>/README.md`
+- `episodes/<group-id>/course_context.md`
+- `episodes/<group-id>/context_selection.json`
+- `episodes/<group-id>/review.json`
+- `episodes/<group-id>/audio_review.md`
 - `jobs/research.jsonl`
+- `jobs/course-context-selections.jsonl`
 - `jobs/source-scripts.jsonl`
 - `jobs/episode-reviews.jsonl`
 - `jobs/episode-capsules.jsonl`
 - `schemas/research-record.schema.json`
 - `schemas/source-script.schema.json`
+- `schemas/course-context-selection.schema.json`
 - `schemas/episode-review.schema.json`
 - `schemas/episode-capsule.schema.json`
 
 Research JSON files are section-level inputs, not podcast episodes. Episode directories show how
 those section inputs are assembled into a single listening-course episode.
+
+`jobs/` and `schemas/` are generated runtime artifacts. Do not edit them by hand. The source of truth
+for job kinds, manifest filenames, schema filenames, prompt contracts, allowed headless agents, and
+JSON schema objects lives in `consciousness_pipeline/agents/contracts.py` and
+`consciousness_pipeline/contracts/schemas.py`. Refresh generated artifacts with:
+
+```bash
+uv run python -m consciousness_pipeline.cli jobs
+```
 
 ## Run An Episode In The Correct Order
 
@@ -97,6 +133,19 @@ that checkpoint to the configured review agent.
 `course/course_memory.md` has been removed from the active pipeline. Durable continuity now lives in the
 static `course/course_contract.md`, immutable accepted episode capsules, and the generated callback index.
 
+## Review Audio Output
+
+Source-dossier review happens before acceptance. Rendered audio gets its own lightweight checklist:
+
+```bash
+uv run python -m consciousness_pipeline.cli write-audio-review --episode-id group-006
+uv run python -m consciousness_pipeline.cli evaluate-episode --episode-id group-006 --stage audio
+```
+
+`write-audio-review` creates `episodes/<group-id>/audio_review.md` from `course/production-status.csv`.
+The default review status is `pending_human_listen`, because the artifact should reflect an actual pass
+through NotebookLM's rendered audio before an episode is called final.
+
 ## Run A Single Headless Job For Debugging
 
 `run-job` is the low-level primitive. Use it for isolated research jobs, comparison artifacts, or debugging,
@@ -114,15 +163,16 @@ Remove `--dry-run` to execute. Use `--agent claude` to run through the installed
 Claude Code CLI in normal print mode. The runner intentionally does not use `--bare`, because
 `--bare` bypasses Claude Code's usual local auth/keychain path and forces API-key-style auth.
 
-To generate a comparison artifact without overwriting the Codex output, override the output paths:
+To generate a temporary comparison artifact without overwriting the Codex output, override the output paths
+to an untracked location outside episode directories:
 
 ```bash
 uv run python -m consciousness_pipeline.cli run-job \
   --manifest jobs/source-scripts.jsonl \
   --job-id group-002-script \
   --agent claude \
-  --output-path episodes/group-002/claude/script.json \
-  --bundle-output-path episodes/group-002/claude/notebooklm_bundle/research_dossier.md
+  --output-path /tmp/landscape-comparison/group-002/script.json \
+  --bundle-output-path /tmp/landscape-comparison/group-002/notebooklm_bundle/research_dossier.md
 ```
 
 ## Quality Checks
@@ -147,3 +197,8 @@ Use Computer Use or Claude Code browser control to create NotebookLM notebooks, 
 `research_dossier.md` plus every Markdown file in `notebooklm_bundle/sources/`, choose Deep Dive and
 Long audio, paste the custom prompt from the episode manifest, and record the resulting URL/status in
 `course/production-status.csv`.
+
+Do not collapse the bundle into one copied-text source unless the user explicitly asks for that degraded
+mode. For top-level five-section episodes, the normal handoff is six files: the dossier plus five source
+Markdown files. For one-section episodes such as `group-006`, the bundle contains the dossier plus one
+source Markdown file.

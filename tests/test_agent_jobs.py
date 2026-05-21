@@ -4,8 +4,10 @@ import unittest
 from pathlib import Path
 from typing import Any
 
-from consciousness_pipeline.agent_jobs import build_job_prompt, write_agent_job_artifacts
-from consciousness_pipeline.models import Section
+from consciousness_pipeline.agents.contracts import JOB_CONTRACTS_BY_KIND, schema_path_for_kind
+from consciousness_pipeline.agents.jobs import write_agent_job_artifacts
+from consciousness_pipeline.agents.prompts import build_job_prompt
+from consciousness_pipeline.core.models import Section
 
 
 def make_section(section_id: str, title: str, parent: str = "Materialism theories") -> Section:
@@ -60,12 +62,13 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertEqual(research_jobs[0]["kind"], "research")
             self.assertEqual(research_jobs[0]["job_id"], "research-9.2.3")
             self.assertEqual(research_jobs[0]["output_path"], "data/research/9.2.3.json")
-            self.assertEqual(research_jobs[0]["schema_path"], "schemas/research-record.schema.json")
+            self.assertNotIn("schema_path", research_jobs[0])
+            self.assertEqual(schema_path_for_kind(research_jobs[0]["kind"]), "schemas/research-record.schema.json")
             self.assertEqual(research_jobs[0]["agents"], ["codex_exec", "claude_headless"])
 
             self.assertEqual(len(script_jobs), 1)
             self.assertEqual(script_jobs[0]["kind"], "source_script")
-            self.assertEqual(script_jobs[0]["prompt_contract"], "notebooklm_factual_source_script_v1")
+            self.assertEqual(script_jobs[0]["prompt_contract"], "notebooklm_factual_source_script_v2")
             self.assertEqual(script_jobs[0]["duration_target"], "long_form")
             self.assertEqual(script_jobs[0]["section_ids"], ["9.2.3", "9.2.4"])
             self.assertEqual(script_jobs[0]["episode_manifest_path"], "episodes/group-001/manifest.json")
@@ -89,7 +92,8 @@ class AgentJobGenerationTest(unittest.TestCase):
             )
             self.assertIn("course/course_contract.md", capsule_jobs[0]["input_paths"])
             self.assertEqual(capsule_jobs[0]["output_path"], "course/episode_capsules/group-001.json")
-            self.assertEqual(capsule_jobs[0]["schema_path"], "schemas/episode-capsule.schema.json")
+            self.assertNotIn("schema_path", capsule_jobs[0])
+            self.assertEqual(schema_path_for_kind(capsule_jobs[0]["kind"]), "schemas/episode-capsule.schema.json")
 
             self.assertEqual(len(selection_jobs), 1)
             self.assertEqual(selection_jobs[0]["kind"], "course_context_selection")
@@ -98,7 +102,11 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertEqual(selection_jobs[0]["episode_manifest_path"], "episodes/group-001/manifest.json")
             self.assertIn("course/callback_index.json", selection_jobs[0]["input_paths"])
             self.assertEqual(selection_jobs[0]["output_path"], "episodes/group-001/context_selection.json")
-            self.assertEqual(selection_jobs[0]["schema_path"], "schemas/course-context-selection.schema.json")
+            self.assertNotIn("schema_path", selection_jobs[0])
+            self.assertEqual(
+                schema_path_for_kind(selection_jobs[0]["kind"]),
+                "schemas/course-context-selection.schema.json",
+            )
 
             self.assertEqual(len(review_jobs), 1)
             self.assertEqual(review_jobs[0]["kind"], "episode_review")
@@ -114,17 +122,14 @@ class AgentJobGenerationTest(unittest.TestCase):
                 "episodes/group-001/notebooklm_bundle/research_dossier.md",
             )
             self.assertEqual(review_jobs[0]["output_path"], "episodes/group-001/review.json")
-            self.assertEqual(review_jobs[0]["schema_path"], "schemas/episode-review.schema.json")
+            self.assertNotIn("schema_path", review_jobs[0])
+            self.assertEqual(schema_path_for_kind(review_jobs[0]["kind"]), "schemas/episode-review.schema.json")
 
-            self.assertTrue((root / "schemas" / "research-record.schema.json").exists())
-            self.assertTrue((root / "schemas" / "episode-capsule.schema.json").exists())
-            self.assertTrue((root / "schemas" / "course-context-selection.schema.json").exists())
-            self.assertTrue((root / "schemas" / "episode-review.schema.json").exists())
+            for contract in JOB_CONTRACTS_BY_KIND.values():
+                self.assertTrue((root / "schemas" / contract.schema_name).exists())
             source_script_schema = json.loads((root / "schemas" / "source-script.schema.json").read_text())
             self.assertIn("research_dossier_markdown", source_script_schema["required"])
             self.assertNotIn("script_markdown", source_script_schema["properties"])
-            self.assertFalse((root / "jobs" / "podcast-scripts.jsonl").exists())
-            self.assertFalse((root / "schemas" / "podcast-script.schema.json").exists())
             self.assertNotIn("playwright", serialized)
 
             sections_path = root / "data" / "extracted" / "sections.json"
@@ -207,7 +212,6 @@ class AgentJobGenerationTest(unittest.TestCase):
                 "job_id": "research-8",
                 "section_id": "8",
                 "output_path": "data/research/8.json",
-                "schema_path": "schemas/research-record.schema.json",
             }
 
             prompt = build_job_prompt(job, root)
@@ -237,7 +241,6 @@ class AgentJobGenerationTest(unittest.TestCase):
                 "section_ids": ["6"],
                 "episode_manifest_path": "episodes/group-002/manifest.json",
                 "output_path": "episodes/group-002/script.json",
-                "schema_path": "schemas/source-script.schema.json",
                 "notebooklm_handoff": "computer_use_after_script_bundle",
                 "notebooklm_bundle_dir": "episodes/group-002/notebooklm_bundle",
                 "bundle_output_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
@@ -250,27 +253,6 @@ class AgentJobGenerationTest(unittest.TestCase):
             self.assertIn("Use this context to continue the course", prompt)
             self.assertIn("## Course Continuity Grounding", prompt)
             self.assertIn("Do not bury course continuity inside the episode-scope section.", prompt)
-
-    def test_write_agent_job_artifacts_removes_legacy_dialogue_script_manifests(self):
-        with tempfile.TemporaryDirectory() as tmp:
-            root = Path(tmp)
-            sections = [make_section("9.2.3", "Global workspace theory")]
-            legacy_job = root / "jobs" / "podcast-scripts.jsonl"
-            legacy_schema = root / "schemas" / "podcast-script.schema.json"
-            legacy_job.parent.mkdir(parents=True)
-            legacy_schema.parent.mkdir(parents=True)
-            legacy_job.write_text("legacy dialogue job\n", encoding="utf-8")
-            legacy_schema.write_text('{"legacy": true}\n', encoding="utf-8")
-
-            write_agent_job_artifacts(
-                sections,
-                jobs_dir=root / "jobs",
-                schemas_dir=root / "schemas",
-                episodes_dir=root / "episodes",
-            )
-
-            self.assertFalse(legacy_job.exists())
-            self.assertFalse(legacy_schema.exists())
 
 
 if __name__ == "__main__":

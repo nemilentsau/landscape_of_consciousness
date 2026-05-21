@@ -1,8 +1,9 @@
 import os
+import re
 import tomllib
 import unittest
 
-from consciousness_pipeline.config import PROJECT_ROOT
+from consciousness_pipeline.core.config import PROJECT_ROOT
 
 
 class ToolingConfigTest(unittest.TestCase):
@@ -41,6 +42,15 @@ class ToolingConfigTest(unittest.TestCase):
         self.assertTrue(os.access(script, os.X_OK))
         text = script.read_text(encoding="utf-8")
         self.assertIn("uv run python -m consciousness_pipeline.cli run-episode", text)
+
+    def test_scripts_do_not_call_global_python(self):
+        bare_python = re.compile(r"(?<!uv run )\bpython3?\b")
+
+        for script in (PROJECT_ROOT / "scripts").iterdir():
+            if script.is_file():
+                for line in script.read_text(encoding="utf-8").splitlines():
+                    if not line.strip().startswith("#"):
+                        self.assertIsNone(bare_python.search(line), f"{script.name}: {line}")
 
 
 if __name__ == "__main__":

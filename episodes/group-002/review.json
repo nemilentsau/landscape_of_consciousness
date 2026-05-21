@@ -1,0 +1,19 @@
+{
+  "schema_version": "episode_review_v1",
+  "episode_id": "group-002",
+  "approved": true,
+  "summary": "Retrospective source-dossier review for group-002. The accepted dossier is factual NotebookLM source material for sections 6-10: whether consciousness is primitive or fundamental, identity theory, Kuhn's landscape framing, materialism theories, and non-reductive physicalism. It keeps brain dependence, identity, realization, reduction, and explanation distinct, and it treats physicalism as a serious family of options rather than a settled solution to phenomenality.",
+  "blocking_issues": [],
+  "non_blocking_notes": [
+    "The dossier predates the verdict-matrix template, so it does not include the recommended `## Verdict Matrix` heading.",
+    "NotebookLM audio is marked `audio_requested`, not `audio_ready`, in the production ledger."
+  ],
+  "checked_items": [
+    "script.json exists and reports an empty missing_inputs array",
+    "notebooklm_bundle/research_dossier.md exists and is source material rather than performed dialogue",
+    "manifest sections 6-10 are represented in the dossier",
+    "No host dialogue, speaker labels, banter, or stage directions are present",
+    "Primitive-status claims, identity theory, materialism, and non-reductive physicalism are compared without collapsing correlation into explanation",
+    "Source notes and local input paths are present for traceability"
+  ]
+}

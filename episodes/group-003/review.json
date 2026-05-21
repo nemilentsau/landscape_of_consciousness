@@ -1,0 +1,19 @@
+{
+  "schema_version": "episode_review_v1",
+  "episode_id": "group-003",
+  "approved": true,
+  "summary": "Retrospective source-dossier review for group-003. The accepted dossier is factual NotebookLM source material for sections 11-15: quantum theories, integrated information theory, panpsychisms, monisms, and dualisms. It compares large ontological options by target, evidence type, bridge relation, and failure mode, while keeping formal elegance, metaphysical breadth, and empirical confirmation separate.",
+  "blocking_issues": [],
+  "non_blocking_notes": [
+    "The dossier predates the verdict-matrix template, so it does not include the recommended `## Verdict Matrix` heading.",
+    "NotebookLM audio is still marked `not_started` in the production ledger."
+  ],
+  "checked_items": [
+    "script.json exists and reports an empty missing_inputs array",
+    "notebooklm_bundle/research_dossier.md exists and is source material rather than performed dialogue",
+    "manifest sections 11-15 are represented in the dossier",
+    "No host dialogue, speaker labels, banter, or stage directions are present",
+    "Quantum, IIT, panpsychist, monist, and dualist claims are labeled with appropriate uncertainty and objections",
+    "Source notes and local input paths are present for traceability"
+  ]
+}

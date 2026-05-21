@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from consciousness_pipeline.episode_acceptance import EpisodeAcceptanceError, accept_episode
+from consciousness_pipeline.episodes.acceptance import EpisodeAcceptanceError, accept_episode
 
 
 def write_status(path: Path) -> None:
@@ -93,7 +93,7 @@ class EpisodeAcceptanceTest(unittest.TestCase):
                 capsule_path.write_text(json.dumps(make_capsule(root), indent=2), encoding="utf-8")
                 return [agent, job_id]
 
-            with patch("consciousness_pipeline.episode_acceptance.run_job", side_effect=fake_run_job):
+            with patch("consciousness_pipeline.episodes.acceptance.run_job", side_effect=fake_run_job):
                 result = accept_episode("group-002", "codex", root=root)
 
             self.assertEqual(result, [["codex", "group-002-capsule"]])
@@ -112,7 +112,7 @@ class EpisodeAcceptanceTest(unittest.TestCase):
             (root / "jobs").mkdir()
             (root / "jobs" / "episode-capsules.jsonl").write_text('{"job_id": "group-002-capsule"}\n')
 
-            with patch("consciousness_pipeline.episode_acceptance.run_job") as run_job:
+            with patch("consciousness_pipeline.episodes.acceptance.run_job") as run_job:
                 with self.assertRaises(EpisodeAcceptanceError) as context:
                     accept_episode("group-002", "codex", root=root)
 
