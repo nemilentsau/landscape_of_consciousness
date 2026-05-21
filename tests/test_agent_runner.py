@@ -13,6 +13,8 @@ from consciousness_pipeline.agents.runner import (
 )
 from consciousness_pipeline.contracts.schemas import SOURCE_SCRIPT_SCHEMA
 
+READY_DOSSIER = "## Episode Metadata\n\n## Course Continuity Grounding\n\n## Source Notes And Local Input Paths\n"
+
 
 class AgentRunnerCommandTest(unittest.TestCase):
     def test_build_codex_command_uses_exec_schema_and_output_file(self):
@@ -94,7 +96,7 @@ class AgentRunnerCommandTest(unittest.TestCase):
                 "title": "Top-level sections Part 2",
                 "episode_question": job["episode_question"],
                 "duration_target": "long_form",
-                "research_dossier_markdown": "# Claude dossier\n\nFactual material.",
+                "research_dossier_markdown": READY_DOSSIER,
                 "citations": ["Kuhn 2024"],
                 "missing_inputs": [],
             }
@@ -121,6 +123,73 @@ class AgentRunnerCommandTest(unittest.TestCase):
             bundle_path = root / "episodes" / "group-002" / "claude" / "notebooklm_bundle" / "research_dossier.md"
             self.assertEqual(json.loads(script_path.read_text(encoding="utf-8")), structured_output)
             self.assertEqual(bundle_path.read_text(encoding="utf-8"), structured_output["research_dossier_markdown"])
+
+    @patch("consciousness_pipeline.agents.runner.subprocess.run")
+    def test_run_claude_job_does_not_overwrite_bundle_with_status_note(self, run):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sections_path = root / "data" / "extracted" / "sections.json"
+            sections_path.parent.mkdir(parents=True)
+            sections_path.write_text(
+                json.dumps(
+                    [
+                        {
+                            "section_id": "6",
+                            "title": "Is consciousness primitive/fundamental?",
+                            "level": 1,
+                            "start_page": 6,
+                            "end_page": 6,
+                            "taxonomy_path": ["Is consciousness primitive/fundamental?"],
+                            "text": "Kuhn section text.",
+                            "slug": "06-is-consciousness-primitive-fundamental",
+                        }
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            manifest_path = root / "jobs" / "source-scripts.jsonl"
+            manifest_path.parent.mkdir(parents=True)
+            job = {
+                "job_id": "group-002-script",
+                "kind": "source_script",
+                "group_id": "group-002",
+                "title": "Top-level sections Part 2",
+                "episode_question": "What is the strongest case for this cluster, and where does it break?",
+                "section_ids": ["6"],
+                "episode_manifest_path": "episodes/group-002/manifest.json",
+                "output_path": "episodes/group-002/script.json",
+                "notebooklm_handoff": "computer_use_after_script_bundle",
+                "notebooklm_bundle_dir": "episodes/group-002/notebooklm_bundle",
+                "bundle_output_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
+            }
+            manifest_path.write_text(json.dumps(job) + "\n", encoding="utf-8")
+            bundle_path = root / "episodes" / "group-002" / "notebooklm_bundle" / "research_dossier.md"
+            bundle_path.parent.mkdir(parents=True)
+            bundle_path.write_text(READY_DOSSIER, encoding="utf-8")
+            structured_output = {
+                "episode_id": "group-002",
+                "title": "Top-level sections Part 2",
+                "episode_question": job["episode_question"],
+                "duration_target": "long_form",
+                "research_dossier_markdown": "Wrote the full factual source dossier to disk.",
+                "citations": ["episodes/group-002/script.json"],
+                "missing_inputs": [],
+            }
+            run.side_effect = [
+                subprocess.CompletedProcess(args=["claude", "--version"], returncode=0, stdout="2.1.138", stderr=""),
+                subprocess.CompletedProcess(
+                    args=["claude", "-p"],
+                    returncode=0,
+                    stdout=json.dumps({"result": structured_output}),
+                    stderr="",
+                ),
+            ]
+
+            run_job(manifest_path, "group-002-script", "claude", root=root)
+
+            script_path = root / "episodes" / "group-002" / "script.json"
+            self.assertEqual(json.loads(script_path.read_text(encoding="utf-8")), structured_output)
+            self.assertEqual(bundle_path.read_text(encoding="utf-8"), READY_DOSSIER)
 
     @patch("consciousness_pipeline.agents.runner.subprocess.run")
     def test_run_claude_capsule_job_writes_structured_output_without_dossier_bundle(self, run):

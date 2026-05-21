@@ -141,6 +141,8 @@ class AgentJobGenerationTest(unittest.TestCase):
             prompt = build_job_prompt(script_jobs[0], root)
             self.assertIn("factual NotebookLM source dossier", prompt)
             self.assertIn("Do not write dialogue", prompt)
+            self.assertIn("Do not create, patch, or overwrite the output files yourself", prompt)
+            self.assertIn("must contain the complete Markdown dossier text", prompt)
             self.assertIn("NotebookLM will generate the conversational audio", prompt)
             self.assertIn("Do not import or rely on", prompt)
             self.assertIn("`jsonschema`", prompt)

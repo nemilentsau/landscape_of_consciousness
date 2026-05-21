@@ -262,10 +262,10 @@ Job ID: {job["job_id"]}
 Episode group: {job["group_id"]} - {job["title"]}
 Episode question: {job["episode_question"]}
 Episode manifest: {job["episode_manifest_path"]}
-Output path: {job["output_path"]}
+Runner-managed output path: {job["output_path"]}
 Required schema: {schema_path_for_job(job)}
 NotebookLM handoff: {job["notebooklm_handoff"]}; bundle dir {job["notebooklm_bundle_dir"]}
-NotebookLM dossier markdown output: {job["bundle_output_path"]}
+Runner-managed NotebookLM dossier markdown output: {job["bundle_output_path"]}
 
 Sections:
 {summaries}
@@ -278,6 +278,9 @@ Course continuity context:
 
 Produce thorough research material for NotebookLM to work with. NotebookLM will generate the conversational audio.
 Do not write dialogue, speaker names, stage directions, banter, cold opens, finished narration, or host patter.
+Do not create, patch, or overwrite the output files yourself. Return one JSON object matching the schema;
+the runner will write both runner-managed files from that final JSON. The research_dossier_markdown field
+must contain the complete Markdown dossier text, not a status summary, path list, or note about what was written.
 
 The research_dossier_markdown should be factual and structured. Use these top-level Markdown
 sections in this order:
@@ -306,7 +309,6 @@ mind, and What not to infer. Keep it factual and sourced; mark uncertainty expli
 Return only JSON matching the schema. The local runner writes research_dossier_markdown to the
 NotebookLM dossier markdown output path for upload.
 Validation note: the runner evaluates `--stage dossier` after this job. Do not import or rely on
-`jsonschema`; it is not guaranteed in headless runtimes. If you self-check, use
-`uv run python -m consciousness_pipeline.cli evaluate-episode --episode-id {job["group_id"]} --stage dossier`
-after writing both the JSON output and dossier markdown.
+`jsonschema`; it is not guaranteed in headless runtimes. Before returning, self-check that
+research_dossier_markdown itself includes the required headings and full factual content.
 """

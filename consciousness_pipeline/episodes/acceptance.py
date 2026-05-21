@@ -31,6 +31,7 @@ def _update_production_status(root: Path, episode_id: str) -> None:
         fieldnames = list(reader.fieldnames or [])
     for row in rows:
         if row.get("group_id") == episode_id:
+            row["research_status"] = "researched"
             row["script_status"] = "source_script_ready"
             row["notebooklm_status"] = "notebooklm_bundle_ready"
             row["message"] = "Source dossier accepted; episode capsule generated"
