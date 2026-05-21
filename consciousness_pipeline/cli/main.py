@@ -24,6 +24,8 @@ from consciousness_pipeline.episodes.acceptance import accept_episode
 from consciousness_pipeline.episodes.audio_reviews import (
     DEFAULT_REVIEW_STATUS,
     VALID_REVIEW_STATUSES,
+    VERIFIED_AUDIO_STATUSES,
+    record_notebooklm_status,
     write_audio_review,
 )
 from consciousness_pipeline.episodes.runner import run_episode, select_episode_context
@@ -199,6 +201,17 @@ def cmd_write_audio_review(args: argparse.Namespace) -> None:
     print(f"Wrote audio review checklist: {path}")
 
 
+def cmd_record_notebooklm_status(args: argparse.Namespace) -> None:
+    path = record_notebooklm_status(
+        PROJECT_ROOT,
+        args.episode_id,
+        args.audio_status,
+        notebook_url=args.notebook_url or "",
+        message=args.message,
+    )
+    print(f"Recorded NotebookLM status in {path}: {args.episode_id} -> {args.audio_status}")
+
+
 def cmd_all(args: argparse.Namespace) -> None:
     cmd_extract(args)
     cmd_headings(args)
@@ -281,6 +294,24 @@ def build_parser() -> argparse.ArgumentParser:
         help="Initial audio review status",
     )
     audio_review_parser.set_defaults(func=cmd_write_audio_review)
+    record_status_parser = subparsers.add_parser("record-notebooklm-status")
+    record_status_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-006")
+    record_status_parser.add_argument(
+        "--audio-status",
+        required=True,
+        choices=VERIFIED_AUDIO_STATUSES,
+        help="Verified NotebookLM audio lifecycle state",
+    )
+    record_status_parser.add_argument(
+        "--notebook-url",
+        help="NotebookLM notebook URL. Required for ready/review/accepted/regenerate states.",
+    )
+    record_status_parser.add_argument(
+        "--message",
+        required=True,
+        help="Short evidence note describing what Codex verified or why this is a retrospective reconciliation.",
+    )
+    record_status_parser.set_defaults(func=cmd_record_notebooklm_status)
     select_context_parser = subparsers.add_parser("select-context")
     select_context_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-005")
     select_context_parser.add_argument("--agent", required=True, choices=AGENT_CHOICES, help="Headless agent backend")

@@ -339,6 +339,23 @@ class EpisodeEvaluationTest(unittest.TestCase):
             check_ids = {issue["check_id"] for issue in report["issues"]}  # type: ignore[index]
             self.assertIn("audio_review_pending", check_ids)
 
+    def test_evaluate_episode_audio_stage_accepts_reviewed_audio_status(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            write_episode_root(root)
+            _write_audio_status(root, "audio_accepted")
+            (root / "episodes" / "group-001" / "audio_review.md").write_text(
+                "# Audio Review: group-001\n\nReview status: accepted\n\n## Decision\n\nAccepted.\n",
+                encoding="utf-8",
+            )
+
+            report = evaluate_episode(root, "group-001", stage="audio")
+
+            self.assertTrue(report["ok"])
+            check_ids = {issue["check_id"] for issue in report["issues"]}  # type: ignore[index]
+            self.assertNotIn("audio_not_ready", check_ids)
+            self.assertNotIn("audio_review_pending", check_ids)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -15,8 +15,8 @@ source dossiers and episode capsules. The durable continuity layer is active:
 - generated per-episode context packs in `episodes/<group-id>/course_context.md`
 
 NotebookLM audio handoff is not complete for every accepted dossier. `course/production-status.csv` is the
-handoff ledger: groups 004-006 are marked `audio_ready`, group 002 is `audio_requested`, and groups 001/003
-still need NotebookLM handoff/status reconciliation.
+handoff ledger: groups 001-003 are marked `audio_requested` after retrospective reconciliation, with
+groups 001/003 still needing URL capture; groups 004-006 are marked `audio_ready`.
 
 The current quality-improvement pass is tracked in `docs/episode-quality-implementation-plan.md`.
 
@@ -195,8 +195,19 @@ uv run python -m consciousness_pipeline.cli bundle-sources --episode-id group-00
 
 Use Computer Use or Claude Code browser control to create NotebookLM notebooks, upload
 `research_dossier.md` plus every Markdown file in `notebooklm_bundle/sources/`, choose Deep Dive and
-Long audio, paste the custom prompt from the episode manifest, and record the resulting URL/status in
-`course/production-status.csv`.
+Long audio, paste the custom prompt from the episode manifest, and record the verified transition with:
+
+```bash
+uv run python -m consciousness_pipeline.cli record-notebooklm-status \
+  --episode-id group-001 \
+  --audio-status audio_requested \
+  --notebook-url "https://notebooklm.google.com/notebook/..." \
+  --message "NotebookLM accepted Long Deep Dive audio request from six-file bundle"
+```
+
+Use `audio_requested` when NotebookLM has accepted the request but generation may still be running.
+Use `audio_ready` only after revisiting the notebook and observing that audio is available. Later states are
+`audio_review_pending`, `audio_accepted`, and `audio_regenerate_requested`.
 
 Do not collapse the bundle into one copied-text source unless the user explicitly asks for that degraded
 mode. For top-level five-section episodes, the normal handoff is six files: the dossier plus five source
