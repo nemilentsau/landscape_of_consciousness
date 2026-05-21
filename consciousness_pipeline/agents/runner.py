@@ -1,19 +1,23 @@
-import argparse
 import json
 import subprocess
 from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
+from consciousness_pipeline.agents.contracts import (
+    AGENT_CHOICES,
+    schema_for_job,
+    schema_path_for_job,
+)
 from consciousness_pipeline.agents.jobs import find_job
 from consciousness_pipeline.agents.prompts import build_job_prompt
 from consciousness_pipeline.core.config import PROJECT_ROOT
 
 
 def check_agent_available(agent: str) -> None:
-    if agent == "codex":
+    if agent == AGENT_CHOICES[0]:
         command = ["codex", "--version"]
-    elif agent == "claude":
+    elif agent == AGENT_CHOICES[1]:
         command = ["claude", "--version"]
     else:
         raise ValueError("agent must be 'codex' or 'claude'")
@@ -31,7 +35,7 @@ def build_codex_command(job: Mapping[str, object], prompt: str) -> list[str]:
         "--sandbox",
         "workspace-write",
         "--output-schema",
-        str(job["schema_path"]),
+        schema_path_for_job(job),
         "-o",
         str(job["output_path"]),
         prompt,
@@ -39,7 +43,7 @@ def build_codex_command(job: Mapping[str, object], prompt: str) -> list[str]:
 
 
 def build_claude_command(job: Mapping[str, object], prompt: str, root: Path = PROJECT_ROOT) -> list[str]:
-    schema = (root / str(job["schema_path"])).read_text(encoding="utf-8")
+    schema = json.dumps(schema_for_job(job), ensure_ascii=False)
     return [
         "claude",
         "-p",
@@ -56,6 +60,12 @@ def _resolve_project_path(root: Path, path: object) -> Path:
     if candidate.is_absolute():
         return candidate
     return root / candidate
+
+
+def _write_schema_for_job(job: Mapping[str, object], root: Path) -> None:
+    schema_path = _resolve_project_path(root, schema_path_for_job(job))
+    schema_path.parent.mkdir(parents=True, exist_ok=True)
+    schema_path.write_text(json.dumps(schema_for_job(job), indent=2, ensure_ascii=False, sort_keys=True) + "\n")
 
 
 def _apply_output_overrides(
@@ -142,11 +152,12 @@ def run_job(
 ) -> list[str]:
     job = _apply_output_overrides(find_job(manifest_path, job_id), output_path, bundle_output_path)
     if not dry_run:
+        _write_schema_for_job(job, root)
         check_agent_available(agent)
     prompt = build_job_prompt(job, root)
-    if agent == "codex":
+    if agent == AGENT_CHOICES[0]:
         command = build_codex_command(job, prompt)
-    elif agent == "claude":
+    elif agent == AGENT_CHOICES[1]:
         command = build_claude_command(job, prompt, root)
     else:
         raise ValueError("agent must be 'codex' or 'claude'")
@@ -161,33 +172,3 @@ def run_job(
         result = subprocess.run(command, cwd=root, text=True, capture_output=True, check=True)
         _write_claude_output(job, result.stdout, root)
     return command
-
-
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Run Codex CLI or Claude Code headless production jobs")
-    parser.add_argument("--manifest", required=True, type=Path, help="JSONL job manifest path")
-    parser.add_argument("--job-id", required=True, help="Job id from the manifest")
-    parser.add_argument("--agent", required=True, choices=("codex", "claude"), help="Headless agent backend")
-    parser.add_argument("--dry-run", action="store_true", help="Print the command without executing it")
-    parser.add_argument("--output-path", type=Path, help="Override the job output path")
-    parser.add_argument("--bundle-output-path", type=Path, help="Override the NotebookLM dossier markdown path")
-    return parser
-
-
-def main() -> None:
-    args = build_parser().parse_args()
-    manifest = args.manifest if args.manifest.is_absolute() else PROJECT_ROOT / args.manifest
-    command = run_job(
-        manifest,
-        args.job_id,
-        args.agent,
-        dry_run=args.dry_run,
-        output_path=args.output_path,
-        bundle_output_path=args.bundle_output_path,
-    )
-    if args.dry_run:
-        print(json.dumps(command, indent=2))
-
-
-if __name__ == "__main__":
-    main()

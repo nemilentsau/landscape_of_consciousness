@@ -74,6 +74,15 @@ Generated artifacts:
 Research JSON files are section-level inputs, not podcast episodes. Episode directories show how
 those section inputs are assembled into a single listening-course episode.
 
+`jobs/` and `schemas/` are generated runtime artifacts. Do not edit them by hand. The source of truth
+for job kinds, manifest filenames, schema filenames, prompt contracts, allowed headless agents, and
+JSON schema objects lives in `consciousness_pipeline/agents/contracts.py` and
+`consciousness_pipeline/contracts/schemas.py`. Refresh generated artifacts with:
+
+```bash
+uv run python -m consciousness_pipeline.cli jobs
+```
+
 ## Run An Episode In The Correct Order
 
 Use the episode runner for production. It runs every required section research job first, checks that the

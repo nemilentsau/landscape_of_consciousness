@@ -1,5 +1,4 @@
 import json
-import os
 import subprocess
 import tempfile
 import unittest
@@ -12,13 +11,14 @@ from consciousness_pipeline.agents.runner import (
     check_agent_available,
     run_job,
 )
+from consciousness_pipeline.contracts.schemas import SOURCE_SCRIPT_SCHEMA
 
 
 class AgentRunnerCommandTest(unittest.TestCase):
     def test_build_codex_command_uses_exec_schema_and_output_file(self):
         job = {
+            "kind": "research",
             "output_path": "data/research/9.2.3.json",
-            "schema_path": "schemas/research-record.schema.json",
         }
         prompt = "Research the consciousness theory and return JSON."
 
@@ -36,15 +36,10 @@ class AgentRunnerCommandTest(unittest.TestCase):
     def test_build_claude_command_uses_print_mode_local_auth_and_json_schema(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            schema_path = root / "schemas" / "source-script.schema.json"
-            schema_path.parent.mkdir(parents=True)
-            schema = {"type": "object", "properties": {"title": {"type": "string"}}, "required": ["title"]}
-            schema_path.write_text(json.dumps(schema), encoding="utf-8")
-            job = {"schema_path": "schemas/source-script.schema.json"}
+            job = {"kind": "source_script"}
             prompt = "Write a factual NotebookLM source dossier."
 
-            with patch.dict(os.environ, {"CLAUDE_ALLOWED_TOOLS": "Bash(git *) Edit"}):
-                command = build_claude_command(job, prompt, root)
+            command = build_claude_command(job, prompt, root)
 
             self.assertEqual(command[:2], ["claude", "-p"])
             self.assertIn(prompt, command)
@@ -53,7 +48,7 @@ class AgentRunnerCommandTest(unittest.TestCase):
             self.assertIn("--output-format", command)
             self.assertIn("json", command)
             self.assertIn("--json-schema", command)
-            self.assertIn(json.dumps(schema), command)
+            self.assertIn(json.dumps(SOURCE_SCRIPT_SCHEMA, ensure_ascii=False), command)
 
     @patch("consciousness_pipeline.agents.runner.subprocess.run")
     def test_run_claude_job_allows_comparison_output_paths_and_writes_dossier_bundle(self, run):
@@ -78,34 +73,6 @@ class AgentRunnerCommandTest(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
-            schema_path = root / "schemas" / "source-script.schema.json"
-            schema_path.parent.mkdir(parents=True)
-            schema_path.write_text(
-                json.dumps(
-                    {
-                        "type": "object",
-                        "properties": {
-                            "episode_id": {"type": "string"},
-                            "title": {"type": "string"},
-                            "episode_question": {"type": "string"},
-                            "duration_target": {"type": "string"},
-                            "research_dossier_markdown": {"type": "string"},
-                            "citations": {"type": "array", "items": {"type": "string"}},
-                            "missing_inputs": {"type": "array", "items": {"type": "string"}},
-                        },
-                        "required": [
-                            "episode_id",
-                            "title",
-                            "episode_question",
-                            "duration_target",
-                            "research_dossier_markdown",
-                            "citations",
-                            "missing_inputs",
-                        ],
-                    }
-                ),
-                encoding="utf-8",
-            )
             manifest_path = root / "jobs" / "source-scripts.jsonl"
             manifest_path.parent.mkdir(parents=True)
             job = {
@@ -117,7 +84,6 @@ class AgentRunnerCommandTest(unittest.TestCase):
                 "section_ids": ["6"],
                 "episode_manifest_path": "episodes/group-002/manifest.json",
                 "output_path": "episodes/group-002/script.json",
-                "schema_path": "schemas/source-script.schema.json",
                 "notebooklm_handoff": "computer_use_after_script_bundle",
                 "notebooklm_bundle_dir": "episodes/group-002/notebooklm_bundle",
                 "bundle_output_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
@@ -160,18 +126,6 @@ class AgentRunnerCommandTest(unittest.TestCase):
     def test_run_claude_capsule_job_writes_structured_output_without_dossier_bundle(self, run):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            schema_path = root / "schemas" / "episode-capsule.schema.json"
-            schema_path.parent.mkdir(parents=True)
-            schema_path.write_text(
-                json.dumps(
-                    {
-                        "type": "object",
-                        "properties": {"episode_id": {"type": "string"}},
-                        "required": ["episode_id"],
-                    }
-                ),
-                encoding="utf-8",
-            )
             (root / "course").mkdir(parents=True)
             (root / "course" / "course_contract.md").write_text("Static course rules.", encoding="utf-8")
             episode_dir = root / "episodes" / "group-002"
@@ -190,7 +144,6 @@ class AgentRunnerCommandTest(unittest.TestCase):
                 "episode_manifest_path": "episodes/group-002/manifest.json",
                 "accepted_dossier_path": "episodes/group-002/notebooklm_bundle/research_dossier.md",
                 "output_path": "course/episode_capsules/group-002.json",
-                "schema_path": "schemas/episode-capsule.schema.json",
             }
             manifest_path.write_text(json.dumps(job) + "\n", encoding="utf-8")
             structured_output = {"episode_id": "group-002"}

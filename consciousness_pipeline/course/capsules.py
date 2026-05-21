@@ -3,63 +3,7 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
-EPISODE_CAPSULE_SCHEMA: dict[str, Any] = {
-    "type": "object",
-    "properties": {
-        "schema_version": {"type": "string", "const": "episode_capsule_v1"},
-        "episode_id": {"type": "string"},
-        "title": {"type": "string"},
-        "accepted_dossier_path": {"type": "string"},
-        "section_ids": {"type": "array", "items": {"type": "string"}},
-        "thesis": {"type": "string"},
-        "durable_concepts": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "concept": {"type": "string"},
-                    "summary": {"type": "string"},
-                    "source_path": {"type": "string"},
-                },
-                "required": ["concept", "summary", "source_path"],
-                "additionalProperties": False,
-            },
-        },
-        "recurring_distinctions": {"type": "array", "items": {"type": "string"}},
-        "do_not_reexplain": {"type": "array", "items": {"type": "string"}},
-        "open_tensions": {"type": "array", "items": {"type": "string"}},
-        "callbacks": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "concept": {"type": "string"},
-                    "family": {"type": "string"},
-                    "tags": {"type": "array", "items": {"type": "string"}},
-                    "summary": {"type": "string"},
-                    "source_path": {"type": "string"},
-                    "useful_for_future_sections": {"type": "array", "items": {"type": "string"}},
-                },
-                "required": ["concept", "family", "tags", "summary", "source_path", "useful_for_future_sections"],
-                "additionalProperties": False,
-            },
-        },
-    },
-    "required": [
-        "schema_version",
-        "episode_id",
-        "title",
-        "accepted_dossier_path",
-        "section_ids",
-        "thesis",
-        "durable_concepts",
-        "recurring_distinctions",
-        "do_not_reexplain",
-        "open_tensions",
-        "callbacks",
-    ],
-    "additionalProperties": False,
-}
+from consciousness_pipeline.contracts.schemas import EPISODE_CAPSULE_SCHEMA
 
 REQUIRED_STRING_FIELDS = ("schema_version", "episode_id", "title", "accepted_dossier_path", "thesis")
 REQUIRED_LIST_FIELDS = (

@@ -2,6 +2,7 @@ import argparse
 import json
 from pathlib import Path
 
+from consciousness_pipeline.agents.contracts import AGENT_CHOICES
 from consciousness_pipeline.agents.jobs import write_agent_job_artifacts
 from consciousness_pipeline.agents.runner import run_job
 from consciousness_pipeline.core.config import (
@@ -226,7 +227,7 @@ def build_parser() -> argparse.ArgumentParser:
     run_job_parser = subparsers.add_parser("run-job")
     run_job_parser.add_argument("--manifest", required=True, help="JSONL job manifest path")
     run_job_parser.add_argument("--job-id", required=True, help="Job id from the manifest")
-    run_job_parser.add_argument("--agent", required=True, choices=("codex", "claude"), help="Headless agent backend")
+    run_job_parser.add_argument("--agent", required=True, choices=AGENT_CHOICES, help="Headless agent backend")
     run_job_parser.add_argument("--dry-run", action="store_true", help="Print the command without executing it")
     run_job_parser.add_argument("--output-path", type=Path, help="Override the job output path")
     run_job_parser.add_argument("--bundle-output-path", type=Path, help="Override the NotebookLM dossier markdown path")
@@ -234,7 +235,7 @@ def build_parser() -> argparse.ArgumentParser:
     run_episode_parser = subparsers.add_parser("run-episode")
     run_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-003")
     run_episode_parser.add_argument(
-        "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
+        "--agent", required=True, choices=AGENT_CHOICES, help="Headless agent backend"
     )
     run_episode_parser.add_argument("--dry-run", action="store_true", help="Print ordered jobs without executing them")
     run_episode_parser.add_argument(
@@ -244,14 +245,14 @@ def build_parser() -> argparse.ArgumentParser:
     )
     run_episode_parser.add_argument(
         "--review-agent",
-        choices=("codex", "claude"),
+        choices=AGENT_CHOICES,
         help="Agent backend used for --auto-accept review and capsule generation; defaults to claude",
     )
     run_episode_parser.set_defaults(func=cmd_run_episode)
     accept_episode_parser = subparsers.add_parser("accept-episode")
     accept_episode_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-002")
     accept_episode_parser.add_argument(
-        "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
+        "--agent", required=True, choices=AGENT_CHOICES, help="Headless agent backend"
     )
     accept_episode_parser.add_argument(
         "--dry-run", action="store_true", help="Print the capsule job without executing it"
@@ -282,9 +283,7 @@ def build_parser() -> argparse.ArgumentParser:
     audio_review_parser.set_defaults(func=cmd_write_audio_review)
     select_context_parser = subparsers.add_parser("select-context")
     select_context_parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-005")
-    select_context_parser.add_argument(
-        "--agent", required=True, choices=("codex", "claude"), help="Headless agent backend"
-    )
+    select_context_parser.add_argument("--agent", required=True, choices=AGENT_CHOICES, help="Headless agent backend")
     select_context_parser.add_argument(
         "--dry-run", action="store_true", help="Print the context-selection command without executing it"
     )

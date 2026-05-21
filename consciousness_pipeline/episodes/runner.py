@@ -1,8 +1,8 @@
-import argparse
 import json
 from pathlib import Path
 from typing import Any
 
+from consciousness_pipeline.agents.contracts import manifest_path_for_kind
 from consciousness_pipeline.agents.runner import run_job
 from consciousness_pipeline.core.config import PROJECT_ROOT
 from consciousness_pipeline.core.models import Section
@@ -47,15 +47,15 @@ def _episode_manifest_path(root: Path, episode_id: str) -> Path:
 
 
 def _research_manifest_path(root: Path) -> Path:
-    return root / "jobs" / "research.jsonl"
+    return manifest_path_for_kind(root, "research")
 
 
 def _source_script_manifest_path(root: Path) -> Path:
-    return root / "jobs" / "source-scripts.jsonl"
+    return manifest_path_for_kind(root, "source_script")
 
 
 def _context_selection_manifest_path(root: Path) -> Path:
-    return root / "jobs" / "course-context-selections.jsonl"
+    return manifest_path_for_kind(root, "course_context_selection")
 
 
 def _context_selection_output_path(root: Path, episode_id: str) -> Path:
@@ -63,7 +63,7 @@ def _context_selection_output_path(root: Path, episode_id: str) -> Path:
 
 
 def _episode_review_manifest_path(root: Path) -> Path:
-    return root / "jobs" / "episode-reviews.jsonl"
+    return manifest_path_for_kind(root, "episode_review")
 
 
 def _section_ids(manifest: dict[str, Any]) -> list[str]:
@@ -271,7 +271,7 @@ def plan_episode_jobs(
         plan.append(
             {
                 "kind": "course_episode_capsule",
-                "manifest": str(root / "jobs" / "episode-capsules.jsonl"),
+                "manifest": str(manifest_path_for_kind(root, "course_episode_capsule")),
                 "job_id": f"{episode_id}-capsule",
             }
         )
@@ -319,34 +319,3 @@ def run_episode(
         commands.extend(accept_episode(episode_id, str(review_agent), root=root))
         _raise_evaluation_errors(root, episode_id, "accepted")
     return commands
-
-
-def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Run one episode through the required production order")
-    parser.add_argument("--episode-id", required=True, help="Episode id, e.g. group-003")
-    parser.add_argument("--agent", required=True, choices=("codex", "claude"), help="Headless agent backend")
-    parser.add_argument("--dry-run", action="store_true", help="Print the job order without executing jobs")
-    parser.add_argument("--auto-accept", action="store_true", help="Review and accept the dossier after generation")
-    parser.add_argument(
-        "--review-agent",
-        choices=("codex", "claude"),
-        help="Agent backend used for the auto-accept review and capsule job; defaults to claude",
-    )
-    return parser
-
-
-def main() -> None:
-    args = build_parser().parse_args()
-    result = run_episode(
-        args.episode_id,
-        args.agent,
-        dry_run=args.dry_run,
-        auto_accept=args.auto_accept,
-        review_agent=args.review_agent,
-    )
-    if args.dry_run:
-        print(json.dumps(result, indent=2))
-
-
-if __name__ == "__main__":
-    main()

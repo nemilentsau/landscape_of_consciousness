@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+from consciousness_pipeline.agents.contracts import schema_path_for_job
 from consciousness_pipeline.core.models import Section
 
 
@@ -49,7 +50,7 @@ def build_research_prompt(job: dict[str, Any], section: Section) -> str:
 
 Job ID: {job["job_id"]}
 Output path: {job["output_path"]}
-Required schema: {job["schema_path"]}
+Required schema: {schema_path_for_job(job)}
 
 Kuhn anchor:
 {_section_summary(section)}
@@ -121,7 +122,7 @@ def build_course_context_selection_prompt(job: dict[str, Any], root: Path) -> st
 Job ID: {job["job_id"]}
 Episode group: {job["group_id"]} - {job["title"]}
 Output path: {job["output_path"]}
-Required schema: {job["schema_path"]}
+Required schema: {schema_path_for_job(job)}
 
 Your task is to choose compact continuity guidance for this episode. This is a selection job, not a
 research job. Use compact capsule metadata and the callback index; do not read or summarize full prior
@@ -161,7 +162,7 @@ def build_episode_capsule_prompt(job: dict[str, Any], root: Path) -> str:
 Job ID: {job["job_id"]}
 Episode group: {job["group_id"]} - {job["title"]}
 Output path: {job["output_path"]}
-Required schema: {job["schema_path"]}
+Required schema: {schema_path_for_job(job)}
 
 Your task is to extract durable course continuity from the accepted NotebookLM source dossier:
 do not rewrite the whole course, do not add new facts, and do not use this job to repair or expand the
@@ -213,7 +214,7 @@ def build_episode_review_prompt(job: dict[str, Any], root: Path) -> str:
 Job ID: {job["job_id"]}
 Episode group: {job["group_id"]} - {job["title"]}
 Output path: {job["output_path"]}
-Required schema: {job["schema_path"]}
+Required schema: {schema_path_for_job(job)}
 
 This is a review gate. Approve only if the source dossier is suitable to become durable course
 continuity for later episodes.
@@ -262,7 +263,7 @@ Episode group: {job["group_id"]} - {job["title"]}
 Episode question: {job["episode_question"]}
 Episode manifest: {job["episode_manifest_path"]}
 Output path: {job["output_path"]}
-Required schema: {job["schema_path"]}
+Required schema: {schema_path_for_job(job)}
 NotebookLM handoff: {job["notebooklm_handoff"]}; bundle dir {job["notebooklm_bundle_dir"]}
 NotebookLM dossier markdown output: {job["bundle_output_path"]}
 

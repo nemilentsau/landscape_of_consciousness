@@ -2,6 +2,7 @@ import csv
 import json
 from pathlib import Path
 
+from consciousness_pipeline.agents.contracts import manifest_path_for_kind
 from consciousness_pipeline.agents.runner import run_job
 from consciousness_pipeline.core.config import PROJECT_ROOT
 from consciousness_pipeline.course.callback_index import write_callback_index
@@ -50,7 +51,7 @@ def accept_episode(
         raise EpisodeAcceptanceError(f"{dossier_path.relative_to(root)} is missing")
 
     command = run_job(
-        root / "jobs" / "episode-capsules.jsonl",
+        manifest_path_for_kind(root, "course_episode_capsule"),
         f"{episode_id}-capsule",
         agent,
         root=root,

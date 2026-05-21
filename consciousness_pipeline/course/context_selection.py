@@ -3,63 +3,7 @@ from collections.abc import Mapping
 from pathlib import Path
 from typing import Any
 
-COURSE_CONTEXT_SELECTION_SCHEMA: dict[str, Any] = {
-    "type": "object",
-    "properties": {
-        "schema_version": {"type": "string", "const": "course_context_selection_v1"},
-        "episode_id": {"type": "string"},
-        "selected_capsules": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "episode_id": {"type": "string"},
-                    "selection_type": {"type": "string", "enum": ["recent", "relevant"]},
-                    "reason": {"type": "string"},
-                },
-                "required": ["episode_id", "selection_type", "reason"],
-                "additionalProperties": False,
-            },
-        },
-        "selected_callbacks": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "concept": {"type": "string"},
-                    "episode_id": {"type": "string"},
-                    "capsule_path": {"type": "string"},
-                    "source_path": {"type": "string"},
-                    "reason": {"type": "string"},
-                },
-                "required": ["concept", "episode_id", "capsule_path", "source_path", "reason"],
-                "additionalProperties": False,
-            },
-        },
-        "rejected_near_misses": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "concept": {"type": "string"},
-                    "episode_id": {"type": "string"},
-                    "source_path": {"type": "string"},
-                    "reason": {"type": "string"},
-                },
-                "required": ["concept", "episode_id", "source_path", "reason"],
-                "additionalProperties": False,
-            },
-        },
-    },
-    "required": [
-        "schema_version",
-        "episode_id",
-        "selected_capsules",
-        "selected_callbacks",
-        "rejected_near_misses",
-    ],
-    "additionalProperties": False,
-}
+from consciousness_pipeline.contracts.schemas import COURSE_CONTEXT_SELECTION_SCHEMA
 
 REQUIRED_STRING_FIELDS = ("schema_version", "episode_id")
 REQUIRED_LIST_FIELDS = ("selected_capsules", "selected_callbacks", "rejected_near_misses")

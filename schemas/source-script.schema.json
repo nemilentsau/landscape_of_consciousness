@@ -1,32 +1,32 @@
 {
-  "type": "object",
+  "additionalProperties": false,
   "properties": {
-    "episode_id": {
+    "citations": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "duration_target": {
       "type": "string"
     },
-    "title": {
+    "episode_id": {
       "type": "string"
     },
     "episode_question": {
       "type": "string"
     },
-    "duration_target": {
-      "type": "string"
+    "missing_inputs": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
     },
     "research_dossier_markdown": {
       "type": "string"
     },
-    "citations": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "missing_inputs": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
+    "title": {
+      "type": "string"
     }
   },
   "required": [
@@ -38,5 +38,5 @@
     "citations",
     "missing_inputs"
   ],
-  "additionalProperties": false
+  "type": "object"
 }
