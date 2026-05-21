@@ -3,8 +3,8 @@
 Date: 2026-05-21
 
 Implementation status: active pass implemented for pipeline and docs. Remaining work is human listening
-decisions for rendered audio, URL capture for retrospectively reconciled handoffs, and later NotebookLM
-readiness checks for episodes not yet audio-ready.
+decisions for rendered audio, URL capture for remaining retrospectively reconciled handoffs, and later
+NotebookLM readiness checks for episodes not yet audio-ready.
 
 ## Goal
 
@@ -23,13 +23,14 @@ Completed local continuity:
 - listener-facing titles and one-sentence promises in `course/listener-facing-titles.md`
 - callback index with 36 callback concepts
 - NotebookLM bundles for all six top-level episodes
-- post-audio review checklists for audio-ready groups 004-006
+- post-audio review checklists for audio-ready/review-pending groups 001 and 004-006
 
 Operational gaps:
 
-- `group-001` and `group-003` have retrospective `audio_requested` reconciliation but still need URL capture
+- `group-001` has a captured NotebookLM URL and generated Deep Dive audio, but still needs a human listening decision
+- `group-003` has retrospective `audio_requested` reconciliation but still needs URL capture
 - `group-002` is marked `audio_requested`, not `audio_ready`
-- audio-ready groups 004-006 have review checklists, but each still needs a human listening decision
+- audio-ready/review-pending groups 001 and 004-006 have review checklists, but each still needs a human listening decision
 - accepted source dossiers for groups 001-006 predate the compact verdict matrix
 
 ## Phase 1: Status And Review Hygiene
@@ -38,8 +39,9 @@ Operational gaps:
 2. Done: added retrospective manual review artifacts for `group-001`, `group-002`, `group-003`, and
    `group-006`.
 3. Done: record that `group-001`, `group-002`, and `group-003` have entered the NotebookLM audio request path.
-4. Capture missing NotebookLM URLs for `group-001` and `group-003`, then later verify whether groups 001-003 are `audio_ready`.
-5. Keep the review standard from `group-004` and `group-005`: factual source material, no dialogue, no
+4. Done for `group-001`: captured the NotebookLM URL, verified the six-file bundle, and found Deep Dive audio available.
+5. Capture the missing NotebookLM URL for `group-003`, then later verify whether groups 002-003 are `audio_ready`.
+6. Keep the review standard from `group-004` and `group-005`: factual source material, no dialogue, no
    banter, no untagged speculative claims, clear source traceability.
 
 ## Phase 2: Listener-Facing Episode Framing

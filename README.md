@@ -15,8 +15,9 @@ source dossiers and episode capsules. The durable continuity layer is active:
 - generated per-episode context packs in `episodes/<group-id>/course_context.md`
 
 NotebookLM audio handoff is not complete for every accepted dossier. `course/production-status.csv` is the
-handoff ledger: groups 001-003 are marked `audio_requested` after retrospective reconciliation, with
-groups 001/003 still needing URL capture; groups 004-006 are marked `audio_ready`.
+handoff ledger: group 001 has a captured NotebookLM URL and is awaiting human audio review; groups 002-003
+are marked `audio_requested`, with group 003 still needing URL capture; groups 004-006 are marked
+`audio_ready`.
 
 The current quality-improvement pass is tracked in `docs/episode-quality-implementation-plan.md`.
 
